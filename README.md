@@ -4,7 +4,7 @@
 - Para requerimientos de manera independiente:
     - en [Windows](installation/win.md)
     - en [Linux](installation/linux.md)
-    - en [Max](installation/mc.md)
+    - en [Mac](installation/mc.md)
 
 #### Instrucciones para el uso de este repositorio
 
