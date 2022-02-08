@@ -1,4 +1,4 @@
-### Instalaciones
+**Instalaciones**
 
 - Para [máquina virtual](installation/vm.md) (el sistema operativo anfitrión es indistinto)
 - Para requerimientos de manera independiente:
