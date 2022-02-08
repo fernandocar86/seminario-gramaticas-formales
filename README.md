@@ -1,4 +1,4 @@
-**Instalaciones**
+#### Instalaciones
 
 - Para [máquina virtual](installation/vm.md) (el sistema operativo anfitrión es indistinto)
 - Para requerimientos de manera independiente:
@@ -6,6 +6,21 @@
     - en [Linux](installation/linux.md)
     - en [Max](installation/mc.md)
 
+#### Instrucciones para el uso de este repositorio
+
+Para clonarte este repo, ejecutá la siguiente línea:
+
+```
+git clone https://github.com/fernandocar86/seminario-gramaticas-formales.git
+```
+
+Si vas a utilizar `notebooks`, te aconsejamos limpiarlas antes de subirlas. Para que esto se haga de forma automática, podés configurar el repositorio usando el siguiente comando (solo para usuarios de **Linux** y **Mac**):
+
+```
+./set_config.sh
+```
+
+*Solo para usuarios de Linux y Mac.
 # Materiales de cursada
 
 ## Welcome to GitHub Pages
