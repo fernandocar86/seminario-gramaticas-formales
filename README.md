@@ -1,3 +1,13 @@
+# Instalaciones
+
+- Para [máquina virtual](installation/vm.md) (el sistema operativo anfitrión es indistinto)
+- Para requerimientos de manera independiente:
+    - en [Windows](installation/win.md)
+    - en [Linux](installation/linux.md)
+    - en [Max](installation/mc.md)
+
+# Materiales de cursada
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/fernandocar86/seminario-gramaticas-formales/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
