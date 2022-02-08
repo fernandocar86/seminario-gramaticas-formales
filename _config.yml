@@ -2,6 +2,5 @@
 title: Seminario sobre Gramáticas Formales
 description: Material para el el seminario de Gramáticas Formales de la carrera de Letras de la UBA
 
-#theme: jekyll-theme-midnight
-theme: jekyll-theme-cayman
+theme: jekyll-theme-midnight
 show_downloads: "true"
