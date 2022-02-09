@@ -1,0 +1,55 @@
+:- S, NP, NC, PARTP, PP
+
+		
+D :: NP/NC
+PRO :: NP
+
+TV :: (S\NP)/NP
+DTV :: TV/PP
+
+
+el => D
+la => D
+una => D
+un => D
+
+julia => NP
+cata => NP
+fede => NP
+martín => NP
+pablo => NP
+fer => NP
+vicky => NP
+
+él => PRO
+ella => PRO
+
+regalo => NC
+globo => NC
+plaza => NC
+facultad => NC
+tabaco => NC
+
+fuma => S\NP
+
+fumó => TV
+explotó => TV
+
+envió => DTV
+entregó => DTV
+
+a => PP/NP
+por => PP/NP
+en => PP/NP
+
+fumado => PARTP/PP
+enviado => PARTP/PP
+entregado => PARTP/PP
+explotado => PARTP/PP
+
+fue => (S\NP)/PARTP
+
+explotó => S\NP
+habla => S\NP
+
+
