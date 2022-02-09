@@ -24,7 +24,7 @@ Si vas a utilizar `notebooks`, te aconsejamos limpiarlas antes de subirlas. Para
 # Materiales de cursada
 
 ## Clase 01 
-- [Parsers](clase-01/parsers.md) 
+- [Parsers](Clase-01/parsers.md) 
 
 ## Welcome to GitHub Pages
 
