@@ -1,10 +1,12 @@
-#### Instalaciones
+# Requisitos técnicos
 
-- Para [máquina virtual](installation/vm.md) (el sistema operativo anfitrión es indistinto)
-- Para requerimientos de manera independiente:
-    - en [Windows](installation/win.md)
-    - en [Linux](installation/linux.md)
-    - en [Mac](installation/mc.md)
+En la cursada vamos a utilizar diversos recursos computacionales, principalmente en los lenguajes de programación Python y Prolog, librerías como NLTK, Spacy y Delphin, entre otras, programas como Wish, y el sistema de control de versiones git. Para poder hacer las actividades y correr los códigos que se suban a esta repositorio, es necesario que los estudiantes tengan todo lo necesario instalado. 
+
+- Quienes tengan mayores conocimientos de programación pueden instalarse todo lo necesario a partir de la lista que incluimos abajo. Es importante aclarar que la cátedra no va a hacer un seguimiento personalizado de los problemas de instalación que puedan surgir mediante este método, por lo que recomendamos hacer la instalación independiente solo en caso de tener experiencia en la instalación de este tipo de recursos.
+    - [lista de recursos](installation/recursos.md)
+
+- Quienes no tienen experiencia en programación o en el manejo de la línea de comandos, pueden instalarse una máquina virtual especialmente diseñada para esta cursada. Una máquina virtual es una computadora huésped que corre dentro de la anfitriona. La computadora huésped tiene su propia memoria asignada y su propio sistema operativo. La presente máquina virtual tiene como sistema operativo Ubuntu y tiene ya instalado todo lo que vamos a usar en la cursada. Pueden acceder con el siguiente link
+    - [máquina virtual](installation/vm.md) (el sistema operativo anfitrión es indistinto)
 
 #### Instrucciones para el uso de este repositorio
 
