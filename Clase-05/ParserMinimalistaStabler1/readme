@@ -1,0 +1,44 @@
+mgcky - cky-like parser for "minimalist grammars"
+version 1.0, 30 Aug 2002
+
+The top file for loading files and demos is setup.pl.
+
+After loading a grammar, showLexicon/0 shows the lexical items,
+numbered as they are in the derivations delivered by the parser.
+
+setup.pl is now configured so that if you load it
+in a working SWI-prolog environment,
+it should load a parser and grammar.
+setup.pl has various test and top-level predicates.
+For example, after loading grammar gh5.pl, you can execute
+gh1(x) to run an example, and then type h at the prompt to
+select from the tree display options.
+
+The display utilities use tcl/tk and dot, which are freely
+available at:
+	http://www.scriptics.com/software/
+	http://www.research.att.com/sw/tools/graphviz/
+
+NOTE TO HACKERS: If you are going to trace the execution of this
+code, you should first comment out the portray clauses that appear
+at the ends of the parser files (mgpx.pl, mghapx.pl -- whichever 
+you are using)
+
+------------------
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+
+Please send bug reports, comments or suggestions to
+stabler@ucla.edu

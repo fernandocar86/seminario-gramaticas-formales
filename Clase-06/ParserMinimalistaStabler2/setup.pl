@@ -1,0 +1,58 @@
+% file: setup.pl
+% origin author : E Stabler
+% origin date: Jan 2001
+% purpose: load files for CKY-like MG parser, swi version
+% use: This is the top file for loading files and demos.
+%      If this load prompts about redefining predicates, type p(roceed)
+% updates: June 2001- Willemijn Vermaat 
+% updates: May 2002 - Stabler - extension to standard transformational grammar
+% updates: Jul 2010 - Stabler - update for SWI Prolog features
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% Este archivo está simplificado por Fernando Carranza para correr solo una selección 
+% ilustrativa de las gramáticas minimalistas para su uso interno en las clases del 
+% seminario "Gramáticas formales: formalismos e implementaciones" (Carranza y Zdrojewski) 
+% durante el primer cuatrimestre de 2022, Universidad de Buenos Aires.
+
+ 
+% Para la versión original de Stabler remitimos a 
+% https://linguistics.ucla.edu/person/edward-stabler/
+%
+% Para hacer que el parser corra línea por línea comentar en lhapx función everystep
+% todo:
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% operator defs - don't touch these
+:- op(500, xfy, ::). % lexical items
+:- op(500, fx, =). % for selection features
+:- op(500, xf, <=).		% for right incorporation
+:- op(500, fx, =>). % for left incorporation
+:- op(500, xf, ==>). % for right affix hop
+:- op(500, fx, <==). % for left affix hop
+:- op(500, xfy, <<). % for adjunction
+:- op(500, xfy, >>). % for adjunction
+
+% for tree display
+:- ensure_loaded('tree_display/wish_treeSWI').
+:- ensure_loaded('tree_display/latex_treeSWI').
+:- ensure_loaded('tree_display/pptree').
+
+% Recognizer and display tool
+:- ensure_loaded('parser/mghapx'),ensure_loaded('parser/lhapx').  % TG parser and lexical sequence parser
+
+   % GRAMMARS REQUIRING HEAD MOVEMENT (mghapx+lhapx)
+:- ['grammars/spanish']. % 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Oraciones para probar
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% spanish.pl
+g0spanish1lex :- showLexicon.
+spanish1(1) :- showParse(['Juan',leer,'-pres',el,libro]).
+spanish1(2) :- showParse(['Romi',leer,'-pdo',el,libro]).
+% y así sucesivamente
+
+
+
