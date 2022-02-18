@@ -22,15 +22,17 @@ import subprocess
 
 ```python
 ace.compile('ace/trunk/ace/config.tdl', 'ace/grammar.dat',executable="ace/ace/ace")
-ace.parse(grm='ace/grammar.dat', datum='Mary', executable="ace/ace/ace",full_forest=True,tsdbinfo=False)
+ace.parse(grm='ace/grammar.dat', datum='The cat is under the table', executable="ace/ace/ace")
 ```
 
 
 ```python
-with ace.ACEParser(grm='ace/grammar.dat', executable="ace/ace/ace",tsdbinfo=False,full_forest=True) as parser:
-    response = parser.interact('The cat is under the table.')
+with ace.ACEParser(grm='ace/grammar.dat', executable="ace/ace/ace") as parser:
+    response = parser.interact('Every dog bites a person in his arm')
     mrs = response.result(0)['mrs']
+    tree = response.result(0)['tree']
     print(mrs)
+    print(tree)
     
 ```
 
@@ -63,6 +65,36 @@ if platform.system().lower() == 'windows':
     os.startfile('avm.pdf')
 elif platform.system().lower() == 'linux':
     subprocess.run(['xdg-open', 'avm.pdf'])
+else:
+    raise RuntimeError('Unknown operating system "{}"'.format(platform.system()))
+```
+
+
+```python
+# Este código convierte el tree en un código de latex para convertirlo en una avm. 
+# Hay que tener latex instalado.
+# Una vez convertido, en linux (chequeado) y windows (no chequeado) abre el pdf.
+# Para otros sistemas operativos hay que tunear el código o abrir manualmente.
+
+tree = re.sub(r'\(', r'[', tree) # Reemplaza "(" por "["
+tree = re.sub(r'\)', r' ]', tree) # Reemplaza ")" por " ]"
+tree = re.sub(r'\"([A-Z]+)\"', r'.\1', tree) # Agrega punto antes de los no terminales
+tree = re.sub(r'\"([a-z]+)\"', r' \1', tree) # Agrega espacio antes de los terminales y les saca las comillas
+print(tree)
+with open('tree.tex', 'w', encoding='utf-8') as f:
+    line1 = '\\documentclass[a4paper, 12pt]{article}\\usepackage[paperheight=50cm, paperwidth=50cm, tmargin=0.5cm, bmargin=0.5cm, lmargin=0.5cm, rmargin=0.5cm]{geometry}\\usepackage[utf8]{inputenc}\\usepackage[T1]{fontenc}\\usepackage[spanish]{babel}\\usepackage[normalem]{ulem}\\usepackage{lmodern,graphicx,qtree}\\begin{document}\\resizebox{48cm}{48}{\\Tree '
+    line3 = '}\\end{document}'
+    f.write(line1)
+    f.write(tree)
+    f.write(line3)
+    f.close()
+subprocess.run(['pdflatex', '-interaction=nonstopmode', 'tree.tex'])
+os.remove("tree.log")
+os.remove('tree.aux')
+if platform.system().lower() == 'windows':
+    os.startfile('tree.pdf')
+elif platform.system().lower() == 'linux':
+    subprocess.run(['xdg-open', 'tree.pdf'])
 else:
     raise RuntimeError('Unknown operating system "{}"'.format(platform.system()))
 ```
