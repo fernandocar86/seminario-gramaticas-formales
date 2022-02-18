@@ -33,17 +33,21 @@ def rd_parser(sentence, grammar):                   # define una función llamad
     rd_parser = nltk.RecursiveDescentParser(grammar) # proceso esas palabras
     for tree in rd_parser.parse(sent):              # para cada árbol posible en mi gramática para esa oración
         print(tree)                                 # lo imprimo
-
+        return(tree)
 ```
 
 
 ```python
 #Para correr el Recursive Descent Parser
 
-print('Escribí una oración:')                          #Para que me pida que escriba una oración
-oracion1 = input()                                     #Para que me abra un campo en el que escriba la oración
-grammar = nltk.data.load('gramaticas/ContextFreeGrammar.cfg')     # establece cuál va a ser mi gramática
-rd_parser(oracion1, grammar)                           #Para correr la función
+print('Escribí una oración:')                          # Para que me pida que escriba una oración
+oracion1 = input()                                     # Para que me abra un campo en el que escriba la oración
+grammar = nltk.data.load('gramaticas/CFG.cfg')     # establece cuál va a ser mi gramática
+rd_parser(oracion1, grammar)                           # Para correr la función
+
+# Oraciones que acepta la gramática: 
+# Cata/Martín/Julia/Maca/Pablo fuma
+# Cata/Martín/Julia/Maca/Pablo entregó/envió el/la/un/una plaza/facultad/regalo/globo/tabaco
 ```
 
 **Demo del Right Descent Parser**
@@ -57,7 +61,7 @@ nltk.app.rdparser()
 
 
 ```python
-#Shift Reduce Parser
+# Shift Reduce Parser
 
 def sr_parser(sentence, grammar):                      # define la función sr_parser con dos argumentos
     print(grammar)                                     # imprimte la gramática
@@ -70,15 +74,19 @@ def sr_parser(sentence, grammar):                      # define la función sr_p
     sr_parser = nltk.ShiftReduceParser(grammar)        # proceso esas palabras
     for tree in sr_parser.parse(sent):                 # para cada árbol posible en mi gramática para esa oración
         print(tree)                                    # lo imprimo
-
+        return(tree)                                   # lo dibujo
 ```
 
 
 ```python
-print('Escribí una oración:')                           # imprime un mensaje pidiendo que escriba una oración
-oracion2 = input()                                      # asigna a una variable mi oración como valor
-grammar = nltk.data.load('gramaticas/ContextFreeGrammar.cfg')      # asigna a una variable mi gramática como valor
+print('Escribí una oración:')                       # imprime un mensaje pidiendo que escriba una oración
+oracion2 = input()                                  # asigna a una variable mi oración como valor
+grammar = nltk.data.load('gramaticas/CFG.cfg')      # asigna a una variable mi gramática como valor
 sr_parser(oracion2, grammar)   
+
+# Oraciones que acepta la gramática: 
+# Cata/Martín/Julia/Maca/Pablo fuma
+# Cata/Martín/Julia/Maca/Pablo entregó/envió el/la/un/una plaza/facultad/regalo/globo/tabaco
 ```
 
 **Desventajas:**
@@ -119,8 +127,11 @@ Brown Laboratory for Linguistic Information Processing
 
 Introduce gramáticas a partir de un corpus
 
+### Reranking Parser
+
 
 ```python
+import bllipparser
 from bllipparser import RerankingParser                             #Importa el parser
 from bllipparser.ModelFetcher import download_and_install_model     # Descarga e instala el "modelo"
 
@@ -132,12 +143,12 @@ rrp = RerankingParser.from_unified_model_dir(model_dir)
 ```python
 oracion2 = "john runs through the hill"
 rrp.simple_parse(oracion2)
+#rrp.parse(oracion2)
 ```
 
 
 ```python
-oracion3 = "No one saw him disembark in the unanimous night, no one saw the bamboo canoe sink into the sacred mud, but in a few days there was no one who did not know that the taciturn man came from the South"
-rrp.simple_parse(oracion3)
+rrp.tag(oracion2)
 ```
 
 
@@ -145,4 +156,30 @@ rrp.simple_parse(oracion3)
 print('Escribí una oración en inglés')
 oracion4 = input()
 rrp.simple_parse(oracion4)
+```
+
+### Método tree
+
+
+```python
+oracion3 = "No one saw him disembark in the unanimous night, no one saw the bamboo canoe sink into the sacred mud, but in a few days there was no one who did not know that the taciturn man came from the South"
+structure = rrp.simple_parse(oracion3)
+print(structure)
+```
+
+
+```python
+tree = bllipparser.Tree(structure)
+prettytree = tree.pretty_string()
+sentenceroot = tree.label
+sentencespan = tree.span()
+print(tree)
+print(prettytree)
+print(sentenceroot)
+print(sentencespan)
+```
+
+
+```python
+
 ```
