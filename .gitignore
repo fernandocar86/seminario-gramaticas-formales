@@ -26,6 +26,8 @@ share/python-wheels/
 .installed.cfg
 *.egg
 Clase-09/ace
+Clase-09/avm.tex
+Clase-09/avm.pdf
 MANIFEST
 
 # PyInstaller

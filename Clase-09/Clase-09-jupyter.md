@@ -4,7 +4,7 @@ Para ver la documentación de ACE ir a [https://pydelphin.readthedocs.io/en/late
 
 Ace utiliza como base una gramática que utiliza el formalismo de HPSG. Al correr el parser devuelve como resultado una matriz de atribución de valores que refleja la MRS o *Minimal Recursion semantics*. 
 
-Para poder correr esta jupyter es necesario primero descargarse en este mismo directorio el archivo ace.zip, que está en la carpeta compartida del seminario, en la carpeta "Paquetes o recursos complementarios".
+Para poder correr esta jupyter es necesario primero descargarse a este mismo directorio el archivo ace.zip, que está en la carpeta compartida del seminario, en la carpeta "Paquetes o recursos complementarios". Una vez descargado, descomprimirlo.
 
 ## Paquetes requeridos
 
@@ -13,19 +13,21 @@ Para poder correr esta jupyter es necesario primero descargarse en este mismo di
 from delphin import ace
 import re
 import os  
+import platform                                                                                     
+import subprocess
 ```
 
 ## Parser de ACE
 
 
 ```python
-ace.compile('trunk/ace/config.tdl', 'grammar.dat',executable="ace/ace")
-ace.parse(grm='grammar.dat', datum='Mary', executable="ace/ace",full_forest=True,tsdbinfo=False)
+ace.compile('ace/trunk/ace/config.tdl', 'ace/grammar.dat',executable="ace/ace/ace")
+ace.parse(grm='ace/grammar.dat', datum='Mary', executable="ace/ace/ace",full_forest=True,tsdbinfo=False)
 ```
 
 
 ```python
-with ace.ACEParser(grm='grammar.dat', executable="ace/ace",tsdbinfo=False,full_forest=True) as parser:
+with ace.ACEParser(grm='ace/grammar.dat', executable="ace/ace/ace",tsdbinfo=False,full_forest=True) as parser:
     response = parser.interact('The cat is under the table.')
     mrs = response.result(0)['mrs']
     print(mrs)
@@ -34,10 +36,10 @@ with ace.ACEParser(grm='grammar.dat', executable="ace/ace",tsdbinfo=False,full_f
 
 
 ```python
-# Este código convierte el mrs en un código de latex para convertirlo en una avm. Hay que tener latex instalado.
-
-import platform                                                                                     
-import subprocess
+# Este código convierte el mrs en un código de latex para convertirlo en una avm. 
+# Hay que tener latex instalado.
+# Una vez convertido, en linux (chequeado) y windows (no chequeado) abre el pdf.
+# Para otros sistemas operativos hay que tunear el código o abrir manualmente.
 
 mrs = re.sub(r'\]', r'\\]', mrs) # Agrega \ adelante de ]
 mrs = re.sub(r'\[', '\\[', mrs) # Agrega \ adelante de [
