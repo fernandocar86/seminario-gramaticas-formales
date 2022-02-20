@@ -42,7 +42,7 @@
 :- ensure_loaded('parser/mghapx'),ensure_loaded('parser/lhapx').  % TG parser and lexical sequence parser
 
    % GRAMMARS REQUIRING HEAD MOVEMENT (mghapx+lhapx)
-:- ['grammars/spanish']. % 
+:- ['grammars/spanish1']. % 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Oraciones para probar
