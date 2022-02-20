@@ -12,6 +12,7 @@ En la cursada vamos a utilizar diversos recursos computacionales, principalmente
 
 Para clonarte este repo, ejecutá la siguiente línea:
 
+{% include codeHeader.html %}
 ```
 git clone https://github.com/fernandocar86/seminario-gramaticas-formales.git
 ```
