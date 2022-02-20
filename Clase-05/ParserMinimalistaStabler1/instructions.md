@@ -34,7 +34,7 @@ Para poder correr estos materiales es preciso tener instalado Prolog, LaTeX y Wi
    ```
 6. Cargar el archivo ``setup.pl``, encerrándolo entre corchetes, como se muestra a continuación:
    ```
-   [setup]
+   [setup].
    ```
    Van a aparecer varios errores, principalmente de variables libres, pero estos errores no deberían interferir.
 7. Copiar alguno de los comandos showParse que están comentados en ``setup.pl`` que correspondan a la gramática elegida y apretar enter. Por ejemplo. Al copiar el comando ``showParse([a,b,c]).``, perteneciente a la gramática ``anbncn`` aparece lo siguiente.
