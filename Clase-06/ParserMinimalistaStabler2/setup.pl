@@ -23,6 +23,9 @@
 % todo:
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Operadores
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % operator defs - don't touch these
 :- op(500, xfy, ::). % lexical items
 :- op(500, fx, =). % for selection features
@@ -33,25 +36,37 @@
 :- op(500, xfy, <<). % for adjunction
 :- op(500, xfy, >>). % for adjunction
 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Visualizado de árboles
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % for tree display
 :- ensure_loaded('tree_display/wish_treeSWI').
 :- ensure_loaded('tree_display/latex_treeSWI').
 :- ensure_loaded('tree_display/pptree').
 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Parser
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % Recognizer and display tool
 :- ensure_loaded('parser/mghapx'),ensure_loaded('parser/lhapx').  % TG parser and lexical sequence parser
 
-   % GRAMMARS REQUIRING HEAD MOVEMENT (mghapx+lhapx)
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Gramáticas
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% GRAMMARS REQUIRING HEAD MOVEMENT (mghapx+lhapx)
 :- ['grammars/spanish1']. % 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Oraciones para probar
+% Oraciones para probar (seleecionar de la gramática que corresponda)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % spanish.pl
-g0spanish1lex :- showLexicon.
-spanish1(1) :- showParse(['Juan',leer,'-pres',el,libro]).
-spanish1(2) :- showParse(['Romi',leer,'-pdo',el,libro]).
+% showLexicon.
+% showParse(['Juan',leer,'-pres',el,libro]).
+% showParse(['Romi',leer,'-pdo',el,libro]).
 % y así sucesivamente
 
 
