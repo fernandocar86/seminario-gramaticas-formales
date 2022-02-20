@@ -1,4 +1,3 @@
-"""
 'fuma' -> 'juan'
 'fuma' -> 'fede'|'cata'|'julia'|'martín'|'vicky'|'pablo' 'el'|'la'
 'explotó' -> 'fede' | 'cata' | 'julia' | 'martín' | 'vicky' | 'pablo' 'el' | 'la'
@@ -13,4 +12,3 @@
 'enviado' -> 'por'
 'fumado' -> 'por'
 'por' -> 'el' | 'la' | 'fede' | 'cata' | 'julia' | 'martín' | 'vicky' | 'pablo'
-"""
