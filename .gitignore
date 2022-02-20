@@ -25,6 +25,8 @@ share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+Clase-05/ParserMinimalistaStabler1/ltree.tex
+Clase-05/ParserMinimalistaStabler1/wishtemp
 Clase-09/ace
 Clase-09/avm.tex
 Clase-09/avm.pdf
