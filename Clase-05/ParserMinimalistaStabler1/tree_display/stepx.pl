@@ -12,7 +12,7 @@ step :-
 	;	help0,step
 	).
 
-step(D,B,X,Lex,Deps) :- pstep(D,B,X,Lex,Deps,'display (return, or h for help)? ').
+step(D,B,X,Lex,Deps) :- pstep(D,B,X,Lex,Deps,'visualizar (enter, o h para ayuda)? ').
 
 pstep(D,B,X,Lex,Deps,Prompt) :-
 	prompted_char(Prompt,C),
@@ -88,28 +88,51 @@ is_endline(C) :-		% line terminator, NOT just newline
 
 % help0/0 is for step/0
 help0 :-
-	format("\nAt the prompt:\tmore?",[]),
+	format("\nEn la terminal:\t¿más?",[]),
 	format("\n              \t   a\tto abort",[]),
 	format("\n              \t  <cr>\tdone",[]),
 	format("\n              \t   ;\tfor failure/alternatives",[]),
-	format("\n          \t or anything else\tfor this help\n",[]).
+	format("\n          \t o algo más\tpara esta ayuda\n",[]).
 
 % help1/0 is for step1/0
 help3 :-
-	format("\nAt the prompt:\tmore?",[]),
-	format("\n              \t  <cr>\tto finish",[]),
-	format("\n              \t   ;\tfor more results",[]),
-	format("\n              \t   t\tdisplay derivation with tk",[]),
-	format("\n              \t   d\tprint derivation tree to tk and ltree.tex",[]),
-	format("\n              \t   b\tprint bare tree to tk and ltree.tex",[]),
-	format("\n              \t   x\tprint x-bar tree to tk and ltree.tex",[]),
-	format("\n              \t   p\tpprint derivation tree to terminal and ltree.tex",[]),
-	format("\n              \t   q\tpprint bare tree to terminal and ltree.tex",[]),
-	format("\n              \t   r\tpprint x-bar tree to terminal and ltree.tex",[]),
-	format("\n              \t   0\tshow unfactored dependency structure horizontally",[]),
-	format("\n              \t   1\tshow factored dependency structure vertically",[]),
-	format("\n              \t   a\tabort",[]),
+	format("\nEn la terminal:\t¿más?",[]),
+	format("\n              \t  <cr>\tterminar",[]),
+	format("\n              \t   ;\tmás respultados",[]),
+	format("\n              \t   t\tvizualizar derivación con tk",[]),
+	format("\n              \t   d\timprimir árbol con tk y ltree.tex",[]),
+	format("\n              \t   b\timprimir árbol escueto con tk y ltree.tex",[]),
+	format("\n              \t   x\timprimir árbol de x con barra con tk y ltree.tex",[]),
+	format("\n              \t   p\timprimir árbol en la terminarl y ltree.tex",[]),
+	format("\n              \t   q\timprimir árbol escueto en la terminal y ltree.tex",[]),
+	format("\n              \t   r\timprimir árbol de x con barra en la terminal y ltree.tex",[]),
+	format("\n              \t   0\tmostrar estructura de dependencias no factorizada horizontalmente",[]),
+	format("\n              \t   1\tmostrar estructura de dependencia factorizada verticalmente",[]),
+	format("\n              \t   a\tabortar",[]),
 	format("\n          \t or anything else\tfor this help\n",[]).
+%help0 :-
+%	format("\nAt the prompt:\tmore?",[]),
+%	format("\n              \t   a\tto abort",[]),
+%	format("\n              \t  <cr>\tdone",[]),
+%	format("\n              \t   ;\tfor failure/alternatives",[]),
+%	format("\n          \t or anything else\tfor this help\n",[]).
+%
+% help1/0 is for step1/0
+%help3 :-
+%	format("\nAt the prompt:\tmore?",[]),
+%	format("\n              \t  <cr>\tto finish",[]),
+%	format("\n              \t   ;\tfor more results",[]),
+%	format("\n              \t   t\tdisplay derivation with tk",[]),
+%	format("\n              \t   d\tprint derivation tree to tk and ltree.tex",[]),
+%	format("\n              \t   b\tprint bare tree to tk and ltree.tex",[]),
+%	format("\n              \t   x\tprint x-bar tree to tk and ltree.tex",[]),
+%	format("\n              \t   p\tpprint derivation tree to terminal and ltree.tex",[]),
+%	format("\n              \t   q\tpprint bare tree to terminal and ltree.tex",[]),
+%	format("\n              \t   r\tpprint x-bar tree to terminal and ltree.tex",[]),
+%	format("\n              \t   0\tshow unfactored dependency structure horizontally",[]),
+%	format("\n              \t   1\tshow factored dependency structure vertically",[]),
+%	format("\n              \t   a\tabort",[]),
+%	format("\n          \t or anything else\tfor this help\n",[]).
 
 dep_tree0(Phon,Links) :-
 	tell('dotdep.dot'),

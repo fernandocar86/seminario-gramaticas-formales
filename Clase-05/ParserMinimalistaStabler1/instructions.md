@@ -14,12 +14,12 @@ Para poder correr estos materiales es preciso tener instalado Prolog, LaTeX y Wi
 
 1. Abrir el archivo ``setup.pl`` 
 2. Chequear en el archivo la sección ``Gramáticas`` y dejar descomentada solo la gramática que se desea probar (en Prolog los comentarios se introducen con el signo ``%``.
-3. Guadar setup.
+3. Guardar setup.
 4. Entrar a la terminal desde ese mismo directorio.
 5. Iniciar Prolog con alguno de los siguientes comandos: 
     ```
     prolog
-    swipl`
+    swipl
     ```
    Si todo funciona bien, en la pantalla va a aparecer un mensaje como el siguiente:
    ```
@@ -32,12 +32,12 @@ Para poder correr estos materiales es preciso tener instalado Prolog, LaTeX y Wi
    
    ?- 
    ```
-6. Cargar el archivo ``setup``, encerrándolo entre corchetes, como se muestra a continuación:
+6. Cargar el archivo ``setup.pl``, encerrándolo entre corchetes, como se muestra a continuación:
    ```
    [setup]
    ```
    Van a aparecer varios errores, principalmente de variables libres, pero estos errores no deberían interferir.
-7. Copiar alguno de los comandos showParse que están comentados en ``setup.pl`` y apretar enter. Por ejemplo. Al copiar el comando ``showParse([a,b,c]).`` aparece lo siguiente.
+7. Copiar alguno de los comandos showParse que están comentados en ``setup.pl`` que correspondan a la gramática elegida y apretar enter. Por ejemplo. Al copiar el comando ``showParse([a,b,c]).``, perteneciente a la gramática ``anbncn`` aparece lo siguiente.
    ```
    ?- showParse([a,b,c]).
    analizando...
