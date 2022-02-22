@@ -1,0 +1,5 @@
+:- S, NP
+i => NP {I}
+give => ((S\NP)/NP)/NP {\x y z.give(y,x,z)}
+them => NP {them}
+money => NP {money}

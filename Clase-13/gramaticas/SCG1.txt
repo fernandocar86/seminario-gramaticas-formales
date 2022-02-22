@@ -1,0 +1,12 @@
+:- S, NP, PP
+juan => NP {juan}
+pablo => NP {pablo}
+romi => NP {romi}
+fernando => NP {fernando}
+maca => NP {maca}
+fuma => (S\NP) {\x.fumar(x)}
+explota => (S\NP) {\x.explotar(x)}
+corre => (S\NP) {\x.correr(x)}
+nada => (S\NP) {\x.nadar(x)}
+dio => ((S\NP)/PP)/NP {\x y z.dar(y,x,z)}
+a => PP/NP {\x P.P(x)}
