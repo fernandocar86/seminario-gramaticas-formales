@@ -1,0 +1,25 @@
+:- S, NP, NC
+		
+el => NP[NUM=3]/NC[GEN=masc]
+la => NP[NUM=3]/NC[GEN=fem]
+una => NP[NUM=3]/NC[GEN=fem]
+un => NP[NUM=3]/NC[GEN=masc]
+
+julia => NP[NUM=3]
+cata => NP[NUM=3]
+fede => NP[NUM=3]
+martín => NP[NUM=3]
+pablo => NP[NUM=3]
+fer => NP[NUM=3]
+vicky => NP[NUM=3]
+
+regalo => NC[GEN=masc]
+globo => NC[GEN=masc]
+plaza => NC[GEN=fem]
+facultad => NC[GEN=fem]
+tabaco => NC[GEN=masc]
+
+fuma => S\NP[NUM=3]
+fumó => S\NP[NUM=3]
+explotó => S\NP[NUM=3]
+habla => S\NP[NUM=3]
