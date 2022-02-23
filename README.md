@@ -1,5 +1,4 @@
 {% include head.html %}
-# Página principal seminario gramáticas formales
 
 ## Requerimientos técnicos
 
