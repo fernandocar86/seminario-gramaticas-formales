@@ -1,4 +1,4 @@
-{% include Head.html %}
+{% include head.html %}
 
 # Requerimientos técnicos
 
