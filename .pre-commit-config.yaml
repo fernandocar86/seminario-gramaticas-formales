@@ -13,9 +13,9 @@ repos:
     rev: 1.0.0
     hooks:
     -   id: nb-ensure-clean
-        args: [--meta, ExecuteTime]
--   repo: https://github.com/mwouts/jupytext
-    rev: v1.13.7
-    hooks:
-    -   id: jupytext
-        args: [--from, ipynb, --to, "markdown"]
+        args: [--meta, ExecuteTime, 'Clase-*']
+#-   repo: https://github.com/mwouts/jupytext
+#    rev: v1.13.7
+#    hooks:
+#    -   id: jupytext
+#        args: [--from, ipynb, --to, "markdown"]
