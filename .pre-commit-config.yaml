@@ -10,18 +10,18 @@ repos:
     -   id: check-added-large-files
 -   repo: local
     hooks:
-    -   id: jupyter-nb-clear-output
-        name: jupyter-nb-clear-output
-        files: .ipynb
-        stages: [commit]
-        language: system
-        entry: jupyter nbconvert --clear-output --inplace
     -   id: jupyter-nb-to-markdown
         name: jupyter-nb-to-markdown
         files: .ipynb
         stages: [commit]
         language: system
         entry: jupyter nbconvert --to markdown
+    -   id: jupyter-nb-clear-output
+        name: jupyter-nb-clear-output
+        files: .ipynb
+        stages: [commit]
+        language: system
+        entry: jupyter nbconvert --clear-output --inplace
 -   repo: local
     hooks:
     -   id: re-add updated tracked files
