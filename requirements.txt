@@ -1,1 +1,3 @@
-# python requirements
+jupyterlab==3.2.9
+nltk==3.7
+spacy==3.2.2
