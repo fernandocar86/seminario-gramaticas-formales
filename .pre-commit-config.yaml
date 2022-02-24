@@ -8,14 +8,24 @@ repos:
     -   id: end-of-file-fixer
     -   id: check-yaml
     -   id: check-added-large-files
-
--   repo: https://gitlab.com/iamlikeme/nbhooks
-    rev: 1.0.0
+-   repo: local
     hooks:
-    -   id: nb-ensure-clean
-        args: [--meta, ExecuteTime, 'Clase-*']
-#-   repo: https://github.com/mwouts/jupytext
-#    rev: v1.13.7
-#    hooks:
-#    -   id: jupytext
-#        args: [--from, ipynb, --to, "markdown"]
+    -   id: jupyter-nb-clear-output
+        name: jupyter-nb-clear-output
+        files: .ipynb
+        stages: [commit]
+        language: system
+        entry: jupyter nbconvert --clear-output --inplace
+    -   id: jupyter-nb-to-markdown
+        name: jupyter-nb-to-markdown
+        files: .ipynb
+        stages: [commit]
+        language: system
+        entry: jupyter nbconvert --to markdown
+-   repo: local
+    hooks:
+    -   id: re-add updated tracked files
+        name: re-add updated tracked files
+        stages: [commit]
+        language: system
+        entry: git add -u
