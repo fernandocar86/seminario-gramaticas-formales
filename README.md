@@ -17,7 +17,7 @@ En la cursada vamos a utilizar diversos recursos computacionales, principalmente
 
 | Clase | Temas | Docente a cargo | Materiales |
 | ------ | ------ | ------ | ------ |
-| Clase 01 | Presentación del equipo y del programa. Formalización como matematización. Teoría de conjuntos y funciones. Nociones básicas de teoría de los lenguajes (lenguaje, alfabeto, etc.).   Jerarquía de lenguajes formales.   | |  |
+| Clase 01 | Presentación del equipo y del programa. <br> Formalización como matematización. Teoría de conjuntos y funciones. Nociones básicas de teoría de los lenguajes (lenguaje, alfabeto, etc.). <br> Jerarquía de lenguajes formales.   | Fernandeo Carranza / <br> Macarena Fernández Urquiza| - [Form de presentación](https://docs.google.com/forms/d/1KPm1NavIN9sPfl7bTirTtNs-BcgAO1jZvV2TAurPuyE/prefill)<br>- [Usuario de GitHub](Clase-01/github_user.md)<br>- [Máquina virtual]()<br> - [Apuntes sobre formalización]() |
 | Clase 02 | Jerarquía de lenguajes formales; Gramáticas, autómatas y lenguajes; equivalencia débil y equivalencia fuerte; teoría de la complejidad. Uso básico de git | | |
 | Clase 03 | Gramáticas Independientes de contexto. Definición; axiomas de dominancia y de precedencia. Algunas limitaciones. Parsers: RecursiveDescentParser (NLTK), Shift-ReduceParser (NLTK), ChartParser (NLTK). Freeling. | | - [Jupyter](Clase-03/Clase-03-jupyter.md) |
 | Clase 04 | Diferenciación entre reglas de precedencia lineal y reglas de dominancia inmediata, metarreglas, postulados de significado. Principios: la convención de Rasgo Nuclear (Head Feature Convention), principio del rasgo Foot (Foot Feature Principle), principio del control de la concordancia, Restricciones de Coaparición de Rasgos, reglas léxicas. | | |
