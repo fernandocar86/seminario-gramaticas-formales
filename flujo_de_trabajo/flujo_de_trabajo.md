@@ -60,7 +60,7 @@ Cada integrante deberá, a su vez, aceptar la invitación a colaborar que llegar
 
 Y una vez aceptada la invitación, deberá clonarse el repo de su compañere (no el del seminario) en su ambiente local (su computadora).
 
-Es importante que les integrantes del equipo docente también sean invitades como colaborador@s. Pueden agregarles usando sus nombres en GitHub.:
+Es importante que les integrantes del equipo docente también sean invitades como colaborador@s. Pueden agregarles usando sus nombres en GitHub:
 
         macfernandez
         fernandocar86
