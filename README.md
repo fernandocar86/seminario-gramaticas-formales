@@ -2,10 +2,11 @@
 
 ## Requerimientos técnicos
 
-{% capture code %}
+{%- capture code -%}
 print('hola mundo')
-{% endcapture %}
-{% include code.html code=code lang="python" %}
+{%- endcapture code -%}
+{% include code_snippet.md code=code language='javascript' %}
+
 
 En la cursada vamos a utilizar diversos recursos computacionales, principalmente en los lenguajes de programación Python y Prolog, librerías como NLTK, Spacy y Delphin, entre otras, programas como Wish, y el sistema de control de versiones git. Para poder hacer las actividades y correr los códigos que se suban a esta repositorio, es necesario que los estudiantes tengan todo lo necesario instalado.
 
