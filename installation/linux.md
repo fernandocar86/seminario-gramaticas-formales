@@ -1,1 +1,0 @@
-Instrucciones para instalar requisitos para linux.
