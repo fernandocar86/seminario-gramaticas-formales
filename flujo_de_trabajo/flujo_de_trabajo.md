@@ -56,9 +56,16 @@ En la ventana emergente, agregar a cada integrante del equipo usando su direcci�
 
 ![](2022-03-06-20-40-09.png)
 
-Cada integrante deberá, a su vez, aceptar la invitación a colaborar que llegará a su dirección de mail.
+Cada integrante deberá, a su vez, aceptar la invitación a colaborar que llegará a su dirección de mail. Agregar colaborado@s usando su nombre de GitHub es también posible (pero chequear bien que sea la persona correcta).
 
 Y una vez aceptada la invitación, deberá clonarse el repo de su compañere (no el del seminario) en su ambiente local (su computadora).
+
+Es importante que les integrantes del equipo docente también sean invitades como colaborador@s. Pueden agregarles usando sus nombres en GitHub.:
+
+        macfernandez
+        fernandocar86
+        pablozd
+        juliamendoim
 
 
 ## 3- Trabajo en grupo
