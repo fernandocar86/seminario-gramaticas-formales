@@ -18,6 +18,7 @@ var clipboard{{ nanosecond }} = new Clipboard(copybutton);
 
 clipboard{{ nanosecond }}.on('success', function(e) {
     console.log(e);
+    return e.text
 });
 clipboard{{ nanosecond }}.on('error', function(e) {
     console.log(e);
