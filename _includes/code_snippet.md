@@ -11,8 +11,8 @@
 </button>
 
 <script>
-var copybutton = document.getElementById('copybutton{{ nanosecond }}');
-var clipboard{{ nanosecond }} = new Clipboard(copybutton);
+var copybutton = document.getElementById('copybutton{{ nanosecond }}')
+var clipboard{{ nanosecond }} = new ClipboardJS(copybutton);
 
 clipboard{{ nanosecond }}.on('success', function(e) {
     console.log(e);
