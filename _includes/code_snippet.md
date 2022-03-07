@@ -14,11 +14,10 @@
 
 <script>
 var copybutton = document.getElementById('copybutton{{ nanosecond }}')
-var clipboard{{ nanosecond }} = new Clipboard(copybutton);
+var clipboard{{ nanosecond }} = new Clipboard(copybutton).value;
 
 clipboard{{ nanosecond }}.on('success', function(e) {
     console.log(e);
-    return e.text
 });
 clipboard{{ nanosecond }}.on('error', function(e) {
     console.log(e);
