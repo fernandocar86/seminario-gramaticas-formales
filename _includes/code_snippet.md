@@ -7,7 +7,7 @@
 {% assign nanosecond = "now" | date: "%N" %}
 <textarea id="code{{ nanosecond }}" style="display:none;">{{ code | xml_escape }}</textarea>
 <button id="copybutton{{ nanosecond }}" data-clipboard-target="#code{{ nanosecond }}">
-  <img src="assets/clippy.svg.png" alt="Copy to clipboard" />
+  <img src="_includes/assets/clippy.svg.png" alt="Copy to clipboard" />
 </button>
 
 <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
