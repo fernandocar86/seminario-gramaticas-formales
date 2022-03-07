@@ -11,9 +11,9 @@
 </button>
 
 <script>
-src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.4.0/clipboard.min.js"
+src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.4.0/clipboard.min.js"
 var copybutton = document.getElementById('copybutton{{ nanosecond }}')
-var clipboard{{ nanosecond }} = new Clipboard(copybutton);
+var clipboard{{ nanosecond }} = new ClipboardJS(copybutton);
 
 clipboard{{ nanosecond }}.on('success', function(e) {
     console.log(e);
