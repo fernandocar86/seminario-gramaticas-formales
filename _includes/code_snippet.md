@@ -5,9 +5,9 @@
 {{ code }}
 ```
 {% assign nanosecond = "now" | date: "%N" %}
-<textarea id="code{{ nanosecond }}" style="display:none;">{{ code | xml_escape }}</textarea>
-<button id="copybutton{{ nanosecond }}" onlcick="copyCode( 'code'+{{ nanosecond }} )"
-data-clipboard-target="#code{{ nanosecond }}">Copy</button>
+<textarea id="code" style="display:none;">{{ code }}</textarea>
+<button id="copybutton" onlcick="copyCode( 'code' )"
+data-clipboard-target="#code">Copy</button>
 
 <script>
 function copyCode( queryId ) {
