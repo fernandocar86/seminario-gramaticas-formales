@@ -6,20 +6,14 @@
 ```
 {% assign nanosecond = "now" | date: "%N" %}
 <textarea id="code{{ nanosecond }}" style="display:none;">{{ code | xml_escape }}</textarea>
-<button id="copybutton{{ nanosecond }}" data-clipboard-target="#code{{ nanosecond }}">
-  <img src="_includes/assets/clippy.svg.png" alt="Copy to clipboard" />
-</button>
-
-<script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
+<button id="copybutton{{ nanosecond }}" onlcick="copyCode( 'code'+{{ nanosecond }} )"
+data-clipboard-target="#code{{ nanosecond }}">Copy</button>
 
 <script>
-var copybutton = document.getElementById('copybutton{{ nanosecond }}')
-var clipboard{{ nanosecond }} = new ClipboardJS(copybutton);
-
-clipboard{{ nanosecond }}.on('success', function(e) {
-    console.log(e);
-});
-clipboard{{ nanosecond }}.on('error', function(e) {
-    console.log(e);
-});
+function copyCode( queryId ) {
+  console.log(queryId)
+  var copyText = document.getElementById( queryId );
+  console.log(copyText)
+  navigator.clipboard.writeText(copyText.textContent);
+  }
 </script>
