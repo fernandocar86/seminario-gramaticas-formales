@@ -7,6 +7,10 @@ print('hola mundo')
 ```
 {% include copybutton.html %}
 
+```latex
+\textit{texto en itálicas}
+```
+{% include copybutton.html %}
 
 En la cursada vamos a utilizar diversos recursos computacionales, principalmente en los lenguajes de programación Python y Prolog, librerías como NLTK, Spacy y Delphin, entre otras, programas como Wish, y el sistema de control de versiones git. Para poder hacer las actividades y correr los códigos que se suban a esta repositorio, es necesario que los estudiantes tengan todo lo necesario instalado.
 
