@@ -21,6 +21,9 @@ En la cursada vamos a utilizar diversos recursos computacionales, principalmente
 - Quienes no tienen experiencia en programación o en el manejo de la línea de comandos, pueden instalarse una máquina virtual especialmente diseñada para esta cursada. Una máquina virtual es una computadora huésped que corre dentro de la anfitriona. La computadora huésped tiene su propia memoria asignada y su propio sistema operativo. La presente máquina virtual tiene como sistema operativo Ubuntu y tiene ya instalado todo lo que vamos a usar en la cursada. Pueden acceder con el siguiente link
     - [máquina virtual](installation/vm.md) (el sistema operativo anfitrión es indistinto)
 
+## Instrucciones para los trabajos prácticos
+Para cumplir con la regularidad en este seminario, es necesario realizar una serie de trabajos prácticos que serán oportunamente presentados durante la cursada. Para poder resolverlos, es necesario tener en cuenta las instrucciones que se incluyen en el siguiente [vínculo](flujo_de_trabajo/flujo_de_trabajo.md).
+
 ## Cronograma de clases y materiales
 
 
