@@ -1,18 +1,14 @@
 .copy-code-button {
-    color: #272822;
-    background-color: #FFF;
-    border-color: #272822;
-    border: 2px solid;
-    border-radius: 3px 3px 0px 0px;
-
-    /* right-align */
-    display: block;
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    grid-column-gap: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 4px 8px;
     margin-left: auto;
     margin-right: 0;
-
-    margin-bottom: -2px;
-    padding: 3px 8px;
-    font-size: 0.8em;
 }
 
 .copy-code-button:hover {
