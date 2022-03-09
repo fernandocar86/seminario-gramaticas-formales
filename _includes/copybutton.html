@@ -23,11 +23,13 @@
       });
 
         var pre = codeBlock.parentNode;
-        if (pre.parentNode.classList.contains('highlight')) {
-            var highlight = pre.parentNode;
-            highlight.parentNode.insertBefore(button, highlight);
-        } else {
-            pre.parentNode.insertBefore(button, pre);
-        }
+        pre.insertBefore(button, codeBlock);
+
+        //if (pre.parentNode.classList.contains('highlight')) {
+        //    var highlight = pre.parentNode;
+        //    highlight.parentNode.insertBefore(button, highlight);
+        //} else {
+        //    pre.parentNode.insertBefore(button, pre);
+        //}
     });
 </script>
