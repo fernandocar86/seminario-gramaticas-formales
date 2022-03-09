@@ -21,6 +21,9 @@ En la cursada vamos a utilizar diversos recursos computacionales, principalmente
 - Quienes no tienen experiencia en programación o en el manejo de la línea de comandos, pueden instalarse una máquina virtual especialmente diseñada para esta cursada. Una máquina virtual es una computadora huésped que corre dentro de la anfitriona. La computadora huésped tiene su propia memoria asignada y su propio sistema operativo. La presente máquina virtual tiene como sistema operativo Ubuntu y tiene ya instalado todo lo que vamos a usar en la cursada. Pueden acceder con el siguiente link
     - [máquina virtual](installation/vm.md) (el sistema operativo anfitrión es indistinto)
 
+## Instrucciones para los trabajos prácticos
+Para cumplir con la regularidad en este seminario, es necesario realizar una serie de trabajos prácticos que serán oportunamente presentados durante la cursada. Para poder resolverlos, es necesario tener en cuenta las instrucciones que se incluyen en el siguiente [vínculo](flujo_de_trabajo/flujo_de_trabajo.md).
+
 ## Cronograma de clases y materiales
 
 
@@ -39,46 +42,7 @@ En la cursada vamos a utilizar diversos recursos computacionales, principalmente
 | Clase 10 | Gramáticas de dependencias. La noción de dependencia. Motivaciones para las gramáticas de dependencias. Tipos de dependencias: semánticas, sintácticas y morfológicas. Definición formal. Axiomas de las Gramáticas de dependencias: condición de raíz única, conectividad, no multidominancia, proyectividad. Implementación computacional: ProjectiveDependencyParser de NLTK en Python  | Macarena Fernández Urquiza / <br> Julia Milanese| - [Visualización de Notebook](Clase-10/Clase-10-jupyter.md) |
 | Clase 11 | Gramática de dependencias como cuádrupla: relaciones, terminales, categorías, funciones de asignación. Implementación computacional; Spacy, MaltParser, parser de dependencias de Freeling, PyStanford Dependencies. | Pablo Zdrojewski / <br> Julia Milanese | - [Visualización de Notebook](Clase-11/Clase-11-jupyter.md) |
 | Clase 12 | Gramáticas categoriales: Conectivas. Reglas: aplicación, asociatividad, composición, ascenso/Regla de Geech, división. Representación de la estructura sintáctica en términos de funciones y argumentos. Implementación de una gramática categorial clásica  con el parser nltk. CCG en Python. Proyecto OpenCCG. | Pablo Zdrojewski | - [Visualización de Notebook](Clase-12/Clase-12-jupyter.md) |
-| Clase 13 | Notación lambda. Paralelismo entre la sintaxis y la semántica. Reglas léxicas. Gramáticas categoriales generalizadas. Implementación en nltk.CCG  | Pablo Zdrojewski / <br> Fernando Carranza | - [Jupyter](Clase-13/Clase-13-jupyter.md) |
+| Clase 13 | Notación lambda. Paralelismo entre la sintaxis y la semántica. Reglas léxicas. Gramáticas categoriales generalizadas. Implementación en nltk.CCG  | Pablo Zdrojewski / <br> Fernando Carranza | - [Visualización de Notebook](Clase-13/Clase-13-jupyter.md) |
 | Clase 14 | Cierre de cursada | | |
 
 
-{% comment %}
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/fernandocar86/seminario-gramaticas-formales/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/fernandocar86/seminario-gramaticas-formales/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
-{% endcomment %}
