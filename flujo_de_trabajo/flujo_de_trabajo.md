@@ -76,7 +76,9 @@ Los trabajos prácticos van a estar asociados a diferentes temas que veamos en l
 
 Por ejemplo, para el TP número 1, cada integrante del grupo deberá crear una nueva rama de trabajo usando el comando:
 
-        $ git checkout -b tp1/{NOMBRE_INTEGRANTE}
+```{bash}
+git checkout -b tp1/{NOMBRE_INTEGRANTE}
+```
 
 Una vez completada su parte del trabajo, deberá seguir los pasos para agregar sus cambios, "commitearlos" y "pushearlos" a GitHub (Cómo hacer todo esto es parte de la clase sobre git y GitHub).
 
@@ -87,3 +89,5 @@ Una vez que está completa su solución al TP1, deberá hacer, desde GitHub, un 
 Ese "PR" será revisado y comentado por 2 docentes. Los comentarios podrán incluir cambios propuestos que deberán sumarse al PR. 
 
 Una vez aprobados los cambios por el equipo docente, se finalizará el "merge" del código a la rama "main" (y se considerará corregido y aprobado el aporte al TP).
+
+{% include copybutton.html %}

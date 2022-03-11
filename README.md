@@ -2,15 +2,6 @@
 
 ## Requerimientos técnicos
 
-
-```python
-print('hola mundo')
-```
-
-```latex
-\textit{texto en itálicas}
-```
-
 {% include copybutton.html %}
 
 En la cursada vamos a utilizar diversos recursos computacionales, principalmente en los lenguajes de programación Python y Prolog, librerías como NLTK, Spacy y Delphin, entre otras, programas como Wish, y el sistema de control de versiones git. Para poder hacer las actividades y correr los códigos que se suban a esta repositorio, es necesario que los estudiantes tengan todo lo necesario instalado.
@@ -30,7 +21,7 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
 
 | Clase | Temas | Docente a cargo | Materiales |
 | ------ | ------ | ------ | ------ |
-| Clase 01 | Presentación del equipo y del programa. <br> Formalización como matematización. Teoría de conjuntos y funciones. Nociones básicas de teoría de los lenguajes (lenguaje, alfabeto, etc.). <br> Jerarquía de lenguajes formales.   | Fernando Carranza / <br> Macarena Fernández Urquiza| - [Form de presentación](https://docs.google.com/forms/d/1KPm1NavIN9sPfl7bTirTtNs-BcgAO1jZvV2TAurPuyE/prefill)<br>- [Usuario de GitHub](Clase-01/github_user.md)<br>- [Máquina virtual](Clase-01/tutorialmv.pdf)<br> - [Apuntes sobre formalización]() |
+| Clase 01 | Presentación del equipo y del programa. <br> Formalización como matematización. Teoría de conjuntos y funciones. Nociones básicas de teoría de los lenguajes (lenguaje, alfabeto, etc.). <br> Jerarquía de lenguajes formales.   | Fernando Carranza / <br> Macarena Fernández Urquiza| - [Form de presentación](https://docs.google.com/forms/d/1KPm1NavIN9sPfl7bTirTtNs-BcgAO1jZvV2TAurPuyE/prefill)<br>- [Usuario de GitHub](Clase-01/github_user.md)<br>- [Máquina virtual]()<br> - [Apuntes sobre formalización]() |
 | Clase 02 | Jerarquía de lenguajes formales; Gramáticas, autómatas y lenguajes; equivalencia débil y equivalencia fuerte; teoría de la complejidad. Uso básico de git | Fernando Carranza / <br> Macarena Fernández Urquiza | - [Indicaciones para el fujo de trabajo con GitHub](flujo_de_trabajo/flujo_de_trabajo.md) |
 | Clase 03 | Gramáticas Independientes de contexto. Definición; axiomas de dominancia y de precedencia. Algunas limitaciones. Parsers: RecursiveDescentParser (NLTK), Shift-ReduceParser (NLTK), ChartParser (NLTK). Freeling. | Julia Milanese | - [Visualización de Notebook](Clase-03/Clase-03-jupyter.md) |
 | Clase 04 | Diferenciación entre reglas de precedencia lineal y reglas de dominancia inmediata, metarreglas, postulados de significado. Principios: la convención de Rasgo Nuclear (Head Feature Convention), principio del rasgo Foot (Foot Feature Principle), principio del control de la concordancia, Restricciones de Coaparición de Rasgos, reglas léxicas. | Fernando Carranza | |
