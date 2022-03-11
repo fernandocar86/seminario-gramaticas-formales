@@ -2,8 +2,6 @@
 
 ## Requerimientos técnicos
 
-{% include copybutton.html %}
-
 En la cursada vamos a utilizar diversos recursos computacionales, principalmente en los lenguajes de programación Python y Prolog, librerías como NLTK, Spacy y Delphin, entre otras, programas como Wish, y el sistema de control de versiones git. Para poder hacer las actividades y correr los códigos que se suban a esta repositorio, es necesario que los estudiantes tengan todo lo necesario instalado.
 
 - Quienes tengan mayores conocimientos de programación pueden instalarse todo lo necesario a partir de la lista que incluimos abajo. Es importante aclarar que la cátedra no va a hacer un seguimiento personalizado de los problemas de instalación que puedan surgir mediante este método, por lo que recomendamos hacer la instalación independiente solo en caso de tener experiencia en la instalación de este tipo de recursos.
@@ -35,3 +33,5 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
 | Clase 12 | Gramáticas categoriales: Conectivas. Reglas: aplicación, asociatividad, composición, ascenso/Regla de Geech, división. Representación de la estructura sintáctica en términos de funciones y argumentos. Implementación de una gramática categorial clásica  con el parser nltk. CCG en Python. Proyecto OpenCCG. | Pablo Zdrojewski | - [Visualización de Notebook](Clase-12/Clase-12-jupyter.md) |
 | Clase 13 | Notación lambda. Paralelismo entre la sintaxis y la semántica. Reglas léxicas. Gramáticas categoriales generalizadas. Implementación en nltk.CCG  | Pablo Zdrojewski / <br> Fernando Carranza | - [Visualización de Notebook](Clase-13/Clase-13-jupyter.md) |
 | Clase 14 | Cierre de cursada | | |
+
+{% include copybutton.html assets="assets/" %}

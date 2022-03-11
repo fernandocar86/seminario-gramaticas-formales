@@ -90,4 +90,4 @@ Ese "PR" será revisado y comentado por 2 docentes. Los comentarios podrán incl
 
 Una vez aprobados los cambios por el equipo docente, se finalizará el "merge" del código a la rama "main" (y se considerará corregido y aprobado el aporte al TP).
 
-{% include copybutton.html %}
+{% include copybutton.html assets="../assets" %}
