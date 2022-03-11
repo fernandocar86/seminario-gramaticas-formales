@@ -34,4 +34,4 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
 | Clase 13 | Notación lambda. Paralelismo entre la sintaxis y la semántica. Reglas léxicas. Gramáticas categoriales generalizadas. Implementación en nltk.CCG  | Pablo Zdrojewski / <br> Fernando Carranza | - [Visualización de Notebook](Clase-13/Clase-13-jupyter.md) |
 | Clase 14 | Cierre de cursada | | |
 
-{% include copybutton.html assets="assets/" %}
+{% include copybutton.html %}

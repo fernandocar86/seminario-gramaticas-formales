@@ -1,6 +1,6 @@
 # Flujo de trabajo con git y GitHub
 
-Para completar los trabajos prácticos del seminario, van a tener que hacer cambios en archivos de este repositorio: 
+Para completar los trabajos prácticos del seminario, van a tener que hacer cambios en archivos de este repositorio:
 
 https://github.com/fernandocar86/seminario-gramaticas-formales
 
@@ -9,7 +9,7 @@ Pero para evitar que esos cambios se vean reflejados en el repositorio original 
 
 ## 1- Formación de grupos
 
-Los trabajos están pensados para ser resueltos en grupo. Cada miembro del grupo resolverá la parte que le corresponda y aportará sus resultados usando git. 
+Los trabajos están pensados para ser resueltos en grupo. Cada miembro del grupo resolverá la parte que le corresponda y aportará sus resultados usando git.
 
 ### Fork
 
@@ -86,8 +86,8 @@ Una vez completada su parte del trabajo, deberá seguir los pasos para agregar s
 
 Una vez que está completa su solución al TP1, deberá hacer, desde GitHub, un "pull request" a la rama "main" (Cómo hacer todo esto es parte de la clase sobre git y GitHub).
 
-Ese "PR" será revisado y comentado por 2 docentes. Los comentarios podrán incluir cambios propuestos que deberán sumarse al PR. 
+Ese "PR" será revisado y comentado por 2 docentes. Los comentarios podrán incluir cambios propuestos que deberán sumarse al PR.
 
 Una vez aprobados los cambios por el equipo docente, se finalizará el "merge" del código a la rama "main" (y se considerará corregido y aprobado el aporte al TP).
 
-{% include copybutton.html assets="../assets" %}
+{% include copybutton.html %}
