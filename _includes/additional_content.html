@@ -16,6 +16,7 @@
     section.parentNode.insertBefore(navList, section)
 
     function createProperBullet(filePath){
+        console.log(filePath)
         const docUrl = filePath;
         if (docUrl.startsWith('/Clase') || docUrl.startsWith('/instructivos')){
             const elementsInPath = docUrl.split('/')
