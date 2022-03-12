@@ -1,25 +1,37 @@
-{% assign doclist = site.pages | sort: 'url'  %}
+<script>
+    // create nav list for content
+    const navList = document.createElement('nav')
 
-<nav>
-    <ul class="site-content">Contenido del sitio
-    {% for doc in doclist %}
-        <script>
-            const listElements = [];
-            const docUrl = "{{ doc.url }}";
-            if (docUrl.startsWith('/Clase') || docUrl.startsWith('/instructivos')){
-                const pathElements = docUrl.split('/')
-                if (listElements.includes(pathElements[1])){
-                    console.log(pathElements[1]+' en la lista')
+    // create list inside nav
+    const navBullets = document.createElement('ul')
+    navBullets.textContent = "Contenido del sitio"
+    navBullets.className = "site-content"
+
+    // add navBullets to nav
+    nav.appendChild(navBullets)
+
+    // get section and append nav to it
+    const section = document.querySelector('section')
+    section.parentNode.insertBefore(nav, section)
+
+    function createProperBullet(filePath){
+        const docUrl = "{{ doc.url }}";
+        if (docUrl.startsWith('/Clase') || docUrl.startsWith('/instructivos')){
+            const elementsInPath = docUrl.split('/')
+                if (document.querySelector("li."+elementsInPath[1]) !== null){
+                    // get class bullet
+                    const claseItem = document.querySelector("li."+elementsInPath[1])
+                    console.log(claseItem)
                 }
                 else {
                     // create bullet with class
                     const claseItem = document.createElement('li')
-                    claseItem.textContent = pathElements[1]
-                    claseItem.className = pathElements[1]
+                    claseItem.textContent = elementsInPath[1].replace('-',' ')
+                    claseItem.className = elementsInPath[1]
 
                     // create bullet with class content (specific .md)
                     const claseContent = document.createElement('a')
-                    claseContent.textContent = pathElements[pathElements.length-1]
+                    claseContent.textContent = pathElements[pathElements.length-1].replace('-',' ').replace('.md','')
                     claseContent.hrefn = docUrl
 
                     // add content to class
@@ -30,17 +42,12 @@
                     navSiteContentList.appendChild(claseItem)
                 }
             }
-        </script>
-    {% endfor %}
-    </ul>
-</nav>
+    }
+</script>
 
-{% assign doclist = site.pages | sort: 'url'  %}
-<ul>
+
 {% for doc in doclist %}
      {% if doc.name contains '.md' or doc.name contains '.html' %}
-         <li><a href="{{ site.baseurl }}{{ doc.url }}">{{ doc.url }}</a></li>
-         <script>console.log("{{ site.baseurl }} || {{ doc.url }}")</script>
+         <script>createProperBullet("{{ doc.url }}")</script>
      {% endif %}
 {% endfor %}
-</ul>
