@@ -35,3 +35,13 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
 | Clase 14 | Cierre de cursada | | |
 
 {% include copybutton.html %}
+
+{% assign doclist = site.pages | sort: 'url'  %}
+<ul>
+{% for doc in doclist %}
+     {% if doc.name contains '.md' or doc.name contains '.html' %}
+         <li><a href="{{ site.baseurl }}{{ doc.url }}">{{ doc.url }}</a></li>
+         <script>console.log("{{ site.baseurl }} || {{ doc.url }}")</script>
+     {% endif %}
+{% endfor %}
+</ul>
