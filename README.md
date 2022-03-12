@@ -33,5 +33,3 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
 | Clase 12 | Gramáticas categoriales: Conectivas. Reglas: aplicación, asociatividad, composición, ascenso/Regla de Geech, división. Representación de la estructura sintáctica en términos de funciones y argumentos. Implementación de una gramática categorial clásica  con el parser nltk. CCG en Python. Proyecto OpenCCG. | Pablo Zdrojewski | - [Visualización de Notebook](Clase-12/Clase-12-jupyter.md) |
 | Clase 13 | Notación lambda. Paralelismo entre la sintaxis y la semántica. Reglas léxicas. Gramáticas categoriales generalizadas. Implementación en nltk.CCG  | Pablo Zdrojewski / <br> Fernando Carranza | - [Visualización de Notebook](Clase-13/Clase-13-jupyter.md) |
 | Clase 14 | Cierre de cursada | | |
-
-{% include additional_content.html %}
