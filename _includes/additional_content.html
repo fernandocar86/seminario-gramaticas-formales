@@ -1,19 +1,26 @@
+{% assign doclist = site.pages | sort: 'url'  %}
+{% for doc in doclist %}
+     {% if doc.name contains '.md' or doc.name contains '.html' %}
+         <script>console.log("{{ site.baseurl }} || {{ doc.url }}")</script>
+     {% endif %}
+{% endfor %}
+
 <script>
     // create nav list for content
-    const navList = document.createElement('nav')
-    navList.className = "content"
+    //const navList = document.createElement('nav')
+    //navList.className = "content"
 
     // create list inside nav
-    const navBullets = document.createElement('ul')
-    navBullets.textContent = "Contenido del sitio"
-    navBullets.className = "site-content"
+    //const navBullets = document.createElement('ul')
+    //navBullets.textContent = "Contenido del sitio"
+    //navBullets.className = "site-content"
 
     // add navBullets to nav
-    navList.appendChild(navBullets)
+    //navList.appendChild(navBullets)
 
     // get section and append nav to it
-    const section = document.querySelector('section')
-    section.parentNode.insertBefore(navList, section)
+    //const section = document.querySelector('section')
+    //section.parentNode.insertBefore(navList, section)
 
     function createProperBullet(filePath){
         console.log(filePath)
@@ -46,10 +53,3 @@
             }
     }
 </script>
-
-{% assign doclist = site.pages | sort: 'url'  %}
-{% for doc in doclist %}
-     {% if doc.name contains '.md' or doc.name contains '.html' %}
-         <script>console.log("{{ site.baseurl }} || {{ doc.url }}")</script>
-     {% endif %}
-{% endfor %}
