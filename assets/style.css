@@ -41,3 +41,13 @@
     /* Avoid pushing up the copy buttons. */
     margin: 0;
 }
+
+nav.content {
+    width: 230px;
+    position: fixed;
+    top: 220px;
+    left: 50%;
+    margin-left: -580px;
+    text-align: right;
+    font-size: 22px;
+}

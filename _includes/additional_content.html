@@ -1,6 +1,7 @@
 <script>
     // create nav list for content
     const navList = document.createElement('nav')
+    navList.className = "content"
 
     // create list inside nav
     const navBullets = document.createElement('ul')
@@ -15,7 +16,7 @@
     section.parentNode.insertBefore(navList, section)
 
     function createProperBullet(filePath){
-        const docUrl = "{{ doc.url }}";
+        const docUrl = filePath;
         if (docUrl.startsWith('/Clase') || docUrl.startsWith('/instructivos')){
             const elementsInPath = docUrl.split('/')
                 if (document.querySelector("li."+elementsInPath[1]) !== null){
