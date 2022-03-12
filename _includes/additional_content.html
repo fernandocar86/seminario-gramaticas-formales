@@ -1,7 +1,9 @@
 {% assign doclist = site.pages | sort: 'url'  %}
 
-<script>
-    for (doc in doclist){
-        console.log(doc)
-    }
-</script>
+<nav>
+    <ul>
+    {% for doc in doclist %}
+        <script>console.log("{{ doc }}")</script>
+    {% endfor %}
+    </ul>
+</nav>
