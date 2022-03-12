@@ -1,6 +1,56 @@
 {% assign doclist = site.pages | sort: 'url'  %}
 {% for doc in doclist %}
      {% if doc.name contains '.md' or doc.name contains '.html' %}
-        <script>console.log('{{ doc.url }}');</script>
+        <script>console.log(doc.url);</script>
      {% endif %}
 {% endfor %}
+
+
+<script>
+    // create nav list for content
+    //const navList = document.createElement('nav')
+    //navList.className = "content"
+
+    // create list inside nav
+    //const navBullets = document.createElement('ul')
+    //navBullets.textContent = "Contenido del sitio"
+    //navBullets.className = "site-content"
+
+    // add navBullets to nav
+    //navList.appendChild(navBullets)
+
+    // get section and append nav to it
+    //const section = document.querySelector('section')
+    //section.parentNode.insertBefore(navList, section)
+
+    function createProperBullet(filePath){
+        console.log(filePath)
+        const docUrl = filePath;
+        if (docUrl.startsWith('/Clase') || docUrl.startsWith('/instructivos')){
+            const elementsInPath = docUrl.split('/')
+                if (document.querySelector("li."+elementsInPath[1]) !== null){
+                    // get class bullet
+                    const claseItem = document.querySelector("li."+elementsInPath[1])
+                    console.log(claseItem)
+                }
+                else {
+                    // create bullet with class
+                    const claseItem = document.createElement('li')
+                    claseItem.textContent = elementsInPath[1].replace('-',' ')
+                    claseItem.className = elementsInPath[1]
+
+                    // create bullet with class content (specific .md)
+                    const claseContent = document.createElement('a')
+                    claseContent.textContent = pathElements[pathElements.length-1].replace('-',' ').replace('.md','')
+                    claseContent.hrefn = docUrl
+
+                    // add content to class
+                    claseItem.appendChild(claseContent)
+
+                    // add class to nav
+                    const navSiteContentList = document.getElementsByClassName("site-content")
+                    navSiteContentList.appendChild(claseItem)
+                }
+            }
+    }
+</script>
