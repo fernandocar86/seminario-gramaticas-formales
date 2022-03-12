@@ -16,5 +16,3 @@
     - git
     - texlive (latex)
     - Texmaker (o algún otro editor)
-
-
