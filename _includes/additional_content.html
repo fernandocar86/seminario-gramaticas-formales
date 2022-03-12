@@ -1,9 +1,11 @@
 {% assign doclist = site.pages | sort: 'url'  %}
 
 <nav>
-    <ul>
+    <ul>Contenido del sitio
     {% for doc in doclist %}
-        <script>console.log("{{ doc }}")</script>
+        <script>
+        console.log("{{ doc.url }}")
+        </script>
     {% endfor %}
     </ul>
 </nav>
