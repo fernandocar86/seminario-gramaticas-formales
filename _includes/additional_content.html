@@ -8,11 +8,11 @@
     navBullets.className = "site-content"
 
     // add navBullets to nav
-    nav.appendChild(navBullets)
+    navList.appendChild(navBullets)
 
     // get section and append nav to it
     const section = document.querySelector('section')
-    section.parentNode.insertBefore(nav, section)
+    section.parentNode.insertBefore(navList, section)
 
     function createProperBullet(filePath){
         const docUrl = "{{ doc.url }}";
