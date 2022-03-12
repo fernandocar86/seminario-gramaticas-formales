@@ -1,11 +1,46 @@
 {% assign doclist = site.pages | sort: 'url'  %}
 
 <nav>
-    <ul>Contenido del sitio
+    <ul class="site-content">Contenido del sitio
     {% for doc in doclist %}
         <script>
-        console.log("{{ doc.url }}")
+            const listElements = [];
+            const docUrl = "{{ doc.url }}";
+            if (docUrl.startsWith('/Clase') || docUrl.startsWith('/instructivos')){
+                const pathElements = docUrl.split('/')
+                if (listElements.includes(pathElements[1])){
+                    console.log(pathElements[1]+' en la lista')
+                }
+                else {
+                    // create bullet with class
+                    const claseItem = document.createElement('li')
+                    claseItem.textContent = pathElements[1]
+                    claseItem.className = pathElements[1]
+
+                    // create bullet with class content (specific .md)
+                    const claseContent = document.createElement('a')
+                    claseContent.textContent = pathElements[pathElements.length-1]
+                    claseContent.hrefn = docUrl
+
+                    // add content to class
+                    claseItem.appendChild(claseContent)
+
+                    // add class to nav
+                    const navSiteContentList = document.getElementsByClassName("site-content")
+                    navSiteContentList.appendChild(claseItem)
+                }
+            }
         </script>
     {% endfor %}
     </ul>
 </nav>
+
+{% assign doclist = site.pages | sort: 'url'  %}
+<ul>
+{% for doc in doclist %}
+     {% if doc.name contains '.md' or doc.name contains '.html' %}
+         <li><a href="{{ site.baseurl }}{{ doc.url }}">{{ doc.url }}</a></li>
+         <script>console.log("{{ site.baseurl }} || {{ doc.url }}")</script>
+     {% endif %}
+{% endfor %}
+</ul>
