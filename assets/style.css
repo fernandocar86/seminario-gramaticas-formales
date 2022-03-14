@@ -42,6 +42,16 @@
     margin: 0;
 }
 
+li {
+    display: list-item;
+    color: #f0e7d5;
+}
+li[class="tag-h1"] {
+    font-size: 20px;
+}
+li[class="tag-h2"] {
+    font-size: 14px;
+}
 nav.content {
     width: 230px;
     position: fixed;
@@ -50,4 +60,15 @@ nav.content {
     margin-left: -580px;
     text-align: right;
     font-size: 22px;
+}
+a:-webkit-any-link {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+}
+ul {
+    list-style-type: none;
+}
+ul[class="this-page"]:not(li) {
+    color: rgb(218, 149, 45);
 }
