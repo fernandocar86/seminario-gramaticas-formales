@@ -67,7 +67,7 @@
 
         const textA = document.createElement('a')
         textA.href = "{{ site.baseurl }}"+element
-        textA.textContent = element
+        textA.textContent = element.replace('/').replace('/').replace('-',' ')
         elementLi.appendChild(textA)
 
         list.appendChild(elementLi)
