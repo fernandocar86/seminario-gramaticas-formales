@@ -1,56 +1,85 @@
-{% assign doclist = site.pages | sort: 'url'  %}
-{% for doc in doclist %}
-     {% if doc.name contains '.md' or doc.name contains '.html' %}
-        <script>console.log(doc.url);</script>
-     {% endif %}
-{% endfor %}
-
-
+<link href="https://fernandocar86.github.io/seminario-gramaticas-formales/assets/style.css" rel="stylesheet">
 <script>
-    // create nav list for content
-    //const navList = document.createElement('nav')
-    //navList.className = "content"
+    // get section
+    const sectionPage = document.querySelector('section')
 
-    // create list inside nav
-    //const navBullets = document.createElement('ul')
-    //navBullets.textContent = "Contenido del sitio"
-    //navBullets.className = "site-content"
+    // create nav section
+    var navThisPage = document.createElement('nav')
+    navThisPage.className = "content"
+    sectionPage.insertAdjacentElement('beforebegin', navThisPage)
 
-    // add navBullets to nav
-    //navList.appendChild(navBullets)
+    // create list for "this-page"
+    var ulThisPage = document.createElement('ul')
+    ulThisPage.textContent = "En esta página"
+    ulThisPage.className = "this-page"
+    navThisPage.appendChild(ulThisPage)
 
-    // get section and append nav to it
-    //const section = document.querySelector('section')
-    //section.parentNode.insertBefore(navList, section)
+    // add headlines to "this-page" ul
+    function addToThisPageList(head){
+        // set id for healine
+        const headText = head.textContent;              //ex: "First Title"
+        const headId = headText.replace(' ','-');       //ex: "First-Title"
+        const headTag = head.tagName.toLowerCase();     //ex: "H1">"h1"
+        head.id = headId;                               // id="First-Title" (for ref)
 
-    function createProperBullet(filePath){
-        console.log(filePath)
-        const docUrl = filePath;
-        if (docUrl.startsWith('/Clase') || docUrl.startsWith('/instructivos')){
-            const elementsInPath = docUrl.split('/')
-                if (document.querySelector("li."+elementsInPath[1]) !== null){
-                    // get class bullet
-                    const claseItem = document.querySelector("li."+elementsInPath[1])
-                    console.log(claseItem)
-                }
-                else {
-                    // create bullet with class
-                    const claseItem = document.createElement('li')
-                    claseItem.textContent = elementsInPath[1].replace('-',' ')
-                    claseItem.className = elementsInPath[1]
+        const aHeadlineHref = document.createElement('a');
+        aHeadlineHref.textContent = headText;
+        aHeadlineHref.href = "#"+headId;
+        aHeadlineHref.onclick = "location.href='{{% aHeadlineHref.href %}}'";
 
-                    // create bullet with class content (specific .md)
-                    const claseContent = document.createElement('a')
-                    claseContent.textContent = pathElements[pathElements.length-1].replace('-',' ').replace('.md','')
-                    claseContent.hrefn = docUrl
+        const liItem = document.createElement('li');
+        liItem.className = "tag-"+headTag;
+        liItem.appendChild(aHeadlineHref);
 
-                    // add content to class
-                    claseItem.appendChild(claseContent)
-
-                    // add class to nav
-                    const navSiteContentList = document.getElementsByClassName("site-content")
-                    navSiteContentList.appendChild(claseItem)
-                }
+        if (headTag=="h1"){
+            ulThisPage.appendChild(liItem)
+        }
+        else if (headTag=="h2"){
+            if (ulThisPage.lastChild.lastChild.tagName.includes('UL')){
+                ulThisPage.lastChild.querySelector('ul').appendChild(liItem)
             }
+            else {
+                const ulSubHeadList = document.createElement('ul')
+                ulSubHeadList.appendChild(liItem)
+                ulThisPage.lastChild.appendChild(ulSubHeadList)
+            }
+        }
     }
+
+    const sectionChildren = sectionPage.children
+
+    for (var i = 0; i < sectionChildren.length; i++){
+        if (['h1','h2'].includes(sectionChildren[i].tagName.toLowerCase())){
+            addToThisPageList(sectionChildren[i])
+        }
+    }
+
+    //create list for "this-repo"
+    var ulThisRepo = document.createElement('ul')
+    ulThisRepo.textContent = "En el repositorio"
+    ulThisRepo.className = "this-repo"
+    navThisPage.appendChild(ulThisRepo)
+
+    //add element to list
+    function addToRepoList(list, element){
+        const elementLi = document.createElement('li')
+        elementLi.className = 'tag-h2'
+
+        const textA = document.createElement('a')
+        textA.href = "{{ site.baseurl }}"+element
+        textA.textContent = element
+        elementLi.appendChild(textA)
+
+        list.appendChild(elementLi)
+    }
+
+    //get all site-pages and add them to list
+    {% assign doclist = site.pages | sort: 'url'  %}
+    {% for doc in doclist %}
+        {% if doc.name contains '.md' or doc.name contains '.html' %}
+            if ("{{ doc.url }}".startsWith('/Clase') || "{{ doc.url }}".startsWith('/instructivos')){
+                addToRepoList(ulThisRepo, "{{ doc.url }}")
+            }
+        {% endif %}
+    {% endfor %}
 </script>
