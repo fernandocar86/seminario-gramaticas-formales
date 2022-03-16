@@ -23,7 +23,7 @@
         head.id = headId;                               // id="First-Title" (for ref)
 
         const aHeadlineHref = document.createElement('a');
-        aHeadlineHref.className = "content-item"
+        aHeadlineHref.className = "content-item";
         aHeadlineHref.textContent = headText;
         aHeadlineHref.href = "#"+headId;
         aHeadlineHref.onclick = "location.href='{{% aHeadlineHref.href %}}'";
@@ -67,6 +67,7 @@
         elementLi.className = 'tag-h2'
 
         const textA = document.createElement('a')
+        textA.className = "content-item"
         textA.href = "{{ site.baseurl }}"+element
         textA.textContent = element.replace('/','').replace('/','').replace('-',' ')
         elementLi.appendChild(textA)
