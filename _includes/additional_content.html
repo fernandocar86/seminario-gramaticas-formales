@@ -69,7 +69,15 @@
         const textA = document.createElement('a')
         textA.className = "content-item"
         textA.href = "{{ site.baseurl }}"+element
-        textA.textContent = element.replace('/','').replace('/','').replace('-',' ')
+        if (element.startsWith('/Clase')){
+            textA.textContent = element.replace(/\//g,'').replace('-',' ')
+        }
+        else if (element.toLowerCase()==='instructivos'){
+            textA.textContent = 'Instructivos'
+        }
+        else if (element == '/'){
+            textA.textContent = 'Inicio'
+        }
         elementLi.appendChild(textA)
 
         list.appendChild(elementLi)
@@ -80,9 +88,8 @@
     {% for doc in doclist %}
         {% if doc.name contains '.md' or doc.name contains '.html' %}
             if ("{{ doc.name }}".startsWith('index')){
-                if ("{{ doc.url }}".startsWith('/Clase') || "{{ doc.url }}".startsWith('/instructivos')){
-                    addToRepoList(ulThisRepo, "{{ doc.url }}")
-                }
+                addToRepoList(ulThisRepo, "{{ doc.url }}")
+                //if ("{{ doc.url }}".startsWith('/Clase') || "{{ doc.url }}".startsWith('/instructivos')){}
             }
         {% endif %}
     {% endfor %}
