@@ -23,6 +23,7 @@
         head.id = headId;                               // id="First-Title" (for ref)
 
         const aHeadlineHref = document.createElement('a');
+        aHeadlineHref.className = "content-item"
         aHeadlineHref.textContent = headText;
         aHeadlineHref.href = "#"+headId;
         aHeadlineHref.onclick = "location.href='{{% aHeadlineHref.href %}}'";
