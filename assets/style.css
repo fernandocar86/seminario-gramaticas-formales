@@ -75,7 +75,7 @@ ul[class="this-page"]:not(li) {
     overflow: auto;
     margin-bottom: 50px;
 }
-.this-page .this-repo {
+.this-page, .this-repo {
     padding-right: 20px;
 }
 ::-webkit-scrollbar{
