@@ -44,7 +44,6 @@
 
 li {
     display: list-item;
-    color: #f0e7d5;
 }
 li[class="tag-h1"] {
     font-size: 17px;
@@ -61,22 +60,25 @@ nav.content {
     text-align: right;
     font-size: 22px;
 }
-a:-webkit-any-link {
-    color: inherit;
+a.content-item:-webkit-any-link {
+    color: #f0e7d5;
     cursor: pointer;
     text-decoration: none;
+}
+a.content-item:hover {
+    color: #ffcc00
 }
 ul {
     list-style-type: none;
 }
-ul[class="this-page"]:not(li) {
-    color: rgb(218, 149, 45);
+ul.this-page:not(li) {
+    color: #ffcc00;
     height: 300px;
     overflow: auto;
     margin-bottom: 50px;
     padding-right: 20px;
 }
-ul[class="this-repo"]:not(li) {
+ul.this-repo:not(li) {
     padding-right: 20px;
 }
 ::-webkit-scrollbar{
