@@ -1,8 +1,7 @@
 'fuma' -> 'juan'
-'fuma' -> 'fede'|'cata'|'julia'|'martín'|'vicky'|'pablo' 'el'|'la'
-'explotó' -> 'fede' | 'cata' | 'julia' | 'martín' | 'vicky' | 'pablo' 'el' | 'la'
-
-'el' -> 'globo' | 'tabaco'
+'fuma' -> 'fede'|'cata'|'julia'|'martín'|'vicky'|'pablo' | 'el'|'la'
+'explotó' -> 'fede' | 'cata' | 'julia' | 'martín' | 'vicky' | 'pablo' |  'el' | 'la'
+'el' -> 'globo' | 'tabaco' |  'cigarrillo'
 'la' -> 'plaza' | 'facultad'
 'fue' -> 'el'
 'fue' -> 'entregado' | 'enviado' | 'fumado' | 'explotado'
@@ -10,5 +9,4 @@
 'explotado' -> 'por'
 'fumado' -> 'por'
 'enviado' -> 'por'
-'fumado' -> 'por'
 'por' -> 'el' | 'la' | 'fede' | 'cata' | 'julia' | 'martín' | 'vicky' | 'pablo'
