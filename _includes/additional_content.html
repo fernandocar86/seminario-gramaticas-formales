@@ -72,10 +72,10 @@
         if (element.startsWith('/Clase')){
             textA.textContent = element.replace(/\//g,'').replace('-',' ')
         }
-        else if (element.toLowerCase()==='instructivos'){
+        else if (element.toLowerCase().startsWith('/instructivos')){
             textA.textContent = 'Instructivos'
         }
-        else if (element == '/'){
+        else if (element === '/'){
             textA.textContent = 'Inicio'
         }
         elementLi.appendChild(textA)
