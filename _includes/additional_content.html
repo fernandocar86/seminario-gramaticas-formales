@@ -32,25 +32,25 @@
         liItem.className = "tag-"+headTag;
         liItem.appendChild(aHeadlineHref);
 
-        if (headTag=="h1"){
+        if (headTag=="h2"){
             ulThisPage.appendChild(liItem)
         }
-        else if (headTag=="h2"){
-            if (ulThisPage.lastChild.lastChild.tagName.includes('UL')){
-                ulThisPage.lastChild.querySelector('ul').appendChild(liItem)
-            }
-            else {
-                const ulSubHeadList = document.createElement('ul')
-                ulSubHeadList.appendChild(liItem)
-                ulThisPage.lastChild.appendChild(ulSubHeadList)
-            }
-        }
+        //else if (headTag=="h2"){
+        //    if (ulThisPage.lastChild.lastChild.tagName.includes('UL')){
+        //        ulThisPage.lastChild.querySelector('ul').appendChild(liItem)
+        //    }
+        //    else {
+        //        const ulSubHeadList = document.createElement('ul')
+        //        ulSubHeadList.appendChild(liItem)
+        //        ulThisPage.lastChild.appendChild(ulSubHeadList)
+        //    }
+        //}
     }
 
     const sectionChildren = sectionPage.children
 
     for (var i = 0; i < sectionChildren.length; i++){
-        if (['h1','h2'].includes(sectionChildren[i].tagName.toLowerCase())){
+        if (['h2'].includes(sectionChildren[i].tagName.toLowerCase())){
             addToThisPageList(sectionChildren[i])
         }
     }
