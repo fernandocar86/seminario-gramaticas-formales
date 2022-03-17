@@ -7,16 +7,16 @@
 
 
 ```python
-import nltk 
-import re 
+import nltk
+import re
 import os, sys
-import matplotlib 
+import matplotlib
 ```
 
 ## Recursive descent Parser
 
 - **Top-down**
-- Parte del símbolo de inicio y aplica las reglas para obtener los constituyentes inmediatos y armar el árbol hasta llegar a los símbolos terminales. Chequea coincidencia con la secuencia del input. Si no hay coincidencia, tiene que retroceder y buscar diferentes alternativas de parseo. 
+- Parte del símbolo de inicio y aplica las reglas para obtener los constituyentes inmediatos y armar el árbol hasta llegar a los símbolos terminales. Chequea coincidencia con la secuencia del input. Si no hay coincidencia, tiene que retroceder y buscar diferentes alternativas de parseo.
 
 
 ```python
@@ -45,7 +45,7 @@ oracion1 = input()                                     # Para que me abra un cam
 grammar = nltk.data.load('gramaticas/CFG.cfg')     # establece cuál va a ser mi gramática
 rd_parser(oracion1, grammar)                           # Para correr la función
 
-# Oraciones que acepta la gramática: 
+# Oraciones que acepta la gramática:
 # Cata/Martín/Julia/Maca/Pablo fuma
 # Cata/Martín/Julia/Maca/Pablo entregó/envió el/la/un/una plaza/facultad/regalo/globo/tabaco
 ```
@@ -82,9 +82,9 @@ def sr_parser(sentence, grammar):                      # define la función sr_p
 print('Escribí una oración:')                       # imprime un mensaje pidiendo que escriba una oración
 oracion2 = input()                                  # asigna a una variable mi oración como valor
 grammar = nltk.data.load('gramaticas/CFG.cfg')      # asigna a una variable mi gramática como valor
-sr_parser(oracion2, grammar)   
+sr_parser(oracion2, grammar)
 
-# Oraciones que acepta la gramática: 
+# Oraciones que acepta la gramática:
 # Cata/Martín/Julia/Maca/Pablo fuma
 # Cata/Martín/Julia/Maca/Pablo entregó/envió el/la/un/una plaza/facultad/regalo/globo/tabaco
 ```
@@ -95,7 +95,7 @@ sr_parser(oracion2, grammar)
 
 - Pierde mucho tiempo considerando las estructuras que no se corresponden con el input
 
-- En el proceso de backtracking se descartan los parseos anteriores y tiene que volver a construirlos 
+- En el proceso de backtracking se descartan los parseos anteriores y tiene que volver a construirlos
 
 
 
@@ -117,7 +117,7 @@ nltk.app.chartparser()
 
 ## Bllip Parser
 
-Antes hay que instalar el bllip parser. 
+Antes hay que instalar el bllip parser.
 
 Para hacerlo, correr el siguiente comando en la terminal:
 
@@ -183,3 +183,6 @@ print(sentencespan)
 ```python
 
 ```
+
+{% include copybutton.html %}
+{% include additional_content.html %}
