@@ -5,13 +5,13 @@
 En la cursada vamos a utilizar diversos recursos computacionales, principalmente en los lenguajes de programación Python y Prolog, librerías como NLTK, Spacy y Delphin, entre otras, programas como Wish, y el sistema de control de versiones git. Para poder hacer las actividades y correr los códigos que se suban a esta repositorio, es necesario que los estudiantes tengan todo lo necesario instalado.
 
 - Quienes tengan mayores conocimientos de programación pueden instalarse todo lo necesario a partir de la lista que incluimos abajo. Es importante aclarar que la cátedra no va a hacer un seguimiento personalizado de los problemas de instalación que puedan surgir mediante este método, por lo que recomendamos hacer la instalación independiente solo en caso de tener experiencia en la instalación de este tipo de recursos.
-    - [lista de recursos](instructivos/recursos.md)
+    - [lista de recursos](Instructivos/recursos.md)
 
 - Quienes no tienen experiencia en programación o en el manejo de la línea de comandos, pueden instalarse una máquina virtual especialmente diseñada para esta cursada. Una máquina virtual es una computadora huésped que corre dentro de la anfitriona. La computadora huésped tiene su propia memoria asignada y su propio sistema operativo. La presente máquina virtual tiene como sistema operativo Ubuntu y tiene ya instalado todo lo que vamos a usar en la cursada. Pueden acceder con el siguiente link
-    - [máquina virtual](instructivos/vm.md) (el sistema operativo anfitrión es indistinto)
+    - [máquina virtual](Instructivos/vm.md) (el sistema operativo anfitrión es indistinto)
 
 # Instrucciones para los trabajos prácticos
-Para cumplir con la regularidad en este seminario, es necesario realizar una serie de trabajos prácticos que serán oportunamente presentados durante la cursada. Para poder resolverlos, es necesario tener en cuenta las instrucciones que se incluyen en el siguiente [vínculo](instructivos/flujo_de_trabajo.md).
+Para cumplir con la regularidad en este seminario, es necesario realizar una serie de trabajos prácticos que serán oportunamente presentados durante la cursada. Para poder resolverlos, es necesario tener en cuenta las instrucciones que se incluyen en el siguiente [vínculo](Instructivos/flujo_de_trabajo.md).
 
 # Cronograma de clases y materiales
 
@@ -19,7 +19,7 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
 | Clase | Temas | Docente a cargo | Materiales |
 | ------ | ------ | ------ | ------ |
 | Clase 01 | Presentación del equipo y del programa. <br> Formalización como matematización. Teoría de conjuntos y funciones. Nociones básicas de teoría de los lenguajes (lenguaje, alfabeto, etc.). <br> Jerarquía de lenguajes formales.   | Fernando Carranza / <br> Macarena Fernández Urquiza| - [Form de presentación](https://docs.google.com/forms/d/1KPm1NavIN9sPfl7bTirTtNs-BcgAO1jZvV2TAurPuyE/prefill)<br>- [Usuario de GitHub](Clase-01/github_user.md)<br>- [Máquina virtual]()<br> - [Apuntes sobre formalización]() |
-| Clase 02 | Jerarquía de lenguajes formales; Gramáticas, autómatas y lenguajes; equivalencia débil y equivalencia fuerte; teoría de la complejidad. Uso básico de git | Fernando Carranza / <br> Macarena Fernández Urquiza | - [Indicaciones para el fujo de trabajo con GitHub](instructivos/flujo_de_trabajo.md) |
+| Clase 02 | Jerarquía de lenguajes formales; Gramáticas, autómatas y lenguajes; equivalencia débil y equivalencia fuerte; teoría de la complejidad. Uso básico de git | Fernando Carranza / <br> Macarena Fernández Urquiza | - [Indicaciones para el fujo de trabajo con GitHub](Instructivos/flujo_de_trabajo.md) |
 | Clase 03 | Gramáticas Independientes de contexto. Definición; axiomas de dominancia y de precedencia. Algunas limitaciones. Parsers: RecursiveDescentParser (NLTK), Shift-ReduceParser (NLTK), ChartParser (NLTK). Freeling. | Julia Milanese | - [Visualización de Notebook](Clase-03/Clase-03-jupyter.md) |
 | Clase 04 | Diferenciación entre reglas de precedencia lineal y reglas de dominancia inmediata, metarreglas, postulados de significado. Principios: la convención de Rasgo Nuclear (Head Feature Convention), principio del rasgo Foot (Foot Feature Principle), principio del control de la concordancia, Restricciones de Coaparición de Rasgos, reglas léxicas. | Fernando Carranza | |
 | Clase 05 | El declive de GPSG: insuficiencia del poder restrictivo de las gramáticas independientes de contexto, complejidad computacional de GPSG. Repaso de la gramática generativa. El minimalismo. Operaciones básicas: Ensamble, Adjunción, movimiento de núcleos, Agree | Fernando Carranza / <br> Pablo Zdrojewski | - [Instrucciones para correr el parser minimalista en Prolog](Clase-05/ParserMinimalistaStabler1/instructions.md) |

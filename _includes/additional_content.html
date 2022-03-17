@@ -69,11 +69,8 @@
         const textA = document.createElement('a')
         textA.className = "content-item"
         textA.href = "{{ site.baseurl }}"+element
-        if (element.startsWith('/Clase')){
+        if (element.startsWith('/Clase') || element.startsWith('/Instructivos')){
             textA.textContent = element.replace(/\//g,'').replace('-',' ')
-        }
-        else if (element.toLowerCase().startsWith('/instructivos')){
-            textA.textContent = 'Instructivos'
         }
         else if (element === '/'){
             textA.textContent = 'Inicio'
@@ -89,7 +86,6 @@
         {% if doc.name contains '.md' or doc.name contains '.html' %}
             if ("{{ doc.name }}".startsWith('README') || "{{ doc.name }}".startsWith('index')){
                 addToRepoList(ulThisRepo, "{{ doc.url }}")
-                //if ("{{ doc.url }}".startsWith('/Clase') || "{{ doc.url }}".startsWith('/instructivos')){}
             }
         {% endif %}
     {% endfor %}
