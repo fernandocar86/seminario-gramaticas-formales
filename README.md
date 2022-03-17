@@ -11,7 +11,7 @@ En la cursada vamos a utilizar diversos recursos computacionales, principalmente
     - [máquina virtual](Instructivos/vm.md) (el sistema operativo anfitrión es indistinto)
 
 # Instrucciones para los trabajos prácticos
-Para cumplir con la regularidad en este seminario, es necesario realizar una serie de trabajos prácticos que serán oportunamente presentados durante la cursada. Para poder resolverlos, es necesario tener en cuenta las instrucciones que se incluyen en el siguiente [vínculo](Instructivos/flujo_de_trabajo.md).
+Para cumplir con la regularidad en este seminario, es necesario realizar una serie de trabajos prácticos que serán oportunamente presentados durante la cursada. Para poder resolverlos, es necesario tener en cuenta [estas instrucciones](Instructivos/flujo_de_trabajo.md).
 
 # Cronograma de clases y materiales
 
