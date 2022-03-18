@@ -20,8 +20,10 @@ A excepción de `Tkinter` (el cual se recomienda instalar con el comando `sudo a
 2. Instalar Python
 3. Abrir una consola y, desde la carpeta del repositorio ejecutar:
 
-        $ pip3 install --upgrade pip
-        $ pip3 install -r requirements.txt
+    ```{bash}
+    pip3 install --upgrade pip
+    pip3 install -r requirements.txt
+    ```
 
 ## Programas
 
