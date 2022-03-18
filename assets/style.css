@@ -1,0 +1,99 @@
+.copy-code-button {
+    background-color: #FFCC00;
+    font-size:.9rem;
+
+    border:ridge 1px #7b7b7c;
+    border-radius:5px;
+
+    float: right;
+    margin-left: auto;
+    margin-right: 0;
+    padding: 3px 8px;
+
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    grid-column-gap: 4px;
+    cursor: pointer;
+
+    top:5px;
+    right:5px;
+}
+
+.copy-code-button:hover {
+    cursor: pointer;
+    background-color: #ecc490;
+}
+
+.copy-code-button:focus {
+    /* Avoid an ugly focus outline on click in Chrome,
+       but darken the button for accessibility.
+       See https://stackoverflow.com/a/25298082/1481479 */
+    background-color: #E6E6E6;
+    outline: 0;
+}
+
+.copy-code-button:active {
+    background-color: #D9D9D9;
+}
+
+.highlight pre {
+    /* Avoid pushing up the copy buttons. */
+    margin: 0;
+}
+
+li {
+    display: list-item;
+}
+li[class="tag-h1"] {
+    font-size: 17px;
+}
+li[class="tag-h2"] {
+    font-size: 14px;
+}
+nav.content {
+    width: 230px;
+    position: fixed;
+    top: 220px;
+    left: 50%;
+    margin-left: -580px;
+    text-align: right;
+    font-size: 22px;
+}
+a.content-item:-webkit-any-link {
+    color: #f0e7d5;
+    cursor: pointer;
+    text-decoration: none;
+}
+a.content-item:hover {
+    color: #ffcc00
+}
+ul {
+    list-style-type: none;
+}
+ul.this-page:not(li) {
+    color: #ffcc00;
+    height: 300px;
+    overflow: auto;
+    margin-bottom: 50px;
+    padding-right: 20px;
+}
+ul.this-repo:not(li) {
+    padding-right: 20px;
+}
+::-webkit-scrollbar{
+    width: 8px;
+}
+::-webkit-scrollbar-track{
+    background-color:  #252525;
+}
+::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgb(218, 149, 45);
+    border-radius: 8px;
+}
+.highlight pre{
+    margin-bottom: 10px;
+}
+pre::-webkit-scrollbar-track{
+    background-color: #191919;
+}

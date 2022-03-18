@@ -1,0 +1,92 @@
+<link href="https://fernandocar86.github.io/seminario-gramaticas-formales/assets/style.css" rel="stylesheet">
+<script>
+    // get section
+    const sectionPage = document.querySelector('section')
+
+    // create nav section
+    var navThisPage = document.createElement('nav')
+    navThisPage.className = "content"
+    sectionPage.insertAdjacentElement('beforebegin', navThisPage)
+
+    // create list for "this-page"
+    var ulThisPage = document.createElement('ul')
+    ulThisPage.textContent = "En esta página"
+    ulThisPage.className = "this-page"
+    navThisPage.appendChild(ulThisPage)
+
+    // add headlines to "this-page" ul
+    function addToThisPageList(head){
+        // set id for healine
+        const headText = head.textContent;              //ex: "First Title"
+        const headId = headText.replace(' ','-');       //ex: "First-Title"
+        const headTag = head.tagName.toLowerCase();     //ex: "H1">"h1"
+        head.id = headId;                               // id="First-Title" (for ref)
+
+        const aHeadlineHref = document.createElement('a');
+        aHeadlineHref.className = "content-item";
+        aHeadlineHref.textContent = headText;
+        aHeadlineHref.href = "#"+headId;
+        aHeadlineHref.onclick = "location.href='{{% aHeadlineHref.href %}}'";
+
+        const liItem = document.createElement('li');
+        liItem.className = "tag-"+headTag;
+        liItem.appendChild(aHeadlineHref);
+
+        if (headTag=="h2"){
+            ulThisPage.appendChild(liItem)
+        }
+        //else if (headTag=="h2"){
+        //    if (ulThisPage.lastChild.lastChild.tagName.includes('UL')){
+        //        ulThisPage.lastChild.querySelector('ul').appendChild(liItem)
+        //    }
+        //    else {
+        //        const ulSubHeadList = document.createElement('ul')
+        //        ulSubHeadList.appendChild(liItem)
+        //        ulThisPage.lastChild.appendChild(ulSubHeadList)
+        //    }
+        //}
+    }
+
+    const sectionChildren = sectionPage.children
+
+    for (var i = 0; i < sectionChildren.length; i++){
+        if (['h2'].includes(sectionChildren[i].tagName.toLowerCase())){
+            addToThisPageList(sectionChildren[i])
+        }
+    }
+
+    //create list for "this-repo"
+    var ulThisRepo = document.createElement('ul')
+    ulThisRepo.textContent = "En el repositorio"
+    ulThisRepo.className = "this-repo"
+    navThisPage.appendChild(ulThisRepo)
+
+    //add element to list
+    function addToRepoList(list, element){
+        const elementLi = document.createElement('li')
+        elementLi.className = 'tag-h2'
+
+        const textA = document.createElement('a')
+        textA.className = "content-item"
+        textA.href = "{{ site.baseurl }}"+element
+        if (element.startsWith('/Clase') || element.startsWith('/Instructivos')){
+            textA.textContent = element.replace(/\//g,'').replace('-',' ')
+        }
+        else if (element === '/'){
+            textA.textContent = 'Inicio'
+        }
+        elementLi.appendChild(textA)
+
+        list.appendChild(elementLi)
+    }
+
+    //get all site-pages and add them to list
+    {% assign doclist = site.pages | sort: 'url'  %}
+    {% for doc in doclist %}
+        {% if doc.name contains '.md' or doc.name contains '.html' %}
+            if ("{{ doc.name }}".startsWith('README') || "{{ doc.name }}".startsWith('index')){
+                addToRepoList(ulThisRepo, "{{ doc.url }}")
+            }
+        {% endif %}
+    {% endfor %}
+</script>

@@ -1,3 +1,6 @@
+% Fuente para todo el documento
+:- encoding(utf8).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % file: setup.pl
 % origin author : E Stabler
 % origin date: Jan 2001
@@ -14,8 +17,7 @@
 % ilustrativa de las gramáticas minimalistas para su uso interno en las clases del 
 % seminario "Gramáticas formales: formalismos e implementaciones" (Carranza y Zdrojewski) 
 % durante el primer cuatrimestre de 2022, Universidad de Buenos Aires.
-
- 
+%
 % Para la versión original de Stabler remitimos a 
 % https://linguistics.ucla.edu/person/edward-stabler/
 %

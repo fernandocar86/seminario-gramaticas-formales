@@ -4,7 +4,6 @@ repos:
 -   repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.1.0
     hooks:
-    -   id: trailing-whitespace
     -   id: end-of-file-fixer
     -   id: check-yaml
 -   repo: local
@@ -21,10 +20,3 @@ repos:
         stages: [commit]
         language: system
         entry: jupyter nbconvert --clear-output --inplace
--   repo: local
-    hooks:
-    -   id: re-add updated tracked files
-        name: re-add updated tracked files
-        stages: [commit]
-        language: system
-        entry: git add -u
