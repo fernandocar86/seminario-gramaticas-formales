@@ -1,13 +1,10 @@
 # Flujo de trabajo con git y GitHub
 
-Para completar los trabajos prácticos del seminario, van a tener que hacer cambios en archivos de este repositorio:
-
-https://github.com/fernandocar86/seminario-gramaticas-formales
+Para completar los trabajos prácticos del seminario, van a tener que hacer cambios en archivos de [este repositorio](https://github.com/fernandocar86/seminario-gramaticas-formales).
 
 Pero para evitar que esos cambios se vean reflejados en el repositorio original que usamos todes, vamos a establecer un flujo de trabajo grupal aprovechando las herramientas que son propias de git y GitHub.
 
-
-## 1- Formación de grupos
+## Formación de grupos
 
 Los trabajos están pensados para ser resueltos en grupo. Cada miembro del grupo resolverá la parte que le corresponda y aportará sus resultados usando git.
 
@@ -27,7 +24,6 @@ Una vez completados los pasos para el "fork", podrá ver este repositorio agrega
 
 ![](images/2022-03-06-20-19-01.png)
 
-
 ### Branch Protection
 
 Quien se encargue del fork, también deberá deberá seguir los pasos para proteger la rama "main" de su nuevo repositorio así como seleccionar un número de "approvals" de dos (2) personas que estarán a cargo de aceptar los "pull requests" de cualquier integrante del equipo.
@@ -46,7 +42,7 @@ Una vez desplegadas las opciones, completar del siguiente modo:
 
 Finalizado este paso, está todo listo para seleccionar a l@s demás integrantes del equipo como colaborador@s.
 
-## 2- colaborador@s
+## Colaborador@s
 
 Para agregar colaborador@s, moverse dentro de "Settings" a la primera solapa de la izquierda "Collaborators" y cliquear sobre el botón verde "Add people":
 
@@ -67,8 +63,7 @@ Es importante que les integrantes del equipo docente también sean invitades com
         pablozd
         juliamendoim
 
-
-## 3- Trabajo en grupo
+## Trabajo en grupo
 
 Los trabajos prácticos van a estar asociados a diferentes temas que veamos en la cursada. Para cada trabajo práctico les vamos a pedir que se creen una rama por integrante del equipo.
 
