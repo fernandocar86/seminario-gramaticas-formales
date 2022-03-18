@@ -14,15 +14,15 @@ Una vez definidos los grupos, deberán también definir quién se encargará de 
 
 Para ello deberá ir a la página del repositorio:
 
-![](images/2022-03-06-20-14-37.png)
+![](./workflow-images/2022-03-06-20-14-37.png)
 
 y seleccionar sobre el lado derecho superior la opción "fork":
 
-![](images/2022-03-06-20-16-01.png)
+![](./workflow-images/2022-03-06-20-16-01.png)
 
 Una vez completados los pasos para el "fork", podrá ver este repositorio agregado a su lista personal de repositorios de GitHub.
 
-![](images/2022-03-06-20-19-01.png)
+![](./workflow-images/2022-03-06-20-19-01.png)
 
 ### Branch Protection
 
@@ -32,13 +32,13 @@ Estos "pull requests" serán la herramienta del equipo docente para revisar y co
 
 Para proteger la rama principal, deberán navegar hasta la solapa "Settings" de su repositorio:
 
-![](images/2022-03-06-20-53-51.png)
+![](./workflow-images/2022-03-06-20-53-51.png)
 
 Sobre el lado izquierdo, elegir la solapa "Branches" y cliquear el botón con la leyenda "Add rules".
 
 Una vez desplegadas las opciones, completar del siguiente modo:
 
-![](images/2022-03-06-20-32-10.png)
+![](./workflow-images/2022-03-06-20-32-10.png)
 
 Finalizado este paso, está todo listo para seleccionar a l@s demás integrantes del equipo como colaborador@s.
 
@@ -46,11 +46,11 @@ Finalizado este paso, está todo listo para seleccionar a l@s demás integrantes
 
 Para agregar colaborador@s, moverse dentro de "Settings" a la primera solapa de la izquierda "Collaborators" y cliquear sobre el botón verde "Add people":
 
-![](images/2022-03-06-20-37-56.png)
+![](./workflow-images/2022-03-06-20-37-56.png)
 
 En la ventana emergente, agregar a cada integrante del equipo usando su dirección de mail. Este mail debería remitirlos de manera automática al usuario de GitHub correspondiente, por lo tanto, atención a usar el mismo mail que se usó para crear la cuenta de GitHub.
 
-![](images/2022-03-06-20-40-09.png)
+![](./workflow-images/2022-03-06-20-40-09.png)
 
 Cada integrante deberá, a su vez, aceptar la invitación a colaborar que llegará a su dirección de mail. Agregar colaborado@s usando su nombre de GitHub es también posible (pero chequear bien que sea la persona correcta).
 

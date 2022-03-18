@@ -11,7 +11,7 @@ Para sacar el máximo provecho de esa clase, sí es necesario **haber creado pre
 1. Ingresar a la página de [GitHub](https://github.com/).
 2. Hacer click en el botón **Sign up**, ubicado en la esquina superior derecha.
 
-    ![alt text](Clase-01/../images/github-signup.png)
+    ![alt text](./github-user-images/github-signup.png)
 
 3. Seguir los pasos indicados para la creación del usuario.
 4. Una vez creada la cuenta, **registrarla en [este formulario](https://docs.google.com/forms/d/1n2bzV5ghGGa_Q1bIZLDpxXT-Dpjf5rMhVuNf6GpwoNw/prefill)**.
