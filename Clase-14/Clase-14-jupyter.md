@@ -1,12 +1,11 @@
 # Gramáticas categoriales
 
-## Requerimientos
-
 
 ```python
 import nltk 
 import re 
-from nltk.ccg import chart, lexicon
+import os, sys
+import matplotlib 
 ```
 
 Las gramáticas categoriales están conformadas principalmente por un conjunto reducido de reglas y un léxico sumamente rico.
@@ -22,14 +21,16 @@ Construir una gramática categorial consiste principalmente en elaborar un léxi
 ```python
 #Combinatory Categorial Grammar
 
-def combinatory_parser(sentence, grammar):   
+from nltk.ccg import chart, lexicon
+
+def combinatory_parser(sentence):   
     sentence = sentence.lower()                                     # convierte a minúscula
     if sentence.endswith('.'):                                      # si la oración termina con un punto
         sent = re.sub('\.',' ',sentence)                            # se lo quita
     else:                                                           # si no
         sent = sentence                                             # la toma como está
     sent = sent.split()                                             # divide la oración en palabras
-    archivo = open(grammar, 'r')
+    archivo = open('gramaticas/CategorialGrammar2.txt', 'r')
     codigogram = archivo.read()
     lex = lexicon.fromstring(codigogram)
     print(lex)
@@ -43,10 +44,9 @@ def combinatory_parser(sentence, grammar):
 
 
 ```python
-grammar = 'gramaticas/CG1.txt'
 print('Escribí una oración')
 oracion5 = input()
-combinatory_parser(oracion5, grammar)
+combinatory_parser(oracion5)
 ```
 
 
