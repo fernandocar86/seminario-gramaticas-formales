@@ -1,16 +1,16 @@
 ## Lenguajes de programación
 
-- [Python 3.10.2](https://www.python.org/downloads/)
+- [Python 3.8.10](https://www.python.org/downloads/)
 - [SWI-Prolog](https://www.swi-prolog.org/download/stable)
 
 ## Librerías para Python
 
-
-- [PyDelphin](https://pydelphin.readthedocs.io/en/latest/)
 - [Jupyter Notebook](https://jupyter.org/)
 - [Matplotlib](https://matplotlib.org/)
 - [NLTK](https://www.nltk.org/)
+- [PyDelphin](https://pydelphin.readthedocs.io/en/latest/)
 - [SpaCy](https://spacy.io/)
+- [Stanza](https://stanfordnlp.github.io/stanza/installation_usage.html)
 - [Tkinter](https://docs.python.org/es/3/library/tkinter.html)
 - [svgling](https://pypi.org/project/svgling/)
 
