@@ -2,7 +2,7 @@
 
 Con el fin de facilitar la comunicación, pusimos a disposición un servidor de Discord cuyo link pueden encontrar en el [campus del seminario](https://campus.filo.uba.ar/course/view.php?id=2362). Por este canal pueden comunicarse tanto con los docentes como con otros participantes del curso.
 
-Dado que los usuarios de Discord suelen ser _nicknames_ que no siempre se corresponden o permiten identificarnos claramente, les pedimos que tengan a bien configurar su perfil con el nombre y apellido con el que aparecen inscriptios en el seminario. Esto se puede hacer para el servidor específico del seminario y de ningún modo impactaría en el perfil de otro servidor que puedan utilizar.
+Dado que los usuarios de Discord suelen ser _nicknames_ que no siempre se corresponden con nuestros nombres de pila o permiten identificarnos claramente, les pedimos que tengan a bien configurar su perfil con el nombre y apellido con el que aparecen inscriptios en el seminario. Esto se puede hacer para el servidor específico del seminario y de ningún modo impactaría en el perfil de otro servidor que puedan utilizar.
 
 A continuación les dejamos los pasos para que puedan realizar tal configuración desde la aplicación de escritorio o desde un teléfono celular.
 
