@@ -15,3 +15,5 @@ Para sacar el máximo provecho de esa clase, sí es necesario **haber creado pre
 
 3. Seguir los pasos indicados para la creación del usuario.
 4. Una vez creada la cuenta, **registrarla en [este formulario](https://docs.google.com/forms/d/1n2bzV5ghGGa_Q1bIZLDpxXT-Dpjf5rMhVuNf6GpwoNw/prefill)**.
+
+{% include additional_content.html %}

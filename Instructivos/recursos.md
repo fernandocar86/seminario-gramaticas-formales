@@ -34,5 +34,4 @@ A excepción de `Tkinter` (el cual se recomienda instalar con el comando `sudo a
 
 
 {% include copybutton.html %}
-
 {% include additional_content.html %}
