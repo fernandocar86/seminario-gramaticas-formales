@@ -6,6 +6,7 @@
 ## Librerías para Python
 
 - [Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/)
+- [Jupyter Notebook](https://jupyter-notebook.readthedocs.io/en/latest/)
 - [Matplotlib](https://matplotlib.org/)
 - [NLTK](https://www.nltk.org/)
 - [PyDelphin](https://pydelphin.readthedocs.io/en/latest/)
