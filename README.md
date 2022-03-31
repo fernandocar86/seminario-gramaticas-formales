@@ -10,6 +10,8 @@ En la cursada vamos a utilizar diversos recursos computacionales, principalmente
 - Quienes no tienen experiencia en programación o en el manejo de la línea de comandos, pueden instalarse una máquina virtual especialmente diseñada para esta cursada. Una máquina virtual es una computadora huésped que corre dentro de la anfitriona. La computadora huésped tiene su propia memoria asignada y su propio sistema operativo. La presente máquina virtual tiene como sistema operativo Ubuntu y tiene ya instalado todo lo que vamos a usar en la cursada. Pueden acceder con el siguiente link
     - [máquina virtual](./Instructivos/tutorialmv.pdf) (el sistema operativo anfitrión es indistinto)
 
+En las partes teóricas de las clases vamos a usar *handouts* en pdf. Puestos que algunos de estos documentos incluyen campos especiales que no son compatibles con todos los visualizadores de pdf (por ejemplo, no todas las versiones del acrobat reader), recomendamos utilizar [evince](https://wiki.gnome.org/Apps/Evince). Pueden encontrar una versión para Windows [aquí](https://evince.softonic.com/) o [aquí](https://evince.uptodown.com/windows). No hemos probado ninguno de los dos links, por lo que agredecemos si nos pueden avisar si funcionan bien.
+
 ## Instrucciones para los trabajos prácticos
 Para cumplir con la regularidad en este seminario, es necesario realizar una serie de trabajos prácticos que serán oportunamente presentados durante la cursada. Para poder resolverlos, es necesario tener en cuenta [estas instrucciones](./Instructivos/flujo_de_trabajo.md).
 
