@@ -1,11 +1,6 @@
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
--   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.1.0
-    hooks:
-    -   id: end-of-file-fixer
-    -   id: check-yaml
 -   repo: local
     hooks:
     -   id: jupyter-nb-to-markdown
@@ -20,3 +15,16 @@ repos:
         stages: [commit]
         language: system
         entry: jupyter nbconvert --clear-output --inplace
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.1.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-yaml
+-   repo: local
+    hooks:
+    -   id: add .md files
+        name: re-add updated tracked files
+        stages: [commit]
+        language: system
+        entry: git add Clase*.md
