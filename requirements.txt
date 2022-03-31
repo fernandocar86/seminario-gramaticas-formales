@@ -1,8 +1,10 @@
 es-core-news-sm @ https://github.com/explosion/spacy-models/releases/download/es_core_news_sm-3.2.0/es_core_news_sm-3.2.0-py3-none-any.whl
+jupyter==1.0.0
 jupyterlab==3.3.2
 matplotlib==3.5.1
 nltk==3.7
-notebook==6.4.8
+notebook==6.4.10
+pandas==1.4.1
 pre-commit==2.17.0
 PyDelphin==1.6.0
 spacy==3.2.3

@@ -10,6 +10,8 @@ En la cursada vamos a utilizar diversos recursos computacionales, principalmente
 - Quienes no tienen experiencia en programación o en el manejo de la línea de comandos, pueden instalarse una máquina virtual especialmente diseñada para esta cursada. Una máquina virtual es una computadora huésped que corre dentro de la anfitriona. La computadora huésped tiene su propia memoria asignada y su propio sistema operativo. La presente máquina virtual tiene como sistema operativo Ubuntu y tiene ya instalado todo lo que vamos a usar en la cursada. Pueden acceder con el siguiente link
     - [máquina virtual](./Instructivos/tutorialmv.pdf) (el sistema operativo anfitrión es indistinto)
 
+En las partes teóricas de las clases vamos a usar *handouts* en pdf. Puestos que algunos de estos documentos incluyen campos especiales que no son compatibles con todos los visualizadores de pdf (por ejemplo, no todas las versiones del acrobat reader), recomendamos utilizar [evince](https://wiki.gnome.org/Apps/Evince). Pueden encontrar una versión para Windows [aquí](https://evince.softonic.com/) o [aquí](https://evince.uptodown.com/windows). No hemos probado ninguno de los dos links, por lo que agredecemos si nos pueden avisar si funcionan bien.
+
 ## Instrucciones para los trabajos prácticos
 Para cumplir con la regularidad en este seminario, es necesario realizar una serie de trabajos prácticos que serán oportunamente presentados durante la cursada. Para poder resolverlos, es necesario tener en cuenta [estas instrucciones](./Instructivos/flujo_de_trabajo.md).
 
@@ -18,7 +20,7 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
 
 | Clase | Temas | Materiales |
 | ------ | ------ | ------ |
-|Clase 01 <br> 29/03 | Presentación del equipo y del programa. Dinámica de clases. Presentación de trabajos prácticos. |- [Form de presentación](https://docs.google.com/forms/d/1KPm1NavIN9sPfl7bTirTtNs-BcgAO1jZvV2TAurPuyE/prefill)<br>- [Usuario de GitHub](./Instructivos/github_user.md)<br>- [Máquina virtual](./Instructivos/tutorialmv.pdf) |
+|Clase 01 <br> 29/03 | Presentación del equipo y del programa. Dinámica de clases. Presentación de trabajos prácticos. |- [Form de presentación](https://docs.google.com/forms/d/1KPm1NavIN9sPfl7bTirTtNs-BcgAO1jZvV2TAurPuyE/edit)<br>- [Usuario de GitHub](./Instructivos/github_user.md)<br>- [Máquina virtual](./Instructivos/tutorialmv.pdf) |
 | Clase 02 <br> 05/04 | Formalización como matematización. Teoría de conjuntos y funciones. Nociones básicas de teoría de los lenguajes (lenguaje, alfabeto, etc.). <br> Uso básico de git | - [Apuntes sobre formalización]() <br> - [Indicaciones para el fujo de trabajo con GitHub](./Instructivos/flujo_de_trabajo.md) |
 | Clase 03 <br> 12/04 | Jerarquía de lenguajes formales; Gramáticas, autómatas y lenguajes; equivalencia débil y equivalencia fuerte; teoría de la complejidad. |  |
 | Clase 04 <br> 19/04 | Gramáticas Independientes de contexto. Definición; axiomas de dominancia y de precedencia. Algunas limitaciones.<br>Parsers: RecursiveDescentParser (NLTK), Shift-ReduceParser (NLTK), ChartParser (NLTK). Freeling. | - [Visualización de Notebook](Clase-04/Clase-04-jupyter.md) |
