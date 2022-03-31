@@ -6,11 +6,11 @@ En este seminario utilizaremos, entre otros recursos, códigos de programación 
 
 Existen distintas formas de ejecutar código escrito en Python. Una de ellas es en _notebooks_, como esta que están leyendo. Las notebooks son un entorno computacional interactivo que permiten escribir y ejecutar código de Python, entre otros lenguajes, y combinarlo con fragmentos de texto plano o, incluso, con imágenes.
 
-Dos de las interfaces más utilizadas para abrir notebooks son [Jupyter Notebook](https://jupyter-notebook.readthedocs.io/en/latest/user-documentation.html) y [Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/). En este seminario utilizaremos la segunda, pero ambas son muy similares.
+Dos de las interfaces más utilizadas para abrir notebooks son [Jupyter Notebook](https://jupyter-notebook.readthedocs.io/en/latest/user-documentation.html) y [Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/). En la máquina virtual que les brindamos, tienen instalada la primera y, al final de esta clase, instalaremos la segunda.
 
-Si están usando la VM, ya tienen Jupyter Lab instalado en la máquina. Si no la están usando, deberán instalarse el programa(consultar la sección de [Recursos requeridos](https://fernandocar86.github.io/seminario-gramaticas-formales/Instructivos/recursos.html) para una breve explicación).
+Si no están usando la VM, pueden consultar la sección de [Recursos requeridos](https://fernandocar86.github.io/seminario-gramaticas-formales/Instructivos/recursos.html) para una breve explicación de cómo instalar ambas opciones.
 
-Una vez que lo tengan instalado, para ejecutarlo simplmente deben abrir una consola o terminal (`ctrl+alt+t`) y allí escribir `jupyer lab`. Eso les abrirá una pestaña en su navegador por defecto y podrán ver las carpetas y archivos en su computadora.
+Para ejecutarl Jupyter Notebook simplmente deben abrir una consola o terminal (`ctrl+alt+t`) y allí escribir `jupyer notebook`. Eso les abrirá una pestaña en su navegador por defecto y podrán ver las carpetas y archivos en su computadora. Si lo que desean es ejecutar Juyter Lab, deben hacer lo mismo pero escribir `jupyter lab` y se les abrirá una pestaña similar en el navegador.
 
 <div style="text-align:center">
     <img src="./images/terminal.png" width="400px"/>
@@ -20,10 +20,10 @@ Una vez que lo tengan instalado, para ejecutarlo simplmente deben abrir una cons
 También es posible ejecutar Python directamente en la consola. Aquí lo que se hace es invocar lo que se llama un _intérprete_, un programa que lee y ejecuta código escitro en determinado lenguaje. Para esto, una vez abierta la consola, deben escribir "python" y apretar _enter_. Hecho esto, podrán leer algo como lo siguiente:
 
 ```{python}
-Python 3.8.10 (default, Mar 27 2022, 23:42:37) 
+Python 3.8.10 (default, Mar 27 2022, 23:42:37)
 [GCC 9.4.0] on linux
 Type "help", "copyright", "credits" or "license" for more information.
->>> 
+>>>
 ```
 
 Allí se les indica que el intérprete se inició con éxito y que están utilizando la versión 3.8.10. Luego del indicador `>>>` pueden escribir sus comandos para ser ejecutados.
@@ -348,9 +348,14 @@ Los valores pueden ser de distinto tipo: un (número) entero, un (número con pu
 
 Para conocer qué tipo de objeto es determinado valor, podemos usar la función `type()`. Esta puede ser aplicada sobre el valor mismo o sobre una variables que contiene a un valor.
 
+### Enteros y números de punto flotante
+
+El tipo de objeto `int` permite representar los números enteros ($\mathbf{Z}$) en python.
+
 
 ```python
-type(3)
+num = 35
+type(num)
 ```
 
 
@@ -360,23 +365,12 @@ type(3)
 
 
 
-
-```python
-numero = 5
-type(5)
-```
-
-
-
-
-    int
-
-
+Esto solo vale para valores que efetivamente son un número, no así para los que están dentro de un texto o cadena.
 
 
 ```python
-cadena = 'soy un texto'
-type(cadena)
+num_string = '35'
+type(num_string)
 ```
 
 
@@ -386,9 +380,27 @@ type(cadena)
 
 
 
+Sin embargo, si el texto contiene solamente un número, es posible convertirlo a entero utilizando la función `int()`.
+
 
 ```python
-type(3.5)
+num_int = int(num_string)
+type(num_int)
+```
+
+
+
+
+    int
+
+
+
+Por otro lado, si lo que queremos es representar un número racional ($\mathbf{Q}$), debemos usar el tipo de objeto `float`.
+
+
+```python
+rac = 3.6
+type(rac)
 ```
 
 
@@ -398,10 +410,12 @@ type(3.5)
 
 
 
+Y aquí sucede lo mismo con el número en formato texto o cadena, solo que debemos utilizar la función `float()` para la conversión.
+
 
 ```python
-valor = '42'
-type(valor)
+rac_str = '4.0'
+type(rac_str)
 ```
 
 
@@ -410,6 +424,77 @@ type(valor)
     str
 
 
+
+
+```python
+rac_float = float(float_str)
+type(rac_float)
+```
+
+
+    ---------------------------------------------------------------------------
+
+    NameError                                 Traceback (most recent call last)
+
+    Input In [25], in <cell line: 1>()
+    ----> 1 rac_float = float(float_str)
+          2 type(rac_float)
+
+
+    NameError: name 'float_str' is not defined
+
+
+También es posible convertir un número de entero a float y viceversa. En el primer caso perderemos los decimales y en el segundo, se agregará el punto flotante y un cero luego.
+
+
+```python
+rac
+```
+
+
+
+
+    3.6
+
+
+
+
+```python
+int(rac)
+```
+
+
+
+
+    3
+
+
+
+
+```python
+num_int
+```
+
+
+
+
+    35
+
+
+
+
+```python
+float(num_int)
+```
+
+
+
+
+    35.0
+
+
+
+### Booleanos
 
 ### Listas
 
@@ -427,6 +512,18 @@ lista
 
 
     [3, 10, 'hola']
+
+
+
+
+```python
+type(lista)
+```
+
+
+
+
+    list
 
 
 
@@ -613,7 +710,7 @@ lista[4]
 
     IndexError                                Traceback (most recent call last)
 
-    Input In [39], in <cell line: 1>()
+    Input In [45], in <cell line: 1>()
     ----> 1 lista[4]
 
 
@@ -887,9 +984,331 @@ lista
 
 
 
+### Tuplas
+
+
+
 ### Conjuntos
 
-### Tuplas
+Como vimos en la sección teórica, los conjuntos son una colección de objetos o elementos.
+
+Para instanciar un conjunto en Python, podemos:
+
+- encerrar los elementos que queremos ubicar dentro del conjunto entre corchetes
+- armar una lista o tupla y utilizarla como valor para la función `set()`
+
+
+```python
+lista = [1,2,3,4]
+conjunto = set(lista)
+conjunto
+```
+
+
+
+
+    {1, 2, 3, 4}
+
+
+
+
+```python
+type(conjunto)
+```
+
+
+
+
+    set
+
+
+
+Tal y como habíamos visto: los conjuntos no tienen orden ni elementos repetidos.
+
+
+```python
+conjunto = {3, 'foo', (1, 2, 3), 3.14159, 3}
+conjunto
+```
+
+
+
+
+    {(1, 2, 3), 3, 3.14159, 'foo'}
+
+
+
+Si lo que queremos es generar un conjunto vacío, podemos hacer lo mismo pero utilizar una lista vacía o, lo que es más sencillo y prolijo, usar la función `set()` sin ningún valor.
+
+
+```python
+conjunto_vacio = set()
+conjunto_vacio
+```
+
+
+
+
+    set()
+
+
+
+Al igual que las listas, puedo contar cuántos elementos tiene un conjunto con la función `len()`.
+
+
+```python
+len(conjunto)
+```
+
+
+
+
+    4
+
+
+
+
+```python
+len(conjunto_vacio)
+```
+
+
+
+
+    0
+
+
+
+#### Relaciones entre conjuntos
+
+La función `subset()` nos permite evaluar si un conjunto es subconjunto de otro.
+
+
+```python
+a = {'a','b','c'}
+b = {'a','b','c','g','h','z'}
+```
+
+
+```python
+a.issubset(b)
+```
+
+
+
+
+    True
+
+
+
+
+```python
+a.issubset(a)
+```
+
+
+
+
+    True
+
+
+
+También podemos evaluar si un conjunto contiene a otro:
+
+
+```python
+b.issuperset(a)
+```
+
+
+
+
+    True
+
+
+
+
+```python
+b.issuperset(b)
+```
+
+
+
+
+    True
+
+
+
+
+```python
+a.issuperset(b)
+```
+
+
+
+
+    False
+
+
+
+Si lo que queremos es ver si un subconjunto es subconjunto propio, debemos usar el operador `>` y colocar a izquierda el conjunto que queremos evaluar si es subconjutno propio del que ubiquemos a derecha (también podemos usar `<` e invertir las posiciones).
+
+
+```python
+a < b
+```
+
+
+
+
+    True
+
+
+
+
+```python
+a < a
+```
+
+
+
+
+    False
+
+
+
+Con `in` podemos evaluar la pertenencia ($\in$) de un elemento es miembro de un conjunto (esto también funciona con listas).
+
+
+```python
+'c' in a
+```
+
+
+
+
+    True
+
+
+
+
+```python
+'z' in a
+```
+
+
+
+
+    False
+
+
+
+#### Operacines entre conjuntos
+
+
+```python
+x = {'m','n','o'}
+```
+
+
+```python
+y = {'m','w','z'}
+```
+
+
+```python
+x.union(y)            # elementos que están en x o en y
+```
+
+
+
+
+    {'m', 'n', 'o', 'w', 'z'}
+
+
+
+
+```python
+x.intersection(y)     # elementos que están en x y en y
+```
+
+
+
+
+    {'m'}
+
+
+
+
+```python
+x.difference(y)       # elementos que están en x pero no en y (x-y)
+```
+
+
+
+
+    {'n', 'o'}
+
+
+
+
+```python
+y.difference(x)       # elementos que están en y pero no en x (y-x)
+```
+
+
+
+
+    {'w', 'z'}
+
+
+
+
+```python
+from itertools import product  # vamos a volver a esto en un rato
+
+list(product(x,y))  # con product puedo ver el producto cartesiano
+```
+
+
+
+
+    [('n', 'z'),
+     ('n', 'm'),
+     ('n', 'w'),
+     ('o', 'z'),
+     ('o', 'm'),
+     ('o', 'w'),
+     ('m', 'z'),
+     ('m', 'm'),
+     ('m', 'w')]
+
+
+
+
+```python
+list(product(y,x))
+```
+
+
+
+
+    [('z', 'n'),
+     ('z', 'o'),
+     ('z', 'm'),
+     ('m', 'n'),
+     ('m', 'o'),
+     ('m', 'm'),
+     ('w', 'n'),
+     ('w', 'o'),
+     ('w', 'm')]
+
+
+
+
+```python
+
+```
 
 ### Diccionarios
 
@@ -921,11 +1340,22 @@ list('hola')
 
 
 
-### Booleanos
 
-### Enteros
+```python
+bla
+```
 
-### Números de punto flotante
+
+    ---------------------------------------------------------------------------
+
+    NameError                                 Traceback (most recent call last)
+
+    Input In [98], in <cell line: 1>()
+    ----> 1 bla
+
+
+    NameError: name 'bla' is not defined
+
 
 ## Funciones
 
