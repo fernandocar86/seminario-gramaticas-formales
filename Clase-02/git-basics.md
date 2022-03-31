@@ -1,9 +1,23 @@
 # Guía para un uso básico de Git
 
-- ¿Qué es git?
-- ¿Por qué queremos un control de versiones?
-- ¿Qué tipo de control de versiones hay?
-- Los comandos
+## Motivación
 
+¿Por qué necesitamos git?
+
+## Control de versiones
+
+¿Qué es?
+¿Cómo funciona?
+¿Qupe tipos hay?
+
+## Servidores
+
+Git vs. GitHub
+
+## Comandos básicos
+
+<object data='./git-cheat-sheet.pdf' type='application/pdf' width='100%'>
+</object>
 {% include copybutton.html %}
+
 {% include additional_content.html %}
