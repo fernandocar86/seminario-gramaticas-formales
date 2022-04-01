@@ -8,7 +8,7 @@
 
 ¿Qué es?
 ¿Cómo funciona?
-¿Qupe tipos hay?
+¿Qué tipos hay?
 
 ## Servidores
 
