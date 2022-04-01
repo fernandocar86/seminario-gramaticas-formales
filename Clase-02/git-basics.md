@@ -14,10 +14,52 @@
 
 Git vs. GitHub
 
-## Comandos básicos
+## Primeros pasos
+### Clonar un repositorio
 
-<object data='./git-cheat-sheet.pdf' type='application/pdf' width='100%'>
-</object>
+- clone
+### Armar un repositorio
+
+- init
+- gitignore
+- remote
+- config
+### Actualizar un repositorio
+
+- add
+- commit
+- pull
+- diff
+
+## Deshacer cambios
+
+- restore
+- rest ~HEAD
+- reset
+- revert
+## Ramas
+
+- checkout -b
+- branch --list
+- branch -D
+- push --delete origin
+## Merge
+
+- merge
+
+### Resolución de conflictos
+
+- cómo resolver conflictos
+## Pull Requests
+
+- qué son
+
+<div style="text-align:center">
+    <a href="git-cheat-sheet.pdf" target="_blank">
+        <img src="git-cheat-sheet.png" alt="Git Cheat Sheet" width="50%">
+    </a>
+</div>
+
 {% include copybutton.html %}
 
 {% include additional_content.html %}
