@@ -23,6 +23,8 @@
 
 ## Servidores
 
+Volver a generar meme.
+
 <div style="text-align:center">
     <img src="git-basics-images/git-servers.jpg" width="50%">
     <br>
@@ -122,6 +124,18 @@ Git vs. GitHub
 - branch --list
 - branch -D
 - push --delete origin
+
+<div style="text-align:center">
+    <img src="git-basics-images/git-branch-everywhere.jpg" width="60%">
+    <br>
+    <em>
+        Meme tomado de
+        <a href=https://medium.com/droidsonroids/android-studio-and-git-branches-how-to-simplify-your-work-698aee7c38dc>
+        Łukasz Kopociński
+        </a>
+    </em>
+</div>
+
 ## Merge
 
 <div style="text-align:center">
