@@ -226,8 +226,38 @@ Si ahora volvemos a la página donde se encuentra nuestro repositorio remoto y l
 </div>
 
 ### Actualizar el repo local
-- pull
+
+Hasta ahora solo nos hemos ocupado de crear un repositorio (o descargarlo si ya existía previamente) y subir los archivos disponibles en nuestra computadora. Cuando hacemos esto, le indicamos a git que queremos que _trackee_ esos archivos: que los tenga presentes y que, si hacemos alguna modificación, nos permita verla, subirla o deshacerla y volver al archivo como estaba en otro momento.
+
+Entonces, cuando realizamos algún cambio en alguno de los archivos que git está siguiendo, podemos ver no solo qué archivo se modificó sino también cuáles fueron las modificaciones realizadas:
+
+```
+git diff
+```
+        $ git diff                      # diferencias entre el área de trabajo y directorio de git
+                                        # i.e. archivos que fueron modificados pero no se agregaron
+                                        # al staging (el directorio de git tendrá los archivos en
+                                        # la versión en la que se encontraban en el remoto la última
+                                        # vez que se sincronizó el repo local)
+        > + línea añadida (en verde)
+          - línea borrada (en rojo)
+
+        $ git diff <file-path>          # ídem diff pero solo muestra las diferencias para el archivo
+                                        # indicado en <file-path>
+
+        $ git diff --staged             # diferencias entre el staging y el directorio de git (.git)
+                                        # (el staging o área de preparación tendrá los archivos
+                                        # modificados agregados con add)
+
+        $ git diff <remote-repo>/<remote-branch>..<local-branch>        # diferencias entre el área de
+                                                                        # confirmación y el remoto     
+
+        $ git diff <commit-hash> <file-path>    # diferencias entre archivo indicado en <file-path>
+                                                # que se encuentra en el directorio de trabajo y el
+                                                # que está en el commit indicado con el <commit-hash>
+
 - diff
+- pull
 
 <div style="text-align:center">
     <img src="git-basics-images/git-fire.jpg" width="40%">
@@ -368,7 +398,7 @@ git commit --amend -m "Mensaje nuevo"   # permite modificar el mensaje del
 
 <div style="text-align:center">
     <a href="git-cheat-sheet.pdf" target="_blank">
-        <img src="git-cheat-sheet.png" alt="Git Cheat Sheet" width="50%">
+        <img src="git-basics-images/git-cheat-sheet.png" alt="Git Cheat Sheet" width="50%">
     </a>
 </div>
 
