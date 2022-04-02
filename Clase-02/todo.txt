@@ -1,1 +1,2 @@
 git status
+agregar comentario sobre el trackeo de archivos binarios en diff

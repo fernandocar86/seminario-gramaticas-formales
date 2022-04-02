@@ -37,9 +37,7 @@ Existen tres tipos de sistemas de control de cambios (VCS, por sus siglas en ing
 - **Control de versiones centralizado (CVCS):** guarda copias de las versiones de los archivos en un servidor remoto. Las personas que están trabajando en un mismo proyecto pueden conectarse a dicho servidor, acceder a la versión que desean y hacer sus modificaciones. Desventaja: si por alguna razón el servidor se cae o no tenemos acceso a él, no podremos trabajar.
 - **Control de versiones distribuido (DVCS):** las copias de los archivos y su historial de cambios son guardados en un servidor remoto y, a su vez, cada integrante del equipo puede tener una copia de estos guardada localmente.
 
-## Git y Servidores
-
-### ¿Qué es git?
+## ¿Qué es git?
 
 Git es un **control de versiones distribuido** creado por [Linus Torvalds](https://www.cs.helsinki.fi/u/torvalds/) en 2005. 
 
@@ -47,7 +45,7 @@ Al utilizarlo para gestionar proyectos, las personas que trabajan en equipo (y t
 
 Guardar la información de forma remota posibilita que otras personas accedan a dicha información y se la descarguen, en caso de tener los permisos. A su vez, es en ese repositorio remoto donde cada miembro del equipo irá subiendo sus cambios para unificarlos con los del resto y, en caso de que algo le suceda a nuestra computadora, podemos tener la tranquilidad de que toda la información estára respaldada allí.
 
-### ¿Y GitHub?
+## ¿Qué es GitHub?
 
 GitHub es un servidor remoto al cual se conecta nuestra computadora cada vez que subimos (pusheamos) o bajamos (clonamos o pulleamos) información, entre otras cosas. Así como existe [GitHub](https://github.com/), existen otros servidores: [GitLab](https://about.gitlab.com/), [Bitbucket](https://bitbucket.org/product/), [SourceForge](https://sourceforge.net/), etc.
 
@@ -75,6 +73,58 @@ Git me brinda una serie de comandos que me permiten interactuar con el servidor 
     </em>
 </div>
 
+## ¿Cómo funciona git?
+
+En git, la información relacionada a nuestros archivos es manejada como una _copia instantánea_ de estos. Cada vez que se realiza un cambio en un proyecto, "se toma una foto" del estado de cada archivo en ese proyecto y se guarda la referencia. Para ser más eficiente, el sistema solo guarda nuevamente los archivos que se han modificado respecto de la última versión. Si un archivo no fue modificado, el sistema conserva la vieja versión que ya poseía almacenada.
+
+<div style="text-align:center">
+    <img src="git-basics-images/git-checkins-over-time.webp" width="70%">
+    <br>
+    <em>
+        Imagen tomada de
+        <a href=https://blog.softtek.com/es/git-c%C3%B3mo-poner-orden-en-el-caos>
+        Softtek
+        </a>
+    </em>
+</div>
+
+## Los estados de git
+
+Git tiene tres estados principales en los que se pueden encontrar los archivos: 
+
+- modificado (modified): significa que el archivo ha sido modificado pero todavía no se encuentra preparado para su confirmación, no ha sido añadido al índice
+- preparado (staged): significa que un archivo modificado ha sido marcado para que ser almacenado en la próxima confirmación
+- confirmado (committed): significa que el archivo ha sido confirmado y, la próxima vez que se realice un push, se subirá al remoto. Aquí los datos están almacenados de manera segura en la base de datos LOCAL, pero todavía no se encuentran en la copia remota del repositorio (alojada en el servidor que se haya elegido).
+
+De este modo, un proyecto de git cuenta con tres secciones principales: 
+
+- el directorio de git (git directory): donde se almacenan los metadatos y la base de datos de objetos para nuestro proyecto. Es la parte más importante de git, y es lo que se copia cuando clonamos un repositorio desde la nube a nuestra computadora.
+
+- el directorio de trabajo (working directory): copia de una versión del proyecto. Estos archivos se sacan de la base de datos comprimida en el directorio de Git, y se colocan en el disco para que los podamos usar o modificar.
+
+- el área de preparación (staging area): es un archivo, generalmente contenido en nuestro directorio de git, que almacena información acerca de lo que va a ir en nuestra próxima confirmación.
+
+<div style="text-align:center">
+    <img src="git-basics-images/git-workflow.png" width="70%">
+    <br>
+    <em>
+        Imagen tomada de
+        <a href=https://medium.com/@techblurbs/git-getting-started-with-version-control-16a682736933>
+        TechBlurbs
+        </a>
+    </em>
+</div>
+
+
+El **flujo de trabajo** básico en Git es algo así:
+
+- En nuestro directorio de trabajo tenemos una serie de archivos a los que les realizamos modificaciones. En esta instancia los archivos se encuentran **modificados**.
+
+- Luego, los preparamos y los añadimos al área de preparación. Una vez hecho esto, los archivos están preparados o **staged**.
+
+- Finalmente, confirmamos los cambios. Este paso toma los archivos tal y como están en el área de preparación y almacena esa copia instantánea de manera permanente en nuestro directorio de Git. Aquí se dice que los archivos fueron confirmados o **commiatedos**.
+
+Hasta aquí hemos trabajado en forma local. Si bien hemos hecho cambios en nuestros archivos y los hemos confirmado, si vamos a nuestra página de de GitHub (o a la página del servidor que hayamos elegido para gestionar nuestros archivos), no veremos tales cambios en el remoto. Por el momento, nuestros últimos cambios se encuentran solamenten en nuestra computadora. Para subir estos cambios al remoto, lo que debemos hacer es subir los archivos al repo en la nube, esto es, pushearlos.
 ## Iniciar un repositorio
 
 Existen dos maneras de iniciar un repositorio:
@@ -213,19 +263,17 @@ Si ahora volvemos a la página donde se encuentra nuestro repositorio remoto y l
 
 
 <div style="text-align:center">
-    <img src="git-basics-images/git-not-updated.jpg" width="70%">
+    <img src="git-basics-images/git-fire.jpg" width="40%">
     <br>
     <em>
-        La foto a partir de la cual se generó este
-        <br>
-        meme fue encontrada en
-        <a href=https://www.1news.co.nz/2022/03/28/will-smith-chris-rock-oscars-meme-not-appropriate-luxon>
-        1news
+        Imagen tomada de
+        <a href=https://medium.com/@lulu.ilmaknun.q/kompilasi-meme-git-e2fe49c6e33e>
+        Lulu Ilmaknun Qurotaini
         </a>
     </em>
 </div>
 
-### Actualizar el repo local
+### Control de diferencias
 
 Hasta ahora solo nos hemos ocupado de crear un repositorio (o descargarlo si ya existía previamente) y subir los archivos disponibles en nuestra computadora. Cuando hacemos esto, le indicamos a git que queremos que _trackee_ esos archivos: que los tenga presentes y que, si hacemos alguna modificación, nos permita verla, subirla o deshacerla y volver al archivo como estaba en otro momento.
 
@@ -242,22 +290,33 @@ git diff <file-path>    # muestra las diferencias en el
 
 git diff --staged       # muestra las diferencias en
                         # archivos que se agregaron (add)
-                        # y la última confirmación
+                        # y la última confirmaciónq
 ```
 
-- pull
+### Actualizar el repo local
 
 <div style="text-align:center">
-    <img src="git-basics-images/git-fire.jpg" width="40%">
+    <img src="git-basics-images/git-not-updated.jpg" width="70%">
     <br>
     <em>
-        Imagen tomada de
-        <a href=https://medium.com/@lulu.ilmaknun.q/kompilasi-meme-git-e2fe49c6e33e>
-        Lulu Ilmaknun Qurotaini
+        La foto a partir de la cual se generó este
+        <br>
+        meme fue encontrada en
+        <a href=https://www.1news.co.nz/2022/03/28/will-smith-chris-rock-oscars-meme-not-appropriate-luxon>
+        1news
         </a>
     </em>
 </div>
 
+Cada nuevo commit que hacemos es una especie de foto que guarda git de nuestros archivos. Podemos pensar esa secuencia de fotos como una suerte de línea temporal en la que podemos volver hacia atrás si queremos recuperar información que luego fue modificada.
+
+Pero para esto es importante tener nuestro repositorio local, ese sobre el que trabajamos y en el que modificamos nuestros archivos, actualizado. Si no vamos alineando nuestro repositorio local con el remoto y descargándole cada tanto las actualizaciones que otras personas (si trabajamos de forma colborativa) o nosotros mismos (si tenemos más de una computadora o si editamos algún archivo desde la interfaz web) realizamos, git podría no dejarnos pushear, debido a que en el remoto hay nuevos cambios que no tenemos de forma local y, por ende, los archivos no se encuentran en su última versión.
+
+Para descargar la última versión de los archivos usamos el siguiente comando:
+
+```
+git pull
+```
 ## Forkear un repo
 
 <div style="text-align:center">
@@ -389,14 +448,14 @@ git commit --amend -m "Mensaje nuevo"   # permite modificar el mensaje del
 ### diff
 
 ```
-git diff <remote-repo>/<remote-branch>..<local-branch>  # muestra las diferencias entre los archivos
-                                                        # que fueron confirmados y los que están
-                                                        # en el remoto
+git diff <remote-repo>/<remote-branch>      # muestra las modificaciones en los archivos
+                                            # confirmados que todavía no fueron pusheados
+                                            # al remoto
 
-git diff <commit-hash> <file-path>                      # muestra las diferencias entre el archivo
-                                                        # indicado en <file-path>
-                                                        # que se
-                                                # que está en el commit indicado con el <commit-hash>
+git diff <commit-hash> <file-path>          # muestra las diferencias en el archivo
+                                            # <file-path> entre su versión en el commit
+                                            # commit indicado con el <commit-hash> y
+                                            # la versión que se está trabajando
 ```
 ## Cheat Sheet
 
