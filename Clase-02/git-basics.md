@@ -75,16 +75,42 @@ Git me brinda una serie de comandos que me permiten interactuar con el servidor 
     </em>
 </div>
 
-## Primeros pasos
+## Iniciar un repositorio
+
+Existen dos maneras de iniciar un repositorio:
+
+- crearlo desde el servidor y _clonarlo_
+- inicializar un repositorio de forma local e indicarle cuál será el servidor para _backupear_ los archivos
 
 <div style="text-align:center">
     <img src="git-basics-images/git-init.jpg" width="50%">
 </div>
 
-### Clonar un repositorio
+### Crear un repo en el servidor y clonarlo
 
-- clone
-### Armar un repositorio
+Para descargarnos o, más propiamente dicho, *clonarnos* un repositorio que ya existe en la nube, debemos ir a la página donde se ecuentre el repositorio en cuestión (GitHub, GitLab u otra de las existentes) y copiar su url utilizando el botón _Code_:
+
+<div style="text-align:center">
+    <img src="git-basics-images/git-clone.png" width="60%">
+</div>
+
+Luego, abrimos la terminal y, en la carpeta donde deseamos descargar el repositorio, escribimos:
+
+```
+git clone <url>
+```
+
+Esto creará un directorio dentro de la carpeta con el mismo nombre que el repositorio clonado y con todos los subdirectorios necesarios para poder realizar el control de versiones de los archivos.
+
+En caso de querer clonar un repositorio indicando un nombre distinto para el directorio a crear, se debe especificar dicho nombre de la siguiente manera:
+
+```
+git clone <url> <folder-name>
+```
+
+Ese comando hace lo mismo que el anterior, pero llama al directorio de destino con el nombre indicado en \<folder-name>.
+
+### Inicializar un repo local
 
 - init
 - gitignore
