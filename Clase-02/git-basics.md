@@ -232,31 +232,16 @@ Hasta ahora solo nos hemos ocupado de crear un repositorio (o descargarlo si ya 
 Entonces, cuando realizamos algún cambio en alguno de los archivos que git está siguiendo, podemos ver no solo qué archivo se modificó sino también cuáles fueron las modificaciones realizadas:
 
 ```
-git diff
+git diff                # muestra las diferencias en
+                        # archivos modificados
+
+git diff <file-path>    # muestra las diferencias en el
+                        # archivo <file-path>
+
+git diff --staged       # muestra las diferencias en
+                        # archivos que se agregaron (add)
 ```
-        $ git diff                      # diferencias entre el área de trabajo y directorio de git
-                                        # i.e. archivos que fueron modificados pero no se agregaron
-                                        # al staging (el directorio de git tendrá los archivos en
-                                        # la versión en la que se encontraban en el remoto la última
-                                        # vez que se sincronizó el repo local)
-        > + línea añadida (en verde)
-          - línea borrada (en rojo)
 
-        $ git diff <file-path>          # ídem diff pero solo muestra las diferencias para el archivo
-                                        # indicado en <file-path>
-
-        $ git diff --staged             # diferencias entre el staging y el directorio de git (.git)
-                                        # (el staging o área de preparación tendrá los archivos
-                                        # modificados agregados con add)
-
-        $ git diff <remote-repo>/<remote-branch>..<local-branch>        # diferencias entre el área de
-                                                                        # confirmación y el remoto     
-
-        $ git diff <commit-hash> <file-path>    # diferencias entre archivo indicado en <file-path>
-                                                # que se encuentra en el directorio de trabajo y el
-                                                # que está en el commit indicado con el <commit-hash>
-
-- diff
 - pull
 
 <div style="text-align:center">
@@ -394,6 +379,18 @@ git commit --amend -m "Mensaje nuevo"   # permite modificar el mensaje del
                                         # último commit no pusheado
 ```
 
+### diff
+
+```
+git diff <remote-repo>/<remote-branch>..<local-branch>  # muestra las diferencias entre los archivos
+                                                        # que fueron confirmados y los que están
+                                                        # en el remoto
+
+git diff <commit-hash> <file-path>                      # muestra las diferencias entre el archivo
+                                                        # indicado en <file-path>
+                                                        # que se
+                                                # que está en el commit indicado con el <commit-hash>
+```
 ## Cheat Sheet
 
 <div style="text-align:center">
