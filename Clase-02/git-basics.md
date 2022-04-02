@@ -149,6 +149,19 @@ Ese comando hace lo mismo que el anterior, pero llama al directorio de destino c
     </em>
 </div>
 
+## Forkear un repo
+
+<div style="text-align:center">
+    <img src="git-basics-images/git-fork.jpg" width="50%">
+    <br>
+    <em>
+        Meme generado con
+        <a href=https://imgflip.com/memegenerator>
+        Meme Generator
+        </a>
+    </em>
+</div>
+
 ## Deshacer cambios
 
 <div style="text-align:center">
