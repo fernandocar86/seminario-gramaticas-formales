@@ -4,6 +4,8 @@ Para este trabajo práctico deberán trabajar en grupos de a 3 personas. Una vez
 
 Para simplificar la enunciación de las consignas vamos a considear que _A_, _B_ y _C_ refieren a tres personas distintas, (integrantes del equipo y si), pero siempre a la misma persona. Pueden decidir entre ustedes quién es cada una.
 
+## Consignas
+
 1. **La persona A** deberá crear un repositorio público con:
    - un `README.md`
    - un `.gitignore` para Python
@@ -21,3 +23,7 @@ Para simplificar la enunciación de las consignas vamos a considear que _A_, _B_
 4. La **persona A** debe mergear la PR hecha por la **persona B** en el punto 2.
 5. La **persona A** debe mergear desde consola la rama de la **persona C**.
 6. La **persona A** debe agregar un commit en el que agregue al README una descripción de las notebooks generadas por los otros integrantes del equipo.
+
+## Fecha de entrega
+
+Este trabajo debe entregarse **antes del martes 12 de abril**.
