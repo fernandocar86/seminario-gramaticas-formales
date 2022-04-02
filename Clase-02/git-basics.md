@@ -149,10 +149,11 @@ Si mientras hacemos esto vamos mirando el archivo _config_, podremos ver cómo s
 
 Del mismo modo, tenemos indicarle a git quiénes somos y cuál es nuestro correo electrónico. Esto puede hacerse con los siguientes comandos:
 
-        $ git config --local user.name "nombre"
-        
-        $ git config --local user.email "email"
-        
+```
+git config --local user.name "nombre"
+git config --local user.email "email"
+```        
+
 El flag `--local` indica que esa configuración solo es válida para el repositorio que se está utilizando en ese momento. Otros repositorios en nuestra computadora pueden tener otra configuración. En caso de querer utilizar el mismo nombre y correo electrónico en todos los repositorios que se tengan en la computadora, se debe cambiar el flag `--local` por `--global`.
 
 **Aclaración:** No es necesario que el correo sea el mismo que está registrado en nuestro repositorio en la nube, ni que nuestro nombre sea el mismo que indicamos allí. Esta información solo es necesaria por cuestiones protocolares: cada vez que hacemos un commit, git indica el nombre y el correo de quien a fin de que, si alguien más lo necesita, pueda ponerse en contacto.
@@ -176,9 +177,53 @@ git remote -vv              # muestra la url del remoto
 Acceder a la configuración de este modo y no abriendo el archivo _config_ resulta más seguro. Podría ocurrir que, al abrir el archivo, sobreescribamos o modifiquemos de algún modo la información allí almacenada y que eso nos traiga problemas para el uso del repositorio. Además, una vez que nos acostumbramos al uso de comandos, se vuelve un poco más práctico.
 ### Actualizar un repositorio
 
-- add
 - commit
 - push
+
+Una vez que tenemos nuestro repositorio, podemos agregar los archivos contenidos en nuestra carpeta. Para esto, usamos el comando `add`:
+
+```
+git add <file-path>                 # agrega el archvio <file-path>
+
+git add <file-path-1> <file-path-2> # agrega los archivos <file-path-1>
+                                    # y <file-path-2>
+
+git add -u                          # agrega todos los archivos que se
+                                    # hayan modificado
+
+git add -A                          # agrega todos los archivos que estén
+                                    # en el repo sin importar dónde está
+                                    # ubicado el usuario
+
+git add .                           # agrega todos los archivos que estén
+                                    # en el repo DENTRO de la ubicación
+                                    # del usuario
+```
+    
+Una vez preparados los arhcivos, es necesario confirmarlos. Esto se hace mediante el siguiente comando:
+ 
+        $ git commit -m "Primer commit"
+         
+El _flag_ ```-m``` nos permite escribir un mensaje para el commit al mismos tiempo que ejecutamos el comando.
+    
+Si no se incluye este flag, no es posible escribir el mensaje en la misma línea. En ese caso, solo se escribe _git commit_ y la consola mostrará un editor que permita escribir un texto en más de una línea.
+    
+El paso anterior dejó nuestros archivos en nuestro repositorio local. Para subirlos al remoto debemos escribir:
+ 
+        $ git push origin master
+         
+```origin``` es el nombre del remoto y ```master``` es el nombre de la rama. No siempre es necesario incluir esta información. Podemos configurar el repositorio y la rama a la que se debe hacer push por defecto utilizanod alguno de los siguientes comandos:
+
+        $ git branch --set-upstream-to=<remote-branch>    # le indica a Git que la rama local en la que
+                                                          # nos encontramos se sincroniza con la rama
+                                                          # remota que le indiquemos
+        
+        $ git push --set-upstream origin <remote-branch>  # le indica a Git que la rama local pushea a
+                                                          # la rama remota indicada
+
+    
+Si ahora volvemos a la página donde se encuentra nuestro repositorio remoto y le damos _refresh_, veremos que tiene los archivos que hemos subido.
+
 
 <div style="text-align:center">
     <img src="git-basics-images/git-not-updated.jpg" width="70%">
