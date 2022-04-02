@@ -88,7 +88,22 @@ Existen dos maneras de iniciar un repositorio:
 
 ### Crear un repo en el servidor y clonarlo
 
-Para descargarnos o, más propiamente dicho, *clonarnos* un repositorio que ya existe en la nube, debemos ir a la página donde se ecuentre el repositorio en cuestión (GitHub, GitLab u otra de las existentes) y copiar su url utilizando el botón _Code_:
+Crear un repositorio es muy sencillo. Simplemente debemos ir a nuestra cuenta en [GitHub](https://github.com/) y cliquer a en el botón _New repo_ que aparecerá a la izquierda, debajo de nuestro usuario:
+
+<div style="text-align:center">
+    <img src="git-basics-images/git-new-repo.png" width="50%">
+</div>
+
+Eso nos llevará a una página que nos pedirá indicar el nombre del repositorio y, si lo deseamos, también una descripción. Podemos elegir si queremos que cualquier persona pueda ver nuestro repo (opción _Public_) o si queremos darle cierta privacidad (opción _Private_). Adicionalmente, podemos agregarle algún contenido determinado (para generar un repo vacío, dejar todas estas opciones sin marcar):
+- un archivo README.md básico (tendrá solo el nombre del repositorio y luego podremos modificarlo)
+- un `.gitignore` (en la sección x veremos cuál es su utilidad)
+- una licencia
+
+<div style="text-align:center">
+    <img src="git-basics-images/git-new-repo-settings.png" width="50%">
+</div>
+
+Una vez creado el repositorio podemos dercargarlo o, más propiamente dicho, *clonarnos*. Para ello, debemos copiar la url que aparece al cliquear el botón _Code_:
 
 <div style="text-align:center">
     <img src="git-basics-images/git-clone.png" width="60%">
@@ -110,12 +125,55 @@ git clone <url> <folder-name>
 
 Ese comando hace lo mismo que el anterior, pero llama al directorio de destino con el nombre indicado en \<folder-name>.
 
+Con este proceso se puede descargar cualquier repositorio existente (y al cual tengamos acceso y permisos suficientes), ya sea un repositorio que acabamos de crear o uno que tiene varios archivos y contenidos.
+
 ### Inicializar un repo local
 
-- init
-- gitignore
-- remote
-- config
+Supongamos que en nuestra computadora tenemos una carpeta con una serie de archivos y que queremos usar git como controlador de versiones para sus cambios. En ese caso, lo que debemos hacer es ir hasta esa carpeta y abrirla en una terminal. Una vez allí, escribimos:
+
+```
+git init
+```
+
+Este comando lo que hará es crear un subdirectoio _.git_, dentro de nuestra carpeta. Allí, se ubicarán todos los archivos necesarios del repositorio.
+
+De todos modos, el comando `init` solo inicializa la carpeta con los archivos que permitan armar la estructura necesaria para gestionar un repositorio, pero no le indica ninguna información en particular. Para cotejar esto, basta con abrir el archivo _config_ ubicado dentro de _.git_ y ver que se encuentra vacío de contenido. Nosotros debemos configurarlo.
+
+En primer lugar, debemos indicar cuál será nuestro almacenamiento remoto. Para esto, debemos disponer de un repositorio (para simplificar las cosas, vacío). Si no tenemos uno, podemos crearlo como se indicó en el [apartado anterior](#crear-un-repo-en-el-servidor-y-clonarlo). Debemos copiar su url desde el botón _Code_ y con el siguiente comando, agregar esa información a nuestro repositorio local:
+
+```
+git remote add origin <url>
+```
+
+Si mientras hacemos esto vamos mirando el archivo _config_, podremos ver cómo se va agregando la información.
+
+Del mismo modo, tenemos indicarle a git quiénes somos y cuál es nuestro correo electrónico. Esto puede hacerse con los siguientes comandos:
+
+        $ git config --local user.name "nombre"
+        
+        $ git config --local user.email "email"
+        
+El flag `--local` indica que esa configuración solo es válida para el repositorio que se está utilizando en ese momento. Otros repositorios en nuestra computadora pueden tener otra configuración. En caso de querer utilizar el mismo nombre y correo electrónico en todos los repositorios que se tengan en la computadora, se debe cambiar el flag `--local` por `--global`.
+
+**Aclaración:** No es necesario que el correo sea el mismo que está registrado en nuestro repositorio en la nube, ni que nuestro nombre sea el mismo que indicamos allí. Esta información solo es necesaria por cuestiones protocolares: cada vez que hacemos un commit, git indica el nombre y el correo de quien a fin de que, si alguien más lo necesita, pueda ponerse en contacto.
+
+### [HINT] Configuración
+
+Si bien podemos leer el archivo _config_ para ver cómo está configurado nuestro repositorio, dado que `.git` ofrece la posibilidad de acceder a esta información desde consola, es preferible realizar tal consulta mediante comandos. Algunos útiles son:
+
+```
+git config --list           # muestra toda la información
+                            # disponible en config
+        
+git config --get user.name  # muestra el nombre de usuario
+                            # puede cambiarse user.name por
+                            # user.email y obtener el correo
+                                       
+git remote -vv              # muestra la url del remoto
+                            # y su nombre asociado
+```
+
+Acceder a la configuración de este modo y no abriendo el archivo _config_ resulta más seguro. Podría ocurrir que, al abrir el archivo, sobreescribamos o modifiquemos de algún modo la información allí almacenada y que eso nos traiga problemas para el uso del repositorio. Además, una vez que nos acostumbramos al uso de comandos, se vuelve un poco más práctico.
 ### Actualizar un repositorio
 
 - add
