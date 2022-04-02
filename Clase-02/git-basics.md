@@ -192,8 +192,8 @@ Si mientras hacemos esto vamos mirando el archivo _config_, podremos ver cómo s
 Del mismo modo, tenemos indicarle a git quiénes somos y cuál es nuestro correo electrónico. Esto puede hacerse con los siguientes comandos:
 
 ```
-git config --local user.name "nombre"
-git config --local user.email "email"
+git config --local user.name <nombre>
+git config --local user.email <email>
 ```        
 
 El flag `--local` indica que esa configuración solo es válida para el repositorio que se está utilizando en ese momento. Otros repositorios en nuestra computadora pueden tener otra configuración. En caso de querer utilizar el mismo nombre y correo electrónico en todos los repositorios que se tengan en la computadora, se debe cambiar el flag `--local` por `--global`.
@@ -330,6 +330,15 @@ git pull
     </em>
 </div>
 
+Cuando forkeamos un repositorio, hacemos una bifurcación de un proyecto. De esta manera, podemos tomar el código de un repositorio ajeno, hacer una copia en nuestro repositorio remoto y trabajar en esa copia con la seguridad de que no estamos modificando el código del proyecto original. 
+
+Para forkear un repositorio simplemente debemos clickear en el botón `fork` (usualmente ubicado en la esquina superior derecha de la pantalla).
+
+<div style="text-align:center">
+    <img src="git-basics-images/git-fork.png" width="60%">
+</div>
+
+Esto hará que se genere una copia idéndica al proyecto forkeado en nuestro repo y, a partir de allí, podemos clonarlo en nuestra computadora.
 ## Deshacer cambios
 
 <div style="text-align:center">
@@ -343,10 +352,41 @@ git pull
     </em>
 </div>
 
-- restore
-- reset ~HEAD
-- reset
-- revert
+¿Quá pasa si hacemos un cambio y nos arrepentimos?
+
+En caso de haber hecho cambios pero no haberlos agregado al área de preparación:
+
+```
+git restore <file-path>              # deshace cambios realizados en <file-path> y vuelve el
+                                     # archivo a la versión en la que se encontraba antes de
+                                     # modificarlo (ya sea a la última versión confirmada, ya
+                                     # a la última actualización con el remoto)
+```
+
+Si hicimos cambios y los agregamos al área de preparación (add):
+
+```
+git restore --staged <file-path>    # quita los cambios agregados al área de preparación
+                                    # en el archivo <file-path>, pero los deja en el área
+                                    # de trabajo
+```
+
+Si ya confirmamos nuestros cambios (commit):
+
+```
+git revert <SHA>              # revierte el commit con el SHA indicado (pueden escribirse
+                                        # solamente los primeros 7 caracteres, que son los que nos
+                                        # devuelve la consola) este comando genera un nuevo commit que
+                                        # revierte lo modificado en el indicado (i.e. agrega información
+                                        # a la historia de trabajo)
+        
+git reset --soft HEAD~1     # deshace el último commit hecho pero conserva los archivos
+                            # modificados en el área de staging (este comando modifica
+                            # la historia recopilada en git porque borra el commit)
+        
+git reset --hard HEAD~1     # ídem reset --soft solo que no conserva los archivos 
+                            # modificados en el área de staging
+```
 ## Ramas
 
 <div style="text-align:center">
