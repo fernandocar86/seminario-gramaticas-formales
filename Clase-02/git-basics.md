@@ -393,6 +393,18 @@ git reset --hard HEAD~1     # ídem reset --soft solo que no conserva los archiv
     <img src="git-basics-images/git-branch.jpg" width="50%">
 </div>
 
+Cuando hablamos de ramificaciones, nos referimos a que podemos tomar una rama de desarrollo (supongamos, llamada main) y, a partir de ella, generar otra igual en la que seguiremos trabajando, pero cuyos cambios en principio no afectarán a la rama de origen.
+
+Esto es sumamente útil cuando estamos compartiendo nuestro repositorio con otras personas y no queremos que sus cambios interfieran en nuestro trabajo, pero es posible que luego queramos integrar todo, los archivos en nuestra rama con los de las ramas de los demás.
+
+Para git, una rama es simplemente un apuntador móvil que señala cada una de las confirmaciones que vamos haciendo en nuestro repositorio, lo que significa que señala cada foto que vamos tomando de nuestros archivos.
+
+Cuando creamos un repositorio, la primera rama que se crea por defecto suele ser `master` o `main` y esta es la que se considera la _rama base_, pero esto es configurable y se puede indicar cualquier otra rama en su lugar.
+
+Que una rama sea la _rama base_ implica, entre otras cosas, que cuando alguien clone el repo, la rama en la que se encontrará ni bien se genera la copia local será esta rama.
+
+Con cada confirmación que realicemos, y mientras no nos cambiemos de rama, el apuntador de la rama base (o de la rama en la que nos enontemos) irá avanzando en la historia que registra git de un archivo.
+
 - checkout -b
 - branch --list
 - branch -D
@@ -496,6 +508,21 @@ git diff <commit-hash> <file-path>          # muestra las diferencias en el arch
                                             # <file-path> entre su versión en el commit
                                             # commit indicado con el <commit-hash> y
                                             # la versión que se está trabajando
+```
+
+### checkout
+
+```
+git checkout <commit-hash> -- <file-path>   # vuelve el archivo <file-path> a la versión
+                                            # confirmada en el commit indicado en
+                                            # <commit-hash>
+
+git checkout <branch-name> -- <file-path>   # trae el archivo <file-path> desde la rama
+                                            # <branch-name> (sin importar si el archivo ya
+                                            # se encontraba en la rama a la cual se lo 
+                                            # quiere traer o no; si ya se encontraba allí,
+                                            # se pisa la versión anterior con la que se trae
+                                            # de la rama indicada)
 ```
 ## Cheat Sheet
 
