@@ -2,7 +2,17 @@
 
 ## Motivación
 
-¿Por qué necesitamos git?
+Si alguna vez hemos abordado la escritura de un trabajo medianamente extenso al que hemos necesitado ir haciéndole correcciones, probablemente nos haya pasado de terminar teniendo múltiples archivos que refieren a un momento particular de ese proceso de escritura, cada uno con una con alguna modificación o comentario específico.
+
+Esto resulta inconveniente por varios motivos:
+
+- puede que no recordemos cuál es el orden de los archivos (qué versión va primero, cuál después)
+- quizá perdamos algún cambio o corrección importante
+- tal vez una misma línea fue modificada en más de un archivo
+- si solo estamos guardando nuestros cambios en nuestra computadora y algo le sucede, perdemos el trabajo realizado
+- si estamos guardando los archivos en alguna nube, puede que no tengamos una forma sencilla de verificar que la versión en la nube está alineada con la que tenemos localmente
+
+Git es un controlador de versiones que nos puede ayudar a resolver todo esto.
 
 <div style="text-align:center">
     <img src="git-basics-images/git-motivation.jpg" width="60%">
