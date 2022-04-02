@@ -233,13 +233,16 @@ Entonces, cuando realizamos algún cambio en alguno de los archivos que git est�
 
 ```
 git diff                # muestra las diferencias en
-                        # archivos modificados
+                        # archivos modificados y
+                        # la última confirmación
 
 git diff <file-path>    # muestra las diferencias en el
-                        # archivo <file-path>
+                        # archivo <file-path> y
+                        # la última confirmación
 
 git diff --staged       # muestra las diferencias en
                         # archivos que se agregaron (add)
+                        # y la última confirmación
 ```
 
 - pull
@@ -370,6 +373,10 @@ git add -u                          # agrega todos los archivos que se
 git add -A                          # agrega todos los archivos que estén
                                     # en el repo sin importar dónde está
                                     # ubicado el usuario
+
+git add -p                          # muestra las modificaciones realizadas
+                                    # y permite elegir en cada caso si
+                                    # agregar la modificación o no
 ```
 
 ### commit
