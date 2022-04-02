@@ -117,14 +117,6 @@ git clone <url>
 
 Esto creará un directorio dentro de la carpeta con el mismo nombre que el repositorio clonado y con todos los subdirectorios necesarios para poder realizar el control de versiones de los archivos.
 
-En caso de querer clonar un repositorio indicando un nombre distinto para el directorio a crear, se debe especificar dicho nombre de la siguiente manera:
-
-```
-git clone <url> <folder-name>
-```
-
-Ese comando hace lo mismo que el anterior, pero llama al directorio de destino con el nombre indicado en \<folder-name>.
-
 Con este proceso se puede descargar cualquier repositorio existente (y al cual tengamos acceso y permisos suficientes), ya sea un repositorio que acabamos de crear o uno que tiene varios archivos y contenidos.
 
 ### Inicializar un repo local
@@ -175,10 +167,7 @@ git remote -vv              # muestra la url del remoto
 ```
 
 Acceder a la configuración de este modo y no abriendo el archivo _config_ resulta más seguro. Podría ocurrir que, al abrir el archivo, sobreescribamos o modifiquemos de algún modo la información allí almacenada y que eso nos traiga problemas para el uso del repositorio. Además, una vez que nos acostumbramos al uso de comandos, se vuelve un poco más práctico.
-### Actualizar un repositorio
-
-- commit
-- push
+### Subir archivos al remoto
 
 Una vez que tenemos nuestro repositorio, podemos agregar los archivos contenidos en nuestra carpeta. Para esto, usamos el comando `add`:
 
@@ -188,39 +177,37 @@ git add <file-path>                 # agrega el archvio <file-path>
 git add <file-path-1> <file-path-2> # agrega los archivos <file-path-1>
                                     # y <file-path-2>
 
-git add -u                          # agrega todos los archivos que se
-                                    # hayan modificado
-
-git add -A                          # agrega todos los archivos que estén
-                                    # en el repo sin importar dónde está
-                                    # ubicado el usuario
-
 git add .                           # agrega todos los archivos que estén
                                     # en el repo DENTRO de la ubicación
                                     # del usuario
 ```
     
-Una vez preparados los arhcivos, es necesario confirmarlos. Esto se hace mediante el siguiente comando:
+Una vez preparados los arhcivos, es necesario confirmarlos. Para esto, podemos usar alguno de los siguientes comandos:
  
-        $ git commit -m "Primer commit"
-         
-El _flag_ ```-m``` nos permite escribir un mensaje para el commit al mismos tiempo que ejecutamos el comando.
-    
-Si no se incluye este flag, no es posible escribir el mensaje en la misma línea. En ese caso, solo se escribe _git commit_ y la consola mostrará un editor que permita escribir un texto en más de una línea.
-    
-El paso anterior dejó nuestros archivos en nuestro repositorio local. Para subirlos al remoto debemos escribir:
- 
-        $ git push origin master
-         
-```origin``` es el nombre del remoto y ```master``` es el nombre de la rama. No siempre es necesario incluir esta información. Podemos configurar el repositorio y la rama a la que se debe hacer push por defecto utilizanod alguno de los siguientes comandos:
+```
+git commit                          # abre un editor en consola para poder
+                                    # escribir el mensaje de confirmación
 
-        $ git branch --set-upstream-to=<remote-branch>    # le indica a Git que la rama local en la que
-                                                          # nos encontramos se sincroniza con la rama
-                                                          # remota que le indiquemos
-        
-        $ git push --set-upstream origin <remote-branch>  # le indica a Git que la rama local pushea a
-                                                          # la rama remota indicada
+git commit -m "Primer commit"       # confirma con el mensaje que le sigue
+                                    # al flag -m
+```
 
+El paso anterior dejó los archivos en nuestro repositorio local, pero todavía no están subidos al remoto (¡todavía podemos perderlos si algo le sucede a nuestra computadora!). Para subirlos al remoto debemos ejecutar los siguientes comandos:
+
+```
+git branch -M main                  # cambia el nombre de la rama
+                                    # por defecto: master
+
+git push origin main                # sube los archivos al remoto
+                                    # en la url de origin
+                                    # bajo la rama main
+```
+
+No siempre es necesario incluir la información del remoto y la rama. Podemos configurar el repositorio y la rama con la que se sincroniza el repositorio local utilizando flag al pushear:
+
+```       
+git push --set-upstream origin <remote-branch>
+```
     
 Si ahora volvemos a la página donde se encuentra nuestro repositorio remoto y le damos _refresh_, veremos que tiene los archivos que hemos subido.
 
@@ -238,6 +225,7 @@ Si ahora volvemos a la página donde se encuentra nuestro repositorio remoto y l
     </em>
 </div>
 
+### Actualizar el repo local
 - pull
 - diff
 
@@ -348,9 +336,33 @@ Si ahora volvemos a la página donde se encuentra nuestro repositorio remoto y l
 
 - qué son
 
-## Referencias
+## [HINT] Flags útiles
 
-- [Pro Git Book (versión en español)](https://git-scm.com/book/en/v2)
+### clone
+
+```
+git clone <url> <folder-name>       # permite clonar el repo a una
+                                    # carpeta con el nombre que
+                                    # indiquemos en <folder-name>
+```
+
+### add
+
+```
+git add -u                          # agrega todos los archivos que se
+                                    # hayan modificado
+
+git add -A                          # agrega todos los archivos que estén
+                                    # en el repo sin importar dónde está
+                                    # ubicado el usuario
+```
+
+### commit
+
+```
+git commit --amend -m "Mensaje nuevo"   # permite modificar el mensaje del
+                                        # último commit no pusheado
+```
 
 ## Cheat Sheet
 
@@ -359,6 +371,11 @@ Si ahora volvemos a la página donde se encuentra nuestro repositorio remoto y l
         <img src="git-cheat-sheet.png" alt="Git Cheat Sheet" width="50%">
     </a>
 </div>
+
+## Referencias
+
+- [Pro Git Book (versión en español)](https://git-scm.com/book/en/v2)
+
 
 {% include copybutton.html %}
 
