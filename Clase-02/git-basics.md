@@ -414,7 +414,26 @@ git checkout -b <branch-name>
 Este comando creará un nuevo apuntador llamado \<new-branch> que estará basado en la rama desde la cual fue creado. Esto significa que, hasta que hagamos alguna modificación en esta nueva rama o en aquella desde la que partimos, ambas serán iguales. 
 Además, al mismo tiempo que crea la rama, el comando nos moverá a ese apuntador. Cualquier cambio que hagamos será seguido por ese apuntador y no por aquel donde nos encontrábamos previamente.
 
-- checkout -b
+Si, en cambio, solo queremos crear una nueva rama pero no movernos hacia ella, debemos ejecutar el siguiente comando:
+
+```
+git branch <branch-name>
+```
+La nueva rama creada también será idéntica a aquella desde la cual se la creó hasta que le hagamos alguna modificación.
+
+<div style="text-align:center">
+    <img src="git-basics-images/git-new-branch.png" width="50%">
+    <br>
+    <em>
+        Imagen tomada de
+        <a href=https://aprendeconalf.es/docencia/git/manual/gestion-ramas>
+        Aprender con Alf
+        </a>
+    </em>
+</div>
+
+Para movernos entre
+
 - branch --list
 - branch -D
 - push --delete origin
