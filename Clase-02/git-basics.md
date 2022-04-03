@@ -374,11 +374,11 @@ git restore --staged <file-path>    # quita los cambios agregados al área de pr
 Si ya confirmamos nuestros cambios (commit):
 
 ```
-git revert <SHA>              # revierte el commit con el SHA indicado (pueden escribirse
-                                        # solamente los primeros 7 caracteres, que son los que nos
-                                        # devuelve la consola) este comando genera un nuevo commit que
-                                        # revierte lo modificado en el indicado (i.e. agrega información
-                                        # a la historia de trabajo)
+git revert <SHA>            # revierte el commit con el SHA indicado 
+                            # pueden escribirse solamente los primeros 7 caracteres
+                            # este comando genera un nuevo commit que
+                            # revierte lo modificado en el indicado
+                            # (i.e. agrega in información a la historia de trabajo)
         
 git reset --soft HEAD~1     # deshace el último commit hecho pero conserva los archivos
                             # modificados en el área de staging (este comando modifica
@@ -432,11 +432,21 @@ La nueva rama creada también será idéntica a aquella desde la cual se la cre�
     </em>
 </div>
 
-Para movernos entre
+Para movernos entre branches usamos el siguiente comando:
 
-- branch --list
-- branch -D
-- push --delete origin
+```
+git checkout <branch-name>
+```
+
+Para poder ejecutar este comando es necesario tener el directorio de trabajo de la rama en la que nos encontremos limpio. De lo contrario, git nos pedirá que subamos nuestros cambios al remoto o los descartemos.
+
+Si queremos borrar una rama en el repositorio local, debemos usar:
+
+```
+git branch -D <branch-name>
+```
+
+Este comando borrará la rama de mi repo local, pero no afectará la que se encuentra en el remoto.
 
 <div style="text-align:center">
     <img src="git-basics-images/git-branch-everywhere.jpg" width="60%">
@@ -462,7 +472,22 @@ Para movernos entre
     </em>
 </div>
 
-- merge
+Si deseamos fusionar los cambios de una rama en otra, debemos movernos a aquella en la que queremos importar los cambios utilizando el comando `checkout` y llevar los cambios de la rama deseada con el comando `merge`:
+
+```
+git checkout <branch-A>                     # nos mueve a la rama que recibirá
+                                            # los cambios
+
+git pull                                    # asegura que la rama esté actualizada
+
+git fetch <remote> <branch-B>:<branch-B>    # asegura de que la rama cuyos cambios
+                                            # queremos introducir esté sincronizada
+                                            # con el remoto <remote>
+        
+git merge <branch-B>                        # importa los cambios de la rama
+                                            # <branch-B> en aquella en la que
+                                            # nos encontramos (<branch-A>)
+```
 
 ### Resolución de conflictos
 
@@ -491,17 +516,29 @@ Para movernos entre
     </em>
 </div>
 
-- qué son
+Cuando hacemos un merge, una rama A (en la que estamos posicionados) se trae los cambios de otra rama B.
+
+En una pull request (en GitHub) o una merge request (en GitLab) es la rama B la que le pide a la rama A que incorpore sus cambios.
+
+Esta acción debe hacerse desde la interfaz de la página del servidor donde se encuentre el remoto.
+
+Para ello, debemos ir a la página del repositorio remoto, a la sección  _Pull requests_ y cliquear en el botón _New pull request_.
+
+<div style="text-align:center">
+    <img src="git-basics-images/git-pull-requests.png" width="50%">
+</div>
+
+
+<div style="text-align:center">
+    <img src="git-basics-images/git-new-pull-request.png" width="50%">
+</div>
+
+
+Esta no es la única forma de hacer esto. En general, cuando actualizamos una rama, al ingresar al remoto GitHub nos sugiere la posibilidad de comparar ramas y hacer una PR.
+
+**Aclaración:** Tanto el merge como el MR o PR pueden tener conflictos si la rama que se intenta fusionar no tiene (al momento de hacer la fusión) todos los cambios que tiene la rama a la que se quiere fusionar (i.e. debe tener en su historial los commits de la rama a la cual se quieren fusionar los cambios). En caso de existir conflictos, se los deberá resolver como se detalla en la [sección anterior](#resolución-de-conflictos).
 
 ## [HINT] Flags útiles
-
-### clone
-
-```
-git clone <url> <folder-name>       # permite clonar el repo a una
-                                    # carpeta con el nombre que
-                                    # indiquemos en <folder-name>
-```
 
 ### add
 
@@ -516,6 +553,35 @@ git add -A                          # agrega todos los archivos que estén
 git add -p                          # muestra las modificaciones realizadas
                                     # y permite elegir en cada caso si
                                     # agregar la modificación o no
+```
+
+### branch
+
+```
+git branch --list       # muestra la lista de ramas
+```
+
+### checkout
+
+```
+git checkout <commit-hash> -- <file-path>   # vuelve el archivo <file-path> a la versión
+                                            # confirmada en el commit indicado en
+                                            # <commit-hash>
+
+git checkout <branch-name> -- <file-path>   # trae el archivo <file-path> desde la rama
+                                            # <branch-name> (sin importar si el archivo ya
+                                            # se encontraba en la rama a la cual se lo 
+                                            # quiere traer o no; si ya se encontraba allí,
+                                            # se pisa la versión anterior con la que se trae
+                                            # de la rama indicada)
+```
+
+### clone
+
+```
+git clone <url> <folder-name>       # permite clonar el repo a una
+                                    # carpeta con el nombre que
+                                    # indiquemos en <folder-name>
 ```
 
 ### commit
@@ -538,20 +604,12 @@ git diff <commit-hash> <file-path>          # muestra las diferencias en el arch
                                             # la versión que se está trabajando
 ```
 
-### checkout
+### push
 
 ```
-git checkout <commit-hash> -- <file-path>   # vuelve el archivo <file-path> a la versión
-                                            # confirmada en el commit indicado en
-                                            # <commit-hash>
-
-git checkout <branch-name> -- <file-path>   # trae el archivo <file-path> desde la rama
-                                            # <branch-name> (sin importar si el archivo ya
-                                            # se encontraba en la rama a la cual se lo 
-                                            # quiere traer o no; si ya se encontraba allí,
-                                            # se pisa la versión anterior con la que se trae
-                                            # de la rama indicada)
+git push <remote> --delete <branch-nam>     # borra la rama en el remoto
 ```
+
 ## Cheat Sheet
 
 <div style="text-align:center">
