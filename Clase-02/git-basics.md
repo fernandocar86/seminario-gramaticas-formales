@@ -2,7 +2,7 @@
 
 ## Motivación
 
-Si alguna vez hemos abordado la escritura de un trabajo medianamente extenso al que hemos necesitado ir haciéndole correcciones, probablemente nos haya pasado de terminar teniendo múltiples archivos que refieren a un momento particular de ese proceso de escritura, cada uno con una con alguna modificación o comentario específico.
+Si alguna vez hemos abordado la escritura de un trabajo medianamente extenso al que hemos necesitado ir haciéndole correcciones, probablemente nos haya pasado de terminar teniendo múltiples archivos que refieren a un momento particular de ese proceso de escritura, cada uno con alguna modificación o comentario específico.
 
 Esto resulta inconveniente por varios motivos:
 
@@ -29,7 +29,7 @@ Git es un controlador de versiones que nos puede ayudar a resolver todo esto.
 
 Un controlador de versiones es un sistema que permite crear, modificar y eliminar archivos registrando cada uno de esos cambios en un historial, de manera tal que luego podamos revertir las modificaciones realizadas, comparar distintas versiones del archivo en el que estamos trabajando y elegir sobre cuál de ellas queremos continuar trabajando.
 
-Esto es posible porque cada versión de un archivo es registrada como una foto en la que se encontraba ese proyecto en un momento del tiempo en particular.
+Esto es posible porque cada versión de un archivo es registrada como una foto de cómo se encontraba ese proyecto en un momento del tiempo en particular.
 
 Existen tres tipos de sistemas de control de cambios (VCS, por sus siglas en inglés):
 
@@ -60,7 +60,7 @@ GitHub es un servidor remoto al cual se conecta nuestra computadora cada vez que
     </em>
 </div>
 
-Git me brinda una serie de comandos que me permiten interactuar con el servidor en donde alojaré mis arcvhivos, pero el servidor que elija para esto es indistinto (por supuesto, siempre que sea un servidor compatible con git).
+Git me brinda una serie de comandos que me permiten interactuar con el servidor en donde alojaré mis archivos, pero el servidor que elija para esto es indistinto (por supuesto, siempre que sea un servidor compatible con git).
 
 <div style="text-align:center">
     <img src="git-basics-images/git-servers.jpg" width="50%">
@@ -189,7 +189,7 @@ git remote add origin <url>
 
 Si mientras hacemos esto vamos mirando el archivo _config_, podremos ver cómo se va agregando la información.
 
-Del mismo modo, tenemos indicarle a git quiénes somos y cuál es nuestro correo electrónico. Esto puede hacerse con los siguientes comandos:
+Del mismo modo, tenemos que indicarle a git quiénes somos y cuál es nuestro correo electrónico. Esto puede hacerse con los siguientes comandos:
 
 ```
 git config --local user.name <nombre>
@@ -198,7 +198,7 @@ git config --local user.email <email>
 
 El flag `--local` indica que esa configuración solo es válida para el repositorio que se está utilizando en ese momento. Otros repositorios en nuestra computadora pueden tener otra configuración. En caso de querer utilizar el mismo nombre y correo electrónico en todos los repositorios que se tengan en la computadora, se debe cambiar el flag `--local` por `--global`.
 
-**Aclaración:** No es necesario que el correo sea el mismo que está registrado en nuestro repositorio en la nube, ni que nuestro nombre sea el mismo que indicamos allí. Esta información solo es necesaria por cuestiones protocolares: cada vez que hacemos un commit, git indica el nombre y el correo de quien a fin de que, si alguien más lo necesita, pueda ponerse en contacto.
+**Aclaración:** No es necesario que el correo sea el mismo que está registrado en nuestro repositorio en la nube, ni que nuestro nombre sea el mismo que indicamos allí. Esta información solo es necesaria por cuestiones protocolares: cada vez que hacemos un commit, git indica el nombre y el correo de quien hizo los cambios a fin de que, si alguien más lo necesita, pueda ponerse en contacto.
 
 ### [HINT] Configuración
 
@@ -229,10 +229,10 @@ git add <file-path-1> <file-path-2> # agrega los archivos <file-path-1>
 
 git add .                           # agrega todos los archivos que estén
                                     # en el repo DENTRO de la ubicación
-                                    # del usuario
+                                    # en la que se encuentra el usuario
 ```
     
-Una vez preparados los arhcivos, es necesario confirmarlos. Para esto, podemos usar alguno de los siguientes comandos:
+Una vez preparados los archivos, es necesario confirmarlos. Para esto, podemos usar alguno de los siguientes comandos:
  
 ```
 git commit                          # abre un editor en consola para poder
@@ -253,7 +253,7 @@ git push origin main                # sube los archivos al remoto
                                     # bajo la rama main
 ```
 
-No siempre es necesario incluir la información del remoto y la rama. Podemos configurar el repositorio y la rama con la que se sincroniza el repositorio local utilizando flag al pushear:
+No siempre es necesario incluir la información del remoto y la rama. Podemos configurar el repositorio y la rama con la que se sincroniza el repositorio local utilizando un flag al pushear:
 
 ```       
 git push --set-upstream origin <remote-branch>
@@ -310,7 +310,7 @@ git diff --staged       # muestra las diferencias en
 
 Cada nuevo commit que hacemos es una especie de foto que guarda git de nuestros archivos. Podemos pensar esa secuencia de fotos como una suerte de línea temporal en la que podemos volver hacia atrás si queremos recuperar información que luego fue modificada.
 
-Pero para esto es importante tener nuestro repositorio local, ese sobre el que trabajamos y en el que modificamos nuestros archivos, actualizado. Si no vamos alineando nuestro repositorio local con el remoto y descargándole cada tanto las actualizaciones que otras personas (si trabajamos de forma colborativa) o nosotros mismos (si tenemos más de una computadora o si editamos algún archivo desde la interfaz web) realizamos, git podría no dejarnos pushear, debido a que en el remoto hay nuevos cambios que no tenemos de forma local y, por ende, los archivos no se encuentran en su última versión.
+Pero para esto es importante tener nuestro repositorio local, ese sobre el que trabajamos y en el que modificamos nuestros archivos, actualizado. Si no vamos alineando nuestro repositorio local con el remoto y descargándole cada tanto las actualizaciones que otras personas (si trabajamos de forma colaborativa) o nosotros mismos (si tenemos más de una computadora o si editamos algún archivo desde la interfaz web) realizamos, git podría no dejarnos pushear, debido a que en el remoto hay nuevos cambios que no tenemos de forma local y, por ende, los archivos no se encuentran en su última versión.
 
 Para descargar la última versión de los archivos usamos el siguiente comando:
 
@@ -338,7 +338,7 @@ Para forkear un repositorio simplemente debemos clickear en el botón `fork` (us
     <img src="git-basics-images/git-fork.png" width="60%">
 </div>
 
-Esto hará que se genere una copia idéndica al proyecto forkeado en nuestro repo y, a partir de allí, podemos clonarlo en nuestra computadora.
+Esto hará que se genere una copia idéntica al proyecto forkeado en nuestro repo y, a partir de allí, podemos clonarlo en nuestra computadora.
 ## Deshacer cambios
 
 <div style="text-align:center">
@@ -403,7 +403,7 @@ Cuando creamos un repositorio, la primera rama que se crea por defecto suele ser
 
 Que una rama sea la _rama base_ implica, entre otras cosas, que cuando alguien clone el repo, la rama en la que se encontrará ni bien se genera la copia local será esta rama.
 
-Con cada confirmación que realicemos, y mientras no nos cambiemos de rama, el apuntador de la rama base (o de la rama en la que nos enontemos) irá avanzando en la historia que registra git de un archivo.
+Con cada confirmación que realicemos, y mientras no nos cambiemos de rama, el apuntador de la rama base (o de la rama en la que nos encontremos) irá avanzando en la historia que registra git de un archivo.
 
 Para crear una nueva rama, podemos usar el siguiente comando:
 
