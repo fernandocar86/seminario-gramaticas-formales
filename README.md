@@ -69,7 +69,7 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
     <td>19/04/22</td>
     <td>
       <ul>
-        <li>Gramáticas Independientes de contexto. Definición; axiomas de dominancia y de precedencia. Algunas limitaciones</li>
+        <li>Gramáticas Independientes de contexto. Definición; axiomas de dominancia y de precedencia. Algunas limitaciones.</li>
         <li>Parsers: RecursiveDescentParser (NLTK), Shift-ReduceParser (NLTK), ChartParser (NLTK). Freeling.</li>
       </ul>
     </td>
