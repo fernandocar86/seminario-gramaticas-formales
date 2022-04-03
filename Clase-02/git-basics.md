@@ -455,6 +455,28 @@ git reset --soft HEAD~1     # deshace el último commit hecho pero conserva los 
 git reset --hard HEAD~1     # ídem reset --soft solo que no conserva los archivos 
                             # modificados en el área de staging
 ```
+
+## [HINT] Rastrear cambios
+
+Puede que a veces nos interese rastrear los cambios dentro de un repositorio. El comando `log` nos permite visualizar los commits realizados, qué archivos modificaron y cuáles fueron los cambios realizados, entre otras cosas:
+
+```
+git log                         # permite visualizar todos los commits, sus mensajes de
+                                # confirmación, autor y fecha de realización
+
+git log --stat                  # ídem anterior pero muestra además cuáles fueron los
+                                # archivos modificados
+
+git log -p <file-path>          # ídem anterior pero muestra además las modificaciones
+                                # realizadas
+
+git log --oneline               # ídem log pero muestra los commits en una sola línea
+
+git log <file-path>             # permite visualizar los commits que han modificado el
+                                # archivo <file-path>   
+    
+git log --author=<author-name>  # muestra los commits realizador por <author-name>
+
 ## Ramas
 
 <div style="text-align:center">
