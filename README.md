@@ -93,76 +93,148 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
   <tr>
     <td><a href="./Clase-06/index.md">06</a></td>
     <td>03/05/22</td>
-    <td></td>
-    <td></td>
+    <td>
+      <ul>
+        <li>Repaso de la gramática generativa. El minimalismo. Operaciones básicas: ensamble interno, ensamble externo, agree. Teoría de X'. Teoría de la frase desnuda. Estructura básica de la cláusula.</li>
+        <li>Gramáticas minimalistas (Minimalist grammars), Conflated Minimalist Grammars, Phase-based Minimalist Grammars, Relativized Minimalist Grammars. Las operaciones de transferencia, selección, ensamble (Merge), el léxico y los ítems léxicos.</li>
+        <li>Implementación en Prolog y Python: mgpx parser e implementación del minimalismo de Alex Warstadt.</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li><a href="./Clase-06/ParserMinimalistaStabler1/instructions.md">Instrucciones para correr el parser minimalista en Prolog</a></li>
+      </ul>
+    </td>
   </tr>
   <tr>
     <td><a href="./Clase-07/index.md">07</a></td>
     <td>10/05/22</td>
-    <td></td>
-    <td></td>
+    <td>
+      <ul>
+        <li>Gramáticas minimalistas con movimiento de núcleos, adjunción, incorporación.</li>
+        <li>Implementación en Prolog y Python: mghapx parser.</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li><a href="./Clase-07/ParserMinimalistaStabler2/instructions.md">Instrucciones para correr el parser minimalista en Prolog</a></li>
+      </ul>
+    </td>
   </tr>
   <tr>
     <td><a href="./Clase-08/index.md">08</a></td>
     <td>17/05/22</td>
-    <td></td>
-    <td></td>
+    <td>
+      <ul>
+        <li>Nociones básicas de las gramáticas de unificación y rasgos: matrices de rasgos, rasgos simples y complejos, unificación y subsunción.</li>
+        <li>Implementación mediante Feature-based grammars en NLTK.</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li><a href="./Clase-08/Clase-08-jupyter.md">Visualización de Notebook</a></li>
+      </ul>
+    </td>
   </tr>
   <tr>
     <td><a href="./Clase-09/index.md">09</a></td>
     <td>24/05/22</td>
-    <td></td>
+    <td>
+      <ul>
+        <li>LFG: estructura-c, estructura-f, estructura-a, ecuación funcional y descripción funcional.</li>
+        <li>Implementaciones computacionales: XLE (demo).</li>
+      </ul>
+    </td>
     <td></td>
   </tr>
   <tr>
     <td><a href="./Clase-10/index.md">10</a></td>
     <td>31/05/22</td>
-    <td></td>
-    <td></td>
+    <td>
+      <ul>
+        <li>HPSG: esquemas de frase, reglas léxicas y structure sharing.</li>
+        <li>Minimal Recursion Semantics.</li>
+        <li>Implementaciones computacionales: ACE, pydelphin.</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li><a href="./Clase-10/Clase-10-jupyter.md">Visualización de Notebook</a></li>
+      </ul>
+    </td>
   </tr>
   <tr>
     <td><a href="./Clase-11/index.md">11</a></td>
     <td>07/06/22</td>
-    <td></td>
-    <td></td>
+    <td>
+      <ul>
+        <li>Gramáticas de dependencias. La noción de dependencia. Motivaciones para las gramáticas de dependencias. Tipos de dependencias: semánticas, sintácticas y morfológicas.</li>
+        <li>Definición formal. Axiomas de las Gramáticas de dependencias: condición de raíz única, conectividad, no multidominancia, proyectividad.</li>
+        <li>Implementación computacional; Spacy, MaltParser, parser de dependencias de Freeling, PyStanford Dependencies.</li>
+      <ul>
+    </td>
+    <td>
+      <ul>
+        <li><a href="Clase-11/Clase-11-jupyter.md">Visualización de Notebook</a></li>
+      </ul>
+    </td>
   </tr>
   <tr>
     <td><a href="./Clase-12/index.md">12</a></td>
     <td>14/06/22</td>
-    <td></td>
-    <td></td>
+    <td>
+      <ul>
+        <li>Gramática de dependencias como cuádrupla: relaciones, terminales, categorías, funciones de asignación.</li>
+        <li>Implementación computacional: ProjectiveDependencyParser de NLTK en Python.</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li><a href="Clase-12/Clase-12-jupyter.md">Visualización de Notebook</a></li>
+      </ul>
+    </td>
   </tr>
   <tr>
     <td><a href="./Clase-13/index.md">13</a></td>
     <td>21/06/22</td>
-    <td></td>
-    <td></td>
+    <td>
+      <ul>
+        <li>Gramáticas categoriales: Conectivas. Reglas: aplicación, asociatividad, composición, ascenso/Regla de Geech, división. Representación de la estructura sintáctica en términos de funciones y argumentos.</li>
+        <li>Implementación de una gramática categorial clásica con el parser NLTK. CCG en Python. Proyecto OpenCCG.</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li><a href="./Clase-13/Clase-13-jupyter.md">Visualización de Notebook</a></li>
+      </ul>
+    </td>
   </tr>
   <tr>
     <td><a href="./Clase-14/index.md">14</a></td>
     <td>28/06/22</td>
-    <td></td>
-    <td></td>
+    <td>
+      <ul>
+        <li>Notación lambda. Paralelismo entre la sintaxis y la semántica. Reglas léxicas.</li>
+        <li>Gramáticas categoriales generalizadas. Implementación en NLTK y CCG.</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li><a href="./Clase-14/Clase-14-jupyter.md">Visualización de Notebook</a></li>
+      </ul>
+    </td>
   </tr>
   <tr>
     <td><a href="./Clase-15/index.md">15</a></td>
     <td>05/05/22</td>
-    <td>Cierre de cursada.</td>
+    <td>
+      <ul>
+        <li>Cierre de cursada.</li>
+      </ul>
+    </td>
     <td></td>
   </tr>
 </table>
 
-| Temas  | Materiales |
-| ------ | ---------- |
-| Repaso de la gramática generativa. El minimalismo. Operaciones básicas: ensamble interno, ensamble externo, agree. Teoría de X'. Teoría de la frase desnuda. Estructura básica de la cláusula. <br>Gramáticas minimalistas (Minimalist grammars), Conflated Minimalist Grammars, Phase-based Minimalist Grammars, Relativized Minimalist Grammars. Las operaciones de transferencia, selección, ensamble (Merge), el léxico y los ítems léxicos.<br>Implementación en Prolog y Python: mgpx parser e implementación del minimalismo de Alex Warstadt | [Instrucciones para correr el parser minimalista en Prolog](Clase-06/ParserMinimalistaStabler1/instructions.md) |
-| Gramáticas minimalistas con movimiento de núcleos, adjunción, incorporación.<br>Implementación en Prolog y Python: mghapx parser. | [Instrucciones para correr el parser minimalista en Prolog](Clase-07/ParserMinimalistaStabler2/instructions.md)
-| Nociones básicas de las gramáticas de unificación y rasgos: matrices de rasgos, rasgos simples y complejos, unificación y subsunción.<br>Implementación mediante Feature-based grammars en NLTK. | - [Visualización de Notebook](Clase-08/Clase-08-jupyter.md) |
-| LFG: estructura-c, estructura-f, estructura-a, ecuación funcional y descripción funcional. Implementaciones computacionales: XLE (demo). | |
-| HPSG: esquemas de frase, reglas léxicas y structure sharing.<br>Minimal Recursion Semantics.<br>Implementaciones computacionales: ACE, pydelphin. | - [Visualización de Notebook](Clase-10/Clase-10-jupyter.md) |
-| Gramáticas de dependencias. La noción de dependencia. Motivaciones para las gramáticas de dependencias. Tipos de dependencias: semánticas, sintácticas y morfológicas.<br>Definición formal. Axiomas de las Gramáticas de dependencias: condición de raíz única, conectividad, no multidominancia, proyectividad. <br>Implementación computacional; Spacy, MaltParser, parser de dependencias de Freeling, PyStanford Dependencies. | - [Visualización de Notebook](Clase-11/Clase-11-jupyter.md) |
-| Gramática de dependencias como cuádrupla: relaciones, terminales, categorías, funciones de asignación.<br>Implementación computacional: ProjectiveDependencyParser de NLTK en Python | - [Visualización de Notebook](Clase-12/Clase-12-jupyter.md) |
-| Gramáticas categoriales: Conectivas. Reglas: aplicación, asociatividad, composición, ascenso/Regla de Geech, división. Representación de la estructura sintáctica en términos de funciones y argumentos.<br>Implementación de una gramática categorial clásica con el parser NLTK. CCG en Python. Proyecto OpenCCG.| - [Visualización de Notebook](Clase-13/Clase-13-jupyter.md) |
-| Notación lambda. Paralelismo entre la sintaxis y la semántica. Reglas léxicas.<br>Gramáticas categoriales generalizadas. Implementación en NLTK y CCG. | - [Visualización de Notebook](Clase-14/Clase-14-jupyter.md) |
-| Cierre de cursada | |
 
 {% include additional_content.html %}
