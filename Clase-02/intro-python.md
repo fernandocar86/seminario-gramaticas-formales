@@ -20,10 +20,10 @@ Para ejecutarl Jupyter Notebook simplmente deben abrir una consola o terminal (`
 También es posible ejecutar Python directamente en la consola. Aquí lo que se hace es invocar lo que se llama un _intérprete_, un programa que lee y ejecuta código escitro en determinado lenguaje. Para esto, una vez abierta la consola, deben escribir "python" y apretar _enter_. Hecho esto, podrán leer algo como lo siguiente:
 
 ```{python}
-Python 3.8.10 (default, Mar 27 2022, 23:42:37)
+Python 3.8.10 (default, Mar 27 2022, 23:42:37) 
 [GCC 9.4.0] on linux
 Type "help", "copyright", "credits" or "license" for more information.
->>>
+>>> 
 ```
 
 Allí se les indica que el intérprete se inició con éxito y que están utilizando la versión 3.8.10. Luego del indicador `>>>` pueden escribir sus comandos para ser ejecutados.
@@ -118,54 +118,6 @@ En tanto lenguaje, Python tiene elementos que cumplen funciones específicas. En
 
 
 
-
-```python
-3 > 1    # mayor (para mayor o igual usar: >=)
-```
-
-
-
-
-    True
-
-
-
-
-```python
-10 <= 90    # menor o igual (para menor usar <)
-```
-
-
-
-
-    True
-
-
-
-
-```python
-0 >= 9
-```
-
-
-
-
-    False
-
-
-
-
-```python
-3 == (6/2)    # igualdad
-```
-
-
-
-
-    True
-
-
-
 ## Variables
 
 Los **valores** son representaciones de objetos que pueden ser manipulados por un programa de computación. Cada valor tiene un tipo determinado (ahondaremos en esto en el [siguiente apartado](#Tipos-de-objetos)). Los números utilizados anteriormente (enteros o racionales) son ejemplos de valores.
@@ -212,9 +164,9 @@ variable
 
     NameError                                 Traceback (most recent call last)
 
-    Input In [14], in <cell line: 1>()
+    <ipython-input-10-1748287bc46a> in <module>
     ----> 1 variable
-
+    
 
     NameError: name 'variable' is not defined
 
@@ -234,7 +186,7 @@ No obstante sí existen algunas reglas que se deben seguir a la hora de definir 
 ```
 
 
-      Input In [15]
+      File "<ipython-input-11-bd5ff5b2efeb>", line 1
         1ravariable = 'hola'
          ^
     SyntaxError: invalid syntax
@@ -273,7 +225,7 @@ v@riable = 'variable'
 ```
 
 
-      Input In [18]
+      File "<ipython-input-14-f732e74b984e>", line 1
         v@riable = 'variable'
         ^
     SyntaxError: cannot assign to operator
@@ -288,7 +240,7 @@ class = 'ilegal assigment'
 ```
 
 
-      Input In [19]
+      File "<ipython-input-15-e19c9b8244b3>", line 1
         class = 'ilegal assigment'
               ^
     SyntaxError: invalid syntax
@@ -427,21 +379,15 @@ type(rac_str)
 
 
 ```python
-rac_float = float(float_str)
+rac_float = float(rac_str)
 type(rac_float)
 ```
 
 
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    Input In [25], in <cell line: 1>()
-    ----> 1 rac_float = float(float_str)
-          2 type(rac_float)
 
 
-    NameError: name 'float_str' is not defined
+    float
+
 
 
 También es posible convertir un número de entero a float y viceversa. En el primer caso perderemos los decimales y en el segundo, se agregará el punto flotante y un cero luego.
@@ -495,6 +441,235 @@ float(num_int)
 
 
 ### Booleanos
+
+Los booleanos son un tipo de valor que nos indica si algo es cierto o falso.
+
+
+```python
+True
+```
+
+
+
+
+    True
+
+
+
+
+```python
+False
+```
+
+
+
+
+    False
+
+
+
+
+```python
+type(True)
+```
+
+
+
+
+    bool
+
+
+
+Podemos obtener este tipo de valores como resultado de expresiones booleanas:
+
+
+```python
+3 > 1       # mayor (para mayor o igual usar: >=)
+```
+
+
+
+
+    True
+
+
+
+
+```python
+10 <= 90    # menor o igual (para menor usar <)
+```
+
+
+
+
+    True
+
+
+
+
+```python
+0 >= 9
+```
+
+
+
+
+    False
+
+
+
+
+```python
+3 == (6/2)  # igualdad
+```
+
+
+
+
+    True
+
+
+
+#### Operadores relacionales
+
+```
+x != y      # x es distinta de y
+x > y       # x es más grande que y
+x < y       # x es más chica que y
+x >= y      # x es es más grande o igual que y
+x <= y      # x es más chica o igual que y
+```
+
+#### Operadores lógicos
+
+```
+x and y     # CONJUNCIÓN: devuelve True si tanto x como y son verdaderas
+x or y      # DISYUNCIÓN INCLUSIVA: devuelve True si x es verdadera y/o y también lo es
+not x       # NEGACIÓN: devuelve True si x es falsa
+```
+
+
+```python
+x = 3 > 2
+x
+```
+
+
+
+
+    True
+
+
+
+
+```python
+y = type(3) == int
+y
+```
+
+
+
+
+    True
+
+
+
+
+```python
+z = len([]) == 4
+z
+```
+
+
+
+
+    False
+
+
+
+
+```python
+x and y
+```
+
+
+
+
+    True
+
+
+
+
+```python
+x and z
+```
+
+
+
+
+    False
+
+
+
+
+```python
+x or y
+```
+
+
+
+
+    True
+
+
+
+
+```python
+y or z
+```
+
+
+
+
+    True
+
+
+
+
+```python
+z or z
+```
+
+
+
+
+    False
+
+
+
+
+```python
+not x
+```
+
+
+
+
+    False
+
+
+
+
+```python
+not z
+```
+
+
+
+
+    True
+
+
 
 ### Listas
 
@@ -710,9 +885,9 @@ lista[4]
 
     IndexError                                Traceback (most recent call last)
 
-    Input In [45], in <cell line: 1>()
+    <ipython-input-58-09bfed834fa2> in <module>
     ----> 1 lista[4]
-
+    
 
     IndexError: list index out of range
 
@@ -1267,21 +1442,21 @@ y.difference(x)       # elementos que están en y pero no en x (y-x)
 ```python
 from itertools import product  # vamos a volver a esto en un rato
 
-list(product(x,y))  # con product puedo ver el producto cartesiano
+list(product(x,y))             # con product puedo ver el producto cartesiano
 ```
 
 
 
 
-    [('n', 'z'),
+    [('n', 'w'),
+     ('n', 'z'),
      ('n', 'm'),
-     ('n', 'w'),
-     ('o', 'z'),
-     ('o', 'm'),
-     ('o', 'w'),
+     ('m', 'w'),
      ('m', 'z'),
      ('m', 'm'),
-     ('m', 'w')]
+     ('o', 'w'),
+     ('o', 'z'),
+     ('o', 'm')]
 
 
 
@@ -1293,15 +1468,15 @@ list(product(y,x))
 
 
 
-    [('z', 'n'),
-     ('z', 'o'),
-     ('z', 'm'),
-     ('m', 'n'),
-     ('m', 'o'),
-     ('m', 'm'),
-     ('w', 'n'),
+    [('w', 'n'),
+     ('w', 'm'),
      ('w', 'o'),
-     ('w', 'm')]
+     ('z', 'n'),
+     ('z', 'm'),
+     ('z', 'o'),
+     ('m', 'n'),
+     ('m', 'm'),
+     ('m', 'o')]
 
 
 
@@ -1350,18 +1525,14 @@ bla
 
     NameError                                 Traceback (most recent call last)
 
-    Input In [98], in <cell line: 1>()
+    <ipython-input-111-047595d0fae9> in <module>
     ----> 1 bla
-
+    
 
     NameError: name 'bla' is not defined
 
 
 ## Funciones
-
-## Iteraciones
-
-## Condicionales
 
 ## Librerías
 
@@ -1377,3 +1548,7 @@ import
 **Referencias**
 
 - [Downey, A., Brooks Jr, F. P., Peek, J., Todino, G., Strang, J., Robbins, A., & Rosenblatt, B. (2012). Think python. 2.0. Green Tea Press Supplemental Material:.](https://greenteapress.com/thinkpython2/thinkpython2.pdf)
+
+{% include additional_content.html %}
+
+{% include copybutton.html %}
