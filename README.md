@@ -17,6 +17,7 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
 
 ## Cronograma de clases y materiales
 
+
 <table>
   <tr>
     <th>Clase</th>
