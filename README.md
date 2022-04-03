@@ -243,4 +243,5 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
   </tr>
 </table>
 
+
 {% include additional_content.html %}
