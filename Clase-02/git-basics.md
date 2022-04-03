@@ -405,6 +405,15 @@ Que una rama sea la _rama base_ implica, entre otras cosas, que cuando alguien c
 
 Con cada confirmación que realicemos, y mientras no nos cambiemos de rama, el apuntador de la rama base (o de la rama en la que nos enontemos) irá avanzando en la historia que registra git de un archivo.
 
+Para crear una nueva rama, podemos usar el siguiente comando:
+
+```
+git checkout -b <branch-name>
+```
+
+Este comando creará un nuevo apuntador llamado \<new-branch> que estará basado en la rama desde la cual fue creado. Esto significa que, hasta que hagamos alguna modificación en esta nueva rama o en aquella desde la que partimos, ambas serán iguales. 
+Además, al mismo tiempo que crea la rama, el comando nos moverá a ese apuntador. Cualquier cambio que hagamos será seguido por ese apuntador y no por aquel donde nos encontrábamos previamente.
+
 - checkout -b
 - branch --list
 - branch -D
