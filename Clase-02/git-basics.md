@@ -219,7 +219,26 @@ git remote -vv              # muestra la url del remoto
 Acceder a la configuración de este modo y no abriendo el archivo _config_ resulta más seguro. Podría ocurrir que, al abrir el archivo, sobreescribamos o modifiquemos de algún modo la información allí almacenada y que eso nos traiga problemas para el uso del repositorio. Además, una vez que nos acostumbramos al uso de comandos, se vuelve un poco más práctico.
 ### Subir archivos al remoto
 
-Una vez que tenemos nuestro repositorio, podemos agregar los archivos contenidos en nuestra carpeta. Para esto, usamos el comando `add`:
+Una vez que tenemos nuestro repositorio, podemos ejecutar el comando `status`. Este comando es sumamente útil porque podemos usarlo en todo momento para ver en qué estado están nuestros archivos.
+
+```
+git status
+```
+
+En esta instancia, en la que tenemos un archivo nuevo que git desconoce, nos mostrará algo como lo siguiente:
+
+```
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	new_file.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+Para agregar los archivos contenidos en nuestra carpeta, usamos el comando `add`:
 
 ```
 git add <file-path>                 # agrega el archvio <file-path>
@@ -231,8 +250,19 @@ git add .                           # agrega todos los archivos que estén
                                     # en el repo DENTRO de la ubicación
                                     # en la que se encuentra el usuario
 ```
-    
-Una vez preparados los archivos, es necesario confirmarlos. Para esto, podemos usar alguno de los siguientes comandos:
+
+Si deseamos verificar que nuestros archivos se hayan agregado correctamente, podemos volver a ejecutar `status`. Ahora nos dirá que tenemos un nuevo archivo y que podemos confirmarlo:
+
+```
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   new_file.txt
+```
+
+Para esto último, podemos usar alguno de los siguientes comandos:
  
 ```
 git commit                          # abre un editor en consola para poder
@@ -242,7 +272,25 @@ git commit -m "Primer commit"       # confirma con el mensaje que le sigue
                                     # al flag -m
 ```
 
-El paso anterior dejó los archivos en nuestro repositorio local, pero todavía no están subidos al remoto (¡todavía podemos perderlos si algo le sucede a nuestra computadora!). Para subirlos al remoto debemos ejecutar los siguientes comandos:
+Luego de ejecutar alguno de los anteriores comandos, la consola nos mostrará un mensaje similar a este:
+
+```
+[main 0fcc82b] agrego nuevo archivo
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 new_file.txt
+```
+
+Si ahora volvemos a correr `status`, veremos que la consola nos indica que estamos adelantados a la historia del remoto.
+
+```
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+```
+
+Esto sucede porque el `commit` confirmó los archivos que queremos subir, pero no los subió al remoto (¡todavía podemos perderlos si algo le sucede a nuestra computadora!). Para subirlos debemos ejecutar los siguientes comandos:
 
 ```
 git branch -M main                  # cambia el nombre de la rama
@@ -293,6 +341,7 @@ git diff --staged       # muestra las diferencias en
                         # y la última confirmaciónq
 ```
 
+Una alcaración importante es que git no puede hacer esto con cualquier tipo de archivos. Con archivos de texto plano (como los que generamos cuando usamos algún programa tipo Notepad o como los srcipts de códgio) no tendremos problemas. Pero frente a archivos de tipo binario (como los documentos de _Word_), git solo podrá decirnos si el archivo cambió o no, pero no podrá especificarnos qué líneas ni caracteres. ¿Significa esto que no podemos subir un archivo `.docx` a GitHub? No necesariamente. Podemos subirlo y utilizar git para recuperar sus distintas versiones, pero deberemos prescindir de una gran parte de las facilidades que ofrece la herramienta.
 ### Actualizar el repo local
 
 <div style="text-align:center">
