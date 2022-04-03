@@ -715,7 +715,7 @@ Sin embargo, también puede ocurrir que la interfaz de nuestro remoto nos indiqu
 
 Para evitar esto, lo mejor es siempre armar nuestra rama de trabajo partiendo de aquella en la que luego querremos introducir nuestros arreglos o mejoras. Por ejemplo, si la rama base de nuestro repo es _main__ y sabemos que nuestros cambios deben fusionarse con ella, partimos de ahí para generar nuestra rama de trabajo. Pongámosle a esta, por nombre, _fix/bug_. 
 
-Ahora bien, una vez que tenemos nuestro trabajo listo, hacemos la PR. Si la rama en la cual queremos introducir los cambios no recibió otras modificaciones en el medio del proceso, probablemente no tengamos mayores iconvenientes. Pero si alguien más intrdujo cambios en la rama "target", la rama que solicita la PR no tendrá el mismo historial de cambios y deberemos sincronizar ambas para alinear sus historias.
+Ahora bien, una vez que tenemos nuestro trabajo listo, hacemos la PR. Si la rama en la cual queremos introducir los cambios no recibió otras modificaciones en el medio del proceso, probablemente no tengamos mayores iconvenientes. Pero si alguien más introdujo cambios en la rama "target", la rama que solicita la PR no tendrá el mismo historial de cambios y deberemos sincronizar ambas para alinear sus historias.
 
 En este caso, lo que debemos hacer es lo siguiente. En nuestra copia local del repositorio ejecutamos:
 
