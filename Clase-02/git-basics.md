@@ -321,6 +321,25 @@ Si ahora volvemos a la página donde se encuentra nuestro repositorio remoto y l
     </em>
 </div>
 
+### Ignorar archivos
+
+Si en nuestra carpeta o directorio tenemos archivo que no queremos que git rastree cada vez que hacemos un cambio, lo que debemos hacer es agregar un archivo llamado `.gitignore` a la misma altura que se encuentra el directorio `.git` y allí listar los paths de archivos que se deseen ignorar, ya sea por nombre o por extensión (ej: *.txt).
+
+Por ejemplo, si queremos que se ignoren las carpetas `data/`, el archivo `config/keys.json` y todos los archivo `.csv` contenidos en la carpeta `result/`, nuestro `.gitignore` debería verse del siguiente modo:
+
+```
+# ignora data/
+data/
+
+# ignora config/keys.json
+config/keys.json
+
+# ignora los .csv contenidos en results/
+results/*.csv
+```
+
+El caracter `#` nos permite agregar comentarios que no serán tenidos en cuenta por git. Estos nos posibilita dejar indicaciones más claras para la comprensión del archivo.
+
 ### Control de diferencias
 
 Hasta ahora solo nos hemos ocupado de crear un repositorio (o descargarlo si ya existía previamente) y subir los archivos disponibles en nuestra computadora. Cuando hacemos esto, le indicamos a git que queremos que _trackee_ esos archivos: que los tenga presentes y que, si hacemos alguna modificación, nos permita verla, subirla o deshacerla y volver al archivo como estaba en otro momento.
