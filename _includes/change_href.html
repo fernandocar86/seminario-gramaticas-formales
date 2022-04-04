@@ -5,7 +5,7 @@
         const href = tableA[i].href
         console.log(href)
         if (href.endsWith('.md')){
-            tableA[i].href = href.replace('.md','.html').repplace('.','{{ site.baseurl }}')
+            tableA[i].href = href.replace('.md','.html').replace('.','{{ site.baseurl }}')
             console.log(tableA[i].href)
         }
     }
