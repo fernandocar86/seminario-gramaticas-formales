@@ -440,7 +440,7 @@ git restore --staged <file-path>    # quita los cambios agregados al área de pr
                                     # de trabajo
 ```
 
-Si ya confirmamos nuestros cambios (commit):
+Si ya confirmamos nuestros cambios (*commit*):
 
 ```
 git revert <SHA>            # revierte el commit con el SHA indicado 
