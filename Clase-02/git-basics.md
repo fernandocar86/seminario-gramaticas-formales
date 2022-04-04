@@ -593,7 +593,7 @@ git merge <branch-B>                        # importa los cambios de la rama
     </em>
 </div>
 
-Cuando hacemos un merge, una rama A (en la que estamos posicionados) se trae los cambios de otra rama B.
+Cuando hacemos un *merge*, una rama A (en la que estamos posicionados) se trae los cambios de otra rama B.
 
 En una pull request (en GitHub) o una merge request (en GitLab) es la rama B la que le pide a la rama A que incorpore sus cambios.
 
