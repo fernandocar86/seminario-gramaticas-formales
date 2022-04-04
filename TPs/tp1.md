@@ -29,3 +29,7 @@ El plazo límete para entregar este trabajo es el **martes 12 de abril a las 9:0
 Para ese horario esperamos que completen [este formulario](https://forms.gle/ypXstqEBqJCwnxXg7) en el que se les solicitará que especifiquen quiénes son las personas que integran el grupo de trabajo y cuál es el repositorio que debemos evaluar.
 
 Es suficiente con que una sola persona por grupo complete el formulario.
+
+{% include copybutton.html %}
+
+{% include additional_content.html %}
