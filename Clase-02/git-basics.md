@@ -98,7 +98,7 @@ Git tiene tres estados principales en los que se pueden encontrar los archivos:
 
 De este modo, un proyecto de git cuenta con tres secciones principales: 
 
-- el directorio de git (git directory): donde se almacenan los metadatos y la base de datos de objetos para nuestro proyecto. Es la parte más importante de git, y es lo que se copia cuando clonamos un repositorio desde la nube a nuestra computadora.
+- el directorio de git (*git directory*): donde se almacenan los metadatos y la base de datos de objetos para nuestro proyecto. Es la parte más importante de git, y es lo que se copia cuando clonamos un repositorio desde la nube a nuestra computadora.
 
 - el directorio de trabajo (working directory): copia de una versión del proyecto. Estos archivos se sacan de la base de datos comprimida en el directorio de Git, y se colocan en el disco para que los podamos usar o modificar.
 
