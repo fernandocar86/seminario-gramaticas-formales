@@ -93,7 +93,7 @@ En git, la información relacionada a nuestros archivos es manejada como una _co
 Git tiene tres estados principales en los que se pueden encontrar los archivos: 
 
 - modificado (*modified*): significa que el archivo ha sido modificado pero todavía no se encuentra preparado para su confirmación, no ha sido añadido al índice
-- preparado (staged): significa que un archivo modificado ha sido marcado para que ser almacenado en la próxima confirmación
+- preparado (*staged*): significa que un archivo modificado ha sido marcado para que ser almacenado en la próxima confirmación
 - confirmado (committed): significa que el archivo ha sido confirmado y, la próxima vez que se realice un push, se subirá al remoto. Aquí los datos están almacenados de manera segura en la base de datos LOCAL, pero todavía no se encuentran en la copia remota del repositorio (alojada en el servidor que se haya elegido).
 
 De este modo, un proyecto de git cuenta con tres secciones principales: 
