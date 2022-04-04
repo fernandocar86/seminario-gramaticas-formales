@@ -459,7 +459,7 @@ git reset --hard HEAD~1     # ídem reset --soft solo que no conserva los archiv
 
 ## [HINT] Rastrear cambios
 
-Puede que a veces nos interese rastrear los cambios dentro de un repositorio. El comando `log` nos permite visualizar los commits realizados, qué archivos modificaron y cuáles fueron los cambios realizados, entre otras cosas:
+Puede que a veces nos interese rastrear los cambios dentro de un repositorio. El comando `log` nos permite visualizar los *commits* realizados, qué archivos modificaron y cuáles fueron los cambios realizados, entre otras cosas:
 
 ```
 git log                         # permite visualizar todos los commits, sus mensajes de
