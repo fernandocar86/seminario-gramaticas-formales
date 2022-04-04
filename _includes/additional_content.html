@@ -69,7 +69,7 @@
         const textA = document.createElement('a')
         textA.className = "content-item"
         textA.href = "{{ site.baseurl }}"+element
-        if (element.startsWith('/Clase') || element.startsWith('/Instructivos')){
+        if (element.startsWith('/Clase') || element.startsWith('/Instructivos') || element.startsWith('/TPs')){
             textA.textContent = element.replace(/\//g,'').replace('-',' ')
         }
         else if (element === '/'){
