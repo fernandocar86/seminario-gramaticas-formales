@@ -43,7 +43,7 @@ Git es un **control de versiones distribuido** creado por [Linus Torvalds](https
 
 Al utilizarlo para gestionar proyectos, las personas que trabajan en equipo (y también las que trabajan de forma individual) pueden almacenar sus proyectos de manera remota (en la nube) y, a su vez, tener una copia local en la que trabajar.
 
-Guardar la información de forma remota posibilita que otras personas accedan a dicha información y se la descarguen, en caso de tener los permisos. A su vez, es en ese repositorio remoto donde cada miembro del equipo irá subiendo sus cambios para unificarlos con los del resto y, en caso de que algo le suceda a nuestra computadora, podemos tener la tranquilidad de que toda la información estára respaldada allí.
+Guardar la información de forma remota posibilita que otras personas accedan a dicha información y se la descarguen, en caso de tener los permisos. A su vez, es en ese repositorio remoto donde cada miembro del equipo irá subiendo sus cambios para unificarlos con los del resto y, en caso de que algo le suceda a nuestra computadora, podemos tener la tranquilidad de que toda la información estará respaldada allí.
 
 ## ¿Qué es GitHub?
 
@@ -92,17 +92,17 @@ En git, la información relacionada a nuestros archivos es manejada como una _co
 
 Git tiene tres estados principales en los que se pueden encontrar los archivos: 
 
-- modificado (modified): significa que el archivo ha sido modificado pero todavía no se encuentra preparado para su confirmación, no ha sido añadido al índice
-- preparado (staged): significa que un archivo modificado ha sido marcado para que ser almacenado en la próxima confirmación
-- confirmado (committed): significa que el archivo ha sido confirmado y, la próxima vez que se realice un push, se subirá al remoto. Aquí los datos están almacenados de manera segura en la base de datos LOCAL, pero todavía no se encuentran en la copia remota del repositorio (alojada en el servidor que se haya elegido).
+- modificado (*modified*): significa que el archivo ha sido modificado pero todavía no se encuentra preparado para su confirmación, no ha sido añadido al índice
+- preparado (*staged*): significa que un archivo modificado ha sido marcado para que ser almacenado en la próxima confirmación
+- confirmado (*committed*): significa que el archivo ha sido confirmado y, la próxima vez que se realice un push, se subirá al remoto. Aquí los datos están almacenados de manera segura en la base de datos LOCAL, pero todavía no se encuentran en la copia remota del repositorio (alojada en el servidor que se haya elegido).
 
 De este modo, un proyecto de git cuenta con tres secciones principales: 
 
-- el directorio de git (git directory): donde se almacenan los metadatos y la base de datos de objetos para nuestro proyecto. Es la parte más importante de git, y es lo que se copia cuando clonamos un repositorio desde la nube a nuestra computadora.
+- el directorio de git (*git directory*): donde se almacenan los metadatos y la base de datos de objetos para nuestro proyecto. Es la parte más importante de git, y es lo que se copia cuando clonamos un repositorio desde la nube a nuestra computadora.
 
-- el directorio de trabajo (working directory): copia de una versión del proyecto. Estos archivos se sacan de la base de datos comprimida en el directorio de Git, y se colocan en el disco para que los podamos usar o modificar.
+- el directorio de trabajo (*working directory*): copia de una versión del proyecto. Estos archivos se sacan de la base de datos comprimida en el directorio de Git, y se colocan en el disco para que los podamos usar o modificar.
 
-- el área de preparación (staging area): es un archivo, generalmente contenido en nuestro directorio de git, que almacena información acerca de lo que va a ir en nuestra próxima confirmación.
+- el área de preparación (*staging area*): es un archivo, generalmente contenido en nuestro directorio de git, que almacena información acerca de lo que va a ir en nuestra próxima confirmación.
 
 <div style="text-align:center">
     <img src="git-basics-images/git-workflow.png" width="70%">
@@ -138,7 +138,7 @@ Existen dos maneras de iniciar un repositorio:
 
 ### Crear un repo en el servidor y clonarlo
 
-Crear un repositorio es muy sencillo. Simplemente debemos ir a nuestra cuenta en [GitHub](https://github.com/) y cliquer a en el botón _New repo_ que aparecerá a la izquierda, debajo de nuestro usuario:
+Crear un repositorio es muy sencillo. Simplemente debemos ir a nuestra cuenta en [GitHub](https://github.com/) y cliquear a en el botón _New repo_ que aparecerá a la izquierda, debajo de nuestro usuario:
 
 <div style="text-align:center">
     <img src="git-basics-images/git-new-repo.png" width="50%">
@@ -324,7 +324,7 @@ Si ahora volvemos a la página donde se encuentra nuestro repositorio remoto y l
 
 ### Ignorar archivos
 
-Si en nuestra carpeta o directorio tenemos archivo que no queremos que git rastree cada vez que hacemos un cambio, lo que debemos hacer es agregar un archivo llamado `.gitignore` a la misma altura que se encuentra el directorio `.git` y allí listar los paths de archivos que se deseen ignorar, ya sea por nombre o por extensión (ej: *.txt).
+Si en nuestra carpeta o directorio tenemos archivos que no queremos que git rastree cada vez que hacemos un cambio, lo que debemos hacer es agregar un archivo llamado `.gitignore` a la misma altura que se encuentra el directorio `.git` y allí listar los paths de archivos que se deseen ignorar, ya sea por nombre o por extensión (ej: *.txt).
 
 Por ejemplo, si queremos que se ignoren las carpetas `data/`, el archivo `config/keys.json` y todos los archivo `.csv` contenidos en la carpeta `result/`, nuestro `.gitignore` debería verse del siguiente modo:
 
@@ -712,7 +712,7 @@ Si todo ha salido correctamente, podremos utilizar el comando `commit` para term
 
 Cuando realizamos una PR, puede suceder que nos surjan conflictos. En el caso de que los mismos se deban a que estamos compartiendo la rama desde la que hacemos la PR con otra persona, debemos resolverlos del mismo modo que se detalló anteriormente.
 
-Sin embargo, también puede ocurrir que la interfaz de nuestro remoto nos indique que el conflicto se da con la rama en la que queremos introducir nuestros cambios (recordemos que una pull request es una solicitud a una rama para que incorpore los cambios de nuestra rama). En este caso, lo que sucede es que la rama que desea introducir cambios y aquella en la cual se los introduce divergen en algún punto de su historia. ¿Qué significa esto? Que la rama que recibirá los cambios tiene algún commit con modificaciones que la rama que desea introducir cambios no tiene. 
+Sin embargo, también puede ocurrir que la interfaz de nuestro remoto nos indique que el conflicto se da con la rama en la que queremos introducir nuestros cambios (recordemos que una *pull request* es una solicitud a una rama para que incorpore los cambios de nuestra rama). En este caso, lo que sucede es que la rama que desea introducir cambios y aquella en la cual se los introduce divergen en algún punto de su historia. ¿Qué significa esto? Que la rama que recibirá los cambios tiene algún *commit* con modificaciones que la rama que desea introducir cambios no tiene. 
 
 Para evitar esto, lo mejor es siempre armar nuestra rama de trabajo partiendo de aquella en la que luego querremos introducir nuestros arreglos o mejoras. Por ejemplo, si la rama base de nuestro repo es _main__ y sabemos que nuestros cambios deben fusionarse con ella, partimos de ahí para generar nuestra rama de trabajo. Pongámosle a esta, por nombre, _fix/bug_. 
 
@@ -724,7 +724,7 @@ En este caso, lo que debemos hacer es lo siguiente. En nuestra copia local del r
 git checkout <pr-branch>                            # nos posicionamos en la rama que tiene
                                                     # nuestro trabajo (desde la que hacemos la PR)
     
-git fetch <remote> <target-branch>:<target-branch>  # nos aseguramos de que la copia locadl de la
+git fetch <remote> <target-branch>:<target-branch>  # nos aseguramos de que la copia local de la
                                                     # rama a la que hacemos la PR está sincronizada
                                                     # con el remoto
 
@@ -744,8 +744,8 @@ git merge main
 ```
 
 Una vez hecho esto, pueden suceder dos cosas:
-- En el mundo feliz, el merge con la rama target se hace sin conflictos y solo nos restará hacer un `push` a nuestra rama de trabajo. Luego de hacerlo, veremos que la PR realizada se actualiza y las advertencias de conflictos en el remoto deberían desaparecer.
-- En un mundo menos feliz, git podría indicarnos que hay conflictos porque en la rama target había modificaciones que alteraban los mismos archivos que nosotros cambiamos. En este caso, debemos resolverlos del mismo modo que se indicó [anteriormente](#resolución-de-conflictos). Una vez resueltos, realizar los ya clásicos `add`, `commit` y `push`. Igual que en el mundo feliz, la PR se actualizará (debido a que la rama se actualizó) y deberíamos dejar de ver las advertencias de conflictos.
+- En el mundo feliz, el *merge* con la rama *target* se hace sin conflictos y solo nos restará hacer un `push` a nuestra rama de trabajo. Luego de hacerlo, veremos que la PR realizada se actualiza y las advertencias de conflictos en el remoto deberían desaparecer.
+- En un mundo menos feliz, git podría indicarnos que hay conflictos porque en la rama *target* había modificaciones que alteraban los mismos archivos que nosotros cambiamos. En este caso, debemos resolverlos del mismo modo que se indicó [anteriormente](#resolución-de-conflictos). Una vez resueltos, realizar los ya clásicos `add`, `commit` y `push`. Igual que en el mundo feliz, la PR se actualizará (debido a que la rama se actualizó) y deberíamos dejar de ver las advertencias de conflictos.
 
 ## [HINT] Flags útiles
 
