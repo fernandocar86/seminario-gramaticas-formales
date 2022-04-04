@@ -613,7 +613,7 @@ Para ello, debemos ir a la página del repositorio remoto, a la sección  _Pull 
 
 Esta no es la única forma de hacer esto. En general, cuando actualizamos una rama, al ingresar al remoto GitHub nos sugiere la posibilidad de comparar ramas y hacer una PR.
 
-**Aclaración:** Tanto el merge como el MR o PR pueden tener conflictos si la rama que se intenta fusionar no tiene (al momento de hacer la fusión) todos los cambios que tiene la rama a la que se quiere fusionar (i.e. debe tener en su historial los commits de la rama a la cual se quieren fusionar los cambios). En caso de existir conflictos, se los deberá resolver como se detalla en la [sección anterior](#resolución-de-conflictos).
+**Aclaración:** Tanto el merge como el MR o PR pueden tener conflictos si la rama que se intenta fusionar no tiene (al momento de hacer la fusión) todos los cambios que tiene la rama a la que se quiere fusionar (*i.e.*, debe tener en su historial los *commits* de la rama a la cual se quieren fusionar los cambios). En caso de existir conflictos, se los deberá resolver como se detalla en la [sección anterior](#resolución-de-conflictos).
 
 ### Resolución de conflictos
 
