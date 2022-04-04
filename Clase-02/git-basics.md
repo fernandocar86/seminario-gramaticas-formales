@@ -358,7 +358,7 @@ git diff <file-path>    # muestra las diferencias en el
 
 git diff --staged       # muestra las diferencias en
                         # archivos que se agregaron (add)
-                        # y la última confirmaciónq
+                        # y la última confirmación
 ```
 
 Una alcaración importante es que git no puede hacer esto con cualquier tipo de archivos. Con archivos de texto plano (como los que generamos cuando usamos algún programa tipo Notepad o como los srcipts de códgio) no tendremos problemas. Pero frente a archivos de tipo binario (como los documentos de _Word_), git solo podrá decirnos si el archivo cambió o no, pero no podrá especificarnos qué líneas ni caracteres. ¿Significa esto que no podemos subir un archivo `.docx` a GitHub? No necesariamente. Podemos subirlo y utilizar git para recuperar sus distintas versiones, pero deberemos prescindir de una gran parte de las facilidades que ofrece la herramienta.
