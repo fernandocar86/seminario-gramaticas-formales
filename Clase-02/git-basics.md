@@ -122,7 +122,7 @@ El **flujo de trabajo** básico en Git es algo así:
 
 - Luego, los preparamos y los añadimos al área de preparación. Una vez hecho esto, los archivos están preparados o **staged**.
 
-- Finalmente, confirmamos los cambios. Este paso toma los archivos tal y como están en el área de preparación y almacena esa copia instantánea de manera permanente en nuestro directorio de Git. Aquí se dice que los archivos fueron confirmados o **commiatedos**.
+- Finalmente, confirmamos los cambios. Este paso toma los archivos tal y como están en el área de preparación y almacena esa copia instantánea de manera permanente en nuestro directorio de Git. Aquí se dice que los archivos fueron confirmados o **commiteados**.
 
 Hasta aquí hemos trabajado en forma local. Si bien hemos hecho cambios en nuestros archivos y los hemos confirmado, si vamos a nuestra página de de GitHub (o a la página del servidor que hayamos elegido para gestionar nuestros archivos), no veremos tales cambios en el remoto. Por el momento, nuestros últimos cambios se encuentran solamenten en nuestra computadora. Para subir estos cambios al remoto, lo que debemos hacer es subir los archivos al repo en la nube, esto es, pushearlos.
 ## Iniciar un repositorio
