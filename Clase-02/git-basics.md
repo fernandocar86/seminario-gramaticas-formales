@@ -783,7 +783,7 @@ git fetch --all                         # ídem anterior pero con todas
                                         # (usarlo con cuidado)
 ```
 
-Esto comandos nos permite ver si hay cambios que puedan generar conflictos con los nuestros (porque modifican el mismo archivo, por ejemplo).
+Estos comandos nos permiten ver si hay cambios que puedan generar conflictos con los nuestros (porque modifican el mismo archivo, por ejemplo).
 Si no hay cambios o si vemos que no resultan conflictivos, lo que debemos hacer es ejecutar los comandos `add` y `commit` de modo que nuestros cambios se guarden en el área de preparación. Una vez hecho esto, nos descargamos los cambios del remoto utilizando el comando `pull` y, finalmente, pusheamos nuestros cambios (solo pullear si hay cambios, si no los hay, luego de commitear, pushear directamente).
 
 ### log
