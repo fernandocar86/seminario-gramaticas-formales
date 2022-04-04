@@ -636,7 +636,7 @@ En ese contexto, ambos empezamos a trabajar y a introducir cambios en el reposit
 
 ¿Qué hacer entonces? Hacemos un `pull` y nos descargamos los nuevos cambios.
 
-Si las modificaciones que estaban en el remoto no afectaban a los mismos archivos que nosotros modificamos, no tendremos problemas. Simplemente nos saldrá un mensaje editable (que no es otra cosa que un mensaje de confirmación) indicando que se realiza un Merge y podremos hacer el `push`.
+Si las modificaciones que estaban en el remoto no afectaban a los mismos archivos que nosotros modificamos, no tendremos problemas. Simplemente nos saldrá un mensaje editable (que no es otra cosa que un mensaje de confirmación) indicando que se realiza un *merge* y podremos hacer el `push`.
 
 Si, en cambio, la otra persona modificó un archivo también editado por nosotros, es problable que haya conflictos y tengamos que solucionarlos. En este caso, cuando hagamos el pull, nuestra consola mostrará algo como lo siguiente:
 
