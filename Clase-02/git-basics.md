@@ -18,10 +18,7 @@ Git es un controlador de versiones que nos puede ayudar a resolver todo esto.
     <img src="git-basics-images/git-motivation.jpg" width="60%">
     <br>
     <em>
-        Meme generado con 
-        <a href=https://imgflip.com/memegenerator>
-        Meme Generator
-        </a>
+        Meme generado con [Meme Generator](https://imgflip.com/memegenerator)
     </em>
 </div>
 
