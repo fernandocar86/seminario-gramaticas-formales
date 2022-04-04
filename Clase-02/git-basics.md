@@ -694,7 +694,7 @@ Esto debemos hacerlo para cada cambio. Pero, si ya sabemos que queremos aceptar 
 
 Si no estamos usando algún editor de código, para resolver nuestros conflictos (los de código, al menos) deberemos abrir un editor de texto plano (Text Editor, Notepad o el que sea de nuestra preferencia), arremangarnos y buscar cada ocurrencia de conflicto (podemos buscar _HEAD_). Cada vez que encontremos una, tenemos que borrar las líneas que indican _<<<<<<< HEAD (Current Changes)_, _>>>>>>> \<branch> (Incomming Changes)_, _=======_ y las de la porción de código que queremos desestimar. Solo debe quedar el cambio que queremos (el current o el incomming). En el ejemplo anterior, deberíamos dejar o bien _Mi repositorio en GitHub_, o bien _Mi primer repositorio en GitHub_
 
-Una vez hecho esto guardamos el archivo y lo agregamos al stagging (con el ya conocido comando `add`). Y si ejecutamos el comando ```git status```, veremos:
+Una vez hecho esto guardamos el archivo y lo agregamos al staging (con el ya conocido comando `add`). Y si ejecutamos el comando ```git status```, veremos:
 
 ```
 On branch main
