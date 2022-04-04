@@ -15,23 +15,11 @@ Esto resulta inconveniente por varios motivos:
 Git es un controlador de versiones que nos puede ayudar a resolver todo esto.
 
 <div style="text-align:center">
-    <img src="git-basics-images/git-motivation.jpg" width="60%">
-    <br>
-    <em>
-        Meme generado con [Meme Generator](https://imgflip.com/memegenerator)
-    </em>
+    <figure>
+        <img src="git-basics-images/git-motivation.jpg" width="60%">
+        <figcaption>Meme generado con <a href="https://imgflip.com/memegenerator">Meme Generator</a></figcaption>
+    </figure>
 </div>
-
-
-<figure>
-  <img src="git-basics-images/git-motivation.jpg" width="60%">
-  <figcaption>Meme generado con <a href="https://imgflip.com/memegenerator">Meme Generator</a></figcaption>
-</figure>
-
-
-![](./git-basics-images/git-motivation.jpg)
-*Meme generado con [Meme Generator](https://imgflip.com/memegenerator)*
-
 
 ## Control de versiones
 
