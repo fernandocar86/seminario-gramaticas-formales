@@ -17,7 +17,6 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
 
 ## Cronograma de clases y materiales
 
-
 <table>
   <tr>
     <th>Clase</th>
@@ -179,7 +178,7 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
         <li>Gramáticas de dependencias. La noción de dependencia. Motivaciones para las gramáticas de dependencias. Tipos de dependencias: semánticas, sintácticas y morfológicas.</li>
         <li>Definición formal. Axiomas de las Gramáticas de dependencias: condición de raíz única, conectividad, no multidominancia, proyectividad.</li>
         <li>Implementación computacional; Spacy, MaltParser, parser de dependencias de Freeling, PyStanford Dependencies.</li>
-      <ul>
+      </ul>
     </td>
     <td>
       <ul>
