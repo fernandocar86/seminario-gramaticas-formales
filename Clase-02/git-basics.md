@@ -57,7 +57,7 @@ Git me brinda una serie de comandos que me permiten interactuar con el servidor 
 <div style="text-align:center">
     <figure>
         <img src="git-basics-images/git-servers.jpg" width="50%">
-        <figcaption>Meme generado con <a href=https://imgflip.com/memegenerator>Meme Generator</a></figcaption>
+        <figcaption>Meme generado con <a href="https://imgflip.com/memegenerator">Meme Generator</a></figcaption>
     </figure>
 </div>
 
@@ -68,7 +68,7 @@ En Git, la información relacionada a nuestros archivos es manejada como una _co
 <div style="text-align:center">
     <figure>
         <img src="git-basics-images/git-checkins-over-time.webp" width="70%">
-        <figcaption>Imagen tomada de <a href=https://blog.softtek.com/es/git-c%C3%B3mo-poner-orden-en-el-caos>Softtek</a>
+        <figcaption>Imagen tomada de <a href="https://blog.softtek.com/es/git-c%C3%B3mo-poner-orden-en-el-caos">Softtek</a>
         </figcaption>
     </figure>
 </div>
@@ -295,7 +295,7 @@ Si ahora volvemos a la página donde se encuentra nuestro repositorio remoto y l
 <div style="text-align:center">
     <figure>
         <img src="git-basics-images/git-fire.jpg" width="40%">
-        <figcaption>Imagen tomada de <a href=https://medium.com/@lulu.ilmaknun.q/kompilasi-meme-git-e2fe49c6e33e>Lulu Ilmaknun Qurotaini</a>
+        <figcaption>Imagen tomada de <a href="https://medium.com/@lulu.ilmaknun.q/kompilasi-meme-git-e2fe49c6e33e">Lulu Ilmaknun Qurotaini</a>
         </figcaption>
     </figure>
 </div>
@@ -345,7 +345,7 @@ Una alcaración importante es que Git no puede hacer esto con cualquier tipo de 
 <div style="text-align:center">
     <figure>
         <img src="git-basics-images/git-not-updated.jpg" width="70%">
-        <figcaption>La foto a partir de la cual se generó este meme fue encontrada en <a href=https://www.1news.co.nz/2022/03/28/will-smith-chris-rock-oscars-meme-not-appropriate-luxon>1news</a>
+        <figcaption>La foto a partir de la cual se generó este meme fue encontrada en <a href="https://www.1news.co.nz/2022/03/28/will-smith-chris-rock-oscars-meme-not-appropriate-luxon">1news</a>
         </figcaption>
     </figure>
 </div>
@@ -364,7 +364,7 @@ git pull
 <div style="text-align:center">
     <figure>
         <img src="git-basics-images/git-fork.jpg" width="50%">
-        <figcaption>Meme generado con <a href=https://imgflip.com/memegenerator>Meme Generator</a>
+        <figcaption>Meme generado con <a href="https://imgflip.com/memegenerator">Meme Generator</a>
         </figcaption>
     </figure>
 </div>
@@ -383,7 +383,7 @@ Esto hará que se genere una copia idéntica al proyecto forkeado en nuestro rep
 <div style="text-align:center">
     <figure>
         <img src="git-basics-images/git-reset-changes.jpg" width="50%">
-        <figcaption>Meme generado con <a href=https://imgflip.com/memegenerator>Meme Generator</a>
+        <figcaption>Meme generado con <a href="https://imgflip.com/memegenerator">Meme Generator</a>
         </figcaption>
     </figure>
 </div>
@@ -483,7 +483,7 @@ La nueva rama creada también será idéntica a aquella desde la cual se la cre�
 <div style="text-align:center">
     <figure>
         <img src="git-basics-images/git-new-branch.png" width="50%">
-        <figcaption>Imagen tomada de <a href=https://aprendeconalf.es/docencia/git/manual/gestion-ramas>Aprender con Alf</a>
+        <figcaption>Imagen tomada de <a href="https://aprendeconalf.es/docencia/git/manual/gestion-ramas">Aprender con Alf</a>
         </figcaption>
     </figure>
 </div>
@@ -507,7 +507,7 @@ Este comando borrará la rama de mi repo local, pero no afectará la que se encu
 <div style="text-align:center">
     <figure>
         <img src="git-basics-images/git-branch-everywhere.jpg" width="60%">
-        <figcaption>Meme tomado de <a href=https://medium.com/droidsonroids/android-studio-and-git-branches-how-to-simplify-your-work-698aee7c38dc>Łukasz Kopociński</a>
+        <figcaption>Meme tomado de <a href="https://medium.com/droidsonroids/android-studio-and-git-branches-how-to-simplify-your-work-698aee7c38dc">Łukasz Kopociński</a>
         </figcaption>
     </figure>
 </div>
@@ -517,7 +517,7 @@ Este comando borrará la rama de mi repo local, pero no afectará la que se encu
 <div style="text-align:center">
     <figure>
         <img src="git-basics-images/git-merge.jpg" width="50%">
-        <figcaption>Meme generado con <a href=https://imgflip.com/memegenerator>Meme Generator</a>
+        <figcaption>Meme generado con <a href="https://imgflip.com/memegenerator">Meme Generator</a>
         </figcaption>
     </figure>
 </div>
@@ -544,7 +544,7 @@ git merge <branch-B>                        # importa los cambios de la rama
 <div style="text-align:center">
     <figure>
         <img src="git-basics-images/git-pr-merge-relation.jpg" width="60%">
-        <figcaption>Meme tomado de <a href=https://imgflip.com/memegenerator>Meme Generator</a>
+        <figcaption>Meme tomado de <a href="https://imgflip.com/memegenerator">Meme Generator</a>
         </figcaption>
     </figure>
 </div>
@@ -576,7 +576,7 @@ Esta no es la única forma de hacer esto. En general, cuando actualizamos una ra
 <div style="text-align:center">
     <figure>
         <img src="git-basics-images/git-conflicts.jpg" width="70%">
-        <figcaption>Meme generado con <a href=https://imgflip.com/memegenerator>Meme Generator</a>
+        <figcaption>Meme generado con <a href="https://imgflip.com/memegenerator">Meme Generator</a>
         </figcaption>
     </figure>
 </div>
