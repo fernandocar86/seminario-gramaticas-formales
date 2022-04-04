@@ -102,7 +102,7 @@ De este modo, un proyecto de git cuenta con tres secciones principales:
 
 - el directorio de trabajo (*working directory*): copia de una versión del proyecto. Estos archivos se sacan de la base de datos comprimida en el directorio de Git, y se colocan en el disco para que los podamos usar o modificar.
 
-- el área de preparación (staging area): es un archivo, generalmente contenido en nuestro directorio de git, que almacena información acerca de lo que va a ir en nuestra próxima confirmación.
+- el área de preparación (*staging area*): es un archivo, generalmente contenido en nuestro directorio de git, que almacena información acerca de lo que va a ir en nuestra próxima confirmación.
 
 <div style="text-align:center">
     <img src="git-basics-images/git-workflow.png" width="70%">
