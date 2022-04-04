@@ -635,7 +635,7 @@ Aquí se nos marca que la versión en HEAD (nuetra versión del directorio de tr
 De todos modos, para una visualización más clara, lo mejor suele ser usar un editor de código del tipo de [Visual Studio Code](https://code.visualstudio.com/)(VSC), donde veremos algo como lo siguiente:
 
 <div style="text-align:center">
-    <img src="git-basics-images/git-visual-conflicts.png" width="50%">
+    <img src="git-basics-images/git-visual-conflicts.png" width="100%">
 </div>
 
 
