@@ -1588,15 +1588,15 @@ list(product(x,y))             # con product puedo ver el producto cartesiano
 
 
 
-    [('m', 'm'),
-     ('m', 'z'),
-     ('m', 'w'),
-     ('n', 'm'),
-     ('n', 'z'),
-     ('n', 'w'),
-     ('o', 'm'),
+    [('o', 'w'),
      ('o', 'z'),
-     ('o', 'w')]
+     ('o', 'm'),
+     ('n', 'w'),
+     ('n', 'z'),
+     ('n', 'm'),
+     ('m', 'w'),
+     ('m', 'z'),
+     ('m', 'm')]
 
 
 
@@ -1608,15 +1608,15 @@ list(product(y,x))
 
 
 
-    [('m', 'm'),
-     ('m', 'n'),
-     ('m', 'o'),
-     ('z', 'm'),
-     ('z', 'n'),
-     ('z', 'o'),
-     ('w', 'm'),
+    [('w', 'o'),
      ('w', 'n'),
-     ('w', 'o')]
+     ('w', 'm'),
+     ('z', 'o'),
+     ('z', 'n'),
+     ('z', 'm'),
+     ('m', 'o'),
+     ('m', 'n'),
+     ('m', 'm')]
 
 
 
@@ -2168,11 +2168,15 @@ os.listdir('.')   # utiliza la función listdir (de os)
 
 
 
-    ['images',
+    ['intro-python.md',
      '.ipynb_checkpoints',
-     'intro-python.ipynb',
      'index.md',
-     'intro-python.md']
+     'git-basics.md',
+     'handout.pdf',
+     'intro-python.ipynb',
+     'git-basics-images',
+     'images',
+     'git-cheat-sheet.pdf']
 
 
 
@@ -2189,11 +2193,15 @@ listdir('.')
 
 
 
-    ['images',
+    ['intro-python.md',
      '.ipynb_checkpoints',
-     'intro-python.ipynb',
      'index.md',
-     'intro-python.md']
+     'git-basics.md',
+     'handout.pdf',
+     'intro-python.ipynb',
+     'git-basics-images',
+     'images',
+     'git-cheat-sheet.pdf']
 
 
 
@@ -2215,7 +2223,11 @@ O también podemos instalarla desde Jupyter anteponiendo un signo de exclamació
 ! pip install art
 ```
 
-    Requirement already satisfied: art in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (5.5)
+    Collecting art
+      Downloading art-5.5-py2.py3-none-any.whl (583 kB)
+    [2K     [38;2;114;156;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m583.5/583.5 KB[0m [31m4.7 MB/s[0m eta [36m0:00:00[0m
+    [?25hInstalling collected packages: art
+    Successfully installed art-5.5
 
 
 
@@ -2238,89 +2250,114 @@ Para instalar jupyter lab, de hecho, podemos hacerlo del mismo modo:
 ! pip install jupyter lab
 ```
 
-    Requirement already satisfied: jupyter in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (1.0.0)
-    Requirement already satisfied: lab in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (7.0)
-    Requirement already satisfied: ipykernel in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jupyter) (6.9.2)
-    Requirement already satisfied: nbconvert in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jupyter) (6.4.4)
-    Requirement already satisfied: notebook in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jupyter) (6.4.8)
-    Requirement already satisfied: qtconsole in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jupyter) (5.2.2)
-    Requirement already satisfied: jupyter-console in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jupyter) (6.4.3)
-    Requirement already satisfied: ipywidgets in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jupyter) (7.7.0)
-    Requirement already satisfied: simplejson in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from lab) (3.17.6)
-    Requirement already satisfied: matplotlib in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from lab) (3.5.1)
-    Requirement already satisfied: txt2tags>=3.6 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from lab) (3.7)
-    Requirement already satisfied: jupyter-client<8.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (7.1.2)
-    Requirement already satisfied: tornado<7.0,>=4.2 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (6.1)
-    Requirement already satisfied: matplotlib-inline<0.2.0,>=0.1.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (0.1.3)
-    Requirement already satisfied: ipython>=7.23.1 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (8.2.0)
-    Requirement already satisfied: nest-asyncio in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (1.5.4)
-    Requirement already satisfied: traitlets<6.0,>=5.1.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (5.1.1)
-    Requirement already satisfied: debugpy<2.0,>=1.0.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (1.6.0)
-    Requirement already satisfied: psutil in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (5.9.0)
-    Requirement already satisfied: nbformat>=4.2.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipywidgets->jupyter) (5.2.0)
-    Requirement already satisfied: ipython-genutils~=0.2.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipywidgets->jupyter) (0.2.0)
-    Requirement already satisfied: jupyterlab-widgets>=1.0.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipywidgets->jupyter) (1.1.0)
-    Requirement already satisfied: widgetsnbextension~=3.6.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipywidgets->jupyter) (3.6.0)
-    Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,<3.1.0,>=2.0.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jupyter-console->jupyter) (3.0.28)
-    Requirement already satisfied: pygments in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jupyter-console->jupyter) (2.11.2)
-    Requirement already satisfied: packaging>=20.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from matplotlib->lab) (21.3)
-    Requirement already satisfied: kiwisolver>=1.0.1 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from matplotlib->lab) (1.4.1)
-    Requirement already satisfied: cycler>=0.10 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from matplotlib->lab) (0.11.0)
-    Requirement already satisfied: pyparsing>=2.2.1 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from matplotlib->lab) (3.0.7)
-    Requirement already satisfied: pillow>=6.2.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from matplotlib->lab) (9.0.1)
-    Requirement already satisfied: numpy>=1.17 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from matplotlib->lab) (1.22.3)
-    Requirement already satisfied: python-dateutil>=2.7 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from matplotlib->lab) (2.8.2)
-    Requirement already satisfied: fonttools>=4.22.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from matplotlib->lab) (4.31.2)
-    Requirement already satisfied: beautifulsoup4 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (4.10.0)
-    Requirement already satisfied: pandocfilters>=1.4.1 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (1.5.0)
-    Requirement already satisfied: entrypoints>=0.2.2 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (0.4)
-    Requirement already satisfied: defusedxml in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (0.7.1)
-    Requirement already satisfied: mistune<2,>=0.8.1 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (0.8.4)
-    Requirement already satisfied: nbclient<0.6.0,>=0.5.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (0.5.13)
-    Requirement already satisfied: testpath in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (0.6.0)
-    Requirement already satisfied: jinja2>=2.4 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (3.1.1)
-    Requirement already satisfied: bleach in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (4.1.0)
-    Requirement already satisfied: jupyterlab-pygments in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (0.1.2)
-    Requirement already satisfied: jupyter-core in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (4.9.2)
-    Requirement already satisfied: Send2Trash>=1.8.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from notebook->jupyter) (1.8.0)
-    Requirement already satisfied: prometheus-client in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from notebook->jupyter) (0.13.1)
-    Requirement already satisfied: terminado>=0.8.3 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from notebook->jupyter) (0.13.3)
-    Requirement already satisfied: pyzmq>=17 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from notebook->jupyter) (22.3.0)
-    Requirement already satisfied: argon2-cffi in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from notebook->jupyter) (21.3.0)
-    Requirement already satisfied: qtpy in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from qtconsole->jupyter) (2.0.1)
-    Requirement already satisfied: pickleshare in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (0.7.5)
-    Requirement already satisfied: backcall in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (0.2.0)
-    Requirement already satisfied: decorator in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (5.1.1)
-    Requirement already satisfied: jedi>=0.16 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (0.18.1)
-    Requirement already satisfied: setuptools>=18.5 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (56.0.0)
-    Requirement already satisfied: pexpect>4.3 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (4.8.0)
-    Requirement already satisfied: stack-data in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (0.2.0)
-    Requirement already satisfied: MarkupSafe>=2.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jinja2>=2.4->nbconvert->jupyter) (2.1.1)
-    Requirement already satisfied: jsonschema!=2.5.0,>=2.4 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbformat>=4.2.0->ipywidgets->jupyter) (4.4.0)
-    Requirement already satisfied: wcwidth in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from prompt-toolkit!=3.0.0,!=3.0.1,<3.1.0,>=2.0.0->jupyter-console->jupyter) (0.2.5)
-    Requirement already satisfied: six>=1.5 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from python-dateutil>=2.7->matplotlib->lab) (1.16.0)
-    Requirement already satisfied: ptyprocess in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from terminado>=0.8.3->notebook->jupyter) (0.7.0)
-    Requirement already satisfied: argon2-cffi-bindings in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from argon2-cffi->notebook->jupyter) (21.2.0)
-    Requirement already satisfied: soupsieve>1.2 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from beautifulsoup4->nbconvert->jupyter) (2.3.1)
-    Requirement already satisfied: webencodings in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from bleach->nbconvert->jupyter) (0.5.1)
-    Requirement already satisfied: parso<0.9.0,>=0.8.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jedi>=0.16->ipython>=7.23.1->ipykernel->jupyter) (0.8.3)
-    Requirement already satisfied: importlib-resources>=1.4.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jsonschema!=2.5.0,>=2.4->nbformat>=4.2.0->ipywidgets->jupyter) (5.6.0)
-    Requirement already satisfied: pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,>=0.14.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jsonschema!=2.5.0,>=2.4->nbformat>=4.2.0->ipywidgets->jupyter) (0.18.1)
-    Requirement already satisfied: attrs>=17.4.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jsonschema!=2.5.0,>=2.4->nbformat>=4.2.0->ipywidgets->jupyter) (21.4.0)
-    Requirement already satisfied: cffi>=1.0.1 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from argon2-cffi-bindings->argon2-cffi->notebook->jupyter) (1.15.0)
-    Requirement already satisfied: pure-eval in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from stack-data->ipython>=7.23.1->ipykernel->jupyter) (0.2.2)
-    Requirement already satisfied: executing in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from stack-data->ipython>=7.23.1->ipykernel->jupyter) (0.8.3)
-    Requirement already satisfied: asttokens in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from stack-data->ipython>=7.23.1->ipykernel->jupyter) (2.0.5)
-    Requirement already satisfied: pycparser in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from cffi>=1.0.1->argon2-cffi-bindings->argon2-cffi->notebook->jupyter) (2.21)
-    Requirement already satisfied: zipp>=3.1.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from importlib-resources>=1.4.0->jsonschema!=2.5.0,>=2.4->nbformat>=4.2.0->ipywidgets->jupyter) (3.7.0)
+    Requirement already satisfied: jupyter in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (1.0.0)
+    Collecting lab
+      Downloading lab-7.0-py2.py3-none-any.whl (91 kB)
+    [2K     [38;2;114;156;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m91.9/91.9 KB[0m [31m1.8 MB/s[0m eta [36m0:00:00[0m
+    [?25hRequirement already satisfied: notebook in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jupyter) (6.4.8)
+    Requirement already satisfied: jupyter-console in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jupyter) (6.4.3)
+    Requirement already satisfied: nbconvert in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jupyter) (6.4.5)
+    Requirement already satisfied: qtconsole in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jupyter) (5.2.2)
+    Requirement already satisfied: ipykernel in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jupyter) (6.10.0)
+    Requirement already satisfied: ipywidgets in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jupyter) (7.7.0)
+    Collecting simplejson
+      Downloading simplejson-3.17.6-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (139 kB)
+    [2K     [38;2;114;156;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m139.5/139.5 KB[0m [31m4.8 MB/s[0m eta [36m0:00:00[0m
+    [?25hCollecting txt2tags>=3.6
+      Using cached txt2tags-3.7-py2.py3-none-any.whl (51 kB)
+    Requirement already satisfied: matplotlib in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from lab) (3.5.1)
+    Requirement already satisfied: matplotlib-inline<0.2.0,>=0.1.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (0.1.3)
+    Requirement already satisfied: traitlets<6.0,>=5.1.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (5.1.1)
+    Requirement already satisfied: nest-asyncio in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (1.5.4)
+    Requirement already satisfied: ipython>=7.23.1 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (8.2.0)
+    Requirement already satisfied: debugpy<2.0,>=1.0.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (1.6.0)
+    Requirement already satisfied: jupyter-client<8.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (7.1.2)
+    Requirement already satisfied: tornado<7.0,>=5.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (6.1)
+    Requirement already satisfied: psutil in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (5.9.0)
+    Requirement already satisfied: nbformat>=4.2.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipywidgets->jupyter) (5.2.0)
+    Requirement already satisfied: widgetsnbextension~=3.6.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipywidgets->jupyter) (3.6.0)
+    Requirement already satisfied: ipython-genutils~=0.2.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipywidgets->jupyter) (0.2.0)
+    Requirement already satisfied: jupyterlab-widgets>=1.0.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipywidgets->jupyter) (1.1.0)
+    Requirement already satisfied: pygments in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jupyter-console->jupyter) (2.11.2)
+    Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,<3.1.0,>=2.0.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jupyter-console->jupyter) (3.0.28)
+    Requirement already satisfied: pillow>=6.2.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from matplotlib->lab) (9.0.1)
+    Requirement already satisfied: cycler>=0.10 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from matplotlib->lab) (0.11.0)
+    Requirement already satisfied: pyparsing>=2.2.1 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from matplotlib->lab) (3.0.7)
+    Requirement already satisfied: packaging>=20.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from matplotlib->lab) (21.3)
+    Requirement already satisfied: fonttools>=4.22.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from matplotlib->lab) (4.31.2)
+    Requirement already satisfied: kiwisolver>=1.0.1 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from matplotlib->lab) (1.4.1)
+    Requirement already satisfied: numpy>=1.17 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from matplotlib->lab) (1.22.3)
+    Requirement already satisfied: python-dateutil>=2.7 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from matplotlib->lab) (2.8.2)
+    Requirement already satisfied: beautifulsoup4 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (4.10.0)
+    Requirement already satisfied: bleach in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (4.1.0)
+    Requirement already satisfied: jupyterlab-pygments in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (0.1.2)
+    Requirement already satisfied: pandocfilters>=1.4.1 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (1.5.0)
+    Requirement already satisfied: MarkupSafe>=2.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (2.1.1)
+    Requirement already satisfied: jinja2>=2.4 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (3.1.1)
+    Requirement already satisfied: jupyter-core in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (4.9.2)
+    Requirement already satisfied: entrypoints>=0.2.2 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (0.4)
+    Requirement already satisfied: defusedxml in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (0.7.1)
+    Requirement already satisfied: testpath in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (0.6.0)
+    Requirement already satisfied: nbclient<0.6.0,>=0.5.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (0.5.13)
+    Requirement already satisfied: mistune<2,>=0.8.1 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (0.8.4)
+    Requirement already satisfied: argon2-cffi in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from notebook->jupyter) (21.3.0)
+    Requirement already satisfied: prometheus-client in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from notebook->jupyter) (0.13.1)
+    Requirement already satisfied: terminado>=0.8.3 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from notebook->jupyter) (0.13.3)
+    Requirement already satisfied: pyzmq>=17 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from notebook->jupyter) (22.3.0)
+    Requirement already satisfied: Send2Trash>=1.8.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from notebook->jupyter) (1.8.0)
+    Requirement already satisfied: qtpy in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from qtconsole->jupyter) (2.0.1)
+    Requirement already satisfied: decorator in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (5.1.1)
+    Requirement already satisfied: setuptools>=18.5 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (56.0.0)
+    Requirement already satisfied: stack-data in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (0.2.0)
+    Requirement already satisfied: pickleshare in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (0.7.5)
+    Requirement already satisfied: jedi>=0.16 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (0.18.1)
+    Requirement already satisfied: backcall in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (0.2.0)
+    Requirement already satisfied: pexpect>4.3 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (4.8.0)
+    Requirement already satisfied: jsonschema!=2.5.0,>=2.4 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbformat>=4.2.0->ipywidgets->jupyter) (4.4.0)
+    Requirement already satisfied: wcwidth in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from prompt-toolkit!=3.0.0,!=3.0.1,<3.1.0,>=2.0.0->jupyter-console->jupyter) (0.2.5)
+    Requirement already satisfied: six>=1.5 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from python-dateutil>=2.7->matplotlib->lab) (1.16.0)
+    Requirement already satisfied: ptyprocess in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from terminado>=0.8.3->notebook->jupyter) (0.7.0)
+    Requirement already satisfied: argon2-cffi-bindings in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from argon2-cffi->notebook->jupyter) (21.2.0)
+    Requirement already satisfied: soupsieve>1.2 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from beautifulsoup4->nbconvert->jupyter) (2.3.1)
+    Requirement already satisfied: webencodings in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from bleach->nbconvert->jupyter) (0.5.1)
+    Requirement already satisfied: parso<0.9.0,>=0.8.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jedi>=0.16->ipython>=7.23.1->ipykernel->jupyter) (0.8.3)
+    Requirement already satisfied: importlib-resources>=1.4.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jsonschema!=2.5.0,>=2.4->nbformat>=4.2.0->ipywidgets->jupyter) (5.6.0)
+    Requirement already satisfied: attrs>=17.4.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jsonschema!=2.5.0,>=2.4->nbformat>=4.2.0->ipywidgets->jupyter) (21.4.0)
+    Requirement already satisfied: pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,>=0.14.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jsonschema!=2.5.0,>=2.4->nbformat>=4.2.0->ipywidgets->jupyter) (0.18.1)
+    Requirement already satisfied: cffi>=1.0.1 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from argon2-cffi-bindings->argon2-cffi->notebook->jupyter) (1.15.0)
+    Requirement already satisfied: asttokens in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from stack-data->ipython>=7.23.1->ipykernel->jupyter) (2.0.5)
+    Requirement already satisfied: pure-eval in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from stack-data->ipython>=7.23.1->ipykernel->jupyter) (0.2.2)
+    Requirement already satisfied: executing in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from stack-data->ipython>=7.23.1->ipykernel->jupyter) (0.8.3)
+    Requirement already satisfied: pycparser in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from cffi>=1.0.1->argon2-cffi-bindings->argon2-cffi->notebook->jupyter) (2.21)
+    Requirement already satisfied: zipp>=3.1.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from importlib-resources>=1.4.0->jsonschema!=2.5.0,>=2.4->nbformat>=4.2.0->ipywidgets->jupyter) (3.7.0)
+    Installing collected packages: txt2tags, simplejson, lab
+    Successfully installed lab-7.0 simplejson-3.17.6 txt2tags-3.7
 
 
 ## Ejercicios
 
+1. Definir una variable llamada _laborales_ y asignarle los cinco días hábiles de la semana. Generar una nueva variable llamada _finde_ y asignarle los días del fin de semana. A partir de ambas variables, generar una nueva llamada _semana_ que contenga la lista de todos los días. Las anteriores variables deben permanecer sin modificaciones.
 
-```python
+2. Definir una función llamda *working_days* que tome el nombre de un día de la semana y devuelva un valor booleano que indique si es un día laborable. Por ejemplo, al tomar "lunes" debe devolver "True".
+
+3. (Ejercicio tomado de Downey et. al, 2012) Escribir una función llamada _middle_ que tome una lista y devuelva una nueva lista que contenga todos sus elementos menos el primero y el último. Por ejemplo:
 
 ```
+>>> t = [1,2,3,4]
+>>> middle(t)
+[2,3]
+```
+
+4. (Ejercicio tomado de Downey et. al, 2012) Escribir una función llamada _chop_ que tome una lista y la modifique. La función debe quitar el primero y el último elemento de la lista y devolver `None`. Por ejemplo:
+
+```
+>>> t = [1, 2, 3, 4]
+>>> chop(t)
+>>> t
+[2, 3]
+```
+
+5. (Ejercicio tomado de Downey et. al, 2012) Escribir una función llamada *has_duplicates* que tome una lista y devuelva `True`si la lista tiene elementos repetidos. Esta función no debe modificar la lista original.
 
 **Referencias**
 
