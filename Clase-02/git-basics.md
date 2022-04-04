@@ -323,7 +323,7 @@ Si ahora volvemos a la página donde se encuentra nuestro repositorio remoto y l
 
 ### Ignorar archivos
 
-Si en nuestra carpeta o directorio tenemos archivo que no queremos que git rastree cada vez que hacemos un cambio, lo que debemos hacer es agregar un archivo llamado `.gitignore` a la misma altura que se encuentra el directorio `.git` y allí listar los paths de archivos que se deseen ignorar, ya sea por nombre o por extensión (ej: *.txt).
+Si en nuestra carpeta o directorio tenemos archivos que no queremos que git rastree cada vez que hacemos un cambio, lo que debemos hacer es agregar un archivo llamado `.gitignore` a la misma altura que se encuentra el directorio `.git` y allí listar los paths de archivos que se deseen ignorar, ya sea por nombre o por extensión (ej: *.txt).
 
 Por ejemplo, si queremos que se ignoren las carpetas `data/`, el archivo `config/keys.json` y todos los archivo `.csv` contenidos en la carpeta `result/`, nuestro `.gitignore` debería verse del siguiente modo:
 
