@@ -358,10 +358,10 @@ git diff <file-path>    # muestra las diferencias en el
 
 git diff --staged       # muestra las diferencias en
                         # archivos que se agregaron (add)
-                        # y la última confirmaciónq
+                        # y la última confirmación
 ```
 
-Una alcaración importante es que git no puede hacer esto con cualquier tipo de archivos. Con archivos de texto plano (como los que generamos cuando usamos algún programa tipo Notepad o como los srcipts de códgio) no tendremos problemas. Pero frente a archivos de tipo binario (como los documentos de _Word_), git solo podrá decirnos si el archivo cambió o no, pero no podrá especificarnos qué líneas ni caracteres. ¿Significa esto que no podemos subir un archivo `.docx` a GitHub? No necesariamente. Podemos subirlo y utilizar git para recuperar sus distintas versiones, pero deberemos prescindir de una gran parte de las facilidades que ofrece la herramienta.
+Una alcaración importante es que git no puede hacer esto con cualquier tipo de archivos. Con archivos de texto plano (como los que generamos cuando usamos algún programa tipo Notepad o como los srcipts de código) no tendremos problemas. Pero frente a archivos de tipo binario (como los documentos de _Word_), git solo podrá decirnos si el archivo cambió o no, pero no podrá especificarnos qué líneas ni caracteres. ¿Significa esto que no podemos subir un archivo `.docx` a GitHub? No necesariamente. Podemos subirlo y utilizar git para recuperar sus distintas versiones, pero deberemos prescindir de una gran parte de las facilidades que ofrece la herramienta.
 ### Actualizar el repo local
 
 <div style="text-align:center">
@@ -440,7 +440,7 @@ git restore --staged <file-path>    # quita los cambios agregados al área de pr
                                     # de trabajo
 ```
 
-Si ya confirmamos nuestros cambios (commit):
+Si ya confirmamos nuestros cambios (*commit*):
 
 ```
 git revert <SHA>            # revierte el commit con el SHA indicado 
@@ -459,7 +459,7 @@ git reset --hard HEAD~1     # ídem reset --soft solo que no conserva los archiv
 
 ## [HINT] Rastrear cambios
 
-Puede que a veces nos interese rastrear los cambios dentro de un repositorio. El comando `log` nos permite visualizar los commits realizados, qué archivos modificaron y cuáles fueron los cambios realizados, entre otras cosas:
+Puede que a veces nos interese rastrear los cambios dentro de un repositorio. El comando `log` nos permite visualizar los *commits* realizados, qué archivos modificaron y cuáles fueron los cambios realizados, entre otras cosas:
 
 ```
 git log                         # permite visualizar todos los commits, sus mensajes de
@@ -593,9 +593,9 @@ git merge <branch-B>                        # importa los cambios de la rama
     </em>
 </div>
 
-Cuando hacemos un merge, una rama A (en la que estamos posicionados) se trae los cambios de otra rama B.
+Cuando hacemos un *merge*, una rama A (en la que estamos posicionados) se trae los cambios de otra rama B.
 
-En una pull request (en GitHub) o una merge request (en GitLab) es la rama B la que le pide a la rama A que incorpore sus cambios.
+En una *pull request* (en GitHub y Bitbucket) o una *merge request* (en GitLab) es la rama B la que le pide a la rama A que incorpore sus cambios.
 
 Esta acción debe hacerse desde la interfaz de la página del servidor donde se encuentre el remoto.
 
@@ -613,7 +613,7 @@ Para ello, debemos ir a la página del repositorio remoto, a la sección  _Pull 
 
 Esta no es la única forma de hacer esto. En general, cuando actualizamos una rama, al ingresar al remoto GitHub nos sugiere la posibilidad de comparar ramas y hacer una PR.
 
-**Aclaración:** Tanto el merge como el MR o PR pueden tener conflictos si la rama que se intenta fusionar no tiene (al momento de hacer la fusión) todos los cambios que tiene la rama a la que se quiere fusionar (i.e. debe tener en su historial los commits de la rama a la cual se quieren fusionar los cambios). En caso de existir conflictos, se los deberá resolver como se detalla en la [sección anterior](#resolución-de-conflictos).
+**Aclaración:** Tanto el merge como el MR o PR pueden tener conflictos si la rama que se intenta fusionar no tiene (al momento de hacer la fusión) todos los cambios que tiene la rama a la que se quiere fusionar (*i.e.*, debe tener en su historial los *commits* de la rama a la cual se quieren fusionar los cambios). En caso de existir conflictos, se los deberá resolver como se detalla en la [sección anterior](#resolución-de-conflictos).
 
 ### Resolución de conflictos
 
@@ -636,9 +636,9 @@ En ese contexto, ambos empezamos a trabajar y a introducir cambios en el reposit
 
 ¿Qué hacer entonces? Hacemos un `pull` y nos descargamos los nuevos cambios.
 
-Si las modificaciones que estaban en el remoto no afectaban a los mismos archivos que nosotros modificamos, no tendremos problemas. Simplemente nos saldrá un mensaje editable (que no es otra cosa que un mensaje de confirmación) indicando que se realiza un Merge y podremos hacer el `push`.
+Si las modificaciones que estaban en el remoto no afectaban a los mismos archivos que nosotros modificamos, no tendremos problemas. Simplemente nos saldrá un mensaje editable (que no es otra cosa que un mensaje de confirmación) indicando que se realiza un *merge* y podremos hacer el `push`.
 
-Si, en cambio, la otra persona modificó un archivo también editado por nosotros, es problable que haya conflictos y tengamos que solucionarlos. En este caso, cuando hagamos el pull, nuestra consola mostrará algo como lo siguiente:
+Si, en cambio, la otra persona modificó un archivo también editado por nosotros, es problable que haya conflictos y tengamos que solucionarlos. En este caso, cuando hagamos el *pull*, nuestra consola mostrará algo como lo siguiente:
 
 ```
 Auto-merging README.md
@@ -692,7 +692,7 @@ O podemos aceptar ambo, para ello usamos **Accept Both Changes**.
 
 Esto debemos hacerlo para cada cambio. Pero, si ya sabemos que queremos aceptar todos los cambios entrantes o todos los cambios actuales (los que están en nuestro directorio de trabajo) y estamos usando VSC, podemos utilizar la paleta de comandos. Para ello, apretamos `Ctrl+Shift+P` y escribimos _Accept All_. Esto hará que se nos muestren las opciones para resolver todos los conflictos de fusión de la misma forma (aceptando todos los cambios entrantes, todos los actuales o ambos cambios).
 
-Si no estamos usando algún editor de código, para resolver nuestros conflictos (los de código, al menos) deberemos abrir un editor de texto plano (Text Editor, Notepad o el que sea de nuestra preferencia), arremangarnos y buscar cada ocurrencia de conflicto (podemos buscar _HEAD_). Cada vez que encontremos una, tenemos que borrar las líneas que indican _<<<<<<< HEAD (Current Changes)_, _>>>>>>> \<branch> (Incomming Changes)_, _=======_ y las de la porción de código que queremos desestimar. Solo debe quedar el cambio que queremos (el current o el incomming). En el ejemplo anterior, deberíamos dejar o bien _Mi repositorio en GitHub_, o bien _Mi primer repositorio en GitHub_
+Si no estamos usando algún editor de código, para resolver nuestros conflictos (los de código, al menos) deberemos abrir un editor de texto plano (Text Editor, Notepad o el que sea de nuestra preferencia), arremangarnos y buscar cada ocurrencia de conflicto (podemos buscar _HEAD_). Cada vez que encontremos una, tenemos que borrar las líneas que indican _<<<<<<< HEAD (Current Changes)_, _>>>>>>> \<branch> (Incomming Changes)_, _=======_ y las de la porción de código que queremos desestimar. Solo debe quedar el cambio que queremos (el *current* o el *incomming*). En el ejemplo anterior, deberíamos dejar o bien _Mi repositorio en GitHub_, o bien _Mi primer repositorio en GitHub_
 
 Una vez hecho esto guardamos el archivo y lo agregamos al staging (con el ya conocido comando `add`). Y si ejecutamos el comando ```git status```, veremos:
 
