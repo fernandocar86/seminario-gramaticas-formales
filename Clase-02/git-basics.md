@@ -37,7 +37,7 @@ Existen tres tipos de sistemas de control de cambios (VCS, por sus siglas en ing
 - **Control de versiones centralizado (CVCS):** guarda copias de las versiones de los archivos en un servidor remoto. Las personas que están trabajando en un mismo proyecto pueden conectarse a dicho servidor, acceder a la versión que desean y hacer sus modificaciones. Desventaja: si por alguna razón el servidor se cae o no tenemos acceso a él, no podremos trabajar.
 - **Control de versiones distribuido (DVCS):** las copias de los archivos y su historial de cambios son guardados en un servidor remoto y, a su vez, cada integrante del equipo puede tener una copia de estos guardada localmente.
 
-## ¿Qué es git?
+## ¿Qué es Git?
 
 Git es un **control de versiones distribuido** creado por [Linus Torvalds](https://www.cs.helsinki.fi/u/torvalds/) en 2005. 
 
@@ -60,7 +60,7 @@ GitHub es un servidor remoto al cual se conecta nuestra computadora cada vez que
     </em>
 </div>
 
-Git me brinda una serie de comandos que me permiten interactuar con el servidor en donde alojaré mis archivos, pero el servidor que elija para esto es indistinto (por supuesto, siempre que sea un servidor compatible con git).
+Git me brinda una serie de comandos que me permiten interactuar con el servidor en donde alojaré mis archivos, pero el servidor que elija para esto es indistinto (por supuesto, siempre que sea un servidor compatible con Git).
 
 <div style="text-align:center">
     <img src="git-basics-images/git-servers.jpg" width="50%">
@@ -73,9 +73,9 @@ Git me brinda una serie de comandos que me permiten interactuar con el servidor 
     </em>
 </div>
 
-## ¿Cómo funciona git?
+## ¿Cómo funciona Git?
 
-En git, la información relacionada a nuestros archivos es manejada como una _copia instantánea_ de estos. Cada vez que se realiza un cambio en un proyecto, "se toma una foto" del estado de cada archivo en ese proyecto y se guarda la referencia. Para ser más eficiente, el sistema solo guarda nuevamente los archivos que se han modificado respecto de la última versión. Si un archivo no fue modificado, el sistema conserva la vieja versión que ya poseía almacenada.
+En Git, la información relacionada a nuestros archivos es manejada como una _copia instantánea_ de estos. Cada vez que se realiza un cambio en un proyecto, "se toma una foto" del estado de cada archivo en ese proyecto y se guarda la referencia. Para ser más eficiente, el sistema solo guarda nuevamente los archivos que se han modificado respecto de la última versión. Si un archivo no fue modificado, el sistema conserva la vieja versión que ya poseía almacenada.
 
 <div style="text-align:center">
     <img src="git-basics-images/git-checkins-over-time.webp" width="70%">
@@ -88,7 +88,7 @@ En git, la información relacionada a nuestros archivos es manejada como una _co
     </em>
 </div>
 
-## Los estados de git
+## Los estados de Git
 
 Git tiene tres estados principales en los que se pueden encontrar los archivos: 
 
@@ -96,13 +96,13 @@ Git tiene tres estados principales en los que se pueden encontrar los archivos:
 - preparado (*staged*): significa que un archivo modificado ha sido marcado para que ser almacenado en la próxima confirmación
 - confirmado (*committed*): significa que el archivo ha sido confirmado y, la próxima vez que se realice un push, se subirá al remoto. Aquí los datos están almacenados de manera segura en la base de datos LOCAL, pero todavía no se encuentran en la copia remota del repositorio (alojada en el servidor que se haya elegido).
 
-De este modo, un proyecto de git cuenta con tres secciones principales: 
+De este modo, un proyecto de Git cuenta con tres secciones principales: 
 
-- el directorio de git (*git directory*): donde se almacenan los metadatos y la base de datos de objetos para nuestro proyecto. Es la parte más importante de git, y es lo que se copia cuando clonamos un repositorio desde la nube a nuestra computadora.
+- el directorio de Git (*git directory*): donde se almacenan los metadatos y la base de datos de objetos para nuestro proyecto. Es la parte más importante de Git, y es lo que se copia cuando clonamos un repositorio desde la nube a nuestra computadora.
 
 - el directorio de trabajo (*working directory*): copia de una versión del proyecto. Estos archivos se sacan de la base de datos comprimida en el directorio de Git, y se colocan en el disco para que los podamos usar o modificar.
 
-- el área de preparación (*staging area*): es un archivo, generalmente contenido en nuestro directorio de git, que almacena información acerca de lo que va a ir en nuestra próxima confirmación.
+- el área de preparación (*staging area*): es un archivo, generalmente contenido en nuestro directorio de Git, que almacena información acerca de lo que va a ir en nuestra próxima confirmación.
 
 <div style="text-align:center">
     <img src="git-basics-images/git-workflow.png" width="70%">
@@ -171,7 +171,7 @@ Con este proceso se puede descargar cualquier repositorio existente (y al cual t
 
 ### Inicializar un repo local
 
-Supongamos que en nuestra computadora tenemos una carpeta con una serie de archivos y que queremos usar git como controlador de versiones para sus cambios. En ese caso, lo que debemos hacer es ir hasta esa carpeta y abrirla en una terminal. Una vez allí, escribimos:
+Supongamos que en nuestra computadora tenemos una carpeta con una serie de archivos y que queremos usar Git como controlador de versiones para sus cambios. En ese caso, lo que debemos hacer es ir hasta esa carpeta y abrirla en una terminal. Una vez allí, escribimos:
 
 ```
 git init
@@ -189,7 +189,7 @@ git remote add origin <url>
 
 Si mientras hacemos esto vamos mirando el archivo _config_, podremos ver cómo se va agregando la información.
 
-Del mismo modo, tenemos que indicarle a git quiénes somos y cuál es nuestro correo electrónico. Esto puede hacerse con los siguientes comandos:
+Del mismo modo, tenemos que indicarle a Git quiénes somos y cuál es nuestro correo electrónico. Esto puede hacerse con los siguientes comandos:
 
 ```
 git config --local user.name <nombre>
@@ -198,7 +198,7 @@ git config --local user.email <email>
 
 El flag `--local` indica que esa configuración solo es válida para el repositorio que se está utilizando en ese momento. Otros repositorios en nuestra computadora pueden tener otra configuración. En caso de querer utilizar el mismo nombre y correo electrónico en todos los repositorios que se tengan en la computadora, se debe cambiar el flag `--local` por `--global`.
 
-**Aclaración:** No es necesario que el correo sea el mismo que está registrado en nuestro repositorio en la nube, ni que nuestro nombre sea el mismo que indicamos allí. Esta información solo es necesaria por cuestiones protocolares: cada vez que hacemos un commit, git indica el nombre y el correo de quien hizo los cambios a fin de que, si alguien más lo necesita, pueda ponerse en contacto.
+**Aclaración:** No es necesario que el correo sea el mismo que está registrado en nuestro repositorio en la nube, ni que nuestro nombre sea el mismo que indicamos allí. Esta información solo es necesaria por cuestiones protocolares: cada vez que hacemos un commit, Git indica el nombre y el correo de quien hizo los cambios a fin de que, si alguien más lo necesita, pueda ponerse en contacto.
 
 ### [HINT] Configuración
 
@@ -225,7 +225,7 @@ Una vez que tenemos nuestro repositorio, podemos ejecutar el comando `status`. E
 git status
 ```
 
-En esta instancia, en la que tenemos un archivo nuevo que git desconoce, nos mostrará algo como lo siguiente:
+En esta instancia, en la que tenemos un archivo nuevo que Git desconoce, nos mostrará algo como lo siguiente:
 
 ```
 On branch main
@@ -324,7 +324,7 @@ Si ahora volvemos a la página donde se encuentra nuestro repositorio remoto y l
 
 ### Ignorar archivos
 
-Si en nuestra carpeta o directorio tenemos archivos que no queremos que git rastree cada vez que hacemos un cambio, lo que debemos hacer es agregar un archivo llamado `.gitignore` a la misma altura que se encuentra el directorio `.git` y allí listar los paths de archivos que se deseen ignorar, ya sea por nombre o por extensión (ej: *.txt).
+Si en nuestra carpeta o directorio tenemos archivos que no queremos que Git rastree cada vez que hacemos un cambio, lo que debemos hacer es agregar un archivo llamado `.gitignore` a la misma altura que se encuentra el directorio `.git` y allí listar los paths de archivos que se deseen ignorar, ya sea por nombre o por extensión (ej: *.txt).
 
 Por ejemplo, si queremos que se ignoren las carpetas `data/`, el archivo `config/keys.json` y todos los archivo `.csv` contenidos en la carpeta `result/`, nuestro `.gitignore` debería verse del siguiente modo:
 
@@ -339,13 +339,13 @@ config/keys.json
 results/*.csv
 ```
 
-El caracter `#` nos permite agregar comentarios que no serán tenidos en cuenta por git. Estos nos posibilita dejar indicaciones más claras para la comprensión del archivo.
+El caracter `#` nos permite agregar comentarios que no serán tenidos en cuenta por Git. Estos nos posibilita dejar indicaciones más claras para la comprensión del archivo.
 
 ### Control de diferencias
 
-Hasta ahora solo nos hemos ocupado de crear un repositorio (o descargarlo si ya existía previamente) y subir los archivos disponibles en nuestra computadora. Cuando hacemos esto, le indicamos a git que queremos que _trackee_ esos archivos: que los tenga presentes y que, si hacemos alguna modificación, nos permita verla, subirla o deshacerla y volver al archivo como estaba en otro momento.
+Hasta ahora solo nos hemos ocupado de crear un repositorio (o descargarlo si ya existía previamente) y subir los archivos disponibles en nuestra computadora. Cuando hacemos esto, le indicamos a Git que queremos que _trackee_ esos archivos: que los tenga presentes y que, si hacemos alguna modificación, nos permita verla, subirla o deshacerla y volver al archivo como estaba en otro momento.
 
-Entonces, cuando realizamos algún cambio en alguno de los archivos que git está siguiendo, podemos ver no solo qué archivo se modificó sino también cuáles fueron las modificaciones realizadas:
+Entonces, cuando realizamos algún cambio en alguno de los archivos que Git está siguiendo, podemos ver no solo qué archivo se modificó sino también cuáles fueron las modificaciones realizadas:
 
 ```
 git diff                # muestra las diferencias en
@@ -361,7 +361,7 @@ git diff --staged       # muestra las diferencias en
                         # y la última confirmación
 ```
 
-Una alcaración importante es que git no puede hacer esto con cualquier tipo de archivos. Con archivos de texto plano (como los que generamos cuando usamos algún programa tipo Notepad o como los srcipts de código) no tendremos problemas. Pero frente a archivos de tipo binario (como los documentos de _Word_), git solo podrá decirnos si el archivo cambió o no, pero no podrá especificarnos qué líneas ni caracteres. ¿Significa esto que no podemos subir un archivo `.docx` a GitHub? No necesariamente. Podemos subirlo y utilizar git para recuperar sus distintas versiones, pero deberemos prescindir de una gran parte de las facilidades que ofrece la herramienta.
+Una alcaración importante es que Git no puede hacer esto con cualquier tipo de archivos. Con archivos de texto plano (como los que generamos cuando usamos algún programa tipo Notepad o como los srcipts de código) no tendremos problemas. Pero frente a archivos de tipo binario (como los documentos de _Word_), Git solo podrá decirnos si el archivo cambió o no, pero no podrá especificarnos qué líneas ni caracteres. ¿Significa esto que no podemos subir un archivo `.docx` a GitHub? No necesariamente. Podemos subirlo y utilizar Git para recuperar sus distintas versiones, pero deberemos prescindir de una gran parte de las facilidades que ofrece la herramienta.
 ### Actualizar el repo local
 
 <div style="text-align:center">
@@ -377,9 +377,9 @@ Una alcaración importante es que git no puede hacer esto con cualquier tipo de 
     </em>
 </div>
 
-Cada nuevo commit que hacemos es una especie de foto que guarda git de nuestros archivos. Podemos pensar esa secuencia de fotos como una suerte de línea temporal en la que podemos volver hacia atrás si queremos recuperar información que luego fue modificada.
+Cada nuevo commit que hacemos es una especie de foto que guarda Git de nuestros archivos. Podemos pensar esa secuencia de fotos como una suerte de línea temporal en la que podemos volver hacia atrás si queremos recuperar información que luego fue modificada.
 
-Pero para esto es importante tener nuestro repositorio local, ese sobre el que trabajamos y en el que modificamos nuestros archivos, actualizado. Si no vamos alineando nuestro repositorio local con el remoto y descargándole cada tanto las actualizaciones que otras personas (si trabajamos de forma colaborativa) o nosotros mismos (si tenemos más de una computadora o si editamos algún archivo desde la interfaz web) realizamos, git podría no dejarnos pushear, debido a que en el remoto hay nuevos cambios que no tenemos de forma local y, por ende, los archivos no se encuentran en su última versión.
+Pero para esto es importante tener nuestro repositorio local, ese sobre el que trabajamos y en el que modificamos nuestros archivos, actualizado. Si no vamos alineando nuestro repositorio local con el remoto y descargándole cada tanto las actualizaciones que otras personas (si trabajamos de forma colaborativa) o nosotros mismos (si tenemos más de una computadora o si editamos algún archivo desde la interfaz web) realizamos, Git podría no dejarnos pushear, debido a que en el remoto hay nuevos cambios que no tenemos de forma local y, por ende, los archivos no se encuentran en su última versión.
 
 Para descargar la última versión de los archivos usamos el siguiente comando:
 
@@ -451,7 +451,7 @@ git revert <SHA>            # revierte el commit con el SHA indicado
         
 git reset --soft HEAD~1     # deshace el último commit hecho pero conserva los archivos
                             # modificados en el área de staging (este comando modifica
-                            # la historia recopilada en git porque borra el commit)
+                            # la historia recopilada en Git porque borra el commit)
         
 git reset --hard HEAD~1     # ídem reset --soft solo que no conserva los archivos 
                             # modificados en el área de staging
@@ -488,13 +488,13 @@ Cuando hablamos de ramificaciones, nos referimos a que podemos tomar una rama de
 
 Esto es sumamente útil cuando estamos compartiendo nuestro repositorio con otras personas y no queremos que sus cambios interfieran en nuestro trabajo, pero es posible que luego queramos integrar todo, los archivos en nuestra rama con los de las ramas de los demás.
 
-Para git, una rama es simplemente un apuntador móvil que señala cada una de las confirmaciones que vamos haciendo en nuestro repositorio, lo que significa que señala cada foto que vamos tomando de nuestros archivos.
+Para Git, una rama es simplemente un apuntador móvil que señala cada una de las confirmaciones que vamos haciendo en nuestro repositorio, lo que significa que señala cada foto que vamos tomando de nuestros archivos.
 
 Cuando creamos un repositorio, la primera rama que se crea por defecto suele ser `master` o `main` y esta es la que se considera la _rama base_, pero esto es configurable y se puede indicar cualquier otra rama en su lugar.
 
 Que una rama sea la _rama base_ implica, entre otras cosas, que cuando alguien clone el repo, la rama en la que se encontrará ni bien se genera la copia local será esta rama.
 
-Con cada confirmación que realicemos, y mientras no nos cambiemos de rama, el apuntador de la rama base (o de la rama en la que nos encontremos) irá avanzando en la historia que registra git de un archivo.
+Con cada confirmación que realicemos, y mientras no nos cambiemos de rama, el apuntador de la rama base (o de la rama en la que nos encontremos) irá avanzando en la historia que registra Git de un archivo.
 
 Para crear una nueva rama, podemos usar el siguiente comando:
 
@@ -529,7 +529,7 @@ Para movernos entre branches usamos el siguiente comando:
 git checkout <branch-name>
 ```
 
-Para poder ejecutar este comando es necesario tener el directorio de trabajo de la rama en la que nos encontremos limpio. De lo contrario, git nos pedirá que subamos nuestros cambios al remoto o los descartemos.
+Para poder ejecutar este comando es necesario tener el directorio de trabajo de la rama en la que nos encontremos limpio. De lo contrario, Git nos pedirá que subamos nuestros cambios al remoto o los descartemos.
 
 Si queremos borrar una rama en el repositorio local, debemos usar:
 
@@ -745,7 +745,7 @@ git merge main
 
 Una vez hecho esto, pueden suceder dos cosas:
 - En el mundo feliz, el *merge* con la rama *target* se hace sin conflictos y solo nos restará hacer un `push` a nuestra rama de trabajo. Luego de hacerlo, veremos que la PR realizada se actualiza y las advertencias de conflictos en el remoto deberían desaparecer.
-- En un mundo menos feliz, git podría indicarnos que hay conflictos porque en la rama *target* había modificaciones que alteraban los mismos archivos que nosotros cambiamos. En este caso, debemos resolverlos del mismo modo que se indicó [anteriormente](#resolución-de-conflictos). Una vez resueltos, realizar los ya clásicos `add`, `commit` y `push`. Igual que en el mundo feliz, la PR se actualizará (debido a que la rama se actualizó) y deberíamos dejar de ver las advertencias de conflictos.
+- En un mundo menos feliz, Git podría indicarnos que hay conflictos porque en la rama *target* había modificaciones que alteraban los mismos archivos que nosotros cambiamos. En este caso, debemos resolverlos del mismo modo que se indicó [anteriormente](#resolución-de-conflictos). Una vez resueltos, realizar los ya clásicos `add`, `commit` y `push`. Igual que en el mundo feliz, la PR se actualizará (debido a que la rama se actualizó) y deberíamos dejar de ver las advertencias de conflictos.
 
 ## [HINT] Flags útiles
 
