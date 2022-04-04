@@ -46,27 +46,21 @@ Guardar la información de forma remota posibilita que otras personas accedan a 
 GitHub es un servidor remoto al cual se conecta nuestra computadora cada vez que subimos (pusheamos) o bajamos (clonamos o pulleamos) información, entre otras cosas. Así como existe [GitHub](https://github.com/), existen otros servidores: [GitLab](https://about.gitlab.com/), [Bitbucket](https://bitbucket.org/product/), [SourceForge](https://sourceforge.net/), etc.
 
 <div style="text-align:center">
-    <img src="git-basics-images/git-vs-github.webp" width="70%">
-    <br>
-    <em>
-        Imagen tomada de
-        <a href=https://blog.devmountain.com/git-vs-github-whats-the-difference>
-        Devmountain
-        </a>
-    </em>
+    <figure>
+        <img src="git-basics-images/git-vs-github.webp" width="70%">
+        <figcaption>Imagen tomada de <a href=https://blog.devmountain.com/git-vs-github-whats-the-difference>Devmountain</a>
+        </figcaption>
+    </figure>
 </div>
 
 Git me brinda una serie de comandos que me permiten interactuar con el servidor en donde alojaré mis archivos, pero el servidor que elija para esto es indistinto (por supuesto, siempre que sea un servidor compatible con Git).
 
 <div style="text-align:center">
-    <img src="git-basics-images/git-servers.jpg" width="50%">
-    <br>
-    <em>
-        Meme generado con
-        <a href=https://imgflip.com/memegenerator>
-        Meme Generator
-        </a>
-    </em>
+    <figure>
+        <img src="git-basics-images/git-servers.jpg" width="50%">
+        <figcaption>Meme generado con <a href=https://imgflip.com/memegenerator>Meme Generator</a>
+        </figcaption>
+    </figure>
 </div>
 
 ## ¿Cómo funciona Git?
@@ -74,14 +68,11 @@ Git me brinda una serie de comandos que me permiten interactuar con el servidor 
 En Git, la información relacionada a nuestros archivos es manejada como una _copia instantánea_ de estos. Cada vez que se realiza un cambio en un proyecto, "se toma una foto" del estado de cada archivo en ese proyecto y se guarda la referencia. Para ser más eficiente, el sistema solo guarda nuevamente los archivos que se han modificado respecto de la última versión. Si un archivo no fue modificado, el sistema conserva la vieja versión que ya poseía almacenada.
 
 <div style="text-align:center">
-    <img src="git-basics-images/git-checkins-over-time.webp" width="70%">
-    <br>
-    <em>
-        Imagen tomada de
-        <a href=https://blog.softtek.com/es/git-c%C3%B3mo-poner-orden-en-el-caos>
-        Softtek
-        </a>
-    </em>
+    <figure>
+        <img src="git-basics-images/git-checkins-over-time.webp" width="70%">
+        <figcaption>Imagen tomada de <a href=https://blog.softtek.com/es/git-c%C3%B3mo-poner-orden-en-el-caos>Softtek</a>
+        </figcaption>
+    </figure>
 </div>
 
 ## Los estados de Git
@@ -101,14 +92,11 @@ De este modo, un proyecto de Git cuenta con tres secciones principales:
 - el área de preparación (*staging area*): es un archivo, generalmente contenido en nuestro directorio de Git, que almacena información acerca de lo que va a ir en nuestra próxima confirmación.
 
 <div style="text-align:center">
-    <img src="git-basics-images/git-workflow.png" width="70%">
-    <br>
-    <em>
-        Imagen tomada de
-        <a href=https://medium.com/@techblurbs/git-getting-started-with-version-control-16a682736933>
-        TechBlurbs
-        </a>
-    </em>
+    <figure>
+        <img src="git-basics-images/git-workflow.png" width="70%">
+        <figcaption>Imagen tomada de <a href=https://medium.com/@techblurbs/git-getting-started-with-version-control-16a682736933>TechBlurbs</a>
+        </figcaption>
+    </figure>
 </div>
 
 
@@ -308,14 +296,11 @@ Si ahora volvemos a la página donde se encuentra nuestro repositorio remoto y l
 
 
 <div style="text-align:center">
-    <img src="git-basics-images/git-fire.jpg" width="40%">
-    <br>
-    <em>
-        Imagen tomada de
-        <a href=https://medium.com/@lulu.ilmaknun.q/kompilasi-meme-git-e2fe49c6e33e>
-        Lulu Ilmaknun Qurotaini
-        </a>
-    </em>
+    <figure>
+        <img src="git-basics-images/git-fire.jpg" width="40%">
+        <figcaption>Imagen tomada de <a href=https://medium.com/@lulu.ilmaknun.q/kompilasi-meme-git-e2fe49c6e33e>Lulu Ilmaknun Qurotaini</a>
+        </figcaption>
+    </figure>
 </div>
 
 ### Ignorar archivos
@@ -361,16 +346,11 @@ Una alcaración importante es que Git no puede hacer esto con cualquier tipo de 
 ### Actualizar el repo local
 
 <div style="text-align:center">
-    <img src="git-basics-images/git-not-updated.jpg" width="70%">
-    <br>
-    <em>
-        La foto a partir de la cual se generó este
-        <br>
-        meme fue encontrada en
-        <a href=https://www.1news.co.nz/2022/03/28/will-smith-chris-rock-oscars-meme-not-appropriate-luxon>
-        1news
-        </a>
-    </em>
+    <figure>
+        <img src="git-basics-images/git-not-updated.jpg" width="70%">
+        <figcaption>La foto a partir de la cual se generó este meme fue encontrada en <a href=https://www.1news.co.nz/2022/03/28/will-smith-chris-rock-oscars-meme-not-appropriate-luxon>1news</a>
+        </figcaption>
+    </figure>
 </div>
 
 Cada nuevo commit que hacemos es una especie de foto que guarda Git de nuestros archivos. Podemos pensar esa secuencia de fotos como una suerte de línea temporal en la que podemos volver hacia atrás si queremos recuperar información que luego fue modificada.
@@ -385,14 +365,11 @@ git pull
 ## Forkear un repo
 
 <div style="text-align:center">
-    <img src="git-basics-images/git-fork.jpg" width="50%">
-    <br>
-    <em>
-        Meme generado con
-        <a href=https://imgflip.com/memegenerator>
-        Meme Generator
-        </a>
-    </em>
+    <figure>
+        <img src="git-basics-images/git-fork.jpg" width="50%">
+        <figcaption>Meme generado con <a href=https://imgflip.com/memegenerator>Meme Generator</a>
+        </figcaption>
+    </figure>
 </div>
 
 Cuando forkeamos un repositorio, hacemos una bifurcación de un proyecto. De esta manera, podemos tomar el código de un repositorio ajeno, hacer una copia en nuestro repositorio remoto y trabajar en esa copia con la seguridad de que no estamos modificando el código del proyecto original. 
@@ -407,14 +384,11 @@ Esto hará que se genere una copia idéntica al proyecto forkeado en nuestro rep
 ## Deshacer cambios
 
 <div style="text-align:center">
-    <img src="git-basics-images/git-reset-changes.jpg" width="50%">
-    <br>
-    <em>
-        Meme generado con
-        <a href=https://imgflip.com/memegenerator>
-        Meme Generator
-        </a>
-    </em>
+    <figure>
+        <img src="git-basics-images/git-reset-changes.jpg" width="50%">
+        <figcaption>Meme generado con <a href=https://imgflip.com/memegenerator>Meme Generator</a>
+        </figcaption>
+    </figure>
 </div>
 
 ¿Quá pasa si hacemos un cambio y nos arrepentimos?
@@ -509,14 +483,11 @@ git branch <branch-name>
 La nueva rama creada también será idéntica a aquella desde la cual se la creó hasta que le hagamos alguna modificación.
 
 <div style="text-align:center">
-    <img src="git-basics-images/git-new-branch.png" width="50%">
-    <br>
-    <em>
-        Imagen tomada de
-        <a href=https://aprendeconalf.es/docencia/git/manual/gestion-ramas>
-        Aprender con Alf
-        </a>
-    </em>
+    <figure>
+        <img src="git-basics-images/git-new-branch.png" width="50%">
+        <figcaption>Imagen tomada de <a href=https://aprendeconalf.es/docencia/git/manual/gestion-ramas>Aprender con Alf</a>
+        </figcaption>
+    </figure>
 </div>
 
 Para movernos entre branches usamos el siguiente comando:
@@ -536,27 +507,21 @@ git branch -D <branch-name>
 Este comando borrará la rama de mi repo local, pero no afectará la que se encuentra en el remoto.
 
 <div style="text-align:center">
-    <img src="git-basics-images/git-branch-everywhere.jpg" width="60%">
-    <br>
-    <em>
-        Meme tomado de
-        <a href=https://medium.com/droidsonroids/android-studio-and-git-branches-how-to-simplify-your-work-698aee7c38dc>
-        Łukasz Kopociński
-        </a>
-    </em>
+    <figure>
+        <img src="git-basics-images/git-branch-everywhere.jpg" width="60%">
+        <figcaption>Meme tomado de <a href=https://medium.com/droidsonroids/android-studio-and-git-branches-how-to-simplify-your-work-698aee7c38dc>Łukasz Kopociński</a>
+        </figcaption>
+    </figure>
 </div>
 
 ## Merge
 
 <div style="text-align:center">
-    <img src="git-basics-images/git-merge.jpg" width="50%">
-    <br>
-    <em>
-        Meme generado con
-        <a href=https://imgflip.com/memegenerator>
-        Meme Generator
-        </a>
-    </em>
+    <figure>
+        <img src="git-basics-images/git-merge.jpg" width="50%">
+        <figcaption>Meme generado con <a href=https://imgflip.com/memegenerator>Meme Generator</a>
+        </figcaption>
+    </figure>
 </div>
 
 Si deseamos fusionar los cambios de una rama en otra, debemos movernos a aquella en la que queremos importar los cambios utilizando el comando `checkout` y llevar los cambios de la rama deseada con el comando `merge`:
@@ -579,14 +544,11 @@ git merge <branch-B>                        # importa los cambios de la rama
 ## Pull Requests
 
 <div style="text-align:center">
-    <img src="git-basics-images/git-pr-merge-relation.jpg" width="60%">
-    <br>
-    <em>
-        Meme tomado de
-        <a href=https://imgflip.com/memegenerator>
-        Meme Generator
-        </a>
-    </em>
+    <figure>
+        <img src="git-basics-images/git-pr-merge-relation.jpg" width="60%">
+        <figcaption>Meme tomado de <a href=https://imgflip.com/memegenerator>Meme Generator</a>
+        </figcaption>
+    </figure>
 </div>
 
 Cuando hacemos un *merge*, una rama A (en la que estamos posicionados) se trae los cambios de otra rama B.
@@ -614,14 +576,11 @@ Esta no es la única forma de hacer esto. En general, cuando actualizamos una ra
 ### Resolución de conflictos
 
 <div style="text-align:center">
-    <img src="git-basics-images/git-conflicts.jpg" width="70%">
-    <br>
-    <em>
-        Meme generado con 
-        <a href=https://imgflip.com/memegenerator>
-        Meme Generator
-        </a>
-    </em>
+    <figure>
+        <img src="git-basics-images/git-conflicts.jpg" width="70%">
+        <figcaption>Meme generado con <a href=https://imgflip.com/memegenerator>Meme Generator</a>
+        </figcaption>
+    </figure>
 </div>
 
 Supongamos que estamos trabajando en el mismo repositorio con otras personas y estamos compartiendo nuestra rama de trabajo con alguien más, por lo que dos personas están pusheando a la misma rama.
