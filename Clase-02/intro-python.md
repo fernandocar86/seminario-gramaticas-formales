@@ -164,9 +164,9 @@ variable
 
     NameError                                 Traceback (most recent call last)
 
-    <ipython-input-10-1748287bc46a> in <module>
+    Input In [10], in <cell line: 1>()
     ----> 1 variable
-    
+
 
     NameError: name 'variable' is not defined
 
@@ -186,7 +186,7 @@ No obstante sí existen algunas reglas que se deben seguir a la hora de definir 
 ```
 
 
-      File "<ipython-input-11-bd5ff5b2efeb>", line 1
+      Input In [11]
         1ravariable = 'hola'
          ^
     SyntaxError: invalid syntax
@@ -225,7 +225,7 @@ v@riable = 'variable'
 ```
 
 
-      File "<ipython-input-14-f732e74b984e>", line 1
+      Input In [14]
         v@riable = 'variable'
         ^
     SyntaxError: cannot assign to operator
@@ -240,7 +240,7 @@ class = 'ilegal assigment'
 ```
 
 
-      File "<ipython-input-15-e19c9b8244b3>", line 1
+      Input In [15]
         class = 'ilegal assigment'
               ^
     SyntaxError: invalid syntax
@@ -885,9 +885,9 @@ lista[4]
 
     IndexError                                Traceback (most recent call last)
 
-    <ipython-input-58-09bfed834fa2> in <module>
+    Input In [58], in <cell line: 1>()
     ----> 1 lista[4]
-    
+
 
     IndexError: list index out of range
 
@@ -1160,6 +1160,146 @@ lista
 
 
 ### Tuplas
+
+Las tuplas son secuencias de valores muy similares a las listas, su gran diferencia es que son inmutables. Podemos definir una tupla con paréntesis (_()_) o simplemente ordenando sus elementos y separándolos por una coma.
+
+
+```python
+tupla_1 = 'h','o','l','a'
+tupla_1
+```
+
+
+
+
+    ('h', 'o', 'l', 'a')
+
+
+
+
+```python
+tupla_2 = ('m','u','n','d','o')
+tupla_2
+```
+
+
+
+
+    ('m', 'u', 'n', 'd', 'o')
+
+
+
+También, si ya contamos con una lista o conjunto al que queremos convertir en tupla, podemos utilizar la función `tuple()`.
+
+
+```python
+lista = [1,2,3]
+tupla = tuple(lista)
+tupla
+```
+
+
+
+
+    (1, 2, 3)
+
+
+
+O podemos genrar una tupla vacía:
+
+
+```python
+tuple()
+```
+
+
+
+
+    ()
+
+
+
+
+```python
+type(tupla)
+```
+
+
+
+
+    tuple
+
+
+
+Del mismo modo que accedíamos a elementos de una lista encerrando la posición (o posiciones) entre corchetes, podemos hacerlo con las tuplas:
+
+
+```python
+tupla_1[2]
+```
+
+
+
+
+    'l'
+
+
+
+
+```python
+tupla_1[1:3]
+```
+
+
+
+
+    ('o', 'l')
+
+
+
+Pero, al no ser mutables, no podemos cambiar los elementos que contiene:
+
+
+```python
+tupla
+```
+
+
+
+
+    (1, 2, 3)
+
+
+
+
+```python
+tupla[0] = 3
+```
+
+
+    ---------------------------------------------------------------------------
+
+    TypeError                                 Traceback (most recent call last)
+
+    Input In [93], in <cell line: 1>()
+    ----> 1 tupla[0] = 3
+
+
+    TypeError: 'tuple' object does not support item assignment
+
+
+Sin embargo, podemos generar una nueva tupla y asignársela a la variable que ya existía:
+
+
+```python
+tupla = (3,) + tupla[1:]
+tupla
+```
+
+
+
+
+    (3, 2, 3)
 
 
 
@@ -1448,15 +1588,15 @@ list(product(x,y))             # con product puedo ver el producto cartesiano
 
 
 
-    [('n', 'w'),
-     ('n', 'z'),
-     ('n', 'm'),
-     ('m', 'w'),
+    [('m', 'm'),
      ('m', 'z'),
-     ('m', 'm'),
-     ('o', 'w'),
+     ('m', 'w'),
+     ('n', 'm'),
+     ('n', 'z'),
+     ('n', 'w'),
+     ('o', 'm'),
      ('o', 'z'),
-     ('o', 'm')]
+     ('o', 'w')]
 
 
 
@@ -1468,75 +1608,712 @@ list(product(y,x))
 
 
 
-    [('w', 'n'),
-     ('w', 'm'),
-     ('w', 'o'),
-     ('z', 'n'),
-     ('z', 'm'),
-     ('z', 'o'),
+    [('m', 'm'),
      ('m', 'n'),
-     ('m', 'm'),
-     ('m', 'o')]
+     ('m', 'o'),
+     ('z', 'm'),
+     ('z', 'n'),
+     ('z', 'o'),
+     ('w', 'm'),
+     ('w', 'n'),
+     ('w', 'o')]
 
 
-
-
-```python
-
-```
 
 ### Diccionarios
 
-### Cadenas
+Los diccionarios son una suerte de colección sin orden, cuyos índices son llamados _keys_ y los valores en esos índices, _values_. Es decir, así como en una lista podíamos acceder a los distintos elementos recurriendo a las posiciones (números enteros), para los diccionarios usamos keys. ¿Y qué tipo de objeto puede ser una key? ¡Muchos! Enteros, flotantes, cadenas, por nombrar algunos. Una restricción importante es que, para que estos elementos puedan funcionar como índices, cada key debe ser única. No puedo tener dos keys iguales. Y cada key está asociada a un único valor (_value_), que puede ser desde un entero, hasta una lista o una tupla, pero a un único valor.
 
-convertir cadenas a listas
+Para crear un diccionario podemos usar tanto la función `dict()` como las llaves.
 
 
 ```python
-list('hola')
+diccionario_1 = dict()
+diccionario_1
 ```
 
 
 
 
-    ['h', 'o', 'l', 'a']
+    {}
 
 
 
 
 ```python
-'hola mundo'.split()
+diccionario_2 = dict([('a',1),('b',2),('c',3)])
+diccionario_2
 ```
 
 
 
 
-    ['hola', 'mundo']
+    {'a': 1, 'b': 2, 'c': 3}
 
 
 
 
 ```python
-bla
+diccionario_3 = {
+    100:[1,0,0],
+    101:[1,0,1],
+    102:[1,0,2]
+}
+diccionario_3
+```
+
+
+
+
+    {100: [1, 0, 0], 101: [1, 0, 1], 102: [1, 0, 2]}
+
+
+
+Dado que no tienen orden, no podemos acceder a sus valores indicando una posición, pero sí usando las keys:
+
+
+```python
+diccionario_2[0]
 ```
 
 
     ---------------------------------------------------------------------------
 
-    NameError                                 Traceback (most recent call last)
+    KeyError                                  Traceback (most recent call last)
 
-    <ipython-input-111-047595d0fae9> in <module>
-    ----> 1 bla
-    
+    Input In [122], in <cell line: 1>()
+    ----> 1 diccionario_2[0]
 
-    NameError: name 'bla' is not defined
+
+    KeyError: 0
+
+
+
+```python
+diccionario_2['a']
+```
+
+
+
+
+    1
+
+
+
+Si el diccionario no tiene la key indicada, python nos devolerá un error.
+
+
+```python
+diccionario_2['z']
+```
+
+
+    ---------------------------------------------------------------------------
+
+    KeyError                                  Traceback (most recent call last)
+
+    Input In [124], in <cell line: 1>()
+    ----> 1 diccionario_2['z']
+
+
+    KeyError: 'z'
+
+
+También podemos agregar nuevos pares key-value:
+
+
+```python
+diccionario_2['z'] = 'elemento nuevo'
+diccionario_2
+```
+
+
+
+
+    {'a': 1, 'b': 2, 'c': 3, 'z': 'elemento nuevo'}
+
+
+
+Si no conocemos cuáles son las keys de un dicionario, podemos usar el método `keys()` para acceder a esta información. Los metodos `values()` e `items()` nos dirán los valores y los pares key-value respectivamente.
+
+
+```python
+diccionario_3.keys()
+```
+
+
+
+
+    dict_keys([100, 101, 102])
+
+
+
+
+```python
+diccionario_3.values()
+```
+
+
+
+
+    dict_values([[1, 0, 0], [1, 0, 1], [1, 0, 2]])
+
+
+
+
+```python
+diccionario_3.items()
+```
+
+
+
+
+    dict_items([(100, [1, 0, 0]), (101, [1, 0, 1]), (102, [1, 0, 2])])
+
+
+
+### Cadenas
+
+Las cadenas o _strings_ son secuencias ordenadas de caracteres. Un número, una letra, un signo de puntuación o un espacio pueden ser un caracter. Para definir una cadena debemos encerrar los caracteres entre comillas.
+
+
+```python
+cadena_1 = "hola mundo!!"
+cadena_1
+```
+
+
+
+
+    'hola mundo!!'
+
+
+
+
+```python
+cadena_2 = 'hola mundo con comillas simples'
+cadena_2
+```
+
+
+
+
+    'hola mundo con comillas simples'
+
+
+
+También es posible usar la función `str()` y convertir otro tipo de valor en una cadena.
+
+
+```python
+numero = 2
+numero_str = str(numero)
+numero_str
+```
+
+
+
+
+    '2'
+
+
+
+
+```python
+type(numero_str)
+```
+
+
+
+
+    str
+
+
+
+
+```python
+type(numero)
+```
+
+
+
+
+    int
+
+
+
+De la misma forma que sucedía con las listas, al ser secuencias ordenadas, podemos acceder a los distintos caracteres de una cadena utilizando sus posiciones:
+
+
+```python
+lorem_ipsum = '''Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'''
+lorem_ipsum
+```
+
+
+
+
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit,\nsed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+
+
+
+
+```python
+lorem_ipsum[3]
+```
+
+
+
+
+    'e'
+
+
+
+
+```python
+lorem_ipsum[0:20]
+```
+
+
+
+
+    'Lorem ipsum dolor si'
+
+
+
+
+```python
+lorem_ipsum[-8:]
+```
+
+
+
+
+    'laborum.'
+
+
+
+La función `print()` nos permite imprimir una cadena interpretando los caracteres en ella. El salto de línea, por ejemplo está representado por el caracter `\n`, Si usamos `print()`, en lugar de ver dicho caracter, veremos el salto de línea.
+
+
+```python
+print(lorem_ipsum)
+```
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+Las cadenas no son objetos mutables, por lo cual, al igual que lo que sucedía con las tuplas, no podemos modificar sus elementos (con las listas, sí podíamos). De todos modos, sí podemos asignar una nueva cadena a una variable ya existente.
+
+
+```python
+cadena_1
+```
+
+
+
+
+    'hola mundo!!'
+
+
+
+
+```python
+cadena_1[0] = 'H'
+```
+
+
+    ---------------------------------------------------------------------------
+
+    TypeError                                 Traceback (most recent call last)
+
+    Input In [140], in <cell line: 1>()
+    ----> 1 cadena_1[0] = 'H'
+
+
+    TypeError: 'str' object does not support item assignment
+
+
+
+```python
+cadena_1 = '¡¡' + cadena_1 + '!!'
+cadena_1
+```
+
+
+
+
+    '¡¡hola mundo!!!!'
+
+
+
+A continuación, listamos algunas operaciones útiles que se pueden realizar sobre las cadenas:
+
+
+```python
+cadena_1.upper()     # pasa la cadena a mayúscula (no modifica la variable)
+```
+
+
+
+
+    '¡¡HOLA MUNDO!!!!'
+
+
+
+
+```python
+cadena_1
+```
+
+
+
+
+    '¡¡hola mundo!!!!'
+
+
+
+
+```python
+cadena_1_upper = cadena_1.upper() # pasa la cadena a minúscula (no modifica la variable)
+cadena_1_upper.lower()
+```
+
+
+
+
+    '¡¡hola mundo!!!!'
+
+
+
+
+```python
+cadena_2.capitalize()     # pasa la primera letra a mayúscula (no modifica la variable)
+```
+
+
+
+
+    'Hola mundo con comillas simples'
+
+
+
+
+```python
+cadena_2.title()          # pasa la primera letra de cada palabra a mayúscula (no modifica la variable)
+```
+
+
+
+
+    'Hola Mundo Con Comillas Simples'
+
+
+
+
+```python
+cadena_2.split()          # convierte la cadena en una lista separando los caracteres por espacios
+```
+
+
+
+
+    ['hola', 'mundo', 'con', 'comillas', 'simples']
+
+
+
+
+```python
+cadena_4 = "esta|es|otra|cadena"
+cadena_4.split()
+```
+
+
+
+
+    ['esta|es|otra|cadena']
+
+
+
+
+```python
+cadena_4.split('|')      # convierte la cadena en una lista separando los caracteres por pleca
+```
+
+
+
+
+    ['esta', 'es', 'otra', 'cadena']
+
 
 
 ## Funciones
 
+Dentro del contexto de programación, una función es una secuencia de procedimientos que ejecutan determinado cómputo.
+
+
+```python
+type('hola')
+```
+
+
+
+
+    str
+
+
+
+`type()` es una función que toma un argumento y devuelve una cadena que indica a qué tipo de objeto de Python pertence ese argumento. Este valor que devuelve la función se llama _valor de retorno_.
+
+Para definir una función en Python, usamor la sentencia `def`y a continuación escribimos el nombre la función y su definición:
+
+
+```python
+def saludar(nombre):
+    saludo = 'Hola, '+nombre
+    return saludo
+```
+
+
+```python
+saludar('Don Pepito')
+```
+
+
+
+
+    'Hola, Don Pepito'
+
+
+
+Dentro de una función, los valores se asignan a variables llamadas _parámetro_. La función `saludar()`, por ejemplo, toma un argumento, y asigna ese argumento al parámetro `nombre`. Cuando se utilice ese parámetro dentro de la función, hará referencia al valor que se le asignó.
+
+Algunas funciones tienen valores de retorno y otras no. Las primeras son llamadas _funciones fructíferas_ (_fruitful functions_) y las segunas, _nulas_ (_void functions_). Estas últimas devuelven un valor especial conocido como `None`.
+
+
+```python
+def imprimir_saludo(nombre):
+    saludo = 'Hola, '+nombre
+    print(saludo)
+```
+
+
+```python
+imprimir_saludo('Don José')
+```
+
+    Hola, Don José
+
+
+
+```python
+valor_1 = saludar('Don Pepito')
+valor_2 = imprimir_saludo('Don José')
+```
+
+    Hola, Don José
+
+
+
+```python
+valor_1
+```
+
+
+
+
+    'Hola, Don Pepito'
+
+
+
+
+```python
+valor_2
+```
+
+
+```python
+print(valor_2)
+```
+
+    None
+
+
 ## Librerías
 
-import
+Si bien podemos definir todas las funciones que necesitemos, al ser un lenguaje de código abierto, Python cuenta con muchas funciones ya implementadas por la comunidad que contribuye a su desarrollo. En muchos casos, estas funciones se encuentran en _módulos_ o _librerías_.
+
+Un módulo consiste en uno o más archivos que contienen una serie de funciones relacionadas. Para poder usar un módulo, debemos importarlo usando la sentencia `import`.
+
+
+```python
+import os         # importa el módulo os
+```
+
+
+```python
+os.listdir('.')   # utiliza la función listdir (de os)
+                  # para listar los archivos y carpetas
+                  # en este directorio
+```
+
+
+
+
+    ['images',
+     '.ipynb_checkpoints',
+     'intro-python.ipynb',
+     'index.md',
+     'intro-python.md']
+
+
+
+
+```python
+from os import listdir
+```
+
+
+```python
+listdir('.')
+```
+
+
+
+
+    ['images',
+     '.ipynb_checkpoints',
+     'intro-python.ipynb',
+     'index.md',
+     'intro-python.md']
+
+
+
+
+```python
+#import antigravity
+```
+
+Mientras que algunas librerías ya vienen instaladas con Python por defecto, otras deben ser instaladas en caso de necesitarlas. Para ello, podemos correr el siguiente comando desde la consola:
+
+```
+pip3 install <librería>
+```
+
+O también podemos instalarla desde Jupyter anteponiendo un signo de exclamación cerrado (_!_).
+
+
+```python
+! pip install art
+```
+
+    Requirement already satisfied: art in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (5.5)
+
+
+
+```python
+from art import *    # importa todo desde art
+```
+
+
+```python
+print(art('happy'))
+```
+
+     ۜ\(סּںסּَ` )/ۜ 
+
+
+Para instalar jupyter lab, de hecho, podemos hacerlo del mismo modo:
+
+
+```python
+! pip install jupyter lab
+```
+
+    Requirement already satisfied: jupyter in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (1.0.0)
+    Requirement already satisfied: lab in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (7.0)
+    Requirement already satisfied: ipykernel in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jupyter) (6.9.2)
+    Requirement already satisfied: nbconvert in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jupyter) (6.4.4)
+    Requirement already satisfied: notebook in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jupyter) (6.4.8)
+    Requirement already satisfied: qtconsole in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jupyter) (5.2.2)
+    Requirement already satisfied: jupyter-console in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jupyter) (6.4.3)
+    Requirement already satisfied: ipywidgets in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jupyter) (7.7.0)
+    Requirement already satisfied: simplejson in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from lab) (3.17.6)
+    Requirement already satisfied: matplotlib in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from lab) (3.5.1)
+    Requirement already satisfied: txt2tags>=3.6 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from lab) (3.7)
+    Requirement already satisfied: jupyter-client<8.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (7.1.2)
+    Requirement already satisfied: tornado<7.0,>=4.2 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (6.1)
+    Requirement already satisfied: matplotlib-inline<0.2.0,>=0.1.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (0.1.3)
+    Requirement already satisfied: ipython>=7.23.1 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (8.2.0)
+    Requirement already satisfied: nest-asyncio in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (1.5.4)
+    Requirement already satisfied: traitlets<6.0,>=5.1.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (5.1.1)
+    Requirement already satisfied: debugpy<2.0,>=1.0.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (1.6.0)
+    Requirement already satisfied: psutil in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (5.9.0)
+    Requirement already satisfied: nbformat>=4.2.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipywidgets->jupyter) (5.2.0)
+    Requirement already satisfied: ipython-genutils~=0.2.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipywidgets->jupyter) (0.2.0)
+    Requirement already satisfied: jupyterlab-widgets>=1.0.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipywidgets->jupyter) (1.1.0)
+    Requirement already satisfied: widgetsnbextension~=3.6.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipywidgets->jupyter) (3.6.0)
+    Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,<3.1.0,>=2.0.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jupyter-console->jupyter) (3.0.28)
+    Requirement already satisfied: pygments in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jupyter-console->jupyter) (2.11.2)
+    Requirement already satisfied: packaging>=20.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from matplotlib->lab) (21.3)
+    Requirement already satisfied: kiwisolver>=1.0.1 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from matplotlib->lab) (1.4.1)
+    Requirement already satisfied: cycler>=0.10 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from matplotlib->lab) (0.11.0)
+    Requirement already satisfied: pyparsing>=2.2.1 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from matplotlib->lab) (3.0.7)
+    Requirement already satisfied: pillow>=6.2.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from matplotlib->lab) (9.0.1)
+    Requirement already satisfied: numpy>=1.17 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from matplotlib->lab) (1.22.3)
+    Requirement already satisfied: python-dateutil>=2.7 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from matplotlib->lab) (2.8.2)
+    Requirement already satisfied: fonttools>=4.22.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from matplotlib->lab) (4.31.2)
+    Requirement already satisfied: beautifulsoup4 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (4.10.0)
+    Requirement already satisfied: pandocfilters>=1.4.1 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (1.5.0)
+    Requirement already satisfied: entrypoints>=0.2.2 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (0.4)
+    Requirement already satisfied: defusedxml in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (0.7.1)
+    Requirement already satisfied: mistune<2,>=0.8.1 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (0.8.4)
+    Requirement already satisfied: nbclient<0.6.0,>=0.5.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (0.5.13)
+    Requirement already satisfied: testpath in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (0.6.0)
+    Requirement already satisfied: jinja2>=2.4 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (3.1.1)
+    Requirement already satisfied: bleach in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (4.1.0)
+    Requirement already satisfied: jupyterlab-pygments in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (0.1.2)
+    Requirement already satisfied: jupyter-core in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (4.9.2)
+    Requirement already satisfied: Send2Trash>=1.8.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from notebook->jupyter) (1.8.0)
+    Requirement already satisfied: prometheus-client in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from notebook->jupyter) (0.13.1)
+    Requirement already satisfied: terminado>=0.8.3 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from notebook->jupyter) (0.13.3)
+    Requirement already satisfied: pyzmq>=17 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from notebook->jupyter) (22.3.0)
+    Requirement already satisfied: argon2-cffi in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from notebook->jupyter) (21.3.0)
+    Requirement already satisfied: qtpy in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from qtconsole->jupyter) (2.0.1)
+    Requirement already satisfied: pickleshare in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (0.7.5)
+    Requirement already satisfied: backcall in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (0.2.0)
+    Requirement already satisfied: decorator in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (5.1.1)
+    Requirement already satisfied: jedi>=0.16 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (0.18.1)
+    Requirement already satisfied: setuptools>=18.5 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (56.0.0)
+    Requirement already satisfied: pexpect>4.3 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (4.8.0)
+    Requirement already satisfied: stack-data in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (0.2.0)
+    Requirement already satisfied: MarkupSafe>=2.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jinja2>=2.4->nbconvert->jupyter) (2.1.1)
+    Requirement already satisfied: jsonschema!=2.5.0,>=2.4 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbformat>=4.2.0->ipywidgets->jupyter) (4.4.0)
+    Requirement already satisfied: wcwidth in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from prompt-toolkit!=3.0.0,!=3.0.1,<3.1.0,>=2.0.0->jupyter-console->jupyter) (0.2.5)
+    Requirement already satisfied: six>=1.5 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from python-dateutil>=2.7->matplotlib->lab) (1.16.0)
+    Requirement already satisfied: ptyprocess in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from terminado>=0.8.3->notebook->jupyter) (0.7.0)
+    Requirement already satisfied: argon2-cffi-bindings in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from argon2-cffi->notebook->jupyter) (21.2.0)
+    Requirement already satisfied: soupsieve>1.2 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from beautifulsoup4->nbconvert->jupyter) (2.3.1)
+    Requirement already satisfied: webencodings in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from bleach->nbconvert->jupyter) (0.5.1)
+    Requirement already satisfied: parso<0.9.0,>=0.8.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jedi>=0.16->ipython>=7.23.1->ipykernel->jupyter) (0.8.3)
+    Requirement already satisfied: importlib-resources>=1.4.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jsonschema!=2.5.0,>=2.4->nbformat>=4.2.0->ipywidgets->jupyter) (5.6.0)
+    Requirement already satisfied: pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,>=0.14.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jsonschema!=2.5.0,>=2.4->nbformat>=4.2.0->ipywidgets->jupyter) (0.18.1)
+    Requirement already satisfied: attrs>=17.4.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jsonschema!=2.5.0,>=2.4->nbformat>=4.2.0->ipywidgets->jupyter) (21.4.0)
+    Requirement already satisfied: cffi>=1.0.1 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from argon2-cffi-bindings->argon2-cffi->notebook->jupyter) (1.15.0)
+    Requirement already satisfied: pure-eval in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from stack-data->ipython>=7.23.1->ipykernel->jupyter) (0.2.2)
+    Requirement already satisfied: executing in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from stack-data->ipython>=7.23.1->ipykernel->jupyter) (0.8.3)
+    Requirement already satisfied: asttokens in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from stack-data->ipython>=7.23.1->ipykernel->jupyter) (2.0.5)
+    Requirement already satisfied: pycparser in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from cffi>=1.0.1->argon2-cffi-bindings->argon2-cffi->notebook->jupyter) (2.21)
+    Requirement already satisfied: zipp>=3.1.0 in /home/macarena/repos/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from importlib-resources>=1.4.0->jsonschema!=2.5.0,>=2.4->nbformat>=4.2.0->ipywidgets->jupyter) (3.7.0)
+
 
 ## Ejercicios
 
