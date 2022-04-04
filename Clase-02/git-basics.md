@@ -438,11 +438,10 @@ git log --stat          # ídem anterior pero muestra además cuáles fueron
 git log -p <file-path>  # ídem anterior pero muestra además las
                         # modificaciones realizadas
 
-git log --oneline       # ídem log pero muestra los commits en una
-                        # sola línea
+git log --oneline       # ídem log pero muestra los commits en una sola línea
 
-git log <file-path>     # permite visualizar los commits que han
-                        # modificado el archivo <file-path>    
+git log <file-path>     # permite visualizar los commits que han modificado
+                        # el archivo <file-path>    
 ```
 
 ## Ramas
@@ -524,14 +523,16 @@ Este comando borrará la rama de mi repo local, pero no afectará la que se encu
 Si deseamos fusionar los cambios de una rama en otra, debemos movernos a aquella en la que queremos importar los cambios utilizando el comando `checkout` y llevar los cambios de la rama deseada con el comando `merge`:
 
 ```
-git checkout <branch-A>                     # nos mueve a la rama que recibirá
-                                            # los cambios
+git checkout <branch-A>                     # nos mueve a la rama que
+                                            # recibirá los cambios
 
-git pull                                    # asegura que la rama esté actualizada
+git pull                                    # asegura que la rama esté
+                                            # actualizada
 
-git fetch <remote> <branch-B>:<branch-B>    # asegura de que la rama cuyos cambios
-                                            # queremos introducir esté sincronizada
-                                            # con el remoto <remote>
+git fetch <remote> <branch-B>:<branch-B>    # asegura de que la rama cuyos
+                                            # cambios queremos introducir
+                                            # esté sincronizada con el remoto
+                                            # <remote>
         
 git merge <branch-B>                        # importa los cambios de la rama
                                             # <branch-B> en aquella en la que
@@ -725,55 +726,54 @@ git branch --list       # muestra la lista de ramas
 ### checkout
 
 ```
-git checkout <commit-hash> -- <file-path>   # vuelve el archivo <file-path> a la versión
-                                            # confirmada en el commit indicado en
-                                            # <commit-hash>
+git checkout <commit-hash> -- <file-path>   # vuelve el archivo
+                                            # <file-path> a la versión
+                                            # confirmada en el commit indicado
+                                            # en <commit-hash>
 
-git checkout <branch-name> -- <file-path>   # trae el archivo <file-path> desde la rama
-                                            # <branch-name> (sin importar si el archivo ya
-                                            # se encontraba en la rama a la cual se lo 
-                                            # quiere traer o no; si ya se encontraba allí,
-                                            # se pisa la versión anterior con la que se trae
-                                            # de la rama indicada)
+git checkout <branch-name> -- <file-path>   # trae el archivo <file-path> desde
+                                            # <branch-name> (sin importar si el
+                                            # archivo ya se encontraba en la rama
+                                            # a la cual se lo  quiere traer o no)
 ```
 
 ### clone
 
 ```
-git clone <url> <folder-name>       # permite clonar el repo a una
-                                    # carpeta con el nombre que
-                                    # indiquemos en <folder-name>
+git clone <url> <folder-name>   # permite clonar el repo a una carpeta
+                                # con el nombre que indiquemos en
+                                # <folder-name>
 ```
 
 ### commit
 
 ```
-git commit --amend -m "Mensaje nuevo"   # permite modificar el mensaje del
-                                        # último commit no pusheado
+git commit --amend -m "Mensaje nuevo"   # permite modificar el mensaje
+                                        # del último commit no pusheado
 ```
 
 ### diff
 
 ```
-git diff <remote-repo>/<remote-branch>      # muestra las modificaciones en los archivos
-                                            # confirmados que todavía no fueron pusheados
-                                            # al remoto
+git diff <remote-repo>/<remote-branch>  # muestra las modificaciones en los
+                                        # archivos confirmados que todavía
+                                        # no fueron pusheados al remoto
 
-git diff <commit-hash> <file-path>          # muestra las diferencias en el archivo
-                                            # <file-path> entre su versión en el commit
-                                            # commit indicado con el <commit-hash> y
-                                            # la versión que se está trabajando
+git diff <commit-hash> <file-path>      # muestra las diferencias en
+                                        # <file-path> entre su versión en el
+                                        # commit indicado con el <commit-hash>
+                                        # y la versión que se está trabajando
 ```
 
 ### fetch
 
 ```
-git fetch <remote-name> <branch-name>   # nos trae los cambios de la rama indicada del remoto
-                                        # para que podamos verlos, pero no los descarga a
-                                        # nuestro directorio de trabajo
+git fetch <remote-name> <branch-name>   # trae los cambios de la rama indicada
+                                        # del remoto, pero no los descarga al
+                                        # directorio de trabajo
         
-git fetch --all                         # ídem anterior pero con todas las ramas del remoto de
-                                        # todos los remotos (usarlo con cuidado)
+git fetch --all                         # ídem anterior pero con todas las ramas
+                                        # y todos los remotos (usarlo con cuidado)
 ```
 
 Esto comandos nos permite ver si hay cambios que puedan generar conflictos con los nuestros (porque modifican el mismo archivo, por ejemplo).
