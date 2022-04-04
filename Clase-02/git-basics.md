@@ -743,7 +743,7 @@ git merge main
 ```
 
 Una vez hecho esto, pueden suceder dos cosas:
-- En el mundo feliz, el merge con la rama target se hace sin conflictos y solo nos restará hacer un `push` a nuestra rama de trabajo. Luego de hacerlo, veremos que la PR realizada se actualiza y las advertencias de conflictos en el remoto deberían desaparecer.
+- En el mundo feliz, el *merge* con la rama *target* se hace sin conflictos y solo nos restará hacer un `push` a nuestra rama de trabajo. Luego de hacerlo, veremos que la PR realizada se actualiza y las advertencias de conflictos en el remoto deberían desaparecer.
 - En un mundo menos feliz, git podría indicarnos que hay conflictos porque en la rama *target* había modificaciones que alteraban los mismos archivos que nosotros cambiamos. En este caso, debemos resolverlos del mismo modo que se indicó [anteriormente](#resolución-de-conflictos). Una vez resueltos, realizar los ya clásicos `add`, `commit` y `push`. Igual que en el mundo feliz, la PR se actualizará (debido a que la rama se actualizó) y deberíamos dejar de ver las advertencias de conflictos.
 
 ## [HINT] Flags útiles
