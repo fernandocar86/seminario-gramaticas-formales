@@ -17,7 +17,6 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
 
 ## Cronograma de clases y materiales
 
-
 <table>
   <tr>
     <th>Clase</th>
@@ -53,7 +52,14 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
             <li>Introducción a Python.</li>
         </ul>
     </td>
-    <td></td>
+    <td>
+      <ul>
+        <li><a href="./Clase-02/git-basics.md">Apunte sobre git</a></li>
+        <li><a href="./TPs/tp1.md">TP #1</a></li>
+        <li>Apuntes sobre formalización</li>
+        <li><a href="./Clase-02/intro-python.md">Notebook sobre Python</a></li>
+      </ul>
+    </td>
   </tr>
   <tr>
     <td><a href="./Clase-03/index.md">03</a></td>
