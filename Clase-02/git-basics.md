@@ -48,7 +48,7 @@ GitHub es un servidor remoto al cual se conecta nuestra computadora cada vez que
 <div style="text-align:center">
     <figure>
         <img src="git-basics-images/git-vs-github.webp" width="70%">
-        <figcaption>Imagen tomada de <a href=https://blog.devmountain.com/git-vs-github-whats-the-difference>Devmountain</a></figcaption>
+        <figcaption>Imagen tomada de <a href="https://blog.devmountain.com/git-vs-github-whats-the-difference">Devmountain</a></figcaption>
     </figure>
 </div>
 
@@ -247,11 +247,11 @@ Changes to be committed:
 Para esto último, podemos usar alguno de los siguientes comandos:
  
 ```
-git commit                          # abre un editor en consola para poder
-                                    # escribir el mensaje de confirmación
+git commit                      # abre un editor en consola para poder
+                                # escribir el mensaje de confirmación
 
-git commit -m "Primer commit"       # confirma con el mensaje que le sigue
-                                    # al flag -m
+git commit -m "Primer commit"   # confirma con el mensaje que le sigue
+                                # al flag -m
 ```
 
 Luego de ejecutar alguno de los anteriores comandos, la consola nos mostrará un mensaje similar a este:
@@ -278,9 +278,8 @@ Esto sucede porque el `commit` confirmó los archivos que queremos subir, pero n
 git branch -M main                  # cambia el nombre de la rama
                                     # por defecto: master
 
-git push origin main                # sube los archivos al remoto
-                                    # en la url de origin
-                                    # bajo la rama main
+git push origin main                # sube los archivos al remoto en la
+                                    # url de origin bajo la rama main
 ```
 
 No siempre es necesario incluir la información del remoto y la rama. Podemos configurar el repositorio y la rama con la que se sincroniza el repositorio local utilizando un flag al pushear:
