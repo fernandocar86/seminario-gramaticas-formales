@@ -326,17 +326,15 @@ Hasta ahora solo nos hemos ocupado de crear un repositorio (o descargarlo si ya 
 Entonces, cuando realizamos algún cambio en alguno de los archivos que Git está siguiendo, podemos ver no solo qué archivo se modificó sino también cuáles fueron las modificaciones realizadas:
 
 ```
-git diff                # muestra las diferencias en
-                        # archivos modificados y
-                        # la última confirmación
+git diff                # muestra las diferencias en archivos
+                        # modificados y la última confirmación
 
-git diff <file-path>    # muestra las diferencias en el
-                        # archivo <file-path> y
-                        # la última confirmación
+git diff <file-path>    # muestra las diferencias en el archivo
+                        # <file-path> y la última confirmación
 
-git diff --staged       # muestra las diferencias en
-                        # archivos que se agregaron (add)
-                        # y la última confirmación
+git diff --staged       # muestra las diferencias en archivos
+                        # que se agregaron (add) y la última
+                        # confirmación
 ```
 
 Una alcaración importante es que Git no puede hacer esto con cualquier tipo de archivos. Con archivos de texto plano (como los que generamos cuando usamos algún programa tipo Notepad o como los srcipts de código) no tendremos problemas. Pero frente a archivos de tipo binario (como los documentos de _Word_), Git solo podrá decirnos si el archivo cambió o no, pero no podrá especificarnos qué líneas ni caracteres. ¿Significa esto que no podemos subir un archivo `.docx` a GitHub? No necesariamente. Podemos subirlo y utilizar Git para recuperar sus distintas versiones, pero deberemos prescindir de una gran parte de las facilidades que ofrece la herramienta.
@@ -393,36 +391,37 @@ Esto hará que se genere una copia idéntica al proyecto forkeado en nuestro rep
 En caso de haber hecho cambios pero no haberlos agregado al área de preparación:
 
 ```
-git restore <file-path>     # deshace cambios realizados en
-                            # <file-path> y vuelve el archivo a
-                            # la versión en la que se encontraba
-                            # antes de modificarlo
+git restore <file-path>     # deshace cambios realizados en <file-path>
+                            # y vuelve el archivo a la versión en la
+                            # que se encontraba antes de modificarlo
 ```
 
 Si hicimos cambios y los agregamos al área de preparación (add):
 
 ```
 git restore --staged <file-path>    # quita los cambios agregados al
-                                    # área de preparación en el
-                                    # archivo <file-path>, pero los
-                                    # deja en el área de trabajo
+                                    # área de preparación en el archivo
+                                    # <file-path>, pero los deja en el
+                                    # área de trabajo
 ```
 
 Si ya confirmamos nuestros cambios (*commit*):
 
 ```
 git revert <SHA>            # revierte el commit con el SHA indicado 
-                            # pueden escribirse solamente los primeros 7 caracteres
-                            # este comando genera un nuevo commit que
-                            # revierte lo modificado en el indicado
-                            # (i.e. agrega in información a la historia de trabajo)
+                            # pueden escribirse solamente los primeros 7
+                            # caracteres este comando genera un nuevo
+                            # commit que revierte lo modificado en el
+                            # indicado (i.e. agrega in información a la
+                            # historia de trabajo)
         
-git reset --soft HEAD~1     # deshace el último commit hecho pero conserva los archivos
-                            # modificados en el área de staging (este comando modifica
-                            # la historia recopilada en Git porque borra el commit)
+git reset --soft HEAD~1     # deshace el último commit hecho pero conserva
+                            # los archivos modificados en el área de
+                            # staging (este comando modifica la historia
+                            # recopilada en Git porque borra el commit)
         
-git reset --hard HEAD~1     # ídem reset --soft solo que no conserva los archivos 
-                            # modificados en el área de staging
+git reset --hard HEAD~1     # ídem reset --soft solo que no conserva los
+                            # archivos modificados en el área de staging
 ```
 
 ## [HINT] Rastrear cambios
@@ -430,21 +429,21 @@ git reset --hard HEAD~1     # ídem reset --soft solo que no conserva los archiv
 Puede que a veces nos interese rastrear los cambios dentro de un repositorio. El comando `log` nos permite visualizar los *commits* realizados, qué archivos modificaron y cuáles fueron los cambios realizados, entre otras cosas:
 
 ```
-git log                         # permite visualizar todos los commits, sus mensajes de
-                                # confirmación, autor y fecha de realización
+git log                 # permite visualizar todos los commits, sus
+                        # mensajes de confirmación
 
-git log --stat                  # ídem anterior pero muestra además cuáles fueron los
-                                # archivos modificados
+git log --stat          # ídem anterior pero muestra además cuáles fueron
+                        # los archivos modificados
 
-git log -p <file-path>          # ídem anterior pero muestra además las modificaciones
-                                # realizadas
+git log -p <file-path>  # ídem anterior pero muestra además las
+                        # modificaciones realizadas
 
-git log --oneline               # ídem log pero muestra los commits en una sola línea
+git log --oneline       # ídem log pero muestra los commits en una
+                        # sola línea
 
-git log <file-path>             # permite visualizar los commits que han modificado el
-                                # archivo <file-path>   
-    
-git log --author=<author-name>  # muestra los commits realizador por <author-name>
+git log <file-path>     # permite visualizar los commits que han
+                        # modificado el archivo <file-path>    
+```
 
 ## Ramas
 
@@ -780,6 +779,12 @@ git fetch --all                         # ídem anterior pero con todas las rama
 Esto comandos nos permite ver si hay cambios que puedan generar conflictos con los nuestros (porque modifican el mismo archivo, por ejemplo).
 Si no hay cambios o si vemos que no resultan conflictivos, lo que debemos hacer es ejecutar los comandos `add` y `commit` de modo que nuestros cambios se guarden en el área de preparación. Una vez hecho esto, nos descargamos los cambios del remoto utilizando el comando `pull` y, finalmente, pusheamos nuestros cambios (solo pullear si hay cambios, si no los hay, luego de commitear, pushear directamente).
 
+### log
+
+```
+git log --author=<author-name>  # muestra los commits realizador por
+                                # <author-name>
+```
 ### push
 
 ```
