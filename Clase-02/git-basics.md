@@ -92,7 +92,7 @@ De este modo, un proyecto de Git cuenta con tres secciones principales:
 <div style="text-align:center">
     <figure>
         <img src="git-basics-images/git-workflow.png" width="70%">
-        <figcaption>Imagen tomada de <a href=https://medium.com/@techblurbs/git-getting-started-with-version-control-16a682736933>TechBlurbs</a>
+        <figcaption>Imagen tomada de <a href="https://medium.com/@techblurbs/git-getting-started-with-version-control-16a682736933">TechBlurbs</a>
         </figcaption>
     </figure>
 </div>
@@ -674,16 +674,20 @@ Ahora bien, una vez que tenemos nuestro trabajo listo, hacemos la PR. Si la rama
 En este caso, lo que debemos hacer es lo siguiente. En nuestra copia local del repositorio ejecutamos:
 
 ```
-git checkout <pr-branch>                            # nos posicionamos en la rama que tiene
-                                                    # nuestro trabajo (desde la que hacemos la PR)
+git checkout <pr-branch>                            # nos posiciona en
+                                                    # la rama que tiene
+                                                    # nuestro trabajo
     
-git fetch <remote> <target-branch>:<target-branch>  # nos aseguramos de que la copia local de la
-                                                    # rama a la que hacemos la PR está sincronizada
+git fetch <remote> <target-branch>:<target-branch>  # nos asegura que la
+                                                    # copia local de la
+                                                    # rama a la que hacemos
+                                                    # la PR esté sincronizada
                                                     # con el remoto
 
-git merge <target-branch>                           # fusionamos los cambios de la rama target
-                                                    # (a la que le hacemos la PR) en la rama de
-                                                    # trabajo
+git merge <target-branch>                           # fusionamos los cambios de
+                                                    # la rama target (a la que 
+                                                    # hacemos la PR) en la rama
+                                                    # de trabajo
 ```
 
 Siguiendo nuestro ejemplo anterior:
@@ -733,8 +737,9 @@ git checkout <commit-hash> -- <file-path>   # vuelve el archivo
 
 git checkout <branch-name> -- <file-path>   # trae el archivo <file-path> desde
                                             # <branch-name> (sin importar si el
-                                            # archivo ya se encontraba en la rama
-                                            # a la cual se lo  quiere traer o no)
+                                            # archivo ya se encuentra en la
+                                            # rama a la cual se lo quiere traer
+                                            # o no)
 ```
 
 ### clone
@@ -755,9 +760,9 @@ git commit --amend -m "Mensaje nuevo"   # permite modificar el mensaje
 ### diff
 
 ```
-git diff <remote-repo>/<remote-branch>  # muestra las modificaciones en los
-                                        # archivos confirmados que todavía
-                                        # no fueron pusheados al remoto
+git diff <remote-repo>/<remote-branch>  # muestra las modificaciones en
+                                        # los archivos confirmados que
+                                        # todavía no fueron pusheados
 
 git diff <commit-hash> <file-path>      # muestra las diferencias en
                                         # <file-path> entre su versión en el
@@ -768,12 +773,14 @@ git diff <commit-hash> <file-path>      # muestra las diferencias en
 ### fetch
 
 ```
-git fetch <remote-name> <branch-name>   # trae los cambios de la rama indicada
-                                        # del remoto, pero no los descarga al
-                                        # directorio de trabajo
+git fetch <remote-name> <branch-name>   # trae los cambios de la rama
+                                        # indicada del remoto, pero no
+                                        # los descarga al directorio de
+                                        # trabajo
         
-git fetch --all                         # ídem anterior pero con todas las ramas
-                                        # y todos los remotos (usarlo con cuidado)
+git fetch --all                         # ídem anterior pero con todas
+                                        # las ramas y todos los remotos
+                                        # (usarlo con cuidado)
 ```
 
 Esto comandos nos permite ver si hay cambios que puedan generar conflictos con los nuestros (porque modifican el mismo archivo, por ejemplo).
