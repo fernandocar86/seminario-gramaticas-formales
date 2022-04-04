@@ -2,7 +2,7 @@
 
 Para este trabajo práctico deberán trabajar en grupos de a 3 personas. Una vez conformados los grupos, **un miembro** debe anotar a todos los integrantes en [este formulario](https://forms.gle/ypXstqEBqJCwnxXg7).
 
-Para simplificar la enunciación de las consignas vamos a considear que _A_, _B_ y _C_ refieren a tres personas distintas, (integrantes del equipo y si), pero siempre a la misma persona. Pueden decidir entre ustedes quién es cada una.
+Para simplificar la enunciación de las consignas vamos a considear que _A_, _B_ y _C_ refieren a tres personas distintas integrantes del equipo, pero siempre a la misma persona. Pueden decidir entre ustedes quién es cada una.
 
 ## Consignas
 
