@@ -37,8 +37,8 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
     <td>
         <ul>
             <li><a href="https://forms.gle/aogRG9iQtLSGnf3q9">Form de presentación</a></li>
-            <li><a href="./Instructivos/github_user.md">Usuario de GitHub</a></li>
-            <li><a href="./Instructivos/tutorialmv.pdf">Máquina virtual</a></li>
+            <li><a href="{{ site.baseurl }}/Instructivos/github_user.md">Usuario de GitHub</a></li>
+            <li><a href="{{ site.baseurl }}/Instructivos/tutorialmv.pdf">Máquina virtual</a></li>
         </ul>
     </td>
   </tr>
