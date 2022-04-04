@@ -1,12 +1,10 @@
 # Trabajo Práctico #1
 
-Para este trabajo práctico deberán trabajar en grupos de a 3 personas. Una vez conformados los grupos, **un miembro** debe anotar a todos los integrantes en [este formulario](https://forms.gle/ypXstqEBqJCwnxXg7).
-
 Para simplificar la enunciación de las consignas vamos a considear que _A_, _B_ y _C_ refieren a tres personas distintas integrantes del equipo, pero siempre a la misma persona. Pueden decidir entre ustedes quién es cada una.
 
 ## Consignas
 
-1. **La persona A** deberá crear un repositorio público con:
+1. **La persona A** deberá crear un **repositorio público** con:
    - un `README.md`
    - un `.gitignore` para Python
 2. **La persona B** debe clonarse ese repositorio y crear una rama llamada "persona-B" a partir de main. Allí debe:
@@ -26,4 +24,8 @@ Para simplificar la enunciación de las consignas vamos a considear que _A_, _B_
 
 ## Fecha de entrega
 
-Este trabajo debe entregarse **antes del martes 12 de abril**.
+El plazo límete para entregar este trabajo es el **martes 12 de abril a las 9:00 am**.
+
+Para ese horario esperamos que completen [este formulario](https://forms.gle/ypXstqEBqJCwnxXg7) en el que se les solicitará que especifiquen quiénes son las personas que integran el grupo de trabajo y cuál es el repositorio que debemos evaluar.
+
+Es suficiente con que una sola persona por grupo complete el formulario.
