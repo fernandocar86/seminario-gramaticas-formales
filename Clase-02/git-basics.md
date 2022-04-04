@@ -306,7 +306,8 @@ No siempre es necesario incluir la información del remoto y la rama. Podemos co
 ```       
 git push --set-upstream origin <remote-branch>
 ```
-    
+
+Con esto, ya no será necesario incluir el remoto y la rama cada vez (para esta rama, en otras ramas sí deberemos hacerlo a menos que también realicemos esta configuración).
 Si ahora volvemos a la página donde se encuentra nuestro repositorio remoto y le damos _refresh_, veremos que tiene los archivos que hemos subido.
 
 
