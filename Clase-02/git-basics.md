@@ -146,7 +146,7 @@ Crear un repositorio es muy sencillo. Simplemente debemos ir a nuestra cuenta en
 
 Eso nos llevará a una página que nos pedirá indicar el nombre del repositorio y, si lo deseamos, también una descripción. Podemos elegir si queremos que cualquier persona pueda ver nuestro repo (opción _Public_) o si queremos darle cierta privacidad (opción _Private_). Adicionalmente, podemos agregarle algún contenido determinado (para generar un repo vacío, dejar todas estas opciones sin marcar):
 - un archivo README.md básico (tendrá solo el nombre del repositorio y luego podremos modificarlo)
-- un `.gitignore` (en la sección x veremos cuál es su utilidad)
+- un `.gitignore` (en la sección [Ignorar archivos](#ignorar-archivos) veremos cuál es su utilidad)
 - una licencia
 
 <div style="text-align:center">
