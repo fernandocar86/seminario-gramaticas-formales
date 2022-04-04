@@ -82,7 +82,7 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
     </td>
     <td>
       <ul>
-        <li><a href="Clase-04/Clase-04-jupyter.md">Visualización de Notebook</a></li>
+        <li><a href="./Clase-04/Clase-04-jupyter.md">Visualización de Notebook</a></li>
       </ul>
     </td>
   </tr>
@@ -182,7 +182,7 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
     </td>
     <td>
       <ul>
-        <li><a href="Clase-11/Clase-11-jupyter.md">Visualización de Notebook</a></li>
+        <li><a href="./Clase-11/Clase-11-jupyter.md">Visualización de Notebook</a></li>
       </ul>
     </td>
   </tr>
@@ -197,7 +197,7 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
     </td>
     <td>
       <ul>
-        <li><a href="Clase-12/Clase-12-jupyter.md">Visualización de Notebook</a></li>
+        <li><a href="./Clase-12/Clase-12-jupyter.md">Visualización de Notebook</a></li>
       </ul>
     </td>
   </tr>
@@ -243,5 +243,6 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
   </tr>
 </table>
 
+{% include change_href.html %}
 
 {% include additional_content.html %}

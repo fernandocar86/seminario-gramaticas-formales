@@ -1,0 +1,11 @@
+<script>  
+    const tableA = document.querySelectorAll('td  a');
+
+    for (var i = 0; i < tableA.length; i++){
+        const href = tableA[i].href
+        if (href.endsWith('.md')){
+            tableA[i].href = href.replace('.md','.html')
+        }
+    }
+
+</script>
