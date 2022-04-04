@@ -138,7 +138,7 @@ Existen dos maneras de iniciar un repositorio:
 
 ### Crear un repo en el servidor y clonarlo
 
-Crear un repositorio es muy sencillo. Simplemente debemos ir a nuestra cuenta en [GitHub](https://github.com/) y cliquer a en el botón _New repo_ que aparecerá a la izquierda, debajo de nuestro usuario:
+Crear un repositorio es muy sencillo. Simplemente debemos ir a nuestra cuenta en [GitHub](https://github.com/) y cliquear a en el botón _New repo_ que aparecerá a la izquierda, debajo de nuestro usuario:
 
 <div style="text-align:center">
     <img src="git-basics-images/git-new-repo.png" width="50%">
