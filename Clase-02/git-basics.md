@@ -22,6 +22,17 @@ Git es un controlador de versiones que nos puede ayudar a resolver todo esto.
     </em>
 </div>
 
+
+<figure>
+  <img src="git-basics-images/git-motivation.jpg" width="60%">
+  <figcaption>Meme generado con <a href="https://imgflip.com/memegenerator">Meme Generator</a></figcaption>
+</figure>
+
+
+![](./git-basics-images/git-motivation.jpg)
+*Meme generado con [Meme Generator](https://imgflip.com/memegenerator)*
+
+
 ## Control de versiones
 
 Un controlador de versiones es un sistema que permite crear, modificar y eliminar archivos registrando cada uno de esos cambios en un historial, de manera tal que luego podamos revertir las modificaciones realizadas, comparar distintas versiones del archivo en el que estamos trabajando y elegir sobre cuál de ellas queremos continuar trabajando.
