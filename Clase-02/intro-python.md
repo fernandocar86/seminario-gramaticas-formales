@@ -84,7 +84,8 @@ En tanto lenguaje, Python tiene elementos que cumplen funciones específicas. En
 
 
 ```python
-100 % 4    # resto de división (0 si la división no tiene resto, 1 si sí lo tiene)
+100 % 4     # resto de división (0 si la división no tiene resto,
+            # 1 si sí lo tiene)
 ```
 
 
@@ -164,7 +165,7 @@ variable
 
     NameError                                 Traceback (most recent call last)
 
-    Input In [10], in <cell line: 1>()
+    Input In [10], in <module>
     ----> 1 variable
 
 
@@ -543,9 +544,9 @@ x <= y      # x es más chica o igual que y
 #### Operadores lógicos
 
 ```
-x and y     # CONJUNCIÓN: devuelve True si tanto x como y son verdaderas
-x or y      # DISYUNCIÓN INCLUSIVA: devuelve True si x es verdadera y/o y también lo es
-not x       # NEGACIÓN: devuelve True si x es falsa
+x and y     # CONJUNCIÓN: True si tanto x como y son verdaderas
+x or y      # DISYUNCIÓN INCLUSIVA: True si x es verdadera y/o y lo es
+not x       # NEGACIÓN: True si x es falsa
 ```
 
 
@@ -885,7 +886,7 @@ lista[4]
 
     IndexError                                Traceback (most recent call last)
 
-    Input In [58], in <cell line: 1>()
+    Input In [58], in <module>
     ----> 1 lista[4]
 
 
@@ -1281,7 +1282,7 @@ tupla[0] = 3
 
     TypeError                                 Traceback (most recent call last)
 
-    Input In [93], in <cell line: 1>()
+    Input In [93], in <module>
     ----> 1 tupla[0] = 3
 
 
@@ -1588,15 +1589,15 @@ list(product(x,y))             # con product puedo ver el producto cartesiano
 
 
 
-    [('m', 'm'),
-     ('m', 'z'),
-     ('m', 'w'),
-     ('n', 'm'),
+    [('o', 'z'),
+     ('o', 'w'),
+     ('o', 'm'),
      ('n', 'z'),
      ('n', 'w'),
-     ('o', 'm'),
-     ('o', 'z'),
-     ('o', 'w')]
+     ('n', 'm'),
+     ('m', 'z'),
+     ('m', 'w'),
+     ('m', 'm')]
 
 
 
@@ -1608,15 +1609,15 @@ list(product(y,x))
 
 
 
-    [('m', 'm'),
-     ('m', 'n'),
-     ('m', 'o'),
-     ('z', 'm'),
+    [('z', 'o'),
      ('z', 'n'),
-     ('z', 'o'),
-     ('w', 'm'),
+     ('z', 'm'),
+     ('w', 'o'),
      ('w', 'n'),
-     ('w', 'o')]
+     ('w', 'm'),
+     ('m', 'o'),
+     ('m', 'n'),
+     ('m', 'm')]
 
 
 
@@ -1681,7 +1682,7 @@ diccionario_2[0]
 
     KeyError                                  Traceback (most recent call last)
 
-    Input In [122], in <cell line: 1>()
+    Input In [122], in <module>
     ----> 1 diccionario_2[0]
 
 
@@ -1712,7 +1713,7 @@ diccionario_2['z']
 
     KeyError                                  Traceback (most recent call last)
 
-    Input In [124], in <cell line: 1>()
+    Input In [124], in <module>
     ----> 1 diccionario_2['z']
 
 
@@ -1848,16 +1849,19 @@ De la misma forma que sucedía con las listas, al ser secuencias ordenadas, pode
 ```python
 lorem_ipsum = '''Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'''
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+deserunt mollit anim id est laborum.'''
 lorem_ipsum
 ```
 
 
 
 
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit,\nsed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit,\nsed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut\naliquip ex ea commodo consequat.\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu\nfugiat nulla pariatur.\nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia\ndeserunt mollit anim id est laborum.'
 
 
 
@@ -1906,9 +1910,12 @@ print(lorem_ipsum)
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+    aliquip ex ea commodo consequat.
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+    fugiat nulla pariatur.
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+    deserunt mollit anim id est laborum.
 
 
 Las cadenas no son objetos mutables, por lo cual, al igual que lo que sucedía con las tuplas, no podemos modificar sus elementos (con las listas, sí podíamos). De todos modos, sí podemos asignar una nueva cadena a una variable ya existente.
@@ -1935,7 +1942,7 @@ cadena_1[0] = 'H'
 
     TypeError                                 Traceback (most recent call last)
 
-    Input In [140], in <cell line: 1>()
+    Input In [140], in <module>
     ----> 1 cadena_1[0] = 'H'
 
 
@@ -1959,7 +1966,8 @@ A continuación, listamos algunas operaciones útiles que se pueden realizar sob
 
 
 ```python
-cadena_1.upper()     # pasa la cadena a mayúscula (no modifica la variable)
+cadena_1.upper()    # pasa la cadena a mayúscula
+                    # (no modifica la variable)
 ```
 
 
@@ -1983,7 +1991,8 @@ cadena_1
 
 
 ```python
-cadena_1_upper = cadena_1.upper() # pasa la cadena a minúscula (no modifica la variable)
+cadena_1_upper = cadena_1.upper() # pasa la cadena a minúscula
+                                  # (no modifica la variable)
 cadena_1_upper.lower()
 ```
 
@@ -1996,7 +2005,8 @@ cadena_1_upper.lower()
 
 
 ```python
-cadena_2.capitalize()     # pasa la primera letra a mayúscula (no modifica la variable)
+cadena_2.capitalize()   # pasa la primera letra a mayúscula
+                        #(no modifica la variable)
 ```
 
 
@@ -2008,7 +2018,8 @@ cadena_2.capitalize()     # pasa la primera letra a mayúscula (no modifica la v
 
 
 ```python
-cadena_2.title()          # pasa la primera letra de cada palabra a mayúscula (no modifica la variable)
+cadena_2.title()    # pasa la primera letra de cada palabra
+                    # a mayúscula (no modifica la variable)
 ```
 
 
@@ -2020,7 +2031,8 @@ cadena_2.title()          # pasa la primera letra de cada palabra a mayúscula (
 
 
 ```python
-cadena_2.split()          # convierte la cadena en una lista separando los caracteres por espacios
+cadena_2.split()    # convierte la cadena en una lista
+                    # separando los caracteres por espacios
 ```
 
 
@@ -2045,7 +2057,8 @@ cadena_4.split()
 
 
 ```python
-cadena_4.split('|')      # convierte la cadena en una lista separando los caracteres por pleca
+cadena_4.split('|') # convierte la cadena en una lista
+                    # separando los caracteres por pleca
 ```
 
 
@@ -2223,7 +2236,10 @@ O también podemos instalarla desde Jupyter anteponiendo un signo de exclamació
 ! pip install art
 ```
 
-    Requirement already satisfied: art in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (5.5)
+    Collecting art
+      Using cached art-5.5-py2.py3-none-any.whl (583 kB)
+    Installing collected packages: art
+    Successfully installed art-5.5
 
 
 
@@ -2246,81 +2262,90 @@ Para instalar jupyter lab, de hecho, podemos hacerlo del mismo modo:
 ! pip install jupyter lab
 ```
 
-    Requirement already satisfied: jupyter in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (1.0.0)
-    Requirement already satisfied: lab in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (7.0)
-    Requirement already satisfied: nbconvert in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jupyter) (6.4.5)
-    Requirement already satisfied: qtconsole in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jupyter) (5.2.2)
-    Requirement already satisfied: notebook in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jupyter) (6.4.8)
-    Requirement already satisfied: jupyter-console in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jupyter) (6.4.3)
-    Requirement already satisfied: ipywidgets in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jupyter) (7.7.0)
-    Requirement already satisfied: ipykernel in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jupyter) (6.10.0)
-    Requirement already satisfied: matplotlib in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from lab) (3.5.1)
-    Requirement already satisfied: simplejson in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from lab) (3.17.6)
-    Requirement already satisfied: txt2tags>=3.6 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from lab) (3.7)
-    Requirement already satisfied: debugpy<2.0,>=1.0.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (1.6.0)
-    Requirement already satisfied: nest-asyncio in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (1.5.4)
-    Requirement already satisfied: psutil in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (5.9.0)
-    Requirement already satisfied: traitlets<6.0,>=5.1.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (5.1.1)
-    Requirement already satisfied: tornado<7.0,>=5.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (6.1)
-    Requirement already satisfied: jupyter-client<8.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (7.1.2)
-    Requirement already satisfied: matplotlib-inline<0.2.0,>=0.1.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (0.1.3)
-    Requirement already satisfied: ipython>=7.23.1 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (8.2.0)
-    Requirement already satisfied: jupyterlab-widgets>=1.0.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipywidgets->jupyter) (1.1.0)
-    Requirement already satisfied: nbformat>=4.2.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipywidgets->jupyter) (5.2.0)
-    Requirement already satisfied: ipython-genutils~=0.2.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipywidgets->jupyter) (0.2.0)
-    Requirement already satisfied: widgetsnbextension~=3.6.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipywidgets->jupyter) (3.6.0)
-    Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,<3.1.0,>=2.0.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jupyter-console->jupyter) (3.0.28)
-    Requirement already satisfied: pygments in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jupyter-console->jupyter) (2.11.2)
-    Requirement already satisfied: fonttools>=4.22.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from matplotlib->lab) (4.31.2)
-    Requirement already satisfied: pyparsing>=2.2.1 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from matplotlib->lab) (3.0.7)
-    Requirement already satisfied: python-dateutil>=2.7 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from matplotlib->lab) (2.8.2)
-    Requirement already satisfied: cycler>=0.10 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from matplotlib->lab) (0.11.0)
-    Requirement already satisfied: numpy>=1.17 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from matplotlib->lab) (1.22.3)
-    Requirement already satisfied: pillow>=6.2.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from matplotlib->lab) (9.0.1)
-    Requirement already satisfied: packaging>=20.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from matplotlib->lab) (21.3)
-    Requirement already satisfied: kiwisolver>=1.0.1 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from matplotlib->lab) (1.4.1)
-    Requirement already satisfied: pandocfilters>=1.4.1 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (1.5.0)
-    Requirement already satisfied: mistune<2,>=0.8.1 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (0.8.4)
-    Requirement already satisfied: defusedxml in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (0.7.1)
-    Requirement already satisfied: nbclient<0.6.0,>=0.5.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (0.5.13)
-    Requirement already satisfied: jupyterlab-pygments in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (0.1.2)
-    Requirement already satisfied: MarkupSafe>=2.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (2.1.1)
-    Requirement already satisfied: bleach in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (4.1.0)
-    Requirement already satisfied: testpath in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (0.6.0)
-    Requirement already satisfied: beautifulsoup4 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (4.10.0)
-    Requirement already satisfied: entrypoints>=0.2.2 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (0.4)
-    Requirement already satisfied: jinja2>=2.4 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (3.1.1)
-    Requirement already satisfied: jupyter-core in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (4.9.2)
-    Requirement already satisfied: Send2Trash>=1.8.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from notebook->jupyter) (1.8.0)
-    Requirement already satisfied: terminado>=0.8.3 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from notebook->jupyter) (0.13.3)
-    Requirement already satisfied: pyzmq>=17 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from notebook->jupyter) (22.3.0)
-    Requirement already satisfied: prometheus-client in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from notebook->jupyter) (0.13.1)
-    Requirement already satisfied: argon2-cffi in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from notebook->jupyter) (21.3.0)
-    Requirement already satisfied: qtpy in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from qtconsole->jupyter) (2.0.1)
-    Requirement already satisfied: pickleshare in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (0.7.5)
-    Requirement already satisfied: setuptools>=18.5 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (56.0.0)
-    Requirement already satisfied: pexpect>4.3 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (4.8.0)
-    Requirement already satisfied: jedi>=0.16 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (0.18.1)
-    Requirement already satisfied: stack-data in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (0.2.0)
-    Requirement already satisfied: backcall in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (0.2.0)
-    Requirement already satisfied: decorator in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (5.1.1)
-    Requirement already satisfied: jsonschema!=2.5.0,>=2.4 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from nbformat>=4.2.0->ipywidgets->jupyter) (4.4.0)
-    Requirement already satisfied: wcwidth in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from prompt-toolkit!=3.0.0,!=3.0.1,<3.1.0,>=2.0.0->jupyter-console->jupyter) (0.2.5)
-    Requirement already satisfied: six>=1.5 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from python-dateutil>=2.7->matplotlib->lab) (1.16.0)
-    Requirement already satisfied: ptyprocess in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from terminado>=0.8.3->notebook->jupyter) (0.7.0)
-    Requirement already satisfied: argon2-cffi-bindings in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from argon2-cffi->notebook->jupyter) (21.2.0)
-    Requirement already satisfied: soupsieve>1.2 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from beautifulsoup4->nbconvert->jupyter) (2.3.1)
-    Requirement already satisfied: webencodings in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from bleach->nbconvert->jupyter) (0.5.1)
-    Requirement already satisfied: parso<0.9.0,>=0.8.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jedi>=0.16->ipython>=7.23.1->ipykernel->jupyter) (0.8.3)
-    Requirement already satisfied: attrs>=17.4.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jsonschema!=2.5.0,>=2.4->nbformat>=4.2.0->ipywidgets->jupyter) (21.4.0)
-    Requirement already satisfied: importlib-resources>=1.4.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jsonschema!=2.5.0,>=2.4->nbformat>=4.2.0->ipywidgets->jupyter) (5.6.0)
-    Requirement already satisfied: pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,>=0.14.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from jsonschema!=2.5.0,>=2.4->nbformat>=4.2.0->ipywidgets->jupyter) (0.18.1)
-    Requirement already satisfied: cffi>=1.0.1 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from argon2-cffi-bindings->argon2-cffi->notebook->jupyter) (1.15.0)
-    Requirement already satisfied: executing in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from stack-data->ipython>=7.23.1->ipykernel->jupyter) (0.8.3)
-    Requirement already satisfied: pure-eval in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from stack-data->ipython>=7.23.1->ipykernel->jupyter) (0.2.2)
-    Requirement already satisfied: asttokens in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from stack-data->ipython>=7.23.1->ipykernel->jupyter) (2.0.5)
-    Requirement already satisfied: pycparser in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from cffi>=1.0.1->argon2-cffi-bindings->argon2-cffi->notebook->jupyter) (2.21)
-    Requirement already satisfied: zipp>=3.1.0 in /home/maca/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages (from importlib-resources>=1.4.0->jsonschema!=2.5.0,>=2.4->nbformat>=4.2.0->ipywidgets->jupyter) (3.7.0)
+    Requirement already satisfied: jupyter in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (1.0.0)
+    Collecting lab
+      Using cached lab-7.0-py2.py3-none-any.whl (91 kB)
+    Requirement already satisfied: ipykernel in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from jupyter) (6.9.1)
+    Requirement already satisfied: nbconvert in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from jupyter) (6.4.2)
+    Requirement already satisfied: qtconsole in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from jupyter) (5.2.2)
+    Requirement already satisfied: notebook in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from jupyter) (6.4.8)
+    Requirement already satisfied: jupyter-console in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from jupyter) (6.4.3)
+    Requirement already satisfied: ipywidgets in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from jupyter) (7.7.0)
+    Requirement already satisfied: matplotlib in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from lab) (3.5.1)
+    Collecting txt2tags>=3.6
+      Using cached txt2tags-3.7-py2.py3-none-any.whl (51 kB)
+    Collecting simplejson
+      Using cached simplejson-3.17.6-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (139 kB)
+    Requirement already satisfied: matplotlib-inline<0.2.0,>=0.1.0 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (0.1.3)
+    Requirement already satisfied: ipython>=7.23.1 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (8.0.1)
+    Requirement already satisfied: debugpy<2.0,>=1.0.0 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (1.5.1)
+    Requirement already satisfied: nest-asyncio in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (1.5.4)
+    Requirement already satisfied: tornado<7.0,>=4.2 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (6.1)
+    Requirement already satisfied: traitlets<6.0,>=5.1.0 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (5.1.1)
+    Requirement already satisfied: jupyter-client<8.0 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from ipykernel->jupyter) (7.1.2)
+    Requirement already satisfied: jupyterlab-widgets>=1.0.0 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from ipywidgets->jupyter) (1.1.0)
+    Requirement already satisfied: ipython-genutils~=0.2.0 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from ipywidgets->jupyter) (0.2.0)
+    Requirement already satisfied: nbformat>=4.2.0 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from ipywidgets->jupyter) (5.1.3)
+    Requirement already satisfied: widgetsnbextension~=3.6.0 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from ipywidgets->jupyter) (3.6.0)
+    Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,<3.1.0,>=2.0.0 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from jupyter-console->jupyter) (3.0.28)
+    Requirement already satisfied: pygments in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from jupyter-console->jupyter) (2.11.2)
+    Requirement already satisfied: packaging>=20.0 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from matplotlib->lab) (21.3)
+    Requirement already satisfied: cycler>=0.10 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from matplotlib->lab) (0.11.0)
+    Requirement already satisfied: numpy>=1.17 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from matplotlib->lab) (1.22.2)
+    Requirement already satisfied: python-dateutil>=2.7 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from matplotlib->lab) (2.8.2)
+    Requirement already satisfied: kiwisolver>=1.0.1 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from matplotlib->lab) (1.4.0)
+    Requirement already satisfied: fonttools>=4.22.0 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from matplotlib->lab) (4.30.0)
+    Requirement already satisfied: pillow>=6.2.0 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from matplotlib->lab) (9.0.1)
+    Requirement already satisfied: pyparsing>=2.2.1 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from matplotlib->lab) (3.0.7)
+    Requirement already satisfied: jinja2>=2.4 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (3.0.3)
+    Requirement already satisfied: entrypoints>=0.2.2 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (0.4)
+    Requirement already satisfied: jupyterlab-pygments in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (0.1.2)
+    Requirement already satisfied: mistune<2,>=0.8.1 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (0.8.4)
+    Requirement already satisfied: jupyter-core in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (4.9.2)
+    Requirement already satisfied: pandocfilters>=1.4.1 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (1.5.0)
+    Requirement already satisfied: nbclient<0.6.0,>=0.5.0 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (0.5.11)
+    Requirement already satisfied: testpath in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (0.6.0)
+    Requirement already satisfied: defusedxml in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (0.7.1)
+    Requirement already satisfied: bleach in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from nbconvert->jupyter) (4.1.0)
+    Requirement already satisfied: argon2-cffi in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from notebook->jupyter) (21.3.0)
+    Requirement already satisfied: Send2Trash>=1.8.0 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from notebook->jupyter) (1.8.0)
+    Requirement already satisfied: prometheus-client in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from notebook->jupyter) (0.13.1)
+    Requirement already satisfied: pyzmq>=17 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from notebook->jupyter) (22.3.0)
+    Requirement already satisfied: terminado>=0.8.3 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from notebook->jupyter) (0.13.1)
+    Requirement already satisfied: qtpy in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from qtconsole->jupyter) (2.0.1)
+    Requirement already satisfied: black in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (22.1.0)
+    Requirement already satisfied: setuptools>=18.5 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (47.1.0)
+    Requirement already satisfied: pickleshare in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (0.7.5)
+    Requirement already satisfied: pexpect>4.3 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (4.8.0)
+    Requirement already satisfied: jedi>=0.16 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (0.18.1)
+    Requirement already satisfied: backcall in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (0.2.0)
+    Requirement already satisfied: stack-data in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (0.2.0)
+    Requirement already satisfied: decorator in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from ipython>=7.23.1->ipykernel->jupyter) (5.1.1)
+    Requirement already satisfied: MarkupSafe>=2.0 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from jinja2>=2.4->nbconvert->jupyter) (2.1.0)
+    Requirement already satisfied: jsonschema!=2.5.0,>=2.4 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from nbformat>=4.2.0->ipywidgets->jupyter) (4.4.0)
+    Requirement already satisfied: wcwidth in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from prompt-toolkit!=3.0.0,!=3.0.1,<3.1.0,>=2.0.0->jupyter-console->jupyter) (0.2.5)
+    Requirement already satisfied: six>=1.5 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from python-dateutil>=2.7->matplotlib->lab) (1.16.0)
+    Requirement already satisfied: ptyprocess in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from terminado>=0.8.3->notebook->jupyter) (0.7.0)
+    Requirement already satisfied: argon2-cffi-bindings in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from argon2-cffi->notebook->jupyter) (21.2.0)
+    Requirement already satisfied: webencodings in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from bleach->nbconvert->jupyter) (0.5.1)
+    Requirement already satisfied: parso<0.9.0,>=0.8.0 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from jedi>=0.16->ipython>=7.23.1->ipykernel->jupyter) (0.8.3)
+    Requirement already satisfied: importlib-resources>=1.4.0 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from jsonschema!=2.5.0,>=2.4->nbformat>=4.2.0->ipywidgets->jupyter) (5.4.0)
+    Requirement already satisfied: attrs>=17.4.0 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from jsonschema!=2.5.0,>=2.4->nbformat>=4.2.0->ipywidgets->jupyter) (21.4.0)
+    Requirement already satisfied: pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,>=0.14.0 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from jsonschema!=2.5.0,>=2.4->nbformat>=4.2.0->ipywidgets->jupyter) (0.18.1)
+    Requirement already satisfied: cffi>=1.0.1 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from argon2-cffi-bindings->argon2-cffi->notebook->jupyter) (1.15.0)
+    Requirement already satisfied: platformdirs>=2 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from black->ipython>=7.23.1->ipykernel->jupyter) (2.5.1)
+    Requirement already satisfied: tomli>=1.1.0 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from black->ipython>=7.23.1->ipykernel->jupyter) (2.0.1)
+    Requirement already satisfied: pathspec>=0.9.0 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from black->ipython>=7.23.1->ipykernel->jupyter) (0.9.0)
+    Requirement already satisfied: typing-extensions>=3.10.0.0 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from black->ipython>=7.23.1->ipykernel->jupyter) (4.1.1)
+    Requirement already satisfied: click>=8.0.0 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from black->ipython>=7.23.1->ipykernel->jupyter) (8.0.4)
+    Requirement already satisfied: mypy-extensions>=0.4.3 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from black->ipython>=7.23.1->ipykernel->jupyter) (0.4.3)
+    Requirement already satisfied: executing in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from stack-data->ipython>=7.23.1->ipykernel->jupyter) (0.8.2)
+    Requirement already satisfied: asttokens in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from stack-data->ipython>=7.23.1->ipykernel->jupyter) (2.0.5)
+    Requirement already satisfied: pure-eval in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from stack-data->ipython>=7.23.1->ipykernel->jupyter) (0.2.2)
+    Requirement already satisfied: pycparser in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from cffi>=1.0.1->argon2-cffi-bindings->argon2-cffi->notebook->jupyter) (2.21)
+    Requirement already satisfied: zipp>=3.1.0 in /home/maca/personal/kaggle-NBME/venv/lib/python3.8/site-packages (from importlib-resources>=1.4.0->jsonschema!=2.5.0,>=2.4->nbformat>=4.2.0->ipywidgets->jupyter) (3.7.0)
+    Installing collected packages: txt2tags, simplejson, lab
+    Successfully installed lab-7.0 simplejson-3.17.6 txt2tags-3.7
 
 
 ## Ejercicios
@@ -2331,20 +2356,20 @@ Para instalar jupyter lab, de hecho, podemos hacerlo del mismo modo:
 
 3. (Ejercicio tomado de Downey et. al, 2012) Escribir una función llamada _middle_ que tome una lista y devuelva una nueva lista que contenga todos sus elementos menos el primero y el último. Por ejemplo:
 
-```
->>> t = [1,2,3,4]
->>> middle(t)
-[2,3]
-```
+    ```
+    >>> t = [1,2,3,4]
+    >>> middle(t)
+    [2,3]
+    ```
 
 4. (Ejercicio tomado de Downey et. al, 2012) Escribir una función llamada _chop_ que tome una lista y la modifique. La función debe quitar el primero y el último elemento de la lista y devolver `None`. Por ejemplo:
 
-```
->>> t = [1, 2, 3, 4]
->>> chop(t)
->>> t
-[2, 3]
-```
+    ```
+    >>> t = [1, 2, 3, 4]
+    >>> chop(t)
+    >>> t
+    [2, 3]
+    ```
 
 5. (Ejercicio tomado de Downey et. al, 2012) Escribir una función llamada *has_duplicates* que tome una lista y devuelva `True`si la lista tiene elementos repetidos. Esta función no debe modificar la lista original.
 
