@@ -48,8 +48,7 @@ GitHub es un servidor remoto al cual se conecta nuestra computadora cada vez que
 <div style="text-align:center">
     <figure>
         <img src="git-basics-images/git-vs-github.webp" width="70%">
-        <figcaption>Imagen tomada de <a href=https://blog.devmountain.com/git-vs-github-whats-the-difference>Devmountain</a>
-        </figcaption>
+        <figcaption>Imagen tomada de <a href=https://blog.devmountain.com/git-vs-github-whats-the-difference>Devmountain</a></figcaption>
     </figure>
 </div>
 
@@ -58,8 +57,7 @@ Git me brinda una serie de comandos que me permiten interactuar con el servidor 
 <div style="text-align:center">
     <figure>
         <img src="git-basics-images/git-servers.jpg" width="50%">
-        <figcaption>Meme generado con <a href=https://imgflip.com/memegenerator>Meme Generator</a>
-        </figcaption>
+        <figcaption>Meme generado con <a href=https://imgflip.com/memegenerator>Meme Generator</a></figcaption>
     </figure>
 </div>
 
@@ -396,18 +394,19 @@ Esto hará que se genere una copia idéntica al proyecto forkeado en nuestro rep
 En caso de haber hecho cambios pero no haberlos agregado al área de preparación:
 
 ```
-git restore <file-path>              # deshace cambios realizados en <file-path> y vuelve el
-                                     # archivo a la versión en la que se encontraba antes de
-                                     # modificarlo (ya sea a la última versión confirmada, ya
-                                     # a la última actualización con el remoto)
+git restore <file-path>     # deshace cambios realizados en
+                            # <file-path> y vuelve el archivo a
+                            # la versión en la que se encontraba
+                            # antes de modificarlo
 ```
 
 Si hicimos cambios y los agregamos al área de preparación (add):
 
 ```
-git restore --staged <file-path>    # quita los cambios agregados al área de preparación
-                                    # en el archivo <file-path>, pero los deja en el área
-                                    # de trabajo
+git restore --staged <file-path>    # quita los cambios agregados al
+                                    # área de preparación en el
+                                    # archivo <file-path>, pero los
+                                    # deja en el área de trabajo
 ```
 
 Si ya confirmamos nuestros cambios (*commit*):
