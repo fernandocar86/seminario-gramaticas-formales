@@ -723,7 +723,7 @@ En este caso, lo que debemos hacer es lo siguiente. En nuestra copia local del r
 git checkout <pr-branch>                            # nos posicionamos en la rama que tiene
                                                     # nuestro trabajo (desde la que hacemos la PR)
     
-git fetch <remote> <target-branch>:<target-branch>  # nos aseguramos de que la copia locadl de la
+git fetch <remote> <target-branch>:<target-branch>  # nos aseguramos de que la copia local de la
                                                     # rama a la que hacemos la PR está sincronizada
                                                     # con el remoto
 
