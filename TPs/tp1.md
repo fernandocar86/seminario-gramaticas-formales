@@ -19,10 +19,9 @@ Este trabajo práctico está pensado para ser resuelto en grupos de 3 personas. 
    - hacer push de su rama al repositorio en GitHub
    - mergear su rama a la rama main (_i.e._ introducir los cambios de su rama en main) y actualizar el remoto
 4. La **persona A** debe:
-   - mergear la rama de la **persona B** a main y actualizar el repositorio remoto
-   - agregar un commit en la rama "main" en el que agregue al README una descripción de las notebooks generadas por los otros integrantes del equipo. Hacer push de los cambios en la rama "main" al repositorio en GitHub.
+   - mergear la rama de la **persona B** a main y actualizar el repositorio remoto.
 
-Para la resolución de las consigas, es importante que sigan los pasos en el orden propuesto.
+Para la resolución de las consigas, es importante que sigan los pasos en el orden propuesto. Si en algún momento surgen conflictos, aceptar los cambios de todos los integrantes.
 
 ## Fecha de entrega
 
