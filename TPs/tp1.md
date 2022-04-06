@@ -23,6 +23,24 @@ Este trabajo práctico está pensado para ser resuelto en grupos de 3 personas. 
 
 Para la resolución de las consigas, es importante que sigan los pasos en el orden propuesto. Si en algún momento surgen conflictos, aceptar los cambios de todos los integrantes.
 
+## Colaboradores
+
+Para que todas las personas integrantes del grupo puedan contribuir al mismo repositorio, deberán ser agregadas como colaboradoras. Para eso, quien haya creado el repositorio en el que trabajarán, deberá ir a ese repositorio en GitHub, moverse dentro de "Settings" a la primera solapa de la izquierda "Collaborators" y cliquear sobre el botón verde "Add people":
+
+<div style="text-align:center">
+   <img src="../Instructivos/workflow-images/2022-03-06-20-37-56.png" width="100%">
+</div>
+
+En la ventana emergente, agregar a cada integrante del equipo usando su dirección de mail. Este mail debería remitirlos de manera automática al usuario de GitHub correspondiente, por lo tanto, atención a usar el mismo mail que se usó para crear la cuenta de GitHub.
+
+<div style="text-align:center">
+   <img src="../Instructivos/workflow-images/2022-03-06-20-40-09.png" width="100%">
+</div>
+
+Cada integrante deberá, a su vez, aceptar la invitación a colaborar que llegará a su dirección de mail.
+
+Este proceso también puede realizarse usando el usuario de GitHub de cada persona, pero se debe presta especial atención a que sea la persona correcta.
+
 ## Fecha de entrega
 
 El plazo límite para entregar este trabajo es el **martes 12 de abril a las 9:00 am**.
