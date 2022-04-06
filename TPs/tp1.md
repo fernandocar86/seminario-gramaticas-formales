@@ -4,7 +4,9 @@ Este trabajo práctico está pensado para ser resuelto en grupos de 3 personas. 
 
 ## Consignas
 
-1. **La persona A** deberá crear un **repositorio público** con un `README.md` que solo tenga, en la primera línea, el nombre del repositorio
+1. **La persona A** deberá
+   - crear un **repositorio público** con un `README.md` que solo tenga, en la primera línea, el nombre del repositorio
+   - asignar permisos de colaboración al resto del equipo (ver cómo hacer esto en el [siguiente apartado](#asignación-de-permisos-de-colaboración))
 2. **La persona B** debe clonarse ese repositorio y crear una rama llamada "persona-B" a partir de main. Allí debe:
    - hacer un commit que agregue en la tercera línea del README los nombres de los integrantes separados por comas como se indica a continuación:
         ```
@@ -23,7 +25,7 @@ Este trabajo práctico está pensado para ser resuelto en grupos de 3 personas. 
 
 Para la resolución de las consigas, es importante que sigan los pasos en el orden propuesto. Si en algún momento surgen conflictos, aceptar los cambios de todos los integrantes.
 
-## Colaboradores
+## Asignación de permisos de colaboración
 
 Para que todas las personas integrantes del grupo puedan contribuir al mismo repositorio, deberán ser agregadas como colaboradoras. Para eso, quien haya creado el repositorio en el que trabajarán, deberá ir a ese repositorio en GitHub, moverse dentro de "Settings" a la primera solapa de la izquierda "Collaborators" y cliquear sobre el botón verde "Add people":
 
