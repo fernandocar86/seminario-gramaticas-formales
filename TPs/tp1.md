@@ -6,7 +6,7 @@ Este trabajo práctico está pensado para ser resuelto en grupos de 3 personas. 
 
 1. **La persona A** deberá
    - crear un **repositorio público** con un `README.md` que solo tenga, en la primera línea, el nombre del repositorio
-   - asignar permisos de colaboración al resto del equipo (ver cómo hacer esto en el [siguiente apartado](#asignación-de-permisos-de-colaboración))
+   - asignar permisos de colaboración al resto del equipo (ver cómo hacer esto en el [siguiente apartado](#Asignación-de-permisos-de-colaboración))
 2. **La persona B** debe clonarse ese repositorio y crear una rama llamada "persona-B" a partir de main. Allí debe:
    - hacer un commit que agregue en la tercera línea del README los nombres de los integrantes separados por comas como se indica a continuación:
         ```
