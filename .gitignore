@@ -25,6 +25,7 @@ share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+Clase-03/data/motomamifiltrado.txt
 Clase-05/ParserMinimalistaStabler1/ltree.tex
 Clase-05/ParserMinimalistaStabler1/wishtemp
 Clase-06/ParserMinimalistaStabler2/ltree.tex
