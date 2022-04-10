@@ -66,7 +66,6 @@ with open('data/motomamifiltrado.txt','w') as f:
     print(textofiltrado)
 ```
 
+{% include additional_content.html %}
 
-```python
-
-```
+{% include copybutton.html %}

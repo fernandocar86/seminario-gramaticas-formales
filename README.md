@@ -69,7 +69,12 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
             <li>Jerarquía de lenguajes formales. Gramáticas, autómatas y lenguajes. Equivalencia débil y equivalencia fuerte; teoría de la complejidad.</li>
         </ul>
     </td>
-    <td></td>
+    <td>
+    <ul>
+    	<li><a href="./Clase-03/handout.pdf">Apunte sobre jerarquía de Chomsky</a></li>
+    	<li><a href="./Clase-03/Clase-03-jupyter.md">Notebook librería re</a></li>
+    </ul>
+    </td>
   </tr>
   <tr>
     <td><a href="./Clase-04/index.md">04</a></td>
