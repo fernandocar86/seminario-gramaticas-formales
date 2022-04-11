@@ -4,7 +4,7 @@ Para la resolución de este TP, deberán formar grupos de 4 personas y seguir la
 
 ## Consignas
 
-Para las siguientes oraciones
+Dadas las siguientes oraciones:
 
 a- Gurgeh y Yay juegan juegos violentos. - Recursive Descent Parser
 
@@ -14,7 +14,7 @@ c- Disparan armas que son falsas. - Shift Reduce Parser
 
 d- Estos amigos manipulan jugadores con sus piezas. - Shift Reduce Parser
 
-1- Escribir las producciones de una gramática independiente de contexto que pueda generar cada una y todas las posibles ambigüedades. Para ello, cada miembro del grupo será responsable de agregar las reglas de una sola de las oraciones. Para las categorías no terminales pueden utilizar las vistas en clase, pero recomendamos utilizar el símbolo S (en vez de O) para indicar la oración.
+1- Escribir las producciones de una gramática independiente de contexto que pueda generarlas. Para ello, cada miembro del grupo será responsable de agregar las reglas de una sola de las oraciones (si la oración es ambigua, deberá agregar todas las reglas necesarias para generar los múltiples significados). Para las categorías no terminales pueden utilizar las vistas en clase, pero recomendamos utilizar el símbolo S (en vez de O) para indicar la oración.
 
 2- Cada uno de los miembros del grupo deberá crear una notebook llamada "TP2-{NOMBRE_DE_SU_ORACION}" en la que importará el parser indicado a la derecha de la oración que tiene a cargo y lo usará para parsearla. El resultado final deberá ser el dibujo del árbol correspondiente. Si alguno de los parsers fallara para una oración determinada (no puede parsear la oración o no devuelve todas los árboles posibles), entre TODOS los miembros del equipo deberán escribir una explicación para esta falla en la misma notebook usando el formato "markdown".
 
