@@ -7,8 +7,11 @@ Para la resolución de este TP, deberán formar grupos de 4 personas y seguir la
 Para las siguientes oraciones
 
 a- Gurgeh y Yay juegan juegos violentos. - Recursive Descent Parser
+
 b- Ellos patean y dan piñas virtualmente. - Recursive Descent Parser
+
 c- Disparan armas que son falsas. - Shift Reduce Parser
+
 d- Estos amigos manipulan jugadores con sus piezas. - Shift Reduce Parser
 
 1- Escribir las producciones de una gramática independiente de contexto que pueda generar cada una y todas las posibles ambigüedades. Para ello, cada miembro del grupo será responsable de agregar las reglas de una sola de las oraciones. Para las categorías no terminales pueden utilizar las vistas en clase, pero recomendamos utilizar el símbolo S (en vez de O) para indicar la oración.
