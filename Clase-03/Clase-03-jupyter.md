@@ -10,7 +10,7 @@ print(texto) # Imprime el texto
 
 
 ```python
-with open('data/motomami-filtrado.txt','w') as f:
+with open('data/motomamifiltrado.txt','w') as f:
     textofiltrado = texto.lower() # ¿qué les parece que hace?
     f.write(textofiltrado)
     print(textofiltrado)
