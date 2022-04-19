@@ -87,7 +87,7 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
     </td>
     <td>
       <ul>
-      	<li><a href="./Clase-04/handout.pdf">Notebook librería re</a></li>
+      	<li><a href="./Clase-04/handout.pdf">Apunto sobre CFG</a></li>
         <li><a href="./Clase-04/Clase-04-jupyter.md">Visualización de Notebook</a></li>	
         <li><a href="./TPs/tp2.md">TP #2</a></li>
       </ul>
