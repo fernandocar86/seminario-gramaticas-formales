@@ -19,9 +19,12 @@ Antes de pasar a los parsers, miremos las gramáticas que vamos a "parsear", con
 Notemos que la extensión del archivo es ".cfg", así le vamos a avisar a nltk que la gramática debe ser entendida como "Context Free Grammar".
 Ahora podemos mirar por adentro que la grámatica cuenta con todos los elementos que, según lo que vimos en la clase, constituyen el formalismo de una CFG:
 
-Un axioma: O
+Un axioma: S
+
 Símbolos no terminales: SN, PRO, NP, etc.
+
 Símbolos terminales: martín, cata, etc.
+
 Reglas de reescritura: cada una de las líneas de la gramática, que deben indicar que un elemento a la izquierda del signo -> se debe reescribir como los elementos a la derecha.
 
 ### Tokenización
