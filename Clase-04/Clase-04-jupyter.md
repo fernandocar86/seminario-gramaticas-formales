@@ -1,31 +1,16 @@
 # Parsers para Gramáticas independientes de contexto
 
-## Requerimientos técnicos
-- Python 3
-- nltk
-- matplotlib
-
-La diferencia entre NLTK, Matplotlib y las demás librerías que vamos a usar en esta clase (re, os, sys), es que a las dos primeras las debemos intstalar, en cambio las demás son provistas por python cuando lo intalamos.
-Veamoslas por dentro antes de importarlas en nuestro espacio de trabajo.
-
 
 ```python
 import nltk
 import re
-import os, sys
-import matplotlib
 ```
 
 ## NLTK
 
 Natural Language Toolkit es un conjunto de herramientas para crear programas en python que trabajen con lenguaje natural. nltk.org (la organización a cargo de crear y mantener esta librería) pone a disposición de manera online el [NLTK Book](https://www.nltk.org/book/), su libro especializado en el uso de la librería así como la explicación de conceptos generales de PLN.
 
-Para estar al día con los cambios en el código, lo mejor es chequear este libro on-line en vez de se versión editada, que puede traer ejemplos deprecados ("nbest_parse" vs. "parse")
-
-
-Al instalarnos esta librería, podemos acceder y hacer uso de sus funciones y clases para ayudar a construir nuestra propia herramienta.
-
-Por ejemplo, si quisieramos crear un pequeño corrector gramatical, podríamos utilizar alguno de los parsers de gramáticas independientes de contexto para identificar oraciones no gramaticales y devolver una alerta en este caso.
+Para estar al día con los cambios en el código, lo mejor es chequear este libro on-line en vez de se versión editada, que puede traer ejemplos deprecados ("nbest_parse" vs. "parse").
 
 ### Gramáticas para NLTK
 
@@ -39,22 +24,35 @@ Símbolos no terminales: SN, PRO, NP, etc.
 Símbolos terminales: martín, cata, etc.
 Reglas de reescritura: cada una de las líneas de la gramática, que deben indicar que un elemento a la izquierda del signo -> se debe reescribir como los elementos a la derecha.
 
-Ahora sí, accedamos a los distintos parsers y al finalizar podemos concretar el pequeño corrector gramatical
+### Tokenización
+
+"Sea cual fuere la extensión del texto considerado, es preciso segmentarlo primero en porciones cada vez más  reducidas hasta los elementos no descomponibles". (Émile Benveniste: Problemas de lingüística general (vol I). Siglo XXI, Madrid. 1991):
+
+Antes de poder hacer cualquier procesamiento sobre una cadena de texto, es necesario poder segmentarla en las unidades que espera como input la herramientas de procesamiento. 
+
+En el caso de los parsers, el análisis de la oración se aplica a la secuencia de palabras, por lo tanto, el input de los parsers será una **lista de palabras**. Claro que esta lista deberá corresponder en orden a la oración que queremos parsear. 
+
+Ejemplo: si queremos parsear la oración "Hola mundo", debemos segmentarla hasta conseguir ["Hola", "mundo"].
+
+Por eso, antes de pasar a los parsers, debemos revisar un concepto: la tokenización, es decir, el proceso de transformar una cadena de caracteres en unidades más pequeñas, en nuestro caso, palabras.
+
+El proceso de tokenización es un proceso complejo que se puede servir de expresiones regulares o modelos de lenguaje y varía de lengua a lengua. Nosotros vamos a usar el método más simple confiando en que el español, por regla general, separa las palabra en la secuencia escrita mediante el uso de espacios en blanco. 
+
+Muy rápidamente podemos ver que este método es simple pero no va a funcionar si usamos puntuación, ya que la lista de palabras resultantes de la secuencia "Yo, Claudio" no diríamos que es ["Yo,", "Claudio"]. 
+
+Para eliminar la puntuación, vamos a usar un método de la librería "re" que nos permitirá substituir la puntuación por el símbolo vacío.
+
+¿Qué otros problemas puede traer esta versión sobre simplificada de un tokenizador?
+
+
+
+Pasemos a los parsers:
 
 ## Recursive Descent Parser
 
-Este parser es de tipo **top-down** (analiza de arriba hacia abajo). Es decir que parte del símbolo de inicio y aplica las reglas de la gramática para obtener los constituyentes inmediatos y armar el árbol hasta llegar a los símbolos terminales. 
+El primer parser que vamos a ver es el Recursive Descent Parser. Este parser es de tipo **top-down** (analiza de arriba hacia abajo). Es decir que parte del símbolo de inicio y aplica las reglas de la gramática para obtener los constituyentes inmediatos y armar el árbol hasta llegar a los símbolos terminales. 
 
 Debe chequear que los símbolos terminales coincidan con la secuencia del input sin haberla visto de antemano. Si no hay coincidencia, tiene que retroceder y buscar diferentes alternativas de parseo.
-
-### Antes que nada, qué es la recursión?
-
-
-```python
-# Recursión
-```
-
-Pasemos al parser:
 
 
 ```python
@@ -73,7 +71,7 @@ def rd_parser(oracion, gramatica):                  # Definimos una función lla
     gramatica = nltk.data.load(gramatica)           # Usamos la función de la sub librería "data" que nos permite cargar una gramática para que pueda ser usada luego por el parser.    
     rd_parser = nltk.RecursiveDescentParser(gramatica) # Instanciamos la clase del parser que nos da NLTK pasandole un argumento obligatorio: la gramática.
     for arbol in rd_parser.parse(lista_palabras):    # Una vez que instanciamos la clase, podemos usar sus funciones mientras le pasemos los argumentos requeridos. En este caso, usamos la función "parser" a la que le pasaremos nuestra lista de palabras, y la función nos devolverá cada árbol posible en mi gramática para esa oración.
-        print("- Este es el árbol resultante: ", arbol) # Imprimimos cada árbol en la consola.
+        print("- Este es el árbol resultante: ", arbol.draw()) # Imprimimos cada árbol en la consola.
 ```
 
 
@@ -98,7 +96,7 @@ rd_parser(oracion1, gramatica)                         # Llamamos a la función 
 
 Veamos todo esto en la demo:
 
-### **Demo del Right Descent Parser**
+### **Demo del Recursive Descent Parser**
 
 
 ```python
@@ -148,7 +146,7 @@ sr_parser(oracion2, gramatica)
 # Cata/Martín/Julia/Maca/Pablo entregó/envió el/la/un/una plaza/facultad/regalo/globo/tabaco
 ```
 
-Pero qué son esos Warnings?
+ 
 
 ### Algunas limitaciones del shift reduce parser
 
@@ -158,16 +156,16 @@ Pero qué son esos Warnings?
 
 Veamos todo esto en la demo:
 
-### **Demo del Shift and Reduce parser**
+### **Demo del Shift Reduce parser**
 
 
 ```python
-nltk.app.srparser()
+#nltk.app.srparser()
 ```
 
 ## Chart Parser
 
-Los parsers que vimos hasta acá tienen deficiencias, sea en eficiencia o completitud. El chart parser usa dynamic programming para ser más eficiente. Dynamic programming es una técnica para desarrollar algoritmos que tiende a solucionar un problema subdividiendolo en sub problemas. Consiste en guardar la solución a esos sub problemas para poder reusarla cada vez que se la necesita.
+Los parsers que vimos hasta acá tienen deficiencias, sea en eficiencia o completitud. Frente a estas limitaciones, el chart parser busca mejores resultados usando dynamic programming. Dynamic programming es una técnica para desarrollar algoritmos que tiende a solucionar un problema subdividiendolo en sub problemas. Consiste en guardar la solución a esos sub problemas para poder reusarla cada vez que se la necesita.
 
 El chart parser aplica esta técnica. Por ejemplo, construirá el SP "con el telescopio" una vez y lo guardará en una tabla. Esta tabla se denomina WFST (tabla de subcadenas bien formadas).
 
@@ -214,14 +212,22 @@ def display(wfst, tokens):
 
 
 ```python
-oracion = "fernando fuma en el balcon".split()
+oracion = "el balcon fuma en el balcon".split()
 for indice in range(len(oracion)):
     print(indice, oracion[indice])
 ```
 
+    0 el
+    1 balcon
+    2 fuma
+    3 en
+    4 el
+    5 balcon
+    
+
 
 ```python
-chart_gramatica = nltk.CFG.fromstring(
+chart_gramatica = nltk.CFG.fromstring( #Chomsky normal form
     """O -> SN SV
     SP -> P SN
     SN -> Det NC | 'fernando'
@@ -235,8 +241,18 @@ chart_gramatica = nltk.CFG.fromstring(
 
 ```python
 wfst0 = init_wfst(oracion, chart_gramatica)
-display(wfst, oracion)
+display(wfst0, oracion)
 ```
+
+    
+    WFST 1    2    3    4    5    6   
+    0    Det  .    .    .    .    .    
+    1    .    NC   .    .    .    .    
+    2    .    .    V    .    .    .    
+    3    .    .    .    P    .    .    
+    4    .    .    .    .    Det  .    
+    5    .    .    .    .    .    NC   
+    
 
 
 ```python
@@ -244,20 +260,99 @@ wfst1 = complete_wfst(wfst0, oracion, chart_gramatica, trace=True)
 display(wfst1, oracion)
 ```
 
+    [0] Det [1]  NC [2] ==> [0]  SN [2]
+    [4] Det [5]  NC [6] ==> [4]  SN [6]
+    [3]   P [4]  SN [6] ==> [3]  SP [6]
+    [2]   V [3]  SP [6] ==> [2]  SV [6]
+    [0]  SN [2]  SV [6] ==> [0]   O [6]
+    
+    WFST 1    2    3    4    5    6   
+    0    Det  SN   .    .    .    O    
+    1    .    NC   .    .    .    .    
+    2    .    .    V    .    .    SV   
+    3    .    .    .    P    .    SP   
+    4    .    .    .    .    Det  SN   
+    5    .    .    .    .    .    NC   
+    
+
 Veamos el resultado de correr el Chart Parser por una oración con nuestra gramática original:
 
 
 ```python
 gramatica = 'gramaticas/CFG.cfg'
 gramatica = nltk.data.load(gramatica)
+print(gramatica)
 ```
+
+    Grammar with 47 productions (start state = S)
+        S -> SN SV
+        SN -> PRO
+        SN -> NP
+        SN -> D NC
+        SN -> D NC SP
+        NP -> 'martín'
+        NP -> 'cata'
+        NP -> 'fernando'
+        NP -> 'fede'
+        NP -> 'maca'
+        NP -> 'pablo'
+        NC -> 'plaza'
+        NC -> 'facultad'
+        NC -> 'regalo'
+        NC -> 'globo'
+        NC -> 'tabaco'
+        NC -> 'persona'
+        NC -> 'cigarrillo'
+        NC -> 'telescopio'
+        D -> 'el'
+        D -> 'la'
+        D -> 'un'
+        D -> 'una'
+        PRO -> 'ella'
+        PRO -> 'él'
+        SV -> FV SN SP
+        SV -> FV SP SP
+        SV -> FV SP
+        SV -> FV
+        SV -> FV SN
+        FV -> AUX PART
+        FV -> V
+        AUX -> 'fue'
+        PART -> 'entregado'
+        PART -> 'enviado'
+        PART -> 'fumado'
+        PART -> 'explotado'
+        V -> 'entregó'
+        V -> 'envió'
+        V -> 'explotó'
+        V -> 'fuma'
+        V -> 've'
+        SP -> P SN
+        P -> 'por'
+        P -> 'en'
+        P -> 'a'
+        P -> 'con'
+    
 
 
 ```python
 parser = nltk.ChartParser(gramatica)
-for tree in parser.parse(oracion):
-    print(tree)
+for tree in parser.parse(['fernando', 'fuma']):
+    #print(tree.draw()) # La notación de punto nos permite acceder a métodos del objeto. Descomenten las lineas con "print" y miren qué hace cada método.
+    #print(tree.flatten()) 
+    #print(tree.productions())
+    #print(tree.) #Descomenten la línea y usen la tecla "tab" para ver qué otros métodos ofrece el objeto.
+    for st in tree.subtrees():
+        print(st)
 ```
+
+    (S (SN (NP fernando)) (SV (FV (V fuma))))
+    (SN (NP fernando))
+    (NP fernando)
+    (SV (FV (V fuma)))
+    (FV (V fuma))
+    (V fuma)
+    
 
 
 ```python
@@ -265,30 +360,31 @@ for tree in parser.parse(oracion):
 #nltk.app.chartparser()
 ```
 
-## Bllip Parser
-
-Antes hay que instalar el bllip parser. 
-
-Para hacerlo, correr el siguiente comando en la terminal:
-
-    pip3 install --user bllipparser
+## BLLIP Parser
 
 Brown Laboratory for Linguistic Information Processing
 
-Introduce gramáticas a partir de un corpus
 
-## BLLIP Parser
+Bllip parser es un "reranking parser", es decir, un parser que va a devolver una serie de posibles árboles para una oración, ordenados según su probabilidad del más probable al menos probable; y una vez que obtuvo los 50 mejores árboles, va a aplicar otra estrategia de ranking para reordenar (rerank) este subset de resultados consiguiendo incluso mayor precisión.
 
-Bllip parser es un "reranking parser", un parser que va a asignarle a una oración con más de un árbol posible, el árbol más probable. Es decir, que las porducciones de la gramática van a estar acompañadas de un valor de probabilidad.
+La probabilidad de un determinado resultado viene dada por el modelo de lenguaje que el parser usa. El modelo provisto por BLLIP fue entrenado con un corpus de árboles en inglés (El Penn TreeBank) pero sus resultados podrían variar dependiendo de los datos usados en el entrenamiento, así como del método utilizado para entrenar. 
+
+[Eugene Charniak. "A maximum-entropy-inspired parser." Proceedings of the 1st North American chapter of the Association for Computational Linguistics conference. Association for Computational Linguistics, 2000.](https://aclanthology.org/A00-2018.pdf)
+
+
+[Penn TreeBank](https://catalog.ldc.upenn.edu/LDC99T42)
+
+
+[TreeBank Wikipedia](https://es.wikipedia.org/wiki/TreeBank)
 
 
 ```python
-#pip3 install --user bllipparser
+#!pip3 install --user bllipparser
 ```
 
 
 ```python
-import bllipparser
+#import bllipparser
 from bllipparser import RerankingParser                             #Importa el parser
 from bllipparser.ModelFetcher import download_and_install_model     # Descarga e instala el "modelo"
 
@@ -300,9 +396,12 @@ rrp = RerankingParser.from_unified_model_dir(model_dir)
 ```python
 oracion2 = "john runs through the hill"
 rrp.simple_parse(oracion2)
-#rrp.parse(oracion2)
 ```
 
+```python
+for parse in rrp.parse(oracion2):
+    print(parse) #Probar los métodos de parse usando notación de . y "tab"
+```
 
 ```python
 rrp.tag(oracion2)
@@ -315,14 +414,15 @@ oracion4 = input()
 rrp.simple_parse(oracion4)
 ```
 
-### Método tree
+
+### Método tree - árboles con el formato del Penn TreeBank
 
 
 ```python
 oracion3 = "No one saw him disembark in the unanimous night, no one saw the bamboo canoe sink into the sacred mud, but in a few days there was no one who did not know that the taciturn man came from the South"
 structure = rrp.simple_parse(oracion3)
-print(structure)
 ```
+
 
 
 ```python
@@ -335,3 +435,43 @@ print(prettytree)
 print(sentenceroot)
 print(sentencespan)
 ```
+
+
+### Ejemplo de una gramática con pesos de probabilidad
+
+
+```python
+gramatica_pesos = nltk.parse_pcfg("""    
+    S    -> SN SV              [1.0]    
+    SV   -> V  SN              [1.0]    
+    SN   -> Det N              [0.8]    
+    SN   -> NP                 [0.2]    
+    NP   -> 'Raúl'             [1.0]    
+    Det  -> 'el'               [1.0]    
+    N    -> 'perro'            [0.5]    
+    N    -> 'gato'             [0.5]    
+    V    -> 'comió'            [1.0]    
+    """)
+
+print(gramatica_pesos)
+```
+
+
+
+## Treebank en NLTK
+
+
+```python
+from nltk.corpus import treebank
+#nltk.download('treebank')
+```
+
+
+```python
+t = treebank.parsed_sents('wsj_0001.mrg')[0] # Wall Street Journal
+print(t)
+```
+
+{% include additional_content.html %}
+
+{% include copybutton.html %}
