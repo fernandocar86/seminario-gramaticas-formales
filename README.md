@@ -12,9 +12,6 @@ En la cursada vamos a utilizar diversos recursos computacionales, principalmente
 
 En las partes teóricas de las clases vamos a usar *handouts* en pdf. Puestos que algunos de estos documentos incluyen campos especiales que no son compatibles con todos los visualizadores de pdf (por ejemplo, no todas las versiones del acrobat reader), recomendamos utilizar [evince](https://wiki.gnome.org/Apps/Evince). Pueden encontrar una versión para Windows [aquí](https://evince.softonic.com/) o [aquí](https://evince.uptodown.com/windows). No hemos probado ninguno de los dos links, por lo que agredecemos si nos pueden avisar si funcionan bien.
 
-## Instrucciones para generar y usar un token personal en GitHub
-Para completar el acceso a GitHub desde consola, deberán generar un token personal como se indica en [estas instrucciones](./Instructivos/github_token.md).
-
 ## Instrucciones para los trabajos prácticos
 Para cumplir con la regularidad en este seminario, es necesario realizar una serie de trabajos prácticos que serán oportunamente presentados durante la cursada. Para poder resolverlos, es necesario tener en cuenta [estas instrucciones](./Instructivos/flujo_de_trabajo.md).
 
