@@ -20,7 +20,7 @@ Te va a pedir que vuelvas a poner tu contraseña para asegurarse de tu identidad
 
 ![](./token-images/20220418172524.png)  
 
-Agregale un nombre, un tipo de permiso ("scopes", preferiblemente "repos") y una cantidad de días en que puede estar habilitado (después de ese tiempo, vas a tener que crear otra si seguís usando el mismo repo en el que pusiste este token)
+Agregale un nombre, un tipo de permiso ("scopes", preferiblemente "repos") y una cantidad de días en que puede estar habilitado (después de ese tiempo, vas a tener que crear otro si seguís usando el mismo repo en el que pusiste este token)
 
 ![](./token-images/20220418172729.png)  
 
@@ -28,11 +28,11 @@ Al final de las opciones de permisos vas a encontrar un botón verde que te perm
 
 ![](./token-images/20220418172819.png)  
 
-Copiá el token generado (va a ser la única vez que pueda verlo, pero podés crear tantos como quieras):
+Copiá el token generado. Va a ser la única vez que puedas verlo, pero podés crear tantos como quieras o copiarlo y guardarlo en un lugar seguro:
 
 ![](./token-images/20220418172947.png)  
 
-La próxima vez que para hacer un pull o push git te pida que coloques tu nombre de contraseña de github, usá el token como contraseña. Así quedará fijado hasta que te muevas a otro repo o la contraseña expire:
+La próxima vez que, al hacer un pull o push, git te pida que coloques tu nombre y tu contraseña de github, usá el token como contraseña. Así quedará fijado hasta que te muevas a otro repo o la contraseña expire:
 
 ![](./token-images/20220418173216.png)  
 
