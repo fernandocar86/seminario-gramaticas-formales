@@ -14,8 +14,8 @@ Para estar al día con los cambios en el código, lo mejor es chequear este libr
 
 ### Gramáticas para NLTK
 
-Antes de pasar a los parsers, miremos las gramáticas que vamos a "parsear", construidas según lo pide el libro de Bird et al.
-[LINK A GRAMATICA](CFG.cfg)
+Antes de pasar a los parsers, miremos las gramáticas que vamos a "parsear", construidas según lo pide el libro de Bird et al., y que tenemos guardada en la carpeta "gramaticas".
+
 Notemos que la extensión del archivo es ".cfg", así le vamos a avisar a nltk que la gramática debe ser entendida como "Context Free Grammar".
 Ahora podemos mirar por adentro que la grámatica cuenta con todos los elementos que, según lo que vimos en la clase, constituyen el formalismo de una CFG:
 
