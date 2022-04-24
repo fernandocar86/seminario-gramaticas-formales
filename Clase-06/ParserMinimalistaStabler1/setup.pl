@@ -13,12 +13,12 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 
-% Este archivo está simplificado por Fernando Carranza para correr solo una selección 
-% ilustrativa de las gramáticas minimalistas para su uso interno en las clases del 
-% seminario "Gramáticas formales: formalismos e implementaciones" (Carranza y Zdrojewski) 
+% Este archivo estï¿½ simplificado por Fernando Carranza para correr solo una selecciï¿½n 
+% ilustrativa de las gramï¿½ticas minimalistas para su uso interno en las clases del 
+% seminario "Gramï¿½ticas formales: formalismos e implementaciones" (Carranza y Zdrojewski) 
 % durante el primer cuatrimestre de 2022, Universidad de Buenos Aires.
 %
-% Para la versión original de Stabler remitimos a 
+% Para la versiï¿½n original de Stabler remitimos a 
 % https://linguistics.ucla.edu/person/edward-stabler/
 %
 %
@@ -37,7 +37,7 @@
 :- op(500, xfy, >>). % for adjunction
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Visualizado de árboles
+% Visualizado de ï¿½rboles
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % for tree display
@@ -53,16 +53,17 @@
 :- ensure_loaded('parser/mgpx'),ensure_loaded('parser/lpx').  % basic MG parser and lexical sequence parser
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Gramáticas
+% Gramï¿½ticas
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % GRAMMARS REQUIRING ONLY PHRASAL MOVEMENT (mgpx+lpx)
-:- ['grammars/anbncn']. % 
+:- ['grammars/anbncn']. 
+%:- ['grammars/g0spSVO']. % simple SOV 
 %:- ['grammars/g0spanish']. % simple SOV 
 %:- ['grammars/g-ne']. % "titus praise -s lavinia" inspired by Mahajan 2000
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Oraciones para probar (seleecionar de la gramática que corresponda)
+% Oraciones para probar (seleecionar de la gramï¿½tica que corresponda)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % anbncn.pl
@@ -70,15 +71,23 @@
 % showParse([a,b,c]).
 % showParse([a,a,b,b,c,c]).
 % showParse([a,a,a,b,b,b,c,c,c]).
-% y así sucesivamente
+% y asï¿½ sucesivamente
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% g0spSVO.pl
+% showParse(['Ivan','come','la','torta']).
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % g0spanish.pl
-% showParse([la,reina,la,torta,comió]).
-% showParse(['cuál',torta,la,reina,'comió']).
-% showParse(['la,reina,'rió']).
-% y así sucesivamente
+% showParse([la,reina,la,torta,comiï¿½]).
+% showParse(['cuï¿½l',torta,la,reina,'comiï¿½']).
+% showParse(['la,reina,'riï¿½']).
+% y asï¿½ sucesivamente
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
