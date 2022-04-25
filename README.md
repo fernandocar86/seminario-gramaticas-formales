@@ -103,7 +103,7 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
       </ul>
     </td>
     <td>
-    <li><a href="./Clase-04/Clase-05-handout.pdf">Apunte sobre GPSG</a></li>
+    <li><a href="./Clase-05/handout.pdf">Apunte sobre GPSG</a></li>
     </td>
   </tr>
   <tr>
