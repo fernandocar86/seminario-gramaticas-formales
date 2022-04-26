@@ -59,4 +59,6 @@ Se evaluarán los siguientes aspectos:
 10-30 pts: insuficiente
 
 
+{% include copybutton.html %}
 
+{% include additional_content.html %}
