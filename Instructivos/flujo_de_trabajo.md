@@ -26,19 +26,23 @@ Una vez completados los pasos para el "fork", podrá ver este repositorio agrega
 
 ### Branch Protection
 
-Quien se encargue del fork, también deberá deberá seguir los pasos para proteger la rama "main" de su nuevo repositorio así como seleccionar un número de "approvals" de dos (2) personas que estarán a cargo de aceptar los "pull requests" de cualquier integrante del equipo.
+Quien se encargue del fork, también deberá deberá seguir los pasos para crear una nueva rama llamada tp\<numero> (por ejemplo, la rama del primer trabajo práctico se llamará _tp1_, el segundo se llamará _tp2_, etc.) y tendrá que protegerla. Asimismo, deberá seleccionar un número de "approvals" de dos (2) personas que estarán a cargo de aceptar los "pull requests" de cualquier integrante del equipo.
 
 Estos "pull requests" serán la herramienta del equipo docente para revisar y comentar los aportes de cada integrante al trabajo grupal.
 
-Para proteger la rama principal, deberán navegar hasta la solapa "Settings" de su repositorio:
+Para proteger la rama creada (_tp1_, por ejemplo), deberán navegar hasta la solapa "Settings" de su repositorio:
 
 ![](./workflow-images/2022-03-06-20-53-51.png)
 
 Sobre el lado izquierdo, elegir la solapa "Branches" y cliquear el botón con la leyenda "Add rules".
 
+En la imagen se muestra el nombre _main_, pero ustedes deben modificar con el nombre de la rama que hayan creado (siguiendo el ejemplo, _tp1_).
+
 Una vez desplegadas las opciones, completar del siguiente modo:
 
 ![](./workflow-images/2022-03-06-20-32-10.png)
+
+Aquí verán que el "branch name pattern" no dirá _main_ sino el nombre del branch que hayan elegido anteriormente.
 
 Finalizado este paso, está todo listo para seleccionar a l@s demás integrantes del equipo como colaborador@s.
 
@@ -75,15 +79,15 @@ Por ejemplo, para el TP número 1, cada integrante del grupo deberá crear una n
 git checkout -b tp1/{NOMBRE_INTEGRANTE}
 ```
 
-Una vez completada su parte del trabajo, deberá seguir los pasos para agregar sus cambios, "commitearlos" y "pushearlos" a GitHub (Cómo hacer todo esto es parte de la clase sobre git y GitHub).
+Una vez completada su parte del trabajo, deberá seguir los pasos para agregar sus cambios, "commitearlos" y "pushearlos" a GitHub. En el apunte [apunte sobre Git y GitHub](./Clase-02/git-basics.md) pueden encontrar indicaciones para estos comandos.
 
 ### Pull requests
 
-Una vez que está completa su solución al TP1, deberá hacer, desde GitHub, un "pull request" a la rama "main" (Cómo hacer todo esto es parte de la clase sobre git y GitHub).
+Una vez que está completa su solución al TP1, deberá hacer, desde GitHub, un "pull request" a la rama del trabajo práctico en cuestión (por ejemplo, _tp1_). En el [apunte sobre Git y GitHub](./Clase-02/git-basics.md) pueden encontrar cómo hacer este proceso.
 
 Ese "PR" será revisado y comentado por 2 docentes. Los comentarios podrán incluir cambios propuestos que deberán sumarse al PR.
 
-Una vez aprobados los cambios por el equipo docente, se finalizará el "merge" del código a la rama "main" (y se considerará corregido y aprobado el aporte al TP).
+Una vez aprobados los cambios por el equipo docente, se finalizará el "merge" del código a la rama del trabajo práctico (y se considerará corregido y aprobado el aporte al TP).
 
 {% include copybutton.html %}
 
