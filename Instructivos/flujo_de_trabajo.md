@@ -76,7 +76,7 @@ Los trabajos prácticos van a estar asociados a diferentes temas que veamos en l
 Por ejemplo, para el TP número 1, cada integrante del grupo deberá crear una nueva rama de trabajo usando el comando:
 
 ```{bash}
-git checkout -b tp1/{NOMBRE_INTEGRANTE}
+git checkout -b tp1_{NOMBRE_INTEGRANTE}
 ```
 
 Una vez completada su parte del trabajo, deberá seguir los pasos para agregar sus cambios, "commitearlos" y "pushearlos" a GitHub. En el apunte [apunte sobre Git y GitHub](./Clase-02/git-basics.md) pueden encontrar indicaciones para estos comandos.
