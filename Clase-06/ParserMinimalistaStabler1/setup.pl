@@ -51,22 +51,26 @@
 
 % Recognizer and display tool
 :- ensure_loaded('parser/mgpx'),ensure_loaded('parser/lpx').  % basic MG parser and lexical sequence parser
+%:- ensure_loaded('parser/mtpgp').  % simple mTPG parser
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Gram�ticas
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % GRAMMARS REQUIRING ONLY PHRASAL MOVEMENT (mgpx+lpx)
-:- ['grammars/anbncn']. 
+%:- ['grammars/anbn'].
+%:- ['grammars/anbncn']. 
 %:- ['grammars/g0spSVO']. % simple SOV 
 %:- ['grammars/g0spanish']. % simple SOV 
-%:- ['grammars/g-ne']. % "titus praise -s lavinia" inspired by Mahajan 2000
+:- ['grammars/g-ne']. % "titus praise -s lavinia" inspired by Mahajan 2000
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Oraciones para probar (seleecionar de la gram�tica que corresponda)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% anbncn.pl
+%anbn.pl
+
+%anbncn.pl
 
 % showParse([a,b,c]).
 % showParse([a,a,b,b,c,c]).
@@ -92,7 +96,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% g-ne.pl
+ g-ne.pl
 
 % gh1(X).
 % showParse(['Titus',know,'-s',that,'Lavinia',have,'-s',eat,'-en']).
