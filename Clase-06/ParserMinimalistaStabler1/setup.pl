@@ -27,14 +27,14 @@
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % operator defs - don't touch these
-:- op(500, xfy, ::). % lexical items
-:- op(500, fx, =). % for selection features
-:- op(500, xf, <=).		% for right incorporation
-:- op(500, fx, =>). % for left incorporation
-:- op(500, xf, ==>). % for right affix hop
-:- op(500, fx, <==). % for left affix hop
-:- op(500, xfy, <<). % for adjunction
-:- op(500, xfy, >>). % for adjunction
+% :- op(500, xfy, ::). % lexical items
+% :- op(500, fx, =). % for selection features
+%:- op(500, xf, <=).		% for right incorporation
+%:- op(500, fx, =>). % for left incorporation
+%:- op(500, xf, ==>). % for right affix hop
+%:- op(500, fx, <==). % for left affix hop
+%:- op(500, xfy, <<). % for adjunction
+%:- op(500, xfy, >>). % for adjunction
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Visualizado de �rboles
@@ -51,22 +51,29 @@
 
 % Recognizer and display tool
 :- ensure_loaded('parser/mgpx'),ensure_loaded('parser/lpx').  % basic MG parser and lexical sequence parser
-%:- ensure_loaded('parser/mtpgp').  % simple mTPG parser
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Gram�ticas
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % GRAMMARS REQUIRING ONLY PHRASAL MOVEMENT (mgpx+lpx)
-%:- ['grammars/anbn'].
 %:- ['grammars/anbncn']. 
-%:- ['grammars/g0spSVO']. % simple SOV 
+%:- ['grammars/g0']. 
+:- ['grammars/g0spSVO']. % 
 %:- ['grammars/g0spanish']. % simple SOV 
-:- ['grammars/g-ne']. % "titus praise -s lavinia" inspired by Mahajan 2000
+%:- ['grammars/g0spanish2']. % simple SOV 
+%:- ['grammars/g0sp-caso']. % 
+%:- ['grammars/g-ne']. % "titus praise -s lavinia" inspired by Mahajan 2000
+%:- ['grammars/g-nSP']. % "titus praise -s lavinia" inspired by Mahajan 2000
+%:- ['grammars/g-sp3']. % "titus praise -s lavinia" inspired by Mahajan 2000
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Oraciones para probar (seleecionar de la gram�tica que corresponda)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% g0.pl
+
 
 %anbn.pl
 
@@ -96,8 +103,11 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
- g-ne.pl
+% g-ne.pl
 
+% g-nSP.pl
+
+%%%%% Para clase 7 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % gh1(X).
 % showParse(['Titus',know,'-s',that,'Lavinia',have,'-s',eat,'-en']).
 % showParse(['Titus',wonders,'-s',that,'Lavinia',laugh,'-s']).
