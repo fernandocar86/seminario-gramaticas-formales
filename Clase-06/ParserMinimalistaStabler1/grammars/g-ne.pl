@@ -8,3 +8,6 @@
 [lavinia] :: [d,-k].         [titus] :: [d,-k].         [who] :: [d,-k,-wh].
 
 startCategory(c).
+
+
+% showParse([who,praise,'-s',titus]).
