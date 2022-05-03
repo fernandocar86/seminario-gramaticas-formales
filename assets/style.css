@@ -19,12 +19,10 @@
     top:5px;
     right:5px;
 }
-
 .copy-code-button:hover {
     cursor: pointer;
     background-color: #ecc490;
 }
-
 .copy-code-button:focus {
     /* Avoid an ugly focus outline on click in Chrome,
        but darken the button for accessibility.
@@ -32,16 +30,13 @@
     background-color: #E6E6E6;
     outline: 0;
 }
-
 .copy-code-button:active {
     background-color: #D9D9D9;
 }
-
 .highlight pre {
     /* Avoid pushing up the copy buttons. */
     margin: 0;
 }
-
 li {
     display: list-item;
 }
@@ -52,13 +47,17 @@ li[class="tag-h2"] {
     font-size: 14px;
 }
 nav.content {
-    width: 230px;
+    width: 250px;
     position: fixed;
     top: 220px;
     left: 50%;
-    margin-left: -580px;
+    margin-left: -600px;
     text-align: right;
     font-size: 22px;
+    height: 450px;
+}
+nav ul {
+    padding-right: 30px;
 }
 a.content-item:-webkit-any-link {
     color: #f0e7d5;
@@ -73,13 +72,14 @@ ul {
 }
 ul.this-page:not(li) {
     color: #ffcc00;
-    height: 164px;
+    height: 40%;
     overflow: auto;
     margin-bottom: 50px;
-    padding-right: 20px;
 }
 ul.this-repo:not(li) {
-    padding-right: 20px;
+    /* padding-right: 20px; */
+    height: 60%;
+    overflow: auto;
 }
 ::-webkit-scrollbar{
     width: 8px;

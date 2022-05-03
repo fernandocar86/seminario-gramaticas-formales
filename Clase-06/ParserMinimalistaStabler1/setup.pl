@@ -57,7 +57,7 @@
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % GRAMMARS REQUIRING ONLY PHRASAL MOVEMENT (mgpx+lpx)
-%:- ['grammars/g0spSVO'].   % Simple SVO español
+:- ['grammars/g0spSVO'].   % Simple SVO español
 %:- ['grammars/g0'].        % Simple SOV inglés
 %:- ['grammars/g0spanish']. % simple SOV español
 %:- ['grammars/g-ne']. % Inglés Movimiento de Remanente
