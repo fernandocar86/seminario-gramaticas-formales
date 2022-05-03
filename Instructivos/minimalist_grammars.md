@@ -71,3 +71,7 @@ Para poder correr estos materiales es preciso tener instalado Prolog, LaTeX y Wi
    display (return, or h for help)? 
    ```
 8. Si la oración es aceptada, introducir h y apretar enter. Va a aparecer una serie de opciones para visualizar los distintos árboles.
+
+{% include copybutton.html %}
+
+{% include additional_content.html %}
