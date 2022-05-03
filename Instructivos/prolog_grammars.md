@@ -14,7 +14,7 @@ Para poder correr estos materiales es preciso tener instalado Prolog, LaTeX y Wi
 
 ## Instrucciones
 
-1. Abrir el archivo ``setup.pl``, ubicado en la carpeta de la clase deseada.
+1. Abrir el archivo ``setup.pl``, ubicado en ParserMinimalistaStabler1 (el proeso es el mismo para la gramática ubicada en ParserMinimalistaStabler2)
 2. Chequear en el archivo la sección ``Gramáticas`` y dejar descomentada solo la gramática que se desea probar (en Prolog los comentarios se introducen con el signo ``%``.
 3. Guardar setup.
 4. Entrar a la terminal desde ese mismo directorio.
