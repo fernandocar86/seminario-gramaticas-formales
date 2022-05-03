@@ -245,7 +245,7 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
   </tr>
   <tr>
     <td><a href="./Clase-15/index.md">15</a></td>
-    <td>05/05/22</td>
+    <td>05/07/22</td>
     <td>
       <ul>
         <li>Cierre de cursada.</li>
