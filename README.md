@@ -121,7 +121,7 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
     <td>
       <ul>
         <li><a href="./Clase-06/handout.pdf">Apunte Gramáticas Minimalistas</a></li>
-        <li><a href="./Instructivos/minimalist_grammars.md">Instrucciones para correr el parser minimalista en Prolog</a></li>
+        <li><a href="./Instructivos/prolog_grammars.md">Instrucciones para correr un parser minimalista en Prolog</a></li>
       </ul>
     </td>
   </tr>
@@ -136,7 +136,7 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
     </td>
     <td>
       <ul>
-        <li><a href="./Clase-07/ParserMinimalistaStabler2/instructions.md">Instrucciones para correr el parser minimalista en Prolog</a></li>
+        <li><a href="./Instructivos/prolog_grammars.md">Instrucciones para correr un parser minimalista en Prolog</a></li>
       </ul>
     </td>
   </tr>
