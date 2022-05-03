@@ -2,7 +2,9 @@
 
 ## Información básica
 
-Al bajarse el repositorio de la cursada, en la carpeta correspondiente a la clase 5 van a encontrar una carpeta llamada ParserMinimalistaStabler1. En esta carpeta se encuentra el código simplificado por el grupo docente para correr en Prolog el Parser Minimalista desarrollado por Stabler, que pueden encontrar en su versión original en (la página de Stabler)[https://linguistics.ucla.edu/person/edward-stabler/]. 
+Al bajarse el repositorio de la cursada, en las carpetas correspondientes a las clases 6 y 7 van a encontrar las carpetas `ParserMinimalistaStabler1` y `ParserMinimalistaStabler2`, respectivamente. 
+
+En cada una de ellas se encuentra el código simplificado por el grupo docente para correr en Prolog el Parser Minimalista desarrollado por Stabler, que pueden encontrar en su versión original en [la página de Stabler](https://linguistics.ucla.edu/person/edward-stabler/).
 
 Esta versión simplificada es capaz de parsear gramáticas minimalistas que solo aceptan las operaciones de ensamble externo, ensamble interno y operaciones de licenciamiento con rasgos. 
  
@@ -12,16 +14,19 @@ Para poder correr estos materiales es preciso tener instalado Prolog, LaTeX y Wi
 
 ## Instrucciones
 
-1. Abrir el archivo ``setup.pl`` 
+1. Abrir el archivo ``setup.pl``, ubicado en ParserMinimalistaStabler1 (el proeso es el mismo para la gramática ubicada en ParserMinimalistaStabler2)
 2. Chequear en el archivo la sección ``Gramáticas`` y dejar descomentada solo la gramática que se desea probar (en Prolog los comentarios se introducen con el signo ``%``.
 3. Guardar setup.
 4. Entrar a la terminal desde ese mismo directorio.
 5. Iniciar Prolog con alguno de los siguientes comandos: 
+   
     ```
     prolog
     swipl
     ```
+
    Si todo funciona bien, en la pantalla va a aparecer un mensaje como el siguiente:
+   
    ```
    Welcome to SWI-Prolog (threaded, 64 bits, version 8.4.1)
    SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software.
@@ -32,12 +37,17 @@ Para poder correr estos materiales es preciso tener instalado Prolog, LaTeX y Wi
    
    ?- 
    ```
+
 6. Cargar el archivo ``setup.pl``, encerrándolo entre corchetes, como se muestra a continuación:
+   
    ```
    [setup].
    ```
+   
    Van a aparecer varios errores, principalmente de variables libres, pero estos errores no deberían interferir.
+
 7. Copiar alguno de los comandos showParse que están comentados en ``setup.pl`` que correspondan a la gramática elegida y apretar enter. Por ejemplo. Al copiar el comando ``showParse([a,b,c]).``, perteneciente a la gramática ``anbncn`` aparece lo siguiente.
+   
    ```
    ?- showParse([a,b,c]).
    analizando...
@@ -70,4 +80,9 @@ Para poder correr estos materiales es preciso tener instalado Prolog, LaTeX y Wi
    derivation:[1, 2, 3, 4, 6, 8].
    display (return, or h for help)? 
    ```
+   
 8. Si la oración es aceptada, introducir h y apretar enter. Va a aparecer una serie de opciones para visualizar los distintos árboles.
+
+{% include copybutton.html %}
+
+{% include additional_content.html %}

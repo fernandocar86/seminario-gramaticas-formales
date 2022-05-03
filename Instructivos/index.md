@@ -6,5 +6,5 @@ En esta sección podés encontrar algunas indicaciones útiles para las activida
 - [Instrucciones para generar y usar un token personal en GitHub](./github_token.md)
 - [Instrucciones para el flujo de trabajo con GitHub](./flujo_de_trabajo.md)
 - [Instrucciones para la configuración del perfil en Discord](./discord_setting.md)
-
+- [Instrucciones para correr una gramática en Prolog](./prolog_grammars.md)
 {% include additional_content.html %}
