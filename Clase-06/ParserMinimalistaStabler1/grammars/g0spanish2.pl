@@ -12,11 +12,13 @@
 
 
 %% Tiempo
-[] :: [='V',+k,'T'].              
+[] :: [=v,+k,'T'].              
 
 %% v 
-[] :: [='V',='D','V'].
+[] :: [='X',='D',v].
 
+%% X 
+[] :: [='V',+k,X].
 
 %%% Verbos [V]
 ['comió'] :: [='D',+k,'V'].         ['rió'] :: ['V'].
@@ -25,14 +27,13 @@
 ['cocina'] :: [='D',+k,'V']. 
 
 
-
 %%% Determinantes
 ['el'] :: [='N','D',-k].         ['cuál'] :: [='N','D',-k,-wh].
-%['la'] :: [='N','D',-k].
+['la'] :: [='N','D',-k].
 
 
 %%% Nombres comunes
-['perro'] :: ['N'].              %  ['torta'] :: ['N'].
+['perro'] :: ['N'].                ['torta'] :: ['N'].
 ['hueso'] :: ['N'].
 
 
@@ -46,4 +47,7 @@ startCategory('C').
 
 
 
-% showParse(['el','perro','el','hueso','vio']).
+
+
+
+% showParse(['Ana','vio', 'el', 'hueso']).

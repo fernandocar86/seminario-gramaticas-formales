@@ -102,7 +102,11 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
         <li>El declive de GPSG: insuficiencia del poder restrictivo de las gramáticas independientes de contexto, complejidad computacional de GPSG.</li>
       </ul>
     </td>
-    <td></td>
+    <td>
+      <ul>
+    <li><a href="./Clase-05/handout.pdf">Apunte sobre GPSG</a></li>
+      </ul>
+    </td>
   </tr>
   <tr>
     <td><a href="./Clase-06/index.md">06</a></td>

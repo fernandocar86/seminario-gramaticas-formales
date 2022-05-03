@@ -14,14 +14,17 @@ Para estar al día con los cambios en el código, lo mejor es chequear este libr
 
 ### Gramáticas para NLTK
 
-Antes de pasar a los parsers, miremos las gramáticas que vamos a "parsear", construidas según lo pide el libro de Bird et al.
-[LINK A GRAMATICA](CFG.cfg)
+Antes de pasar a los parsers, miremos las gramáticas que vamos a "parsear", construidas según lo pide el libro de Bird et al., y que tenemos guardada en la carpeta "gramaticas".
+
 Notemos que la extensión del archivo es ".cfg", así le vamos a avisar a nltk que la gramática debe ser entendida como "Context Free Grammar".
 Ahora podemos mirar por adentro que la grámatica cuenta con todos los elementos que, según lo que vimos en la clase, constituyen el formalismo de una CFG:
 
-Un axioma: O
+Un axioma: S
+
 Símbolos no terminales: SN, PRO, NP, etc.
+
 Símbolos terminales: martín, cata, etc.
+
 Reglas de reescritura: cada una de las líneas de la gramática, que deben indicar que un elemento a la izquierda del signo -> se debe reescribir como los elementos a la derecha.
 
 ### Tokenización
@@ -90,9 +93,9 @@ rd_parser(oracion1, gramatica)                         # Llamamos a la función 
 
 ### Algunas limitaciones del recursive descent parser
 
-- 1. La recursión a la izquierda provoca un loop infinito. (SN -> PRO | SN NP)
-- 2. El parser puede llegar a tomar demasiado tiempo en considerar opciones que mirando la oración ya sabemos que no son posibles. (Fernando fuma)
-- 3. El movimiento de backtracking borra construcciones de consituyentes que podrían ser útiles para otras partes de la oración. (El cigarrillo fue fumado por la persona)
+1. La recursión a la izquierda provoca un loop infinito. (SN -> PRO | SN NP)
+2. El parser puede llegar a tomar demasiado tiempo en considerar opciones que mirando la oración ya sabemos que no son posibles. (Fernando fuma)
+3. El movimiento de backtracking borra construcciones de consituyentes que podrían ser útiles para otras partes de la oración. (El cigarrillo fue fumado por la persona)
 
 Veamos todo esto en la demo:
 
@@ -146,12 +149,10 @@ sr_parser(oracion2, gramatica)
 # Cata/Martín/Julia/Maca/Pablo entregó/envió el/la/un/una plaza/facultad/regalo/globo/tabaco
 ```
 
- 
-
 ### Algunas limitaciones del shift reduce parser
 
-- 1. Solo puede devolver un árbol posible, aunque la oración sea ambigua y acepte más de una estructura.
-- 2. En cada acción de reducir, debe seleccionar una, aunque haya más de una posible. Y si la posibilidad de hacer shift o reduce es ambivalente, deberá decidir por una de las dos acciones. Fallas en estas decisiones pueden resultar en una falla del parseo y, al no tener implementada una forma de backtracking, si siguió un camino que fue infructuoso, decidirá que esa oración no tiene solución. (Fernando fuma el cigarrillo en el parque)
+1. Solo puede devolver un árbol posible, aunque la oración sea ambigua y acepte más de una estructura.
+2. En cada acción de reducir, debe seleccionar una, aunque haya más de una posible. Y si la posibilidad de hacer shift o reduce es ambivalente, deberá decidir por una de las dos acciones. Fallas en estas decisiones pueden resultar en una falla del parseo y, al no tener implementada una forma de backtracking, si siguió un camino que fue infructuoso, decidirá que esa oración no tiene solución. (Fernando fuma el cigarrillo en el parque)
 
 
 Veamos todo esto en la demo:
@@ -252,7 +253,7 @@ display(wfst0, oracion)
     3    .    .    .    P    .    .    
     4    .    .    .    .    Det  .    
     5    .    .    .    .    .    NC   
-    
+
 
 
 ```python
@@ -273,7 +274,7 @@ display(wfst1, oracion)
     3    .    .    .    P    .    SP   
     4    .    .    .    .    Det  SN   
     5    .    .    .    .    .    NC   
-    
+
 
 Veamos el resultado de correr el Chart Parser por una oración con nuestra gramática original:
 
@@ -332,7 +333,7 @@ print(gramatica)
         P -> 'en'
         P -> 'a'
         P -> 'con'
-    
+
 
 
 ```python
@@ -424,8 +425,8 @@ structure = rrp.simple_parse(oracion3)
 ```
 
 
-
 ```python
+import bllipparser
 tree = bllipparser.Tree(structure)
 prettytree = tree.pretty_string()
 sentenceroot = tree.label
@@ -441,7 +442,7 @@ print(sentencespan)
 
 
 ```python
-gramatica_pesos = nltk.parse_pcfg("""    
+gramatica_pesos = nltk.PCFG.fromstring("""    
     S    -> SN SV              [1.0]    
     SV   -> V  SN              [1.0]    
     SN   -> Det N              [0.8]    
@@ -455,7 +456,6 @@ gramatica_pesos = nltk.parse_pcfg("""
 
 print(gramatica_pesos)
 ```
-
 
 
 ## Treebank en NLTK
