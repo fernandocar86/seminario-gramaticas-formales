@@ -5,11 +5,11 @@
 
 :- encoding(utf8).
 
-:- op(500, xfy, ::). % lexical items
-:- op(500, fx, =). % for selection features
+%:- op(500, xfy, ::). % lexical items
+%:- op(500, fx, =). % for selection features
 
 [] :: [='T','C'].               
-[] :: [='V','T',='D'].             
+[] :: [='V',='D','T'].             
 
 [come] :: [='D','V'].        
 % [ríe] :: ['V'].

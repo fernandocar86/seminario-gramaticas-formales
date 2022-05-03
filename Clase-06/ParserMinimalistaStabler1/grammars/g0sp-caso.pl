@@ -1,52 +1,55 @@
-% File   : g0spanish.pl
-% Gramática adaptada por Fernando Carranza de la gramática g0.pl  diseñada por E Stabler (Mar 2000). Para uso interno de Seminario "Gramáticas formales: formalismos e implementaciones"  (UBA).
+% File   : g0sp-caso.pl
+% Author : Pablo Zdrojewski
+% Gramática diseñada por Pablo Zdrojewki a partoo la gramática g0.pl  diseñada por Stabler (Mar 2000). Para uso interno de Seminario "Gramáticas formales: formalismos e implementaciones"  (UBA).
 
 :- encoding(utf8).
 
-:- op(500, xfy, ::). % lexical items
-:- op(500, fx, =). % for selection features
+%:- op(500, xfy, ::). % lexical items
+%:- op(500, fx, =). % for selection features
 
 
 %%% Complementantes
-[] :: [='T','C'].               [] :: [='T',+wh,'C'].
+[] :: [=t,c].               [] :: [=t,+wh,c].
 
 
 %% Tiempo
-[] :: [='voice',+nom,'T'].              
-
-%% v 
-[] :: [='V',+ac,'v'].
+[] :: [=voice,+h,+nom,t].              
 
 %% voice 
-[] :: [='v',='Dnom','voice'].
+[] :: [=vt,=dnom,+ac,voice].
+[] :: [=vt,=dnom,voice].
 
 
-
-%%% Verbos [V]
-['comió'] :: [='Dac','V'].         ['rió'] :: ['V'].
-['come'] :: [='Dac','V'].         ['ríe'] :: ['V'].
-['vio'] :: [='Dac','V'].   
-['cocina'] :: [='Dac','V']. 
-
+%%% Verbos v: verbo instransitivo / vt: verbo transitivo
+[sonrie] :: [v,-h].
+[canta]  :: [v,-h].   
+[come] :: [=dac,vt,-h].        
+[vio] :: [=dac,vt,-h].   
+[cocina] :: [=dac,vt,-h]. 
 
 %%% Determinantes
-['el'] :: [='N','D',].         ['cuál'] :: [='N','Dac',-ac,-wh].
-['la'] :: [='N','Dac',-ac].
-['el'] :: [='N','Dnom',-ac].         ['cuál'] :: [='N','Dnom',-ac,-wh].
-['la'] :: [='N','Dnom',-ac].
+['cuál'] :: [=nf,dac,-ac,-wh].
+['cuál'] :: [=nf,dnom,-nom,-wh].
+['cuál'] :: [=nm,dac,-ac,-wh].
+['cuál'] :: [=nm,dnom,-nom,-wh].
+[el] :: [=nm,dnom,-nom].        
+[el] :: [=nm,dac,-ac].        
+[la] :: [=nf,dnom,-nom].
+[la] :: [=nf,dac,-ac].
 
 
 %%% Nombres comunes
-['perro'] :: ['N'].                ['torta'] :: ['N'].
-['hueso'] :: ['N'].
+%[perro] :: [nm].                
+[torta] :: [nf].
+%[hueso] :: [nm].
 
 
 %%% Nombres propios
-['Fernando'] :: ['Dnom',-nom].      
-['Julia'] :: ['Dnom',-nom].   
-['Macarena'] :: ['Dnom',-nom].
-['Pablo'] :: ['Dnom',-nomk].  
+[fernando] :: [dnom,-nom].      
+[julia] :: [dnom,-nom].   
+[macarena] :: [dnom,-nom].
+[pablo] :: [dnom,-nom].  
 
-startCategory('C').
+startCategory('c').
 
 

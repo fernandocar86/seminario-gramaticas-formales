@@ -8,41 +8,40 @@
 
 %% Tiempo
 [] :: [=pred,+h,+k,t]. 
-%[] :: [=pred,+vt,+k,t].  
 
 %% Predicados
 [] :: [=vt,+k,=d,pred].    
 [] :: [=v,=d,pred].
 
 %%% Verbos 
-['comió' ] :: [=d,vt,-h].        
-['sonrió'] :: [v,-h].
-[come] :: [=d,vt,-h].  
-[canta] :: [v,-h].
-[vio] :: [=d,vt,-h].   
-[cocina] :: [=d,vt,-h]. 
+%['comió' ] :: [=d,vt,-h].        
+%['sonrió'] :: [v,-h].
+%[come] :: [=d,vt,-h].  
+%[canta] :: [v,-h].
+[vio] :: [=d,=d,vt,-h].   
+%[cocina] :: [=d,vt,-h]. 
 
 % [] :: [=vt,+k,=d,pred].    [] :: [=v,pred].
 %[praise] :: [=d,vt,-v]. 
 
 
 %%% Determinantes
-[el] :: [=nm,d,-k].  
-['cuál'] :: [=nf,d,-k,-wh].
-['cuál'] :: [=nm,d,-k,-wh].
-[la] :: [=nf,d,-k].
+%[el] :: [=nm,d,-k].  
+%['cuál'] :: [=nf,d,-k,-wh].
+%['cuál'] :: [=nm,d,-k,-wh].
+%[la] :: [=nf,d,-k].
 
 
 %%% Nombres comunes
-[perro] :: [nm].              
-[torta] :: [nf].
-[hueso] :: [nm].
+%[perro] :: [nm].              
+%[torta] :: [nf].
+%[hueso] :: [nm].
 
 
 %%% Nombres propios
 [fernando] :: [d,-k].      
-[julia] :: [d,-k].   
-[macarena] :: [d,-k].
+%[julia] :: [d,-k].   
+%[macarena] :: [d,-k].
 [pablo] :: [d,-k].  
 
 

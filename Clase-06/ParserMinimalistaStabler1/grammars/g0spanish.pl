@@ -12,12 +12,10 @@
 
 
 %% Tiempo
-[] :: [=v,+k,'T'].              
+[] :: [='V',+k,'T'].              
 
 %% v 
-[] :: [='V',='D',v].
-
-
+[] :: [='V',='D','V'].
 
 
 %%% Verbos [V]
@@ -25,16 +23,16 @@
 ['come'] :: [='D',+k,'V'].         ['ríe'] :: ['V'].
 ['vio'] :: [='D',+k,'V'].   
 ['cocina'] :: [='D',+k,'V']. 
-% ['entregó'] :: []
+
 
 
 %%% Determinantes
 ['el'] :: [='N','D',-k].         ['cuál'] :: [='N','D',-k,-wh].
-['la'] :: [='N','D',-k].
+%['la'] :: [='N','D',-k].
 
 
 %%% Nombres comunes
-['perro'] :: ['N'].                ['torta'] :: ['N'].
+['perro'] :: ['N'].              %  ['torta'] :: ['N'].
 ['hueso'] :: ['N'].
 
 
@@ -48,21 +46,4 @@ startCategory('C').
 
 
 
-
-% Verbos
-[comió] :: [='D',+k,'V'].         [rie] :: ['V'].
-[vio] :: [='D',+k,'V'].
-
-% Determinantes
-[el] :: [='N','D',-k].         [Cuál] :: [='N','D',-k,-wh].
-
-% Nombres comunes
-[perro] :: ['N'].                [hueso] :: ['N'].
-
-% Nombres propios
-[Ana] :: ['D',-k].      [Maria] :: ['D',-k].
-
-startCategory('C').
-
-
-% showParse([Ana, vio, el, hueso]).
+% showParse(['el','perro','el','hueso','vio']).
