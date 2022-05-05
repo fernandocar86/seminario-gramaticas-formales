@@ -161,8 +161,7 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
     <td>24/05/22</td>
     <td>
       <ul>
-        <li>LFG: estructura-c, estructura-f, estructura-a, ecuación funcional y descripción funcional.</li>
-        <li>Implementaciones computacionales: XLE (demo).</li>
+        <li>Gramáticas de unificación y rasgos. Implementación mediante Feature-based grammars en NLTK</li>
       </ul>
     </td>
     <td></td>
@@ -172,14 +171,13 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
     <td>31/05/22</td>
     <td>
       <ul>
-        <li>HPSG: esquemas de frase, reglas léxicas y structure sharing.</li>
-        <li>Minimal Recursion Semantics.</li>
-        <li>Implementaciones computacionales: ACE, pydelphin.</li>
+        <li>LFG: estructura-c, estructura-f, estructura-a, ecuación funcional y descripción funcional.</li>
+        <li>Implementaciones computacionales: XLE (demo).</li>
       </ul>
     </td>
     <td>
       <ul>
-        <li><a href="./Clase-10/Clase-10-jupyter.md">Visualización de Notebook</a></li>
+        <li></li>
       </ul>
     </td>
   </tr>
