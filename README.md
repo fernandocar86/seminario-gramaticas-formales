@@ -114,8 +114,8 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
     <td>
       <ul>
         <li>Repaso de la gramática generativa. El minimalismo. Operaciones básicas: ensamble interno, ensamble externo, agree. Teoría de X'. Teoría de la frase desnuda. Estructura básica de la cláusula.</li>
-        <li>Gramáticas minimalistas (Minimalist grammars), Conflated Minimalist Grammars, Phase-based Minimalist Grammars, Relativized Minimalist Grammars. Las operaciones de transferencia, selección, ensamble (Merge), el léxico y los ítems léxicos.</li>
-        <li>Implementación en Prolog y Python: mgpx parser e implementación del minimalismo de Alex Warstadt.</li>
+        <li>Gramáticas minimalistas (Minimalist grammars). Las operaciones de selección, ensamble (Merge), el léxico y los ítems léxicos.</li>
+        <li>Implementación en Prolog: mgpx parser.</li>
       </ul>
     </td>
     <td>
@@ -130,8 +130,8 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
     <td>10/05/22</td>
     <td>
       <ul>
-        <li>Gramáticas minimalistas con movimiento de núcleos, adjunción, incorporación.</li>
-        <li>Implementación en Prolog y Python: mghapx parser.</li>
+        <li>Gramáticas minimalistas con ensamble interno (movimiento de remanentes, movimiento de núcleos).</li>
+        <li>Implementación en Prolog y Python: mghapx parser e implementación del minimalismo de <a href="https://github.com/alexwarstadt/minimalism">Alex Warstadt</a>.</li>
       </ul>
     </td>
     <td>
@@ -145,6 +145,7 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
     <td>17/05/22</td>
     <td>
       <ul>
+        <li>Gramática minimalista. Adjunción, los operadores >> y << </li>
         <li>Nociones básicas de las gramáticas de unificación y rasgos: matrices de rasgos, rasgos simples y complejos, unificación y subsunción.</li>
         <li>Implementación mediante Feature-based grammars en NLTK.</li>
       </ul>
