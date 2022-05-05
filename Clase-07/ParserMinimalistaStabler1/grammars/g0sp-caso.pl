@@ -1,5 +1,6 @@
 % File   : g0sp-caso.pl
 % Author : Pablo Zdrojewski
+% Updated: 2022 
 % Gramática diseñada por Pablo Zdrojewki a partoo la gramática g0.pl  diseñada por Stabler (Mar 2000). Para uso interno de Seminario "Gramáticas formales: formalismos e implementaciones"  (UBA).
 
 :- encoding(utf8).

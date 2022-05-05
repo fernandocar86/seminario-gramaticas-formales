@@ -63,7 +63,7 @@
 %:- ['grammars/g-nSP-k']. % "Gramática del español licenciamiento caso -k
 %:- ['grammars/anbncn'].
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Oraciones para probar (seleecionar de la gram�tica que corresponda)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
