@@ -1,0 +1,90 @@
+wm minsize . 20 20
+frame .f
+canvas .c -xscrollcommand {.hscroll set} -yscrollcommand {.vscroll set}	-scrollregion {-10p -10p 1000p 1000p} -bg white
+scrollbar .hscroll -orient horizontal
+pack .hscroll -side bottom -fill x -in .f
+frame .szb
+pack .szb -side bottom -fill x -in .f
+button .szb.1 -text "dump ps" -font 6x10 -command {.c postscript -colormode gray -file "ltree.ps"}
+pack .szb.1 -side right
+label .szb.2 -text " wish_treeSWI.pl" -font -*-times-bold-r-normal--12-120-*'
+pack .szb.2 -side left
+pack .c -side top -expand 1 -fill both -in .f
+scrollbar .vscroll -orient vertical
+pack .vscroll -side right -fill y
+pack .f -side left -expand 1 -fill both
+.vscroll config -command {.c yview}
+.hscroll config -command {.c xview}
+wm geometry . 380x428-5+40
+.c config -scrollregion {-10p -10p 998p 776p}
+.c create text 34p 0p -text {CP} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 34p 12p 34p 22p
+.c create text 34p 22p -text {C'} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 34p 34p 4p 44p
+.c create text 4p 44p -text {C} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 4p 56p 4p 66p
+.c create text 4p 66p -text {[]} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 34p 34p 63p 44p
+.c create text 63p 44p -text {TP} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 63p 56p 34p 66p
+.c create text 34p 66p -text {DP(1)} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 34p 78p 34p 88p
+.c create text 34p 88p -text {D'} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 34p 100p 22p 110p
+.c create text 22p 110p -text {D} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 22p 122p 22p 132p
+.c create text 22p 132p -text {el} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 34p 100p 45p 110p
+.c create text 45p 110p -text {NP} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 45p 122p 45p 132p
+.c create text 45p 132p -text {N'} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 45p 144p 45p 154p
+.c create text 45p 154p -text {N} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 45p 166p 45p 176p
+.c create text 45p 176p -text {raton} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 63p 56p 93p 66p
+.c create text 93p 66p -text {T'} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 93p 78p 68p 88p
+.c create text 68p 88p -text {T} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 68p 100p 68p 110p
+.c create text 68p 110p -text {[]} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 93p 78p 118p 88p
+.c create text 118p 88p -text {vP} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 118p 100p 90p 110p
+.c create text 90p 110p -text {DP} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 90p 122p 90p 132p
+.c create text 90p 132p -text {t(1)} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 118p 100p 146p 110p
+.c create text 146p 110p -text {v'} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 146p 122p 112p 132p
+.c create text 112p 132p -text {v} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 112p 144p 112p 154p
+.c create text 112p 154p -text {[]} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 146p 122p 179p 132p
+.c create text 179p 132p -text {VP} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 179p 144p 142p 154p
+.c create text 142p 154p -text {DP(0)} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 142p 166p 142p 176p
+.c create text 142p 176p -text {D'} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 142p 188p 130p 198p
+.c create text 130p 198p -text {D} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 130p 210p 130p 220p
+.c create text 130p 220p -text {el} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 142p 188p 153p 198p
+.c create text 153p 198p -text {NP} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 153p 210p 153p 220p
+.c create text 153p 220p -text {N'} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 153p 232p 153p 242p
+.c create text 153p 242p -text {N} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 153p 254p 153p 264p
+.c create text 153p 264p -text {queso} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 179p 144p 217p 154p
+.c create text 217p 154p -text {V'} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 217p 166p 196p 176p
+.c create text 196p 176p -text {V} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 196p 188p 196p 198p
+.c create text 196p 198p -text {encontro} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 217p 166p 238p 176p
+.c create text 238p 176p -text {DP} -anchor n -font "-*-times-bold-r-normal--12-120-*"
+.c create line 238p 188p 238p 198p
+.c create text 238p 198p -text {t(0)} -anchor n -font "-*-times-bold-r-normal--12-120-*"

@@ -1,0 +1,66 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{graphicx} 
+%\usepackage{epic,eepic}
+%\usepackage{fullname}\bibliographystyle{fullname}
+\usepackage{color}
+\usepackage[leftno,lineno5]{lgrind}
+
+\textwidth              7 in            % for paper = 8.5x11in
+\textheight             9.5in           %  + foot 30pt = 9.92in
+\oddsidemargin          -.25in          % 1 inch margin comes for free
+\evensidemargin         -.25in          % 1 inch margin comes for free
+%\topmargin              -.25in          % 4 margins of 0.75in each
+\headheight             0   pt          % default 12pt = 0.42cm       
+\headsep                0   pt          % default 25pt = 0.88cm       
+\footskip               20  pt          % default 30pt
+\unitlength             0.5   mm        % this is used in pictures
+
+\setcounter{tocdepth}{3}
+
+\begin{document}
+\leftline{{\Large\bf mgcky-swi}: listings\hfill UCLA}
+\leftline{Edward Stabler\hfill updated: 30 August 2002}
+\leftline{with contributions by Willemijn Vermaat, Henk Harkema, Greg Kobele, John Hale}
+
+\bigskip\bigskip
+\begin{center}
+\begin{minipage}[h]{4.6in}
+\tiny
+\tableofcontents
+\end{minipage}
+\end{center}
+
+\vfill\eject
+\section{setup}
+\lgrindfile{setup.tex}
+
+\vfill\eject
+\section{parsers}
+\subsection{mgpx.pl}
+\lgrindfile{mgpx.tex}
+\vfill\eject
+\subsection{lpx.pl}
+\lgrindfile{lpx.tex}
+\vfill\eject
+\subsection{mghapx.pl}
+\lgrindfile{mghapx.tex}
+\vfill\eject
+\subsection{lhapx.pl}
+\lgrindfile{lhapx.tex}
+
+\vfill\eject
+\section{grammars}
+\subsection{logic1.pl}
+\lgrindfile{logic1.tex}
+\vfill\eject
+\subsection{g0.pl}
+\lgrindfile{g0.tex}
+\vfill\eject
+\subsection{gh6.pl}
+\lgrindfile{gh6.tex}
+\vfill\eject
+\subsection{larsonian1.pl}
+\lgrindfile{larsonian1.tex}
+\end{document}
