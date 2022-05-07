@@ -28,7 +28,8 @@
 
 % operator defs - don't touch these
 :- op(500, xfy, ::). % lexical items
-:- op(500, fx, =). % for selection features
+:- op(500, fx, =). % for selection feature
+:- op(500, xf, =). % for selection feature
 :- op(500, xf, <=).		% for right incorporation
 :- op(500, fx, =>). % for left incorporation
 :- op(500, xf, ==>). % for right affix hop
@@ -62,8 +63,8 @@
 %:- ['grammars/g0sp-caso']. % Gramática del español con licenciamiento de caso
 %:- ['grammars/g-nSP-k']. % "Gramática del español licenciamiento caso -k
 %:- ['grammars/anbncn'].
-:- ['grammars/toyg']. % Inglés Movimiento de Remanente
-
+%:- ['grammars/toyg']. % Inglés Movimiento de Remanente
+%:- ['grammars/greverse']. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Oraciones para probar (seleecionar de la gram�tica que corresponda)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
