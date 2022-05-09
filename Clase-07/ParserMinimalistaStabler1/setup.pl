@@ -62,7 +62,7 @@
 %:- ['grammars/g-nSP']. % "Gramática del español con Movimiento de Remanente basada en g-ne
 %:- ['grammars/g0sp-caso']. % Gramática del español con licenciamiento de caso
 %:- ['grammars/g-nSP-k']. % "Gramática del español licenciamiento caso -k
-%:- ['grammars/anbncn'].
+:- ['grammars/anbncn'].
 %:- ['grammars/toyg']. % Inglés Movimiento de Remanente
 %:- ['grammars/greverse']. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
