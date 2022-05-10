@@ -1,6 +1,6 @@
 %   File   : greverse.pl 
 
-:- op(500, fx, =). % for selection featu
+:- op(500, fx, =). % for selection feature
 
 [n] :: [c=,h].
 [c] :: [c].
