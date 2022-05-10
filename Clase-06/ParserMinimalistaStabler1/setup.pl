@@ -27,14 +27,14 @@
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % operator defs - don't touch these
-% :- op(500, xfy, ::). % lexical items
-% :- op(500, fx, =). % for selection features
-%:- op(500, xf, <=).		% for right incorporation
-%:- op(500, fx, =>). % for left incorporation
-%:- op(500, xf, ==>). % for right affix hop
-%:- op(500, fx, <==). % for left affix hop
-%:- op(500, xfy, <<). % for adjunction
-%:- op(500, xfy, >>). % for adjunction
+:- op(500, xfy, ::). % lexical items
+:- op(500, fx, =). % for selection features
+:- op(500, xf, <=).		% for right incorporation
+:- op(500, fx, =>). % for left incorporation
+:- op(500, xf, ==>). % for right affix hop
+:- op(500, fx, <==). % for left affix hop
+:- op(500, xfy, <<). % for adjunction
+:- op(500, xfy, >>). % for adjunction
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Visualizado de árboles
@@ -57,9 +57,9 @@
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % GRAMMARS REQUIRING ONLY PHRASAL MOVEMENT (mgpx+lpx)
-:- ['grammars/g0spSVO'].   % Simple SVO español
+%:- ['grammars/g0spSVO'].   % Simple SVO español
 %:- ['grammars/g0'].        % Simple SOV inglés
-%:- ['grammars/g0spanish']. % simple SOV español
+:- ['grammars/g0spanish']. % simple SOV español
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
