@@ -33,7 +33,7 @@
 :- op(500, xf, <=).		% for right incorporation
 :- op(500, fx, =>). % for left incorporation
 :- op(500, xf, ==>). % for right affix hop
-:- op(500, fx, <==). % for left affix hop
+:- op(500, fx, <==). % para affix hopping a la izquierda
 :- op(500, xfy, <<). % para adjunción
 :- op(500, xfy, >>). % para adjunción
 
