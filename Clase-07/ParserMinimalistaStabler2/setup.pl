@@ -14,7 +14,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 
 % Este archivo est� simplificado por Fernando Carranza para correr solo una selecci�n 
-% ilustrativa de las gram�ticas minimalistas para su uso interno en las clases del 
+% ilustrativa de las gramáticas minimalistas para su uso interno en las clases del 
 % seminario "Gram�ticas formales: formalismos e implementaciones" (Carranza y Zdrojewski) 
 % durante el primer cuatrimestre de 2022, Universidad de Buenos Aires.
 % 
