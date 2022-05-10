@@ -32,7 +32,7 @@
 :- op(500, xf, =). % for selection feature
 :- op(500, xf, <=).		% for right incorporation
 :- op(500, fx, =>). % for left incorporation
-:- op(500, xf, ==>). % for right affix hop
+:- op(500, xf, ==>). % para affix hopping a la derecha
 :- op(500, fx, <==). % para affix hopping a la izquierda
 :- op(500, xfy, <<). % para adjunción
 :- op(500, xfy, >>). % para adjunción
