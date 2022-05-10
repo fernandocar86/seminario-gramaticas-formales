@@ -1,3 +1,13 @@
+# Files
+*ace
+*avm.pdf
+*avm.tex
+*ltree.tex
+*tree.pdf
+*motomamifiltrado.txt
+*wishtemp
+*/malt/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -25,17 +35,6 @@ share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-Clase-03/data/motomamifiltrado.txt
-Clase-05/ParserMinimalistaStabler1/ltree.tex
-Clase-05/ParserMinimalistaStabler1/wishtemp
-*/*/ltree.tex
-*/*/wishtemp
-Clase-09/ace
-Clase-09/avm.tex
-Clase-09/avm.pdf
-Clase-09/tree.tex
-Clase-09/tree.pdf
-Clase-11/malt/
 MANIFEST
 
 # PyInstaller
