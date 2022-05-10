@@ -402,9 +402,34 @@ Algo que conviene tener presente en este punto es que, la copia forkeada es una 
 </div>
 
 
-A continuación se listan los pasos para realizar la actualización.
+Si estamos usando GitHub como repositorio remoto, existen dos formas de realizar esta actualización: por interfaz o por línea de comandos.
 
-1. Clonar el repositorio forkeado con el comando `git clone`:
+<details>
+<summary>OPCIÓN #1: por interfaz</summary>
+
+GitHub nos brinda la posibilidad de actualizar la copia forkeada desde su interfaz visual. Para ello, debemos ir a la página de nuestro repositorio forkeado y clickear en el botón *Fetch upstream*.
+
+<div style="text-align:center">
+    <figure>
+        <img src="git-basics-images/git-fork-update-from-github.png" width="45%">
+    </figure>
+</div>
+
+Esto nos dará la opción de introducir los cambios (*Fetch and merge*) y también de compararlos previamente (*Compare*), para oservar si se producirán conflictos.
+
+<div style="text-align:center">
+    <figure>
+        <img src="git-basics-images/git-fork-update-from-github-options.png" width="45%">
+    </figure>
+</div>
+</details>
+
+<details>
+<summary>OPCIÓN #2: por línea de comandos</summary>
+
+Si el servidor remoto que estamos utilizando no nos provee de una interfaz con la cual podamos realizar la actualización del repositorio forkeado, siempre podremos hacerlo por consola. Para ello, los pasos a seguir son los siguientes:
+
+1. Si todavía no se hizo, clonar el repositorio forkeado con el comando `git clone`:
     
     ```{bash}
     git clone <url>
@@ -446,14 +471,14 @@ A continuación se listan los pasos para realizar la actualización.
 
     Esto signfica que ahora nuestro repositorio local tiene configurados dos remotos y podemos elegir desde cuál descargar datos y a cuál subir modificaciones.
 
-5. Actualizamos el repositorio local. Para eso, nos movemos a la rama `main` (la cual no debe tener commits agregados por nosotros) y descargamos las modificaciones hechas en el repositorio `upstream`:
+5. Actualizar el repositorio local. Para eso, nos moverse a la rama `main` (la cual no debe tener commits agregados por nosotros) y descargar las modificaciones hechas en el repositorio `upstream`:
    
     ```{bash}
     git checkout main
     git pull upstream main:main
     ```
 
-    Si acaso realizamos modificaciones propias en la rama `main`, utilizar el siguiente comando:
+    Si acaso realizamos modificaciones propias en la rama `main`, utilizar los siguientes comandos en lugar de los anteriores:
 
     ```{bash}
     git checkout main
@@ -468,15 +493,15 @@ A continuación se listan los pasos para realizar la actualización.
     git push
     ```
 
-Si ahora volvemos a mirar nuestro repositorio remoto en la intervaz de GitHub, veremos un mensaje como el siguiente:
+</details>
+
+Una vez realizado alguno de los dos procedimientos, si volvemos a mirar nuestro repositorio remoto en la intervaz de GitHub, veremos un mensaje como el siguiente:
 
 <div style="text-align:center">
     <figure>
         <img src="git-basics-images/git-fork-uptodate.png" width="100%">
     </figure>
 </div>
-
-
 
 ## Deshacer cambios
 
