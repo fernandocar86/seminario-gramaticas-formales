@@ -35,7 +35,7 @@
 :- op(500, xf, ==>). % for right affix hop
 :- op(500, fx, <==). % for left affix hop
 :- op(500, xfy, <<). % for adjunction
-:- op(500, xfy, >>). % for adjunction
+:- op(500, xfy, >>). % para adjunción
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Visualizado de árboles
