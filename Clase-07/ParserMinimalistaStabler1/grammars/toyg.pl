@@ -63,7 +63,7 @@
 
 %%%%%%%%%%% Versión 3 - 
 
-%%Complementante
+%Complementante
 [] :: [='T','C'].                
 
 %% Tiempo
@@ -92,10 +92,3 @@ startCategory('C').
 
 
 
-%[] :: [=t,'C'].
-%[] :: [=pred,+h,t].
-% [verbo] :: [=d,v,-h]. [] :: [=v,+k,pred]. % funciona verbo > obj
-
-%[verbo] :: [=d,+k,v,-h]. [] :: [=v,pred]. % funciona obj > verbo
-
-%[obj] :: [d,-k].
