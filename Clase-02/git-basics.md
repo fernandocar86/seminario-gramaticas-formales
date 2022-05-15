@@ -404,8 +404,8 @@ Algo que conviene tener presente en este punto es que la copia forkeada es una f
 
 Si estamos usando GitHub como repositorio remoto, existen dos formas de realizar esta actualización: por interfaz o por línea de comandos.
 
-<details>
-<summary>OPCIÓN #1: por interfaz</summary>
+
+**OPCIÓN #1: por interfaz**
 
 GitHub nos brinda la posibilidad de actualizar la copia forkeada desde su interfaz visual. Para ello, debemos ir a la página de nuestro repositorio forkeado y clickear en el botón *Fetch upstream*.
 
@@ -422,10 +422,8 @@ Esto nos dará la opción de introducir los cambios (*Fetch and merge*) y tambi�
         <img src="git-basics-images/git-fork-update-from-github-options.png" width="45%">
     </figure>
 </div>
-</details>
 
-<details>
-<summary>OPCIÓN #2: por línea de comandos</summary>
+**OPCIÓN #2: por línea de comandos**
 
 Si el servidor remoto que estamos utilizando no nos provee de una interfaz con la cual podamos realizar la actualización del repositorio forkeado, siempre podremos hacerlo por consola. Para ello, los pasos a seguir son los siguientes:
 
@@ -492,8 +490,6 @@ Si el servidor remoto que estamos utilizando no nos provee de una interfaz con l
     ```{bash}
     git push
     ```
-
-</details>
 
 Una vez realizado alguno de los dos procedimientos, si volvemos a mirar nuestro repositorio remoto en la interfaz de GitHub, veremos un mensaje como el siguiente:
 
