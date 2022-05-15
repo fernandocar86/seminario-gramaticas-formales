@@ -58,12 +58,15 @@
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % GRAMMARS REQUIRING ONLY PHRASAL MOVEMENT (mgpx+lpx)
+%:- ['grammars/gprueba1']. % Prueba 1
+%:- ['grammars/gprueba2']. % Prueba 2
+%:- ['grammars/gprueba3']. % Prueba 3
 %:- ['grammars/g-ne']. % Inglés Movimiento de Remanente
 %:- ['grammars/g-nSP']. % "Gramática del español con Movimiento de Remanente basada en g-ne
-%:- ['grammars/g0sp-caso']. % Gramática del español con licenciamiento de caso
+:- ['grammars/g0sp-caso']. % Gramática del español con licenciamiento de caso
 %:- ['grammars/g-nSP-k']. % "Gramática del español licenciamiento caso -k
 %:- ['grammars/anbncn'].
-:- ['grammars/toyg']. % Inglés Movimiento de Remanente
+%:- ['grammars/toyg']. % Inglés Movimiento de Remanente
 %:- ['grammars/greverse']. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Oraciones para probar (seleecionar de la gram�tica que corresponda)

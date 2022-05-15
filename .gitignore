@@ -8,6 +8,29 @@
 *wishtemp
 */malt/
 
+# LaTeX
+*.ps
+*.aux
+*.out
+*.blg
+*.bbl
+*.dvi
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.inf
+*.ind
+*.lot
+*.lof
+*.log
+*.nlo
+*.nls
+*.synctex.gz
+*.pdf
+*.toc
+*.sta
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
