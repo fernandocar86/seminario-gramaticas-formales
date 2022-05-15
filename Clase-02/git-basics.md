@@ -393,7 +393,7 @@ Esto hará que se genere una copia idéntica al proyecto forkeado en nuestro ser
 
 Una vez que tenemos el proyecto que deseamos forekado en un repositorio propio, podemos clonarlo en nuestra computadora y trabajar sobre él. Esto es útil cuando queremos utilizar código ajeno y realizarle modificaciones, pero no tenemos los permisos para subir dichas modificaciones al repositorio donde se aloja el código. En estos casos, basta con forkear el repositorio en cuestión. Dado que esa copia vive en un repositorio propio, podremos subir nuestras modificaciones sin inconvenientes.
 
-Algo que conviene tener presente en este punto es que, la copia forkeada es una foto del estado del repositorio original en el momento en el que la tomamos. Esto significa que, si tomamos la foto un día x nuestra copia tendrá el mismo contenido que tenía el repositorio original hasta ese día. Si el día x+1 el repositorio original fue actualizado con nueva información, nuestra copia estará desactualizada a menos que la actualicemos nosotros mismos. En este caso, GitHub nos mostrará una advertencia como la siguiente:
+Algo que conviene tener presente en este punto es que la copia forkeada es una foto del estado del repositorio original en el momento en el que la tomamos. Esto significa que, si tomamos la foto un día x nuestra copia tendrá el mismo contenido que tenía el repositorio original hasta ese día. Si el día x+1 el repositorio original fue actualizado con nueva información, nuestra copia estará desactualizada a menos que la actualicemos nosotros mismos. En este caso, GitHub nos mostrará una advertencia como la siguiente:
 
 <div style="text-align:center">
     <figure>
@@ -415,7 +415,7 @@ GitHub nos brinda la posibilidad de actualizar la copia forkeada desde su interf
     </figure>
 </div>
 
-Esto nos dará la opción de introducir los cambios (*Fetch and merge*) y también de compararlos previamente (*Compare*), para oservar si se producirán conflictos.
+Esto nos dará la opción de introducir los cambios (*Fetch and merge*) y también de compararlos previamente (*Compare*), para observar si se producirán conflictos.
 
 <div style="text-align:center">
     <figure>
@@ -487,7 +487,7 @@ Si el servidor remoto que estamos utilizando no nos provee de una interfaz con l
 
     Considerar que, si se introdujeron modificaciones propias en `main`, es posible que surjan conflictos como consecuencia de que el repositorio original (aquel desde el cual obtuvimos el repo forkeado) y nuestra copia del mismo tienen historias divergentes. En este caso, habrá que resolverlos como se resuelven las situaciones de conflictos o bien, desahacer los commits que introduzcan cambios propios en `main`.
 
-6. Por último, subir las modificaciones descargas al remoto propio:
+6. Por último, subir las modificaciones descargadas al remoto propio:
 
     ```{bash}
     git push
@@ -495,7 +495,7 @@ Si el servidor remoto que estamos utilizando no nos provee de una interfaz con l
 
 </details>
 
-Una vez realizado alguno de los dos procedimientos, si volvemos a mirar nuestro repositorio remoto en la intervaz de GitHub, veremos un mensaje como el siguiente:
+Una vez realizado alguno de los dos procedimientos, si volvemos a mirar nuestro repositorio remoto en la interfaz de GitHub, veremos un mensaje como el siguiente:
 
 <div style="text-align:center">
     <figure>
