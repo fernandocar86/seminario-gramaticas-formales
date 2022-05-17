@@ -1,0 +1,117 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Aclaraciones previas de compilación
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Esta es la versión para compilar cada clase por separado. Para compilar todas las clases juntas ir a handbook.tex
+% Configurar la compilación rápida como LaTex + Bib(la)tex + LaTeX(x2) + dvips+ pvs2pdf + ver pdf
+% Antes de correr la compilación rápida seleccionar siempre sobre este documento "Definir documento actual como 'documento maestro'" en "opciones" 
+% En caso de precisar agregar un paquete, agregarlo a paquetes.tex
+% Para limpiar de archivos auxiliares la copia local del repositorio correr bash remove-aux-files.sh
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Empieza el preámbulo
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper, 12pt, twoside]{article} %Tipo de documento y tamaño de letra
+\usepackage[paperheight=24cm, paperwidth=17cm, tmargin=2cm, bmargin=2cm, lmargin=2.5cm, rmargin=2.5cm, heightrounded, marginparwidth=1.7cm, marginparsep=2mm]{geometry} % Con este comando se puede personalizar el tamaño de papel y márgenes
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Paquetes generales
+\input{paquetes}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dejar descomentada solo la que corresponda a la clase en cuestión
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\title{}
+%\date{Primer Cuatrimestre de 2022}
+%\author{}
+%\begin{document}
+%\input{clases/clase-intro-teoria}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\title{}
+%\date{Primer Cuatrimestre de 2022}
+%\author{}
+%\begin{document}
+%\begin{Form}
+%\input{clases/clase-jerarquia}
+%\end{Form}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\title{}
+%\date{Primer Cuatrimestre de 2022}
+%\author{}
+%\begin{document}
+%\begin{Form}
+%\input{clases/clase-CFG}
+%\end{Form}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\title{}
+%\date{Primer Cuatrimestre de 2022}
+%\author{}
+%\begin{document}
+%\begin{Form}
+%\input{clases/clase-GPSG1}
+%\end{Form}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\title{}
+%\date{Primer Cuatrimestre de 2022}
+%\author{}
+%\begin{document}
+%\begin{Form}
+%\input{clases/clase-minimalismo}
+%\end{Form}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\title{}
+\date{Primer Cuatrimestre de 2022}
+\author{}
+\begin{document}
+\begin{Form}
+\input{clases/clase-feature-based-grammars}
+\end{Form}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\title{}
+%\date{Primer Cuatrimestre de 2022}
+%\author{}
+%\begin{Form}
+%\input{clases/ejerciciosviejos}
+%\end{Form}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\title{}
+%\date{Primer Cuatrimestre de 2022}
+%\author{}
+%\begin{document}
+%\begin{Form}
+%\input{clases/clase-motivaciones-dependencias}
+%\end{Form}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\title{}
+%\date{Primer Cuatrimestre de 2022}
+%\author{}
+%\begin{document}
+%\begin{Form}
+%\input{clases/clase-intro-categoriales}
+%\end{Form}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\bibliography{biblio-y-paquetes/bibliogeneral}
+\bibliographystyle{biblio-y-paquetes/apalike-es}
+
+\end{document}

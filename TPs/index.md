@@ -6,6 +6,7 @@ Aquí podrán encontrar los trabajos prácticos a realizar.
 |----|---------------------------------------------------|---------------------|
 | 01 | [Acercamiento a Git](./tp1.md)                    | martes 12/04 - 9 am |
 | 02 | [Gramáticas Independientes de Contexto](./tp2.md) | martes 03/05 - 9 am |
+| 03 | [Gramáticas Minimalistas](./tp3.pdf)              | martes 24/05 - 9 am |
 
 
 {% include copybutton.html %}
