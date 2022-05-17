@@ -60,7 +60,12 @@
 
 % GRAMMARS REQUIRING HEAD MOVEMENT (mghapx+lhapx)
 %:- ['grammars/spanish1']. % 
-:- ['grammars/gh6']. % 
+%:- ['grammars/gh6']. %
+%:- ['grammars/larsonian1']. %
+:- ['grammars/hmtest1']. %
+ 
+ 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Oraciones para probar (seleecionar de la gram�tica que corresponda)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
