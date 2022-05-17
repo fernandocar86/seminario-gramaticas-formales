@@ -24,10 +24,10 @@
 
 /* use just one font */
 %:- use_module(fonttbr18,	[label_size/3, tk_font_name/1, tk_geometry/1]).
-:- use_module(fonttbr12SWI,	[label_size/3, tk_font_name/1, tk_geometry/1]).
+%:- use_module(fonttbr12SWI,	[label_size/3, tk_font_name/1, tk_geometry/1]).
 %:- use_module(fontcmr10,	[label_size/3, tk_font_name/1, tk_geometry/1]).
 %:- use_module(fontcmtt10,	[label_size/3, tk_font_name/1, tk_geometry/1]).
-%:- use_module(fonttbr18,	[label_size/3, tk_font_name/1, tk_geometry/1]).
+:- use_module(fonttbr18,	[label_size/3, tk_font_name/1, tk_geometry/1]).
 %:- use_module(fonttmr12,	[label_size/3, tk_font_name/1, tk_geometry/1]).
 %:- use_module(fonttt8,	[label_size/3, tk_font_name/1, tk_geometry/1]).
 

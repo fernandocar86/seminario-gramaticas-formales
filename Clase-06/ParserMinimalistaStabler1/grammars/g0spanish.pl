@@ -1,5 +1,5 @@
 % File   : g0spanish.pl
-% Gramática adaptada por Fernando Carranza de la gramática g0.pl  diseñada por E Stabler (Mar 2000). Para uso interno de Seminario "Gramáticas formales: formalismos e implementaciones"  (UBA).
+% Gramática adaptada por Pablo Zdrojewski de la gramática g0.pl  diseñada por E Stabler (Mar 2000). Para uso interno de Seminario "Gramáticas formales: formalismos e implementaciones"  (UBA).
 
 :- encoding(utf8).
 

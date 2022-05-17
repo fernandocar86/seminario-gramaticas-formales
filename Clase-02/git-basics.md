@@ -367,7 +367,7 @@ git pull
     </figure>
 </div>
 
-Cuando forkeamos un repositorio, hacemos una bifurcación de un proyecto. De esta manera, podemos tomar el código de un repositorio ajeno, hacer una copia en nuestro repositorio remoto y trabajar en esa copia con la seguridad de que no estamos modificando el código del proyecto original. 
+Cuando forkeamos un repositorio, hacemos una bifurcación de un proyecto (i.e. tomamos una foto de ese proyecto en determinado momento del tiempo). De esta manera, podemos copiar el código de un repositorio ajeno, que vive en el servidor de otra persona y guardar dicha copia en un repositorio propio. Esto nos permitirá trabajar en esa copia con la seguridad de que no estamos modificando el código del proyecto original. 
 
 Para forkear un repositorio simplemente debemos clickear en el botón `fork` (usualmente ubicado en la esquina superior derecha de la pantalla).
 
@@ -375,7 +375,130 @@ Para forkear un repositorio simplemente debemos clickear en el botón `fork` (us
     <img src="git-basics-images/git-fork.png" width="60%">
 </div>
 
-Esto hará que se genere una copia idéntica al proyecto forkeado en nuestro repo y, a partir de allí, podemos clonarlo en nuestra computadora.
+Esto hará que se genere una copia idéntica al proyecto forkeado en nuestro servidor. GitHub nos indica esto anteponiendo el usuario al nombre del proyecto. El repositorio ajeno mostrará el nombre del usuario al que pertenece el proyecto, pero nuestra copia de ese proyecto (alojada en nuestro servidor) mostrará nuestro usuario y la fuente desde la cual fue forkeada dicha copia.
+
+<div style="text-align:center">
+    <figure>
+        <img src="git-basics-images/git-fork-other-repo.png" width="70%">
+        <figcaption>Repositorio ajeno</figcaption>
+    </figure>
+</div>
+
+<div style="text-align:center">
+    <figure>
+        <img src="git-basics-images/git-fork-own-repo.png" width="70%">
+        <figcaption>Repositorio forkeado</figcaption>
+    </figure>
+</div>
+
+Una vez que tenemos el proyecto que deseamos forekado en un repositorio propio, podemos clonarlo en nuestra computadora y trabajar sobre él. Esto es útil cuando queremos utilizar código ajeno y realizarle modificaciones, pero no tenemos los permisos para subir dichas modificaciones al repositorio donde se aloja el código. En estos casos, basta con forkear el repositorio en cuestión. Dado que esa copia vive en un repositorio propio, podremos subir nuestras modificaciones sin inconvenientes.
+
+Algo que conviene tener presente en este punto es que la copia forkeada es una foto del estado del repositorio original en el momento en el que la tomamos. Esto significa que, si tomamos la foto un día x nuestra copia tendrá el mismo contenido que tenía el repositorio original hasta ese día. Si el día x+1 el repositorio original fue actualizado con nueva información, nuestra copia estará desactualizada a menos que la actualicemos nosotros mismos. En este caso, GitHub nos mostrará una advertencia como la siguiente:
+
+<div style="text-align:center">
+    <figure>
+        <img src="git-basics-images/git-fork-behind.png" width="100%">
+    </figure>
+</div>
+
+
+Si estamos usando GitHub como repositorio remoto, existen dos formas de realizar esta actualización: por interfaz o por línea de comandos.
+
+
+**OPCIÓN #1: por interfaz**
+
+GitHub nos brinda la posibilidad de actualizar la copia forkeada desde su interfaz visual. Para ello, debemos ir a la página de nuestro repositorio forkeado y clickear en el botón *Fetch upstream*.
+
+<div style="text-align:center">
+    <figure>
+        <img src="git-basics-images/git-fork-update-from-github.png" width="45%">
+    </figure>
+</div>
+
+Esto nos dará la opción de introducir los cambios (*Fetch and merge*) y también de compararlos previamente (*Compare*), para observar si se producirán conflictos.
+
+<div style="text-align:center">
+    <figure>
+        <img src="git-basics-images/git-fork-update-from-github-options.png" width="45%">
+    </figure>
+</div>
+
+**OPCIÓN #2: por línea de comandos**
+
+Si el servidor remoto que estamos utilizando no nos provee de una interfaz con la cual podamos realizar la actualización del repositorio forkeado, siempre podremos hacerlo por consola. Para ello, los pasos a seguir son los siguientes:
+
+1. Si todavía no se hizo, clonar el repositorio forkeado con el comando `git clone`:
+    
+    ```{bash}
+    git clone <url>
+    ```
+
+    Aquí, la variabla `<url>` debe cambiarse por la dirección que nos proporciona GitHub para clonar el repositorio (la copia alojada en nuestro servidor).
+
+2.  (OPCIONAL) Verificar las urls para actualizar la versión local del repositorio:
+
+    ```{bash}
+    git remote -vv
+    ```
+
+    Este comando nos devolverá algo como lo siguiente:
+
+    ```{bash}
+    origin	https://github.com/macfernandez/seminario-gramaticas-formales.git (fetch)
+    origin	https://github.com/macfernandez/seminario-gramaticas-formales.git (push)
+    ```
+
+    Esto significa que el remoto llamado `origin` está asociado con la url indicada, tanto para descargar datos (fetch) como para subirlos (push).
+
+3. Agregar la url del repositorio ajeno, del cual obtuvimos el repo forkeado:
+
+    ```{bash}
+    git remote add upstream https://github.com/fernandocar86/seminario-gramaticas-formales.git
+    ```
+
+    Este comando agregará a nuestro repo local la configuración de un nuevo remoto llamado `upstream`, el cual estará asociado a la url indicada a continuación en el mismo comando.
+
+4. (OPCIONAL) Si se ejecutó el paso 2 y ahora se vuelve a correr el mismo comando, se verá que el resultado ha cambiado:
+
+    ```{bash}
+    origin	https://github.com/macfernandez/seminario-gramaticas-formales.git (fetch)
+    origin	https://github.com/macfernandez/seminario-gramaticas-formales.git (push)
+    upstream https://github.com/fernandocar86/seminario-gramaticas-formales.git (fetch)
+    upstream https://github.com/fernandocar86/seminario-gramaticas-formales.git (push)
+    ```
+
+    Esto signfica que ahora nuestro repositorio local tiene configurados dos remotos y podemos elegir desde cuál descargar datos y a cuál subir modificaciones.
+
+5. Actualizar el repositorio local. Para eso, nos moverse a la rama `main` (la cual no debe tener commits agregados por nosotros) y descargar las modificaciones hechas en el repositorio `upstream`:
+   
+    ```{bash}
+    git checkout main
+    git pull upstream main:main
+    ```
+
+    Si acaso realizamos modificaciones propias en la rama `main`, utilizar los siguientes comandos en lugar de los anteriores:
+
+    ```{bash}
+    git checkout main
+    git rebase upstream/main
+    ```
+
+    Considerar que, si se introdujeron modificaciones propias en `main`, es posible que surjan conflictos como consecuencia de que el repositorio original (aquel desde el cual obtuvimos el repo forkeado) y nuestra copia del mismo tienen historias divergentes. En este caso, habrá que resolverlos como se resuelven las situaciones de conflictos o bien, desahacer los commits que introduzcan cambios propios en `main`.
+
+6. Por último, subir las modificaciones descargadas al remoto propio:
+
+    ```{bash}
+    git push
+    ```
+
+Una vez realizado alguno de los dos procedimientos, si volvemos a mirar nuestro repositorio remoto en la interfaz de GitHub, veremos un mensaje como el siguiente:
+
+<div style="text-align:center">
+    <figure>
+        <img src="git-basics-images/git-fork-uptodate.png" width="100%">
+    </figure>
+</div>
+
 ## Deshacer cambios
 
 <div style="text-align:center">

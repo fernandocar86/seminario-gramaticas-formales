@@ -7,23 +7,20 @@
 [] :: [=t,+wh,c].
 
 %% Tiempo
-[] :: [=pred,+h,+k,t]. 
+[] :: [=pred,+h,+k,t].     % <--
 %[] :: [=pred,+vt,+k,t].  
 
 %% Predicados
-[] :: [=vt,+k,=d,pred].    
+[] :: [=vt,+k,=d,pred].    % <--
 [] :: [=v,=d,pred].
 
 %%% Verbos 
 ['comió' ] :: [=d,vt,-h].        
 ['sonrió'] :: [v,-h].
-[come] :: [=d,vt,-h].  
+[come] :: [=d,vt,-h].      % <--
 [canta] :: [v,-h].
 [vio] :: [=d,vt,-h].   
 [cocina] :: [=d,vt,-h]. 
-
-% [] :: [=vt,+k,=d,pred].    [] :: [=v,pred].
-%[praise] :: [=d,vt,-v]. 
 
 
 %%% Determinantes
