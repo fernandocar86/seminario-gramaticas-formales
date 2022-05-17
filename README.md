@@ -153,7 +153,6 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
     <td>
       <ul>
         <li><a href="./Clase-08/ho-minimalismo3.pdf">Apunte sobre Gramáticas Minimalistas</a></li>
-        <li><a href="./Clase-08/Clase-08-jupyter.md">Visualización de Notebook</a></li>
         <li><a href="./TPs/tp3.pdf">TP #3</a></li>
         <li><a href="./Clase-08/handout-fcfg.pdf">Apunte sobre FCFG</a></li>
       </ul>
