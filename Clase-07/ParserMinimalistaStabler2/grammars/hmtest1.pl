@@ -3,7 +3,7 @@
 %%  Esta es la gramática estudiada en clase.                                                          %%
 %%                                                                                                    %%
 %% Recomiendo leer los comentarios que tiene cada item, porque les servirá para realizar el TP3       %%
-%%  También puede ser conveniente que lean leer las observaciones que aparecen al final del archivo.  %%
+%% También puede ser conveniente que lean leer las observaciones que aparecen al final del archivo.  %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
