@@ -120,7 +120,7 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
     </td>
     <td>
       <ul>
-        <li><a href="./Clase-06/handout.pdf">Apunte Gramáticas Minimalistas</a></li>
+        <li><a href="./Clase-06/handout.pdf">Apunte sobre Gramáticas Minimalistas</a></li>
         <li><a href="./Clase-06/ParserMinimalistaStabler1/instructions.md">Instrucciones para correr un parser minimalista en Prolog</a></li>
       </ul>
     </td>
@@ -137,7 +137,7 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
     <td>
       <ul>
         <li><a href="./Clase-07/ParserMinimalistaStabler2/instructions.md">Instrucciones para correr un parser minimalista en Prolog</a></li>
-        <li><a href="./Clase-07/handout.pdf">Apunte gramáticas minimalistas</a></li>
+        <li><a href="./Clase-07/handout.pdf">Apunte sobre Gramáticas Minimalistas</a></li>
       </ul>
     </td>
   </tr>
@@ -148,12 +148,13 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
       <ul>
         <li>Gramática minimalista. Adjunción, los operadores >> y << </li>
         <li>Nociones básicas de las gramáticas de unificación y rasgos: matrices de rasgos, rasgos simples y complejos, unificación y subsunción.</li>
-        <li>Implementación mediante Feature-based grammars en NLTK.</li>
       </ul>
     </td>
     <td>
       <ul>
-        <li><a href="./Clase-08/Clase-08-jupyter.md">Visualización de Notebook</a></li>
+        <li><a href="./Clase-08/ho-minimalismo3.pdf">Apunte sobre Gramáticas Minimalistas</a></li>
+        <li><a href="./TPs/tp3.pdf">TP #3</a></li>
+        <li><a href="./Clase-08/handout-fcfg.pdf">Apunte sobre FCFG</a></li>
       </ul>
     </td>
   </tr>
