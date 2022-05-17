@@ -1,15 +1,16 @@
 []::[='T','C'].  
 []::[=>'T',+wh,'C'].  
 
-[]::[=>v,+nom,'T'].
+['-ó']::[=>v,+nom,'T'].
 []::[=>'V',='D',v].
-[pinta]::[='D',+ac,'V'].
+[pint]::[='D',+ac,'V'].
 [pared]::['N'].
 [la]::[='N','D',-ac].
-['Ivan']::['D',-nom].
-['que']::['D',-ac,-wh].
-['quien']::['D',-nom,-wh].
+['Iván']::['D',-nom].
+['qué']::['D',-ac,-wh].
+['quién']::['D',-nom,-wh].
 startCategory('C').
 
-% showParse(['Ivan',pinta,la,pared]).
-% showParse(['quien',pinta,la,pared]).
+% showParse(['Iván',pint,'-ó',la,pared]).
+% showParse(['quién',pint,'-ó',la,pared]).
+% showParse(['qué',pint,'-ó','Iván']).
