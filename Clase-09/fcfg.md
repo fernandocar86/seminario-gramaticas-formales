@@ -838,32 +838,6 @@ El objeto `FeatStruct` que nos ofrece NLTK nos permite obtener el valor asociado
 
 
 ```python
-fs_b_nltk['CAT']
-```
-
-
-    ---------------------------------------------------------------------------
-
-    KeyError                                  Traceback (most recent call last)
-
-    Input In [48], in <cell line: 1>()
-    ----> 1 fs_b_nltk['CAT']
-
-
-    File ~/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages/nltk/featstruct.py:646, in FeatDict.__getitem__(self, name_or_path)
-        643 """If the feature with the given name or path exists, return
-        644 its value; otherwise, raise ``KeyError``."""
-        645 if isinstance(name_or_path, (str, Feature)):
-    --> 646     return dict.__getitem__(self, name_or_path)
-        647 elif isinstance(name_or_path, tuple):
-        648     try:
-
-
-    KeyError: 'CAT'
-
-
-
-```python
 fs_b_nltk['CONC']
 ```
 
@@ -897,38 +871,6 @@ def fstruct(attribute):
 
 
 ```python
-fstruct('CAT')
-```
-
-
-    ---------------------------------------------------------------------------
-
-    KeyError                                  Traceback (most recent call last)
-
-    Input In [52], in <cell line: 1>()
-    ----> 1 fstruct('CAT')
-
-
-    Input In [51], in fstruct(attribute)
-          1 def fstruct(attribute):
-    ----> 2     value = fs_b_nltk[attribute]
-          3     return value
-
-
-    File ~/personal/seminario-gramaticas-formales/venv/lib/python3.8/site-packages/nltk/featstruct.py:646, in FeatDict.__getitem__(self, name_or_path)
-        643 """If the feature with the given name or path exists, return
-        644 its value; otherwise, raise ``KeyError``."""
-        645 if isinstance(name_or_path, (str, Feature)):
-    --> 646     return dict.__getitem__(self, name_or_path)
-        647 elif isinstance(name_or_path, tuple):
-        648     try:
-
-
-    KeyError: 'CAT'
-
-
-
-```python
 fstruct('CONC')
 ```
 
@@ -951,7 +893,7 @@ fstruct('CONC','GEN')
 
     TypeError                                 Traceback (most recent call last)
 
-    Input In [54], in <cell line: 1>()
+    Input In [52], in <cell line: 1>()
     ----> 1 fstruct('CONC','GEN')
 
 
@@ -1048,50 +990,133 @@ fstruct(fs_c_nltk, 'CONC', 'NUM')
 
 ## Feature Sharing
 
-Podemos aprovechar y ver el paralelismo con la noción de herencia, que tiene una procedencia computacional.
+De las siguientes maneras podemos indicar que una estructura tiene rasgos compartidos.
 
 
 ```python
-fs.cyclic()
+conc = nltk.FeatStruct(NUM='sg', GEN='masc', PER=3)
+fs_sn = nltk.FeatStruct(CAT='SN', N=conc, DET=conc)
+print(fs_sn)
 ```
 
-
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    Input In [63], in <cell line: 1>()
-    ----> 1 fs.cyclic()
-
-
-    NameError: name 'fs' is not defined
+    [ CAT = 'SN'                 ]
+    [                            ]
+    [           [ GEN = 'masc' ] ]
+    [ DET = (1) [ NUM = 'sg'   ] ]
+    [           [ PER = 3      ] ]
+    [                            ]
+    [ N   -> (1)                 ]
 
 
 
 ```python
-# retomar feature sharing
-# recordar que compartir rasgos no es lo mismo que tener duplicada la misma información
-# mostrar con equal_values y hablar sobre reentrancia
+fs_sn = nltk.FeatStruct('[CAT=SN, N=(1)[NUM=sg, GEN=masc, PER=3], DET->(1)]')
+print(fs_sn)
 ```
+
+    [ CAT = 'SN'                 ]
+    [                            ]
+    [           [ GEN = 'masc' ] ]
+    [ DET = (1) [ NUM = 'sg'   ] ]
+    [           [ PER = 3      ] ]
+    [                            ]
+    [ N   -> (1)                 ]
+
 
 
 ```python
-fs.equal_values(fs, check_reentrance=False)
+fs_n = nltk.FeatStruct('[CONC=[NUM=?n, GEN=masc, PER=3]]')
+fs_adj = nltk.FeatStruct('[CONC=[NUM=plu, GEN=masc]]')
+bindings = dict()
+fs_sn = fs_n.unify(fs_adj, bindings)
+print(fs_sn)
+```
+
+    [        [ GEN = 'masc' ] ]
+    [ CONC = [ NUM = 'plu'  ] ]
+    [        [ PER = 3      ] ]
+
+
+
+```python
+print(bindings)
+```
+
+    {Variable('?n'): 'plu'}
+
+
+Con el método `equal_values` podemos cotejar igualdad de las estructuras, incluso contemplando reentrancia.
+
+
+```python
+fs_sn.equal_values(fs_sn, check_reentrance=False)
 ```
 
 
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    Input In [65], in <cell line: 1>()
-    ----> 1 fs.equal_values(fs, check_reentrance=False)
 
 
-    NameError: name 'fs' is not defined
+    True
 
 
-Acá también podríamos mostrar que una estructura que comparte rasgos es más específica que una que no los comparte aunque tiene esepecificados los mismos valores para los mismos atributos.
+
+También podemos constatar que se cumple algo que ya habíamos visto en la sección teórica: una estructura que duplica los valores en sus atributos, pero no los comparte, es una estructura más general que aquella que indica que estos son efectivamente compartidos.
+
+
+```python
+conc = nltk.FeatStruct(NUM='sg', GEN='masc', PER=3)
+fs_sn_sharing = nltk.FeatStruct(CAT='SN', N=conc, DET=conc)
+fs_sn_copy = nltk.FeatStruct('[CAT=SN, N=[NUM=sg, GEN=masc, PER=3], DET=[NUM=sg, GEN=masc, PER=3]]')
+print(fs_sn_sharing)
+```
+
+    [ CAT = 'SN'                 ]
+    [                            ]
+    [           [ GEN = 'masc' ] ]
+    [ DET = (1) [ NUM = 'sg'   ] ]
+    [           [ PER = 3      ] ]
+    [                            ]
+    [ N   -> (1)                 ]
+
+
+
+```python
+print(fs_sn_copy)
+```
+
+    [ CAT = 'SN'             ]
+    [                        ]
+    [       [ GEN = 'masc' ] ]
+    [ DET = [ NUM = 'sg'   ] ]
+    [       [ PER = 3      ] ]
+    [                        ]
+    [       [ GEN = 'masc' ] ]
+    [ N   = [ NUM = 'sg'   ] ]
+    [       [ PER = 3      ] ]
+
+
+
+```python
+fs_sn_sharing.subsumes(fs_sn_copy)
+```
+
+
+
+
+    False
+
+
+
+
+```python
+fs_sn_copy.subsumes(fs_sn_sharing)
+```
+
+
+
+
+    True
+
+
 
 ## Construcción de una gramática
 
