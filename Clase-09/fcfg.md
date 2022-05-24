@@ -525,8 +525,8 @@ fs_b_set.union(fs_c_set)
      ('CAT', 'N'),
      ('LEX', 'mutantes'),
      ('LEX', 'virus'),
-     frozenset({('GEN', 'masc'), ('NUM', 'PLU')}),
-     frozenset({('GEN', 'masc'), ('NUM', None)})}
+     frozenset({('GEN', 'masc'), ('NUM', None)}),
+     frozenset({('GEN', 'masc'), ('NUM', 'PLU')})}
 
 
 
@@ -1675,7 +1675,7 @@ Las FCFG implementan la función intepretación como valor de un rasgo semántic
 
 
 ```python
-nltk.data.show_cfg('gramaticas/pruebasemantica.fcfg')
+nltk.data.show_cfg('gramaticas/SemanticaRasgos.fcfg')
 ```
 
     % start S
@@ -1782,7 +1782,7 @@ nltk.data.show_cfg('gramaticas/pruebasemantica.fcfg')
 
 ```python
 sents = ['Cata fuma']
-grammar = 'gramaticas/pruebasemantica.fcfg'
+grammar = 'gramaticas/SemanticaRasgos.fcfg'
 for results in nltk.interpret_sents(sents, grammar):
     for (synrep, semrep) in results:
              print(synrep)
@@ -1799,3 +1799,7 @@ for results in nltk.interpret_sents(sents, grammar):
 
 - Bird, S., Klein, E., y Loper, E. (2009). _Natural language processing with Python: analyzing text with the natural language toolkit_. “O’Reilly Media, Inc.”. “Chapter 9: Building FeatureBased Grammars”, pp. 327–360.
 - Blevins, J. P. (2011). Feature-based grammar. En _NonTransformational Syntax_, pp. 297–324. Wiley Blackwell, Massachusetts.
+
+{% include additional_content.html %}
+
+{% include copybutton.html %}
