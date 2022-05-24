@@ -166,7 +166,11 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
         <li>Gramáticas de unificación y rasgos. Implementación mediante Feature-based grammars en NLTK</li>
       </ul>
     </td>
-    <td></td>
+    <td>
+      <ul>
+        <li><a href="./Clase-09/fcfg.md">Notebook sobre FCFG</a></li>
+      </ul>
+    </td>
   </tr>
   <tr>
     <td><a href="./Clase-10/index.md">10</a></td>
@@ -178,9 +182,6 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
       </ul>
     </td>
     <td>
-      <ul>
-        <li></li>
-      </ul>
     </td>
   </tr>
   <tr>
