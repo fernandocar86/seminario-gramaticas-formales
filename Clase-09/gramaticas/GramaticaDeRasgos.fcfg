@@ -6,14 +6,14 @@
 # ###################
 
 # Reescritura de la Raíz
-S -> NP[NUM=?n] VP[NUM=?n]
+S -> SN[NUM=?n] SV[NUM=?n]
 
-# Reescritura de NP
-NP[NUM=?n] -> PropN[NUM=?n] 
-NP[NUM=?n,GEN=?g] -> Det[NUM=?n,GEN=?g] N[NUM=?n,GEN=?g]
+# Reescritura de SN
+SN[NUM=?n] -> PropN[NUM=?n] 
+SN[NUM=?n,GEN=?g] -> Det[NUM=?n,GEN=?g] N[NUM=?n,GEN=?g]
 
-# Reescritura de VP
-VP[TENSE=?t, NUM=?n] -> V[TENSE=?t, NUM=?n]
+# Reescritura de SV
+SV[TIEMPO=?t, NUM=?n] -> V[TIEMPO=?t, NUM=?n]
 
 # ###################
 # Lexical Productions
@@ -31,10 +31,10 @@ N[NUM=sg,GEN=masc] -> 'chico' | 'hombre' | 'sujeto'
 N[NUM=pl,GEN=fem] -> 'chicas' | 'mujeres' | 'personas' | 'criaturas'
 N[NUM=pl,GEN=masc] -> 'chicos' | 'hombres' | 'sujetos' 
 
-V[TENSE=pres,NUM=sg] -> 'desaparece' | 'camina' | 'muerde' | 'llora' | 'aparece' | 'viene' | 'estornudan'
-V[TENSE=pres,NUM=pl] -> 'desaparecen' | 'caminan' | 'lloran' | 'muerden' | 'aparecen' | 'vienen' | 'estornudan'
+V[TIEMPO=pres,NUM=sg] -> 'desaparece' | 'camina' | 'muerde' | 'llora' | 'aparece' | 'viene' | 'estornudan'
+V[TIEMPO=pres,NUM=pl] -> 'desaparecen' | 'caminan' | 'lloran' | 'muerden' | 'aparecen' | 'vienen' | 'estornudan'
 
-V[TENSE=pas,NUM=sg] -> 'desapareció' | 'caminó' | 'mordió' | 'lloraba' | 'apareció' | 'vino' | 'estornudó'
-V[TENSE=pas,NUM=pl] -> 'desaparecieron' | 'caminaron' | 'mordieron' | 'lloraban' | 'aparecieron' | 'vinieron' | 'estornudaron'
+V[TIEMPO=pas,NUM=sg] -> 'desapareció' | 'caminó' | 'mordió' | 'lloraba' | 'apareció' | 'vino' | 'estornudó'
+V[TIEMPO=pas,NUM=pl] -> 'desaparecieron' | 'caminaron' | 'mordieron' | 'lloraban' | 'aparecieron' | 'vinieron' | 'estornudaron'
 
 

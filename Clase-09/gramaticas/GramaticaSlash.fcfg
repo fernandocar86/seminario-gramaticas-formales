@@ -6,29 +6,28 @@
 # ###################
 
 # Reescritura de la Raíz
-S -> NP[NUM=?n] VP[NUM=?n]
-S -> Wh[NUM=?n] VP/Wh[NUM=?n]
+S -> SN[NUM=?n] SV[NUM=?n]
+S -> Wh[NUM=?n] SV/Wh[NUM=?n]
 
-# Reescritura de NP
-NP[NUM=?n] -> PropN[NUM=?n] 
-NP[NUM=?n,GEN=?g] -> Det[NUM=?n,GEN=?g] N[NUM=?n,GEN=?g]
+# Reescritura de SN
+SN[NUM=?n] -> PropN[NUM=?n] 
+SN[NUM=?n,GEN=?g] -> Det[NUM=?n,GEN=?g] N[NUM=?n,GEN=?g]
 
-# Reescritura de VP
-VP[NUM=?n] -> V[SUBCAT='intrans', TENSE=?t, NUM=?n]
-VP[NUM=?n] -> V[SUBCAT='decir', TENSE=?t, NUM=?n] CP
-VP/?x[NUM=?n] -> V[SUBCAT='decir', TENSE=?t, NUM=?m] NP[NUM=?m] CP/?x[NUM=?n]
+# Reescritura de SV
+SV[NUM=?n] -> V[SUBCAT='intrans', TENSE=?t, NUM=?n]
+SV[NUM=?n] -> V[SUBCAT='decir', TENSE=?t, NUM=?n] SC
+SV/?x[NUM=?n] -> V[SUBCAT='decir', TENSE=?t, NUM=?m] SN[NUM=?m] SC/?x[NUM=?n]
 
-# Reescritura de CP
-CP -> C IP
-CP/?x[NUM=?n] -> C IP/?x[NUM=?n]
+# Reescritura de SC
+SC -> C ST
+SC/?x[NUM=?n] -> C ST/?x[NUM=?n]
 
 # Reescritura de C
-
 C -> 'que'
-# Reescritura de IP
 
-IP -> NP[NUM=?n] VP[NUM=?n]
-IP/?x[NUM=?n] -> N/?x[NUM=?n] VP[NUM=?n]
+# Reescritura de ST
+ST -> SN[NUM=?n] SV[NUM=?n]
+ST/?x[NUM=?n] -> N/?x[NUM=?n] SV[NUM=?n]
 
 # ###################
 # Lexical Productions
@@ -59,6 +58,7 @@ N/Wh[NUM=pl] ->
 
 # Reescritura Wh
 
+Wh[NUM=sg] -> 'qué'
 Wh[NUM=sg] -> 'quién'
 Wh[NUM=pl] -> 'quiénes'
 
@@ -69,8 +69,12 @@ Wh[NUM=pl] -> 'quiénes'
 V[SUBCAT='intrans', TENSE=pres,NUM=sg] -> 'desaparece' | 'camina' | 'muerde' | 'llora' | 'aparece' | 'viene' | 'estornuda'
 V[SUBCAT='intrans', TENSE=pres,NUM=pl] -> 'desaparecen' | 'caminan' | 'lloran' | 'muerden' | 'aparecen' | 'vienen' | 'estornudan'
 
-V[SUBCAT='intrans', TENSE=pas,NUM=sg] -> 'desapareció' | 'caminó' | 'mordió' | 'lloraba' | 'apareció' | 'vino' | 'estornudó'
+V[SUBCAT='intrans', TENSE=pas,NUM=sg] -> 'desapareció' | 'caminó' | 'mordió' | 'lloraba' | 'apareció' | 'vino' | 'estornudó'| 
 V[SUBCAT='intrans', TENSE=pas,NUM=pl] -> 'desaparecieron' | 'caminaron' | 'mordieron' | 'lloraban' | 'aparecieron' | 'vinieron' | 'estornudaron'
+
+# Verbos transitivos
+
+V[SUBCAT='trans', TENSE=pas,NUM=sg] -> 'vio'
 
 # Verbos de decir
 
