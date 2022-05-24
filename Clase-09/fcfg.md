@@ -311,7 +311,7 @@ fs_d
 
 ¿Y cómo podríamos evaluar la subsunción?
 
-La comparación de objetos por igualdad nos permite ver si ambos objetos son exatamente iguales, pero no si uno de ellos se encuentra contenido en el otro.
+La comparación de objetos por igualdad nos permite ver si ambos objetos son exactamente iguales, pero no si uno de ellos se encuentra contenido en el otro.
 
 
 ```python
@@ -392,7 +392,7 @@ Ventatas de la representación con diccionarios:
 Limitaciones de la representación con diccionarios:
 
 - no brinda un método sencillo para realizar el proceso de unificación para estructuras complejas
-- no brinda un método sencillo para realizar el proceso de subsumción
+- no brinda un método sencillo para realizar el proceso de subsunción
 
 ### Representación como conjuntos
 
@@ -1118,7 +1118,13 @@ fs_sn_copy.subsumes(fs_sn_sharing)
 
 
 
-## Construcción de una gramática
+## Gramáticas de rasgos en NLTK
+
+Como vimos en CFG, NLTK también nos va a proveer una forma de escribir y parser gramáticas de rasgos. Estas tienen la forma derivativa de las CFG, pero sus símbolos no terminales están anotados con rasgos, representados por pares de atributo-valor.
+
+En los casos en los que el atributo se quiere representar como una variable que no ha tomado un valor fijo, se usa la notación "?{variable}". Este valor podría satisfacerse por cualquiera de los valores habilitados por la gramática para ese rasgo, siempre y cuando la unificación se dé de modo exitoso.
+
+La cantidad y el nombre de los rasgos agregados a los elementos de la gramática está en manos de quien escribe la gramática. Prueben agregando un rasgo o simplemente cambiandole el nombre a alguno de los que ya están en el archivo.
 
 
 ```python
@@ -1132,12 +1138,12 @@ nltk.data.show_cfg('gramaticas/GramaticaDeRasgos.fcfg')
     # Reglas de la Gramática
     # ###################
     # Reescritura de la Raíz
-    S -> NP[NUM=?n] VP[NUM=?n]
-    # Reescritura de NP
-    NP[NUM=?n] -> PropN[NUM=?n] 
-    NP[NUM=?n,GEN=?g] -> Det[NUM=?n,GEN=?g] N[NUM=?n,GEN=?g]
-    # Reescritura de VP
-    VP[TENSE=?t, NUM=?n] -> V[TENSE=?t, NUM=?n]
+    S -> SN[NUM=?n] SV[NUM=?n]
+    # Reescritura de SN
+    SN[NUM=?n] -> PropN[NUM=?n] 
+    SN[NUM=?n,GEN=?g] -> Det[NUM=?n,GEN=?g] N[NUM=?n,GEN=?g]
+    # Reescritura de SV
+    SV[TIEMPO=?t, NUM=?n] -> V[TIEMPO=?t, NUM=?n]
     # ###################
     # Lexical Productions
     # ###################
@@ -1150,10 +1156,10 @@ nltk.data.show_cfg('gramaticas/GramaticaDeRasgos.fcfg')
     N[NUM=sg,GEN=masc] -> 'chico' | 'hombre' | 'sujeto' 
     N[NUM=pl,GEN=fem] -> 'chicas' | 'mujeres' | 'personas' | 'criaturas'
     N[NUM=pl,GEN=masc] -> 'chicos' | 'hombres' | 'sujetos' 
-    V[TENSE=pres,NUM=sg] -> 'desaparece' | 'camina' | 'muerde' | 'llora' | 'aparece' | 'viene' | 'estornudan'
-    V[TENSE=pres,NUM=pl] -> 'desaparecen' | 'caminan' | 'lloran' | 'muerden' | 'aparecen' | 'vienen' | 'estornudan'
-    V[TENSE=pas,NUM=sg] -> 'desapareció' | 'caminó' | 'mordió' | 'lloraba' | 'apareció' | 'vino' | 'estornudó'
-    V[TENSE=pas,NUM=pl] -> 'desaparecieron' | 'caminaron' | 'mordieron' | 'lloraban' | 'aparecieron' | 'vinieron' | 'estornudaron'
+    V[TIEMPO=pres,NUM=sg] -> 'desaparece' | 'camina' | 'muerde' | 'llora' | 'aparece' | 'viene' | 'estornudan'
+    V[TIEMPO=pres,NUM=pl] -> 'desaparecen' | 'caminan' | 'lloran' | 'muerden' | 'aparecen' | 'vienen' | 'estornudan'
+    V[TIEMPO=pas,NUM=sg] -> 'desapareció' | 'caminó' | 'mordió' | 'lloraba' | 'apareció' | 'vino' | 'estornudó'
+    V[TIEMPO=pas,NUM=pl] -> 'desaparecieron' | 'caminaron' | 'mordieron' | 'lloraban' | 'aparecieron' | 'vinieron' | 'estornudaron'
 
 
 
@@ -1202,7 +1208,7 @@ print(type(tokens))
 ```python
 from nltk import load_parser
 
-cp = load_parser('gramaticas/GramaticaDeRasgos.fcfg', trace=2)
+cp = load_parser('gramaticas/GramaticaDeRasgos.fcfg', trace=2, cache=False) #Chart Parser
 
 for tree in cp.parse(tokens):
     print(tree)
@@ -1216,34 +1222,32 @@ for tree in cp.parse(tokens):
     Feature Bottom Up Predict Combine Rule:
     |[----]    .    .| [0:1] Det[GEN='fem', NUM='pl'] -> 'las' *
     Feature Bottom Up Predict Combine Rule:
-    |[---->    .    .| [0:1] NP[GEN=?g, NUM=?n] -> Det[GEN=?g, NUM=?n] * N[GEN=?g, NUM=?n] {?g: 'fem', ?n: 'pl'}
+    |[---->    .    .| [0:1] SN[GEN=?g, NUM=?n] -> Det[GEN=?g, NUM=?n] * N[GEN=?g, NUM=?n] {?g: 'fem', ?n: 'pl'}
     Feature Bottom Up Predict Combine Rule:
     |.    [----]    .| [1:2] N[GEN='fem', NUM='pl'] -> 'chicas' *
     Feature Single Edge Fundamental Rule:
-    |[---------]    .| [0:2] NP[GEN='fem', NUM='pl'] -> Det[GEN='fem', NUM='pl'] N[GEN='fem', NUM='pl'] *
+    |[---------]    .| [0:2] SN[GEN='fem', NUM='pl'] -> Det[GEN='fem', NUM='pl'] N[GEN='fem', NUM='pl'] *
     Feature Bottom Up Predict Combine Rule:
-    |[--------->    .| [0:2] S[] -> NP[NUM=?n] * VP[NUM=?n] {?n: 'pl'}
+    |[--------->    .| [0:2] S[] -> SN[NUM=?n] * SV[NUM=?n] {?n: 'pl'}
     Feature Bottom Up Predict Combine Rule:
-    |.    .    [----]| [2:3] V[NUM='pl', TENSE='pres'] -> 'caminan' *
+    |.    .    [----]| [2:3] V[NUM='pl', TIEMPO='pres'] -> 'caminan' *
     Feature Bottom Up Predict Combine Rule:
-    |.    .    [----]| [2:3] VP[NUM='pl', TENSE='pres'] -> V[NUM='pl', TENSE='pres'] *
+    |.    .    [----]| [2:3] SV[NUM='pl', TIEMPO='pres'] -> V[NUM='pl', TIEMPO='pres'] *
     Feature Single Edge Fundamental Rule:
-    |[==============]| [0:3] S[] -> NP[NUM='pl'] VP[NUM='pl'] *
+    |[==============]| [0:3] S[] -> SN[NUM='pl'] SV[NUM='pl'] *
     (S[]
-      (NP[GEN='fem', NUM='pl']
+      (SN[GEN='fem', NUM='pl']
         (Det[GEN='fem', NUM='pl'] las)
         (N[GEN='fem', NUM='pl'] chicas))
-      (VP[NUM='pl', TENSE='pres'] (V[NUM='pl', TENSE='pres'] caminan)))
+      (SV[NUM='pl', TIEMPO='pres'] (V[NUM='pl', TIEMPO='pres'] caminan)))
 
 
 
 ```python
-sentence = 'los chicas caminan'
-tokens = sentence.split()
+cp = load_parser('gramaticas/GramaticaDeRasgos.fcfg', trace=2, cache=False) #Chart Parser
 
-for tree in cp.parse(tokens):
+for tree in cp.parse(['los', 'chicas', 'caminan']):
     print(tree)
-    print('*'*50)
 ```
 
     |.los .chic.cami.|
@@ -1254,16 +1258,22 @@ for tree in cp.parse(tokens):
     Feature Bottom Up Predict Combine Rule:
     |[----]    .    .| [0:1] Det[GEN='masc', NUM='pl'] -> 'los' *
     Feature Bottom Up Predict Combine Rule:
-    |[---->    .    .| [0:1] NP[GEN=?g, NUM=?n] -> Det[GEN=?g, NUM=?n] * N[GEN=?g, NUM=?n] {?g: 'masc', ?n: 'pl'}
+    |[---->    .    .| [0:1] SN[GEN=?g, NUM=?n] -> Det[GEN=?g, NUM=?n] * N[GEN=?g, NUM=?n] {?g: 'masc', ?n: 'pl'}
     Feature Bottom Up Predict Combine Rule:
     |.    [----]    .| [1:2] N[GEN='fem', NUM='pl'] -> 'chicas' *
     Feature Bottom Up Predict Combine Rule:
-    |.    .    [----]| [2:3] V[NUM='pl', TENSE='pres'] -> 'caminan' *
+    |.    .    [----]| [2:3] V[NUM='pl', TIEMPO='pres'] -> 'caminan' *
     Feature Bottom Up Predict Combine Rule:
-    |.    .    [----]| [2:3] VP[NUM='pl', TENSE='pres'] -> V[NUM='pl', TENSE='pres'] *
+    |.    .    [----]| [2:3] SV[NUM='pl', TIEMPO='pres'] -> V[NUM='pl', TIEMPO='pres'] *
 
 
 ## Gramáticas con Slash
+
+![gramaticas_con_slash](./images/gr_with_slash.png)
+
+El mismo parser nos permite implementar gramáticas con el rasgo SLASH que, como vimos en clase, es una de las formas posibles de habilitar dependencias no locales usando rasgos.
+
+Veamos un ejemplo.
 
 
 ```python
@@ -1277,23 +1287,23 @@ nltk.data.show_cfg('gramaticas/GramaticaSlash.fcfg')
     # Reglas de la Gramática
     # ###################
     # Reescritura de la Raíz
-    S -> NP[NUM=?n] VP[NUM=?n]
-    S -> Wh[NUM=?n] VP/Wh[NUM=?n]
-    # Reescritura de NP
-    NP[NUM=?n] -> PropN[NUM=?n] 
-    NP[NUM=?n,GEN=?g] -> Det[NUM=?n,GEN=?g] N[NUM=?n,GEN=?g]
-    # Reescritura de VP
-    VP[NUM=?n] -> V[SUBCAT='intrans', TENSE=?t, NUM=?n]
-    VP[NUM=?n] -> V[SUBCAT='decir', TENSE=?t, NUM=?n] CP
-    VP/?x[NUM=?n] -> V[SUBCAT='decir', TENSE=?t, NUM=?m] NP[NUM=?m] CP/?x[NUM=?n]
-    # Reescritura de CP
-    CP -> C IP
-    CP/?x[NUM=?n] -> C IP/?x[NUM=?n]
+    S -> SN[NUM=?n] SV[NUM=?n]
+    S -> Wh[NUM=?n] SV/Wh[NUM=?n]
+    # Reescritura de SN
+    SN[NUM=?n] -> PropN[NUM=?n] 
+    SN[NUM=?n,GEN=?g] -> Det[NUM=?n,GEN=?g] N[NUM=?n,GEN=?g]
+    # Reescritura de SV
+    SV[NUM=?n] -> V[SUBCAT='intrans', TENSE=?t, NUM=?n]
+    SV[NUM=?n] -> V[SUBCAT='decir', TENSE=?t, NUM=?n] SC
+    SV/?x[NUM=?n] -> V[SUBCAT='decir', TENSE=?t, NUM=?m] SN[NUM=?m] SC/?x[NUM=?n]
+    # Reescritura de SC
+    SC -> C ST
+    SC/?x[NUM=?n] -> C ST/?x[NUM=?n]
     # Reescritura de C
     C -> 'que'
-    # Reescritura de IP
-    IP -> NP[NUM=?n] VP[NUM=?n]
-    IP/?x[NUM=?n] -> N/?x[NUM=?n] VP[NUM=?n]
+    # Reescritura de ST
+    ST -> SN[NUM=?n] SV[NUM=?n]
+    ST/?x[NUM=?n] -> N/?x[NUM=?n] SV[NUM=?n]
     # ###################
     # Lexical Productions
     # ###################
@@ -1313,25 +1323,30 @@ nltk.data.show_cfg('gramaticas/GramaticaSlash.fcfg')
     N/Wh[NUM=sg] -> 
     N/Wh[NUM=pl] ->
     # Reescritura Wh
+    Wh[NUM=sg] -> 'qué'
     Wh[NUM=sg] -> 'quién'
     Wh[NUM=pl] -> 'quiénes'
     # Reescritura de V
     # Verbos intransitivos
     V[SUBCAT='intrans', TENSE=pres,NUM=sg] -> 'desaparece' | 'camina' | 'muerde' | 'llora' | 'aparece' | 'viene' | 'estornuda'
     V[SUBCAT='intrans', TENSE=pres,NUM=pl] -> 'desaparecen' | 'caminan' | 'lloran' | 'muerden' | 'aparecen' | 'vienen' | 'estornudan'
-    V[SUBCAT='intrans', TENSE=pas,NUM=sg] -> 'desapareció' | 'caminó' | 'mordió' | 'lloraba' | 'apareció' | 'vino' | 'estornudó'
+    V[SUBCAT='intrans', TENSE=pas,NUM=sg] -> 'desapareció' | 'caminó' | 'mordió' | 'lloraba' | 'apareció' | 'vino' | 'estornudó'| 
     V[SUBCAT='intrans', TENSE=pas,NUM=pl] -> 'desaparecieron' | 'caminaron' | 'mordieron' | 'lloraban' | 'aparecieron' | 'vinieron' | 'estornudaron'
+    # Verbos transitivos
+    V[SUBCAT='trans', TENSE=pas,NUM=sg] -> 'vio'
     # Verbos de decir
     V[SUBCAT='decir', TENSE=pres,NUM=sg] -> 'dice' | 'afirma' | 'defiende' | 'argumenta' | 'sostiene' 
     V[SUBCAT='decir', TENSE=pas,NUM=sg] -> 'dijo' | 'afirmó' | 'defendió' | 'argumentó' | 'sostuvo' 
 
+
+El rasgo `SUBCAT` nos indica el tipo e subcategorización al que pertenece el ítem léxico (transitivo, intransitivo, etc.). Este rasgo solamente puede aparecer en categorías léxicas. No tiene sentido que apareca en categorías sintagmáticas.
 
 
 ```python
 sentence_slash_grammar = 'quién dice el chico que estornuda'
 sentence = sentence_slash_grammar.split()
 from nltk import load_parser
-cp = load_parser('gramaticas/GramaticaSlash.fcfg', trace=2)
+cp = load_parser('gramaticas/GramaticaSlash.fcfg', trace=2, cache=False)
 for tree in cp.parse(sentence):
      print(tree)
 ```
@@ -1359,86 +1374,264 @@ for tree in cp.parse(sentence):
     |. . . . # . .| [4:4] N[]/Wh[NUM='pl'] -> *
     |. . . . . # .| [5:5] N[]/Wh[NUM='pl'] -> *
     |. . . . . . #| [6:6] N[]/Wh[NUM='pl'] -> *
+    |# . . . . . .| [0:0] V[NUM='sg', SUBCAT='intrans', TENSE='pas'] -> *
+    |. # . . . . .| [1:1] V[NUM='sg', SUBCAT='intrans', TENSE='pas'] -> *
+    |. . # . . . .| [2:2] V[NUM='sg', SUBCAT='intrans', TENSE='pas'] -> *
+    |. . . # . . .| [3:3] V[NUM='sg', SUBCAT='intrans', TENSE='pas'] -> *
+    |. . . . # . .| [4:4] V[NUM='sg', SUBCAT='intrans', TENSE='pas'] -> *
+    |. . . . . # .| [5:5] V[NUM='sg', SUBCAT='intrans', TENSE='pas'] -> *
+    |. . . . . . #| [6:6] V[NUM='sg', SUBCAT='intrans', TENSE='pas'] -> *
     Feature Bottom Up Predict Combine Rule:
     |[-] . . . . .| [0:1] Wh[NUM='sg'] -> 'quién' *
     Feature Bottom Up Predict Combine Rule:
-    |[-> . . . . .| [0:1] S[] -> Wh[NUM=?n] * VP[]/Wh[NUM=?n] {?n: 'sg'}
+    |[-> . . . . .| [0:1] S[] -> Wh[NUM=?n] * SV[]/Wh[NUM=?n] {?n: 'sg'}
     Feature Bottom Up Predict Combine Rule:
     |. [-] . . . .| [1:2] V[NUM='sg', SUBCAT='decir', TENSE='pres'] -> 'dice' *
     Feature Bottom Up Predict Combine Rule:
-    |. [-> . . . .| [1:2] VP[NUM=?n] -> V[NUM=?n, SUBCAT='decir', TENSE=?t] * CP[] {?n: 'sg', ?t: 'pres'}
-    |. [-> . . . .| [1:2] VP[]/?x[NUM=?n] -> V[NUM=?m, SUBCAT='decir', TENSE=?t] * NP[NUM=?m] CP[]/?x[NUM=?n] {?m: 'sg', ?t: 'pres'}
+    |. [-> . . . .| [1:2] SV[NUM=?n] -> V[NUM=?n, SUBCAT='decir', TENSE=?t] * SC[] {?n: 'sg', ?t: 'pres'}
+    |. [-> . . . .| [1:2] SV[]/?x[NUM=?n] -> V[NUM=?m, SUBCAT='decir', TENSE=?t] * SN[NUM=?m] SC[]/?x[NUM=?n] {?m: 'sg', ?t: 'pres'}
     Feature Bottom Up Predict Combine Rule:
     |. . [-] . . .| [2:3] Det[GEN='masc', NUM='sg'] -> 'el' *
     Feature Bottom Up Predict Combine Rule:
-    |. . [-> . . .| [2:3] NP[GEN=?g, NUM=?n] -> Det[GEN=?g, NUM=?n] * N[GEN=?g, NUM=?n] {?g: 'masc', ?n: 'sg'}
+    |. . [-> . . .| [2:3] SN[GEN=?g, NUM=?n] -> Det[GEN=?g, NUM=?n] * N[GEN=?g, NUM=?n] {?g: 'masc', ?n: 'sg'}
     Feature Bottom Up Predict Combine Rule:
     |. . . [-] . .| [3:4] N[GEN='masc', NUM='sg'] -> 'chico' *
     Feature Single Edge Fundamental Rule:
-    |. . [---] . .| [2:4] NP[GEN='masc', NUM='sg'] -> Det[GEN='masc', NUM='sg'] N[GEN='masc', NUM='sg'] *
+    |. . [---] . .| [2:4] SN[GEN='masc', NUM='sg'] -> Det[GEN='masc', NUM='sg'] N[GEN='masc', NUM='sg'] *
     Feature Bottom Up Predict Combine Rule:
-    |. . [---> . .| [2:4] S[] -> NP[NUM=?n] * VP[NUM=?n] {?n: 'sg'}
-    |. . [---> . .| [2:4] IP[] -> NP[NUM=?n] * VP[NUM=?n] {?n: 'sg'}
+    |. . [---> . .| [2:4] S[] -> SN[NUM=?n] * SV[NUM=?n] {?n: 'sg'}
+    |. . [---> . .| [2:4] ST[] -> SN[NUM=?n] * SV[NUM=?n] {?n: 'sg'}
     Feature Single Edge Fundamental Rule:
-    |. [-----> . .| [1:4] VP[]/?x[NUM=?n] -> V[NUM=?m, SUBCAT='decir', TENSE=?t] NP[NUM=?m] * CP[]/?x[NUM=?n] {?m: 'sg', ?t: 'pres'}
+    |. [-----> . .| [1:4] SV[]/?x[NUM=?n] -> V[NUM=?m, SUBCAT='decir', TENSE=?t] SN[NUM=?m] * SC[]/?x[NUM=?n] {?m: 'sg', ?t: 'pres'}
     Feature Bottom Up Predict Combine Rule:
     |. . . . [-] .| [4:5] C[] -> 'que' *
     Feature Bottom Up Predict Combine Rule:
-    |. . . . [-> .| [4:5] CP[] -> C[] * IP[] {}
-    |. . . . [-> .| [4:5] CP[]/?x[NUM=?n] -> C[] * IP[]/?x[NUM=?n] {}
+    |. . . . [-> .| [4:5] SC[] -> C[] * ST[] {}
+    |. . . . [-> .| [4:5] SC[]/?x[NUM=?n] -> C[] * ST[]/?x[NUM=?n] {}
     Feature Bottom Up Predict Combine Rule:
     |. . . . . [-]| [5:6] V[NUM='sg', SUBCAT='intrans', TENSE='pres'] -> 'estornuda' *
     Feature Bottom Up Predict Combine Rule:
-    |. . . . . [-]| [5:6] VP[NUM='sg'] -> V[NUM='sg', SUBCAT='intrans', TENSE='pres'] *
+    |. . . . . [-]| [5:6] SV[NUM='sg'] -> V[NUM='sg', SUBCAT='intrans', TENSE='pres'] *
     Feature Bottom Up Predict Combine Rule:
-    |> . . . . . .| [0:0] IP[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * VP[NUM=?n] {?n: 'sg', ?x: 'Wh'}
+    |> . . . . . .| [0:0] ST[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * SV[NUM=?n] {?n: 'sg', ?x: 'Wh'}
     Feature Bottom Up Predict Combine Rule:
-    |. > . . . . .| [1:1] IP[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * VP[NUM=?n] {?n: 'sg', ?x: 'Wh'}
+    |. > . . . . .| [1:1] ST[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * SV[NUM=?n] {?n: 'sg', ?x: 'Wh'}
     Feature Bottom Up Predict Combine Rule:
-    |. . > . . . .| [2:2] IP[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * VP[NUM=?n] {?n: 'sg', ?x: 'Wh'}
+    |. . > . . . .| [2:2] ST[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * SV[NUM=?n] {?n: 'sg', ?x: 'Wh'}
     Feature Bottom Up Predict Combine Rule:
-    |. . . > . . .| [3:3] IP[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * VP[NUM=?n] {?n: 'sg', ?x: 'Wh'}
+    |. . . > . . .| [3:3] ST[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * SV[NUM=?n] {?n: 'sg', ?x: 'Wh'}
     Feature Bottom Up Predict Combine Rule:
-    |. . . . > . .| [4:4] IP[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * VP[NUM=?n] {?n: 'sg', ?x: 'Wh'}
+    |. . . . > . .| [4:4] ST[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * SV[NUM=?n] {?n: 'sg', ?x: 'Wh'}
     Feature Bottom Up Predict Combine Rule:
-    |. . . . . > .| [5:5] IP[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * VP[NUM=?n] {?n: 'sg', ?x: 'Wh'}
+    |. . . . . > .| [5:5] ST[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * SV[NUM=?n] {?n: 'sg', ?x: 'Wh'}
     Feature Single Edge Fundamental Rule:
-    |. . . . . [-]| [5:6] IP[]/Wh[NUM='sg'] -> N[]/Wh[NUM='sg'] VP[NUM='sg'] *
+    |. . . . . [-]| [5:6] ST[]/Wh[NUM='sg'] -> N[]/Wh[NUM='sg'] SV[NUM='sg'] *
     Feature Single Edge Fundamental Rule:
-    |. . . . [---]| [4:6] CP[]/Wh[NUM='sg'] -> C[] IP[]/Wh[NUM='sg'] *
+    |. . . . [---]| [4:6] SC[]/Wh[NUM='sg'] -> C[] ST[]/Wh[NUM='sg'] *
     Feature Single Edge Fundamental Rule:
-    |. [---------]| [1:6] VP[]/Wh[NUM='sg'] -> V[NUM='sg', SUBCAT='decir', TENSE='pres'] NP[NUM='sg'] CP[]/Wh[NUM='sg'] *
+    |. [---------]| [1:6] SV[]/Wh[NUM='sg'] -> V[NUM='sg', SUBCAT='decir', TENSE='pres'] SN[NUM='sg'] SC[]/Wh[NUM='sg'] *
     Feature Single Edge Fundamental Rule:
-    |[===========]| [0:6] S[] -> Wh[NUM='sg'] VP[]/Wh[NUM='sg'] *
+    |[===========]| [0:6] S[] -> Wh[NUM='sg'] SV[]/Wh[NUM='sg'] *
     Feature Bottom Up Predict Combine Rule:
-    |. . . . . . >| [6:6] IP[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * VP[NUM=?n] {?n: 'sg', ?x: 'Wh'}
+    |. . . . . . >| [6:6] ST[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * SV[NUM=?n] {?n: 'sg', ?x: 'Wh'}
     Feature Bottom Up Predict Combine Rule:
-    |> . . . . . .| [0:0] IP[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * VP[NUM=?n] {?n: 'pl', ?x: 'Wh'}
+    |> . . . . . .| [0:0] ST[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * SV[NUM=?n] {?n: 'pl', ?x: 'Wh'}
     Feature Bottom Up Predict Combine Rule:
-    |. > . . . . .| [1:1] IP[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * VP[NUM=?n] {?n: 'pl', ?x: 'Wh'}
+    |. > . . . . .| [1:1] ST[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * SV[NUM=?n] {?n: 'pl', ?x: 'Wh'}
     Feature Bottom Up Predict Combine Rule:
-    |. . > . . . .| [2:2] IP[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * VP[NUM=?n] {?n: 'pl', ?x: 'Wh'}
+    |. . > . . . .| [2:2] ST[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * SV[NUM=?n] {?n: 'pl', ?x: 'Wh'}
     Feature Bottom Up Predict Combine Rule:
-    |. . . > . . .| [3:3] IP[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * VP[NUM=?n] {?n: 'pl', ?x: 'Wh'}
+    |. . . > . . .| [3:3] ST[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * SV[NUM=?n] {?n: 'pl', ?x: 'Wh'}
     Feature Bottom Up Predict Combine Rule:
-    |. . . . > . .| [4:4] IP[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * VP[NUM=?n] {?n: 'pl', ?x: 'Wh'}
+    |. . . . > . .| [4:4] ST[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * SV[NUM=?n] {?n: 'pl', ?x: 'Wh'}
     Feature Bottom Up Predict Combine Rule:
-    |. . . . . > .| [5:5] IP[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * VP[NUM=?n] {?n: 'pl', ?x: 'Wh'}
+    |. . . . . > .| [5:5] ST[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * SV[NUM=?n] {?n: 'pl', ?x: 'Wh'}
     Feature Bottom Up Predict Combine Rule:
-    |. . . . . . >| [6:6] IP[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * VP[NUM=?n] {?n: 'pl', ?x: 'Wh'}
+    |. . . . . . >| [6:6] ST[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * SV[NUM=?n] {?n: 'pl', ?x: 'Wh'}
+    Feature Bottom Up Predict Combine Rule:
+    |# . . . . . .| [0:0] SV[NUM='sg'] -> V[NUM='sg', SUBCAT='intrans', TENSE='pas'] *
+    Feature Single Edge Fundamental Rule:
+    |# . . . . . .| [0:0] ST[]/Wh[NUM='sg'] -> N[]/Wh[NUM='sg'] SV[NUM='sg'] *
+    Feature Bottom Up Predict Combine Rule:
+    |. # . . . . .| [1:1] SV[NUM='sg'] -> V[NUM='sg', SUBCAT='intrans', TENSE='pas'] *
+    Feature Single Edge Fundamental Rule:
+    |. # . . . . .| [1:1] ST[]/Wh[NUM='sg'] -> N[]/Wh[NUM='sg'] SV[NUM='sg'] *
+    Feature Bottom Up Predict Combine Rule:
+    |. . # . . . .| [2:2] SV[NUM='sg'] -> V[NUM='sg', SUBCAT='intrans', TENSE='pas'] *
+    Feature Single Edge Fundamental Rule:
+    |. . # . . . .| [2:2] ST[]/Wh[NUM='sg'] -> N[]/Wh[NUM='sg'] SV[NUM='sg'] *
+    Feature Bottom Up Predict Combine Rule:
+    |. . . # . . .| [3:3] SV[NUM='sg'] -> V[NUM='sg', SUBCAT='intrans', TENSE='pas'] *
+    Feature Single Edge Fundamental Rule:
+    |. . . # . . .| [3:3] ST[]/Wh[NUM='sg'] -> N[]/Wh[NUM='sg'] SV[NUM='sg'] *
+    Feature Bottom Up Predict Combine Rule:
+    |. . . . # . .| [4:4] SV[NUM='sg'] -> V[NUM='sg', SUBCAT='intrans', TENSE='pas'] *
+    Feature Single Edge Fundamental Rule:
+    |. . [---] . .| [2:4] S[] -> SN[NUM='sg'] SV[NUM='sg'] *
+    |. . [---] . .| [2:4] ST[] -> SN[NUM='sg'] SV[NUM='sg'] *
+    |. . . . # . .| [4:4] ST[]/Wh[NUM='sg'] -> N[]/Wh[NUM='sg'] SV[NUM='sg'] *
+    Feature Bottom Up Predict Combine Rule:
+    |. . . . . # .| [5:5] SV[NUM='sg'] -> V[NUM='sg', SUBCAT='intrans', TENSE='pas'] *
+    Feature Single Edge Fundamental Rule:
+    |. . . . . # .| [5:5] ST[]/Wh[NUM='sg'] -> N[]/Wh[NUM='sg'] SV[NUM='sg'] *
+    Feature Single Edge Fundamental Rule:
+    |. . . . [-] .| [4:5] SC[]/Wh[NUM='sg'] -> C[] ST[]/Wh[NUM='sg'] *
+    Feature Single Edge Fundamental Rule:
+    |. [-------] .| [1:5] SV[]/Wh[NUM='sg'] -> V[NUM='sg', SUBCAT='decir', TENSE='pres'] SN[NUM='sg'] SC[]/Wh[NUM='sg'] *
+    Feature Single Edge Fundamental Rule:
+    |[---------] .| [0:5] S[] -> Wh[NUM='sg'] SV[]/Wh[NUM='sg'] *
+    Feature Bottom Up Predict Combine Rule:
+    |. . . . . . #| [6:6] SV[NUM='sg'] -> V[NUM='sg', SUBCAT='intrans', TENSE='pas'] *
+    Feature Single Edge Fundamental Rule:
+    |. . . . . . #| [6:6] ST[]/Wh[NUM='sg'] -> N[]/Wh[NUM='sg'] SV[NUM='sg'] *
     (S[]
       (Wh[NUM='sg'] quién)
-      (VP[]/Wh[NUM='sg']
+      (SV[]/Wh[NUM='sg']
         (V[NUM='sg', SUBCAT='decir', TENSE='pres'] dice)
-        (NP[GEN='masc', NUM='sg']
+        (SN[GEN='masc', NUM='sg']
           (Det[GEN='masc', NUM='sg'] el)
           (N[GEN='masc', NUM='sg'] chico))
-        (CP[]/Wh[NUM='sg']
+        (SC[]/Wh[NUM='sg']
           (C[] que)
-          (IP[]/Wh[NUM='sg']
+          (ST[]/Wh[NUM='sg']
             (N[]/Wh[NUM='sg'] )
-            (VP[NUM='sg']
+            (SV[NUM='sg']
               (V[NUM='sg', SUBCAT='intrans', TENSE='pres'] estornuda))))))
+
+
+
+```python
+sentence_slash_grammar = 'qué dijo el chico que vio'
+sentence = sentence_slash_grammar.split()
+from nltk import load_parser
+cp = load_parser('gramaticas/GramaticaSlash.fcfg', trace=2, cache=False)
+for tree in cp.parse(sentence):
+     print(tree)
+```
+
+    |.q.d.e.c.q.v.|
+    Leaf Init Rule:
+    |[-] . . . . .| [0:1] 'qué'
+    |. [-] . . . .| [1:2] 'dijo'
+    |. . [-] . . .| [2:3] 'el'
+    |. . . [-] . .| [3:4] 'chico'
+    |. . . . [-] .| [4:5] 'que'
+    |. . . . . [-]| [5:6] 'vio'
+    Feature Empty Predict Rule:
+    |# . . . . . .| [0:0] N[]/Wh[NUM='sg'] -> *
+    |. # . . . . .| [1:1] N[]/Wh[NUM='sg'] -> *
+    |. . # . . . .| [2:2] N[]/Wh[NUM='sg'] -> *
+    |. . . # . . .| [3:3] N[]/Wh[NUM='sg'] -> *
+    |. . . . # . .| [4:4] N[]/Wh[NUM='sg'] -> *
+    |. . . . . # .| [5:5] N[]/Wh[NUM='sg'] -> *
+    |. . . . . . #| [6:6] N[]/Wh[NUM='sg'] -> *
+    |# . . . . . .| [0:0] N[]/Wh[NUM='pl'] -> *
+    |. # . . . . .| [1:1] N[]/Wh[NUM='pl'] -> *
+    |. . # . . . .| [2:2] N[]/Wh[NUM='pl'] -> *
+    |. . . # . . .| [3:3] N[]/Wh[NUM='pl'] -> *
+    |. . . . # . .| [4:4] N[]/Wh[NUM='pl'] -> *
+    |. . . . . # .| [5:5] N[]/Wh[NUM='pl'] -> *
+    |. . . . . . #| [6:6] N[]/Wh[NUM='pl'] -> *
+    |# . . . . . .| [0:0] V[NUM='sg', SUBCAT='intrans', TENSE='pas'] -> *
+    |. # . . . . .| [1:1] V[NUM='sg', SUBCAT='intrans', TENSE='pas'] -> *
+    |. . # . . . .| [2:2] V[NUM='sg', SUBCAT='intrans', TENSE='pas'] -> *
+    |. . . # . . .| [3:3] V[NUM='sg', SUBCAT='intrans', TENSE='pas'] -> *
+    |. . . . # . .| [4:4] V[NUM='sg', SUBCAT='intrans', TENSE='pas'] -> *
+    |. . . . . # .| [5:5] V[NUM='sg', SUBCAT='intrans', TENSE='pas'] -> *
+    |. . . . . . #| [6:6] V[NUM='sg', SUBCAT='intrans', TENSE='pas'] -> *
+    Feature Bottom Up Predict Combine Rule:
+    |[-] . . . . .| [0:1] Wh[NUM='sg'] -> 'qué' *
+    Feature Bottom Up Predict Combine Rule:
+    |[-> . . . . .| [0:1] S[] -> Wh[NUM=?n] * SV[]/Wh[NUM=?n] {?n: 'sg'}
+    Feature Bottom Up Predict Combine Rule:
+    |. [-] . . . .| [1:2] V[NUM='sg', SUBCAT='decir', TENSE='pas'] -> 'dijo' *
+    Feature Bottom Up Predict Combine Rule:
+    |. [-> . . . .| [1:2] SV[NUM=?n] -> V[NUM=?n, SUBCAT='decir', TENSE=?t] * SC[] {?n: 'sg', ?t: 'pas'}
+    |. [-> . . . .| [1:2] SV[]/?x[NUM=?n] -> V[NUM=?m, SUBCAT='decir', TENSE=?t] * SN[NUM=?m] SC[]/?x[NUM=?n] {?m: 'sg', ?t: 'pas'}
+    Feature Bottom Up Predict Combine Rule:
+    |. . [-] . . .| [2:3] Det[GEN='masc', NUM='sg'] -> 'el' *
+    Feature Bottom Up Predict Combine Rule:
+    |. . [-> . . .| [2:3] SN[GEN=?g, NUM=?n] -> Det[GEN=?g, NUM=?n] * N[GEN=?g, NUM=?n] {?g: 'masc', ?n: 'sg'}
+    Feature Bottom Up Predict Combine Rule:
+    |. . . [-] . .| [3:4] N[GEN='masc', NUM='sg'] -> 'chico' *
+    Feature Single Edge Fundamental Rule:
+    |. . [---] . .| [2:4] SN[GEN='masc', NUM='sg'] -> Det[GEN='masc', NUM='sg'] N[GEN='masc', NUM='sg'] *
+    Feature Bottom Up Predict Combine Rule:
+    |. . [---> . .| [2:4] S[] -> SN[NUM=?n] * SV[NUM=?n] {?n: 'sg'}
+    |. . [---> . .| [2:4] ST[] -> SN[NUM=?n] * SV[NUM=?n] {?n: 'sg'}
+    Feature Single Edge Fundamental Rule:
+    |. [-----> . .| [1:4] SV[]/?x[NUM=?n] -> V[NUM=?m, SUBCAT='decir', TENSE=?t] SN[NUM=?m] * SC[]/?x[NUM=?n] {?m: 'sg', ?t: 'pas'}
+    Feature Bottom Up Predict Combine Rule:
+    |. . . . [-] .| [4:5] C[] -> 'que' *
+    Feature Bottom Up Predict Combine Rule:
+    |. . . . [-> .| [4:5] SC[] -> C[] * ST[] {}
+    |. . . . [-> .| [4:5] SC[]/?x[NUM=?n] -> C[] * ST[]/?x[NUM=?n] {}
+    Feature Bottom Up Predict Combine Rule:
+    |. . . . . [-]| [5:6] V[NUM='sg', SUBCAT='trans', TENSE='pas'] -> 'vio' *
+    Feature Bottom Up Predict Combine Rule:
+    |> . . . . . .| [0:0] ST[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * SV[NUM=?n] {?n: 'sg', ?x: 'Wh'}
+    Feature Bottom Up Predict Combine Rule:
+    |. > . . . . .| [1:1] ST[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * SV[NUM=?n] {?n: 'sg', ?x: 'Wh'}
+    Feature Bottom Up Predict Combine Rule:
+    |. . > . . . .| [2:2] ST[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * SV[NUM=?n] {?n: 'sg', ?x: 'Wh'}
+    Feature Bottom Up Predict Combine Rule:
+    |. . . > . . .| [3:3] ST[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * SV[NUM=?n] {?n: 'sg', ?x: 'Wh'}
+    Feature Bottom Up Predict Combine Rule:
+    |. . . . > . .| [4:4] ST[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * SV[NUM=?n] {?n: 'sg', ?x: 'Wh'}
+    Feature Bottom Up Predict Combine Rule:
+    |. . . . . > .| [5:5] ST[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * SV[NUM=?n] {?n: 'sg', ?x: 'Wh'}
+    Feature Bottom Up Predict Combine Rule:
+    |. . . . . . >| [6:6] ST[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * SV[NUM=?n] {?n: 'sg', ?x: 'Wh'}
+    Feature Bottom Up Predict Combine Rule:
+    |> . . . . . .| [0:0] ST[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * SV[NUM=?n] {?n: 'pl', ?x: 'Wh'}
+    Feature Bottom Up Predict Combine Rule:
+    |. > . . . . .| [1:1] ST[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * SV[NUM=?n] {?n: 'pl', ?x: 'Wh'}
+    Feature Bottom Up Predict Combine Rule:
+    |. . > . . . .| [2:2] ST[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * SV[NUM=?n] {?n: 'pl', ?x: 'Wh'}
+    Feature Bottom Up Predict Combine Rule:
+    |. . . > . . .| [3:3] ST[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * SV[NUM=?n] {?n: 'pl', ?x: 'Wh'}
+    Feature Bottom Up Predict Combine Rule:
+    |. . . . > . .| [4:4] ST[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * SV[NUM=?n] {?n: 'pl', ?x: 'Wh'}
+    Feature Bottom Up Predict Combine Rule:
+    |. . . . . > .| [5:5] ST[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * SV[NUM=?n] {?n: 'pl', ?x: 'Wh'}
+    Feature Bottom Up Predict Combine Rule:
+    |. . . . . . >| [6:6] ST[]/?x[NUM=?n] -> N[]/?x[NUM=?n] * SV[NUM=?n] {?n: 'pl', ?x: 'Wh'}
+    Feature Bottom Up Predict Combine Rule:
+    |# . . . . . .| [0:0] SV[NUM='sg'] -> V[NUM='sg', SUBCAT='intrans', TENSE='pas'] *
+    Feature Single Edge Fundamental Rule:
+    |# . . . . . .| [0:0] ST[]/Wh[NUM='sg'] -> N[]/Wh[NUM='sg'] SV[NUM='sg'] *
+    Feature Bottom Up Predict Combine Rule:
+    |. # . . . . .| [1:1] SV[NUM='sg'] -> V[NUM='sg', SUBCAT='intrans', TENSE='pas'] *
+    Feature Single Edge Fundamental Rule:
+    |. # . . . . .| [1:1] ST[]/Wh[NUM='sg'] -> N[]/Wh[NUM='sg'] SV[NUM='sg'] *
+    Feature Bottom Up Predict Combine Rule:
+    |. . # . . . .| [2:2] SV[NUM='sg'] -> V[NUM='sg', SUBCAT='intrans', TENSE='pas'] *
+    Feature Single Edge Fundamental Rule:
+    |. . # . . . .| [2:2] ST[]/Wh[NUM='sg'] -> N[]/Wh[NUM='sg'] SV[NUM='sg'] *
+    Feature Bottom Up Predict Combine Rule:
+    |. . . # . . .| [3:3] SV[NUM='sg'] -> V[NUM='sg', SUBCAT='intrans', TENSE='pas'] *
+    Feature Single Edge Fundamental Rule:
+    |. . . # . . .| [3:3] ST[]/Wh[NUM='sg'] -> N[]/Wh[NUM='sg'] SV[NUM='sg'] *
+    Feature Bottom Up Predict Combine Rule:
+    |. . . . # . .| [4:4] SV[NUM='sg'] -> V[NUM='sg', SUBCAT='intrans', TENSE='pas'] *
+    Feature Single Edge Fundamental Rule:
+    |. . [---] . .| [2:4] S[] -> SN[NUM='sg'] SV[NUM='sg'] *
+    |. . [---] . .| [2:4] ST[] -> SN[NUM='sg'] SV[NUM='sg'] *
+    |. . . . # . .| [4:4] ST[]/Wh[NUM='sg'] -> N[]/Wh[NUM='sg'] SV[NUM='sg'] *
+    Feature Bottom Up Predict Combine Rule:
+    |. . . . . # .| [5:5] SV[NUM='sg'] -> V[NUM='sg', SUBCAT='intrans', TENSE='pas'] *
+    Feature Single Edge Fundamental Rule:
+    |. . . . . # .| [5:5] ST[]/Wh[NUM='sg'] -> N[]/Wh[NUM='sg'] SV[NUM='sg'] *
+    Feature Single Edge Fundamental Rule:
+    |. . . . [-] .| [4:5] SC[]/Wh[NUM='sg'] -> C[] ST[]/Wh[NUM='sg'] *
+    Feature Single Edge Fundamental Rule:
+    |. [-------] .| [1:5] SV[]/Wh[NUM='sg'] -> V[NUM='sg', SUBCAT='decir', TENSE='pas'] SN[NUM='sg'] SC[]/Wh[NUM='sg'] *
+    Feature Single Edge Fundamental Rule:
+    |[---------] .| [0:5] S[] -> Wh[NUM='sg'] SV[]/Wh[NUM='sg'] *
+    Feature Bottom Up Predict Combine Rule:
+    |. . . . . . #| [6:6] SV[NUM='sg'] -> V[NUM='sg', SUBCAT='intrans', TENSE='pas'] *
+    Feature Single Edge Fundamental Rule:
+    |. . . . . . #| [6:6] ST[]/Wh[NUM='sg'] -> N[]/Wh[NUM='sg'] SV[NUM='sg'] *
 
 
 ## Uso de rasgos para significado
@@ -1448,7 +1641,7 @@ Los rasgos pueden utilizarse a su vez para construir una representación semánt
 En semántica formal existe una función particular, que se conoce con el nombre de función interpretación, y que se anota con corchetes dobles. La función interpretación devuelve por cada expresión lingüística su denotación. Las denotaciones pueden ser de dos tipos: 
 
 - elementos atómicos (típicamente objetos o proposiciones, pero también hay otras ontologías que incluyen mundos posibles, eventos y tiempos, entre otras cosas)
-- funciones. 
+- funciones
 
 El uso de rasgos para dar cuenta del significado consiste en que la función denotación sea el valor de un rasgo semántico.
 
@@ -1457,26 +1650,28 @@ En el [libro de NLTK](https://www.nltk.org/book/ch10.html) y en la [documentaci�
 
 Las funciones equivalen a conjuntos y se expresan en el llamado cálculo lambda. 
 
-\x. x fuma
+```\x. x fuma```
 
 Esta es una función que toma un x y devuelve verdadero si x fuma y falso si x no fuma. En términos de conjuntos equivale al conjunto de todos los fumadores (ténicamente equivale al conjunto característico de todos los fumadores, que es el que devuelve verdadero si x fuma y falso si x no fuma).
 
 Hay dos operaciones básicas de cálculo lambda que son particularmente relevantes (una tercera no tuvo tanta repercusión en la semántica formal):
 
-- Conversión alpha (o reducción alpha): cambiar el nombre de una variable y, conjuntamente, el de todas las variables ligadas con ella.
-`[\x. x fuma] = [\y. y fuma] = [\z. z fuma] = ...`
-- Conversión lambda (o reducción beta): cuando combinamos una función con un argumento, eliminar el prefijo lambda y reemplazar todas las ocurrencias de la variable que introduce ese prefijo por el argumento.
+- Conversión _alpha_ (o reducción _alpha_): cambiar el nombre de una variable y, conjuntamente, el de todas las variables ligadas con ella.
 
-- `[\x. x fuma](cata) = cata fuma`
-- `[\f. f](\x. x fuma) = \x. x fuma`
-- `[\f. [\g. [\x. g(x)=f(x)=1]]](\x. x fuma)(\x. x baila) = [\x. [\x. x fuma](x)=[\x. x baila](x)=1] = [\x x fuma y x baila]` 
+    ```[\x. x fuma] = [\y. y fuma] = [\z. z fuma] = ...```
+
+- Conversión lambda (o reducción _beta_): cuando combinamos una función con un argumento, eliminar el prefijo lambda y reemplazar todas las ocurrencias de la variable que introduce ese prefijo por el argumento.
+
+    - `[\x. x fuma](cata) = cata fuma`
+    - `[\f. f](\x. x fuma) = \x. x fuma`
+    - `[\f. [\g. [\x. g(x)=f(x)=1]]](\x. x fuma)(\x. x baila) = [\x. [\x. x fuma](x)=[\x. x baila](x)=1] = [\x x fuma y x baila]` 
 
 Las interpretación semántica de las expresiones lingüísticas se da a partir del significado de sus partes y su combinación mediante reglas que dependen de la forma del árbol y de los tipos de las funciones. Las reglas más frecuentes son: 
 
-- Aplicación funcional: Si un nodo A domina a dos nodos B y C tales que B es una función cuyo dominio incluye a C, entonces [[A]]=[[B]]([[C]])
+- Aplicación funcional: Si un nodo A domina a dos nodos B y C tales que B es una función cuyo dominio incluye a C, entonces [[A]]=\[[B]]([[C]])
 - Modificación de predicados: Si un nodo A domina a dos nodos B y C tales que los dos nodos son funciones que van del dominio de los individuos al dominio de los valores de verdad, entonces [[A]] = \x. [[B]]=[[C]]=1
 
-Las fcfg implementan la función intepretación como valor de un rasgo semántico y reemplazando las reglas que dependen de la forma del árbol directamente por restricciones en las reglas de reescritura. Estas restricciones consisten básicamente en la unificación mediante variables idénticas.
+Las FCFG implementan la función intepretación como valor de un rasgo semántico y reemplazando las reglas que dependen de la forma del árbol directamente por restricciones en las reglas de reescritura. Estas restricciones consisten básicamente en la unificación mediante variables idénticas.
 
 
 ```python
@@ -1598,38 +1793,6 @@ for results in nltk.interpret_sents(sents, grammar):
         (PropN[GEN='fem', -LOC, NUM='sg', SEM=<\P.P(cata)>] Cata))
       (VP[NUM='sg', SEM=<\x.fumar(x)>]
         (IV[NUM='sg', SEM=<\x.fumar(x)>, TNS='pres'] fuma)))
-
-
-## Semántica eventiva
-
-Un tipo de semántica formal que hoy ha ganado mucha popularidad es la semántica eventiva. La semántica eventiva concibe el significado de las oraciones como cuantificación sobre eventos: 
-
-- Juan le dio ayer el libro a Pedro en la casa.
-- Existe un e tal que Agente(e, Juan) & Tema(e, el libro) & Meta(e, Pedro) & en(e, la casa) & Pasado(e)
-
-La semántica neodavidsoniana permite dispensar de grandes listas de subclases (verbos transitivos, verbos intransitivos, verbos ditransitivos, verbos bivalentes, verbos impersonales, verbos que toman distintos tipos de sintagmas preposicionales) y simplificar, en consecuencia, el léxico. Esto se hace al costo de dar una denotación más compleja a las entradas léxicas (que sin embargo, se puede automatizar si se tienen listas léxicas como las de freeling) y a las reglas de reescritura. Este tipo de enfoques propenden a sobregenerar, pero, naturalmente, este no es un problema si lo que nos interesa es parsear oraciones.
-
-
-```python
-sents = ['Cata dio Ficciones a Chafa']
-grammar = 'gramaticas/semantica_eventiva_base.fcfg'
-for results in nltk.interpret_sents(sents, grammar):
-    for (synrep, semrep) in results:
-             print(synrep)
-```
-
-    (S[SEM=<(exists e.agente(e,cata) & dar(e) & pasado(e) & tema(e,ficciones) & meta(e,chafa))>]
-      (NP[+ANIM, GEN='fem', NUM='sg', SEM=<\P.P(cata)>]
-        (PropN[+ANIM, GEN='fem', NUM='sg', SEM=<\P.P(cata)>] Cata))
-      (VP[NUM='sg', SEM=<\e.(dar(e) & pasado(e) & tema(e,ficciones) & meta(e,chafa))>]
-        (V[NUM='sg', SEM=<\e.(dar(e) & pasado(e))>, TNS='pas'] dio)
-        (NP[-ANIM, GEN='masc', NUM='sg', SEM=<\P.P(ficciones)>]
-          (PropN[-ANIM, GEN='masc', NUM='sg', SEM=<\P.P(ficciones)>]
-            Ficciones))
-        (PP[+A, SEM=<\P.P(chafa)>]
-          (P[+a] a)
-          (NP[+ANIM, GEN='masc', NUM='sg', SEM=<\P.P(chafa)>]
-            (PropN[+ANIM, GEN='masc', NUM='sg', SEM=<\P.P(chafa)>] Chafa)))))
 
 
 ## Referencias
