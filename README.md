@@ -114,13 +114,14 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
     <td>
       <ul>
         <li>Repaso de la gramática generativa. El minimalismo. Operaciones básicas: ensamble interno, ensamble externo, agree. Teoría de X'. Teoría de la frase desnuda. Estructura básica de la cláusula.</li>
-        <li>Gramáticas minimalistas (Minimalist grammars), Conflated Minimalist Grammars, Phase-based Minimalist Grammars, Relativized Minimalist Grammars. Las operaciones de transferencia, selección, ensamble (Merge), el léxico y los ítems léxicos.</li>
-        <li>Implementación en Prolog y Python: mgpx parser e implementación del minimalismo de Alex Warstadt.</li>
+        <li>Gramáticas minimalistas (Minimalist grammars). Las operaciones de selección, ensamble (Merge), el léxico y los ítems léxicos.</li>
+        <li>Implementación en Prolog: mgpx parser.</li>
       </ul>
     </td>
     <td>
       <ul>
-        <li><a href="./Clase-06/ParserMinimalistaStabler1/instructions.md">Instrucciones para correr el parser minimalista en Prolog</a></li>
+        <li><a href="./Clase-06/handout.pdf">Apunte sobre Gramáticas Minimalistas</a></li>
+        <li><a href="./Clase-06/ParserMinimalistaStabler1/instructions.md">Instrucciones para correr un parser minimalista en Prolog</a></li>
       </ul>
     </td>
   </tr>
@@ -129,13 +130,14 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
     <td>10/05/22</td>
     <td>
       <ul>
-        <li>Gramáticas minimalistas con movimiento de núcleos, adjunción, incorporación.</li>
-        <li>Implementación en Prolog y Python: mghapx parser.</li>
+        <li>Gramáticas minimalistas con ensamble interno (movimiento de remanentes, movimiento de núcleos).</li>
+        <li>Implementación en Prolog y Python: mghapx parser e implementación del minimalismo de <a href="https://github.com/alexwarstadt/minimalism">Alex Warstadt</a>.</li>
       </ul>
     </td>
     <td>
       <ul>
-        <li><a href="./Clase-07/ParserMinimalistaStabler2/instructions.md">Instrucciones para correr el parser minimalista en Prolog</a></li>
+        <li><a href="./Clase-07/ParserMinimalistaStabler2/instructions.md">Instrucciones para correr un parser minimalista en Prolog</a></li>
+        <li><a href="./Clase-07/handout.pdf">Apunte sobre Gramáticas Minimalistas</a></li>
       </ul>
     </td>
   </tr>
@@ -144,13 +146,15 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
     <td>17/05/22</td>
     <td>
       <ul>
+        <li>Gramática minimalista. Adjunción, los operadores >> y << </li>
         <li>Nociones básicas de las gramáticas de unificación y rasgos: matrices de rasgos, rasgos simples y complejos, unificación y subsunción.</li>
-        <li>Implementación mediante Feature-based grammars en NLTK.</li>
       </ul>
     </td>
     <td>
       <ul>
-        <li><a href="./Clase-08/Clase-08-jupyter.md">Visualización de Notebook</a></li>
+        <li><a href="./Clase-08/ho-minimalismo3.pdf">Apunte sobre Gramáticas Minimalistas</a></li>
+        <li><a href="./TPs/tp3.pdf">TP #3</a></li>
+        <li><a href="./Clase-08/handout-fcfg.pdf">Apunte sobre FCFG</a></li>
       </ul>
     </td>
   </tr>
@@ -159,26 +163,25 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
     <td>24/05/22</td>
     <td>
       <ul>
-        <li>LFG: estructura-c, estructura-f, estructura-a, ecuación funcional y descripción funcional.</li>
-        <li>Implementaciones computacionales: XLE (demo).</li>
+        <li>Gramáticas de unificación y rasgos. Implementación mediante Feature-based grammars en NLTK</li>
       </ul>
     </td>
-    <td></td>
+    <td>
+      <ul>
+        <li><a href="./Clase-09/fcfg.md">Notebook sobre FCFG</a></li>
+      </ul>
+    </td>
   </tr>
   <tr>
     <td><a href="./Clase-10/index.md">10</a></td>
     <td>31/05/22</td>
     <td>
       <ul>
-        <li>HPSG: esquemas de frase, reglas léxicas y structure sharing.</li>
-        <li>Minimal Recursion Semantics.</li>
-        <li>Implementaciones computacionales: ACE, pydelphin.</li>
+        <li>LFG: estructura-c, estructura-f, estructura-a, ecuación funcional y descripción funcional.</li>
+        <li>Implementaciones computacionales: XLE (demo).</li>
       </ul>
     </td>
     <td>
-      <ul>
-        <li><a href="./Clase-10/Clase-10-jupyter.md">Visualización de Notebook</a></li>
-      </ul>
     </td>
   </tr>
   <tr>
@@ -244,7 +247,7 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
   </tr>
   <tr>
     <td><a href="./Clase-15/index.md">15</a></td>
-    <td>05/05/22</td>
+    <td>05/07/22</td>
     <td>
       <ul>
         <li>Cierre de cursada.</li>

@@ -13,15 +13,15 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 
-% Este archivo está simplificado por Fernando Carranza para correr solo una selección 
-% ilustrativa de las gramáticas minimalistas para su uso interno en las clases del 
-% seminario "Gramáticas formales: formalismos e implementaciones" (Carranza y Zdrojewski) 
+% Este archivo estï¿½ simplificado por Fernando Carranza para correr solo una selecciï¿½n 
+% ilustrativa de las gramÃ¡ticas minimalistas para su uso interno en las clases del 
+% seminario "Gramï¿½ticas formales: formalismos e implementaciones" (Carranza y Zdrojewski) 
 % durante el primer cuatrimestre de 2022, Universidad de Buenos Aires.
 % 
-% Para la versión original de Stabler remitimos a 
+% Para la versiï¿½n original de Stabler remitimos a 
 % https://linguistics.ucla.edu/person/edward-stabler/
 %
-% Para hacer que el parser corra línea por línea comentar en lhapx función everystep
+% Para hacer que el parser corra lï¿½nea por lï¿½nea comentar en lhapx funciï¿½n everystep
 % todo:
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -39,7 +39,7 @@
 :- op(500, xfy, >>). % for adjunction
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Visualizado de árboles
+% Visualizado de ï¿½rboles
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % for tree display
@@ -55,21 +55,26 @@
 :- ensure_loaded('parser/mghapx'),ensure_loaded('parser/lhapx').  % TG parser and lexical sequence parser
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Gramáticas
+% Gramï¿½ticas
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % GRAMMARS REQUIRING HEAD MOVEMENT (mghapx+lhapx)
-:- ['grammars/spanish1']. % 
+%:- ['grammars/spanish1']. % 
+%:- ['grammars/gh6']. %
+%:- ['grammars/larsonian1']. %
+:- ['grammars/hmtest1']. %
+ 
+ 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Oraciones para probar (seleecionar de la gramática que corresponda)
+% Oraciones para probar (seleecionar de la gramï¿½tica que corresponda)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % spanish.pl
 % showLexicon.
 % showParse(['Juan',leer,'-pres',el,libro]).
 % showParse(['Romi',leer,'-pdo',el,libro]).
-% y así sucesivamente
+% y asï¿½ sucesivamente
 
 
 

@@ -2,7 +2,7 @@
 
 ## Información básica
 
-Al bajarse el repositorio de la cursada, en la carpeta correspondiente a la clase 6 van a encontrar una carpeta llamada ParserMinimalistaStabler2. En esta carpeta se encuentra el código simplificado por el grupo docente para correr en Prolog el Parser Minimalista desarrollado por Stabler, que pueden encontrar en su versión original en (la página de Stabler)[https://linguistics.ucla.edu/person/edward-stabler/]. 
+Al bajarse el repositorio de la cursada, en la carpeta correspondiente a la clase 7 van a encontrar una carpeta llamada ParserMinimalistaStabler2. En esta carpeta se encuentra el código simplificado por el grupo docente para correr en Prolog el Parser Minimalista desarrollado por Stabler, que pueden encontrar en su versión original en [la página de Stabler](https://linguistics.ucla.edu/person/edward-stabler/).
 
 Esta versión simplificada es capaz de parsear gramáticas minimalistas que aceptan las operaciones de ensamble externo, ensamble interno, operaciones de licenciamiento con rasgos, movimiento de núcleos e incorporación.
  
@@ -65,3 +65,6 @@ Para poder correr estos materiales es preciso tener instalado Prolog, LaTeX y Wi
           	 or anything else	for this help
    ```
 
+{% include copybutton.html %}
+
+{% include additional_content.html %}

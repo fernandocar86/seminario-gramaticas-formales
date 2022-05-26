@@ -13,12 +13,12 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 
-% Este archivo está simplificado por Fernando Carranza para correr solo una selección 
-% ilustrativa de las gramáticas minimalistas para su uso interno en las clases del 
-% seminario "Gramáticas formales: formalismos e implementaciones" (Carranza y Zdrojewski) 
+% Este archivo estï¿½ simplificado por Fernando Carranza para correr solo una selecciï¿½n 
+% ilustrativa de las gramï¿½ticas minimalistas para su uso interno en las clases del 
+% seminario "Gramï¿½ticas formales: formalismos e implementaciones" (Carranza y Zdrojewski) 
 % durante el primer cuatrimestre de 2022, Universidad de Buenos Aires.
 %
-% Para la versión original de Stabler remitimos a 
+% Para la versiï¿½n original de Stabler remitimos a 
 % https://linguistics.ucla.edu/person/edward-stabler/
 %
 %
@@ -37,7 +37,7 @@
 :- op(500, xfy, >>). % for adjunction
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Visualizado de árboles
+% Visualizado de Ã¡rboles
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % for tree display
@@ -53,77 +53,35 @@
 :- ensure_loaded('parser/mgpx'),ensure_loaded('parser/lpx').  % basic MG parser and lexical sequence parser
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Gramáticas
+% GramÃ¡ticas
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % GRAMMARS REQUIRING ONLY PHRASAL MOVEMENT (mgpx+lpx)
-:- ['grammars/anbncn']. % 
-%:- ['grammars/g0spanish']. % simple SOV 
-%:- ['grammars/g-ne']. % "titus praise -s lavinia" inspired by Mahajan 2000
+%:- ['grammars/g0spSVO'].   % Simple SVO espaÃ±ol
+%:- ['grammars/g0'].        % Simple SOV inglÃ©s
+:- ['grammars/g0spanish']. % simple SOV espaÃ±ol
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Oraciones para probar (seleecionar de la gramática que corresponda)
+% Oraciones para probar (seleecionar de la gramï¿½tica que corresponda)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% anbncn.pl
+% g0.pl
 
-% showParse([a,b,c]).
-% showParse([a,a,b,b,c,c]).
-% showParse([a,a,a,b,b,b,c,c,c]).
-% y así sucesivamente
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% g0spSVO.pl
+% showParse(['Ivan','come','la','torta']).
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % g0spanish.pl
-% showParse([la,reina,la,torta,comió]).
-% showParse(['cuál',torta,la,reina,'comió']).
-% showParse(['la,reina,'rió']).
-% y así sucesivamente
+% showParse([la,reina,la,torta,comiï¿½]).
+% showParse(['cuï¿½l',torta,la,reina,'comiï¿½']).
+% showParse(['la,reina,'riï¿½']).
+% y asï¿½ sucesivamente
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% g-ne.pl
-
-% gh1(X).
-% showParse(['Titus',know,'-s',that,'Lavinia',have,'-s',eat,'-en']).
-% showParse(['Titus',wonders,'-s',that,'Lavinia',laugh,'-s']).
-% showParse(['Titus',think,'-s','Lavinia',laugh,'-s']).
-% showParse(['Titus',doubt,'-s',the,claim,that,'Lavinia',laugh,'-s']).
-% showParse(['Titus',know,'-s',what,'Lavinia',praise,'-s']).
-% showParse(['Titus',wonder,'-s',which,king,'Lavinia',praise,'-s']).
-% showParse(['Titus',seem,'-s',to,laugh]).
-% showParse(['Titus',know,'-s',that,'Lavinia',seem,'-s',to,laugh]).
-% showParse(['Titus',seem,'-s',to,praise,'Lavinia']).
-% showParse(['Titus',seem,'-s',to,be,laugh,'-ing']).
-% showParse(['Titus',seem,'-s',to,have,eat,'-en',the,pie]).
-% showParse(['Titus',seem,'-s',to,have,been,eat,'-ing',the,pie]).
-% showParse(['Titus',seem,'-s',happy]).
-% showParse(['Titus',be,'-s',happy]).
-% showParse(['Titus',will,'-s',be,happy]).
-% showParse(['Titus',be,'-s',be,'ing',happy]).
-% showParse(['Titus',be,'-s',have,'-ing',been,happy]).
-% showParse(['Titus',be,'-s',proud]).
-% showParse(['Titus',be,'-s',proud,of,'Lavinia']).
-% showParse(['Titus',prefer,'-s','Lavinia',happy]).
-% showParse(['Titus',prefer,'-s',his,coffee,black]).
-% showParse(['Titus',prefer,'-s',his,shirt,white]).
-% showParse(['Titus',prefer,'-s','Lavinia',proud]).
-% showParse(['Titus',prefer,'-s','Lavinia',proud,of,'Tamara']).
-% showParse(['Titus',prefer,'-s','Lavinia',proud,about,it]).
-% showParse([the,student,be,'-s',up,the,creek]).
-% showParse(['Titus',prefer,'-s','Lavinia',to,be,happy]).
-% showParse(['Titus',prefer,'-s','Lavinia',to,laugh]).
-% showParse(['Titus',prefer,'-s','Lavinia',to,be,laugh,'-ing']).
-% showParse(['Titus',prefer,'-s','Lavinia',to,have,been,eat,'-ing']).
-% showParse([the,student,try,'-s',to,laugh]).
-% showParse([the,student,want,'-s',to,laugh]).
-% showParse([the,student,want,'-s','Lavinia',to,be,happy]).
-% showParse([the,student,try,'-s','Lavinia',to,be,happy]).
-% showParse([the,student,want,'-s','Lavinia',to,laugh]).
-% showParse([the,student,try,'-s','Lavinia',to,laugh]).
-% showParse([the,student,consider,'-s','Lavinia',to,be,happy]).
-% showParse([the,student,consider,'-s',to,be,happy]).
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

@@ -22,7 +22,7 @@ d- Estos amigos manipulan jugadores con sus piezas. - Shift Reduce Parser
 
 La entrega se hará siguiendo lo indicado en el "Flujo de trabajo". 
 
-El plazo límite para entregar este trabajo es el **martes 26 de abril a las 9:00 am**.
+El plazo límite para entregar este trabajo es el **martes 03 de mayo a las 9:00 am**.
 
 Para ese horario esperamos que completen [este formulario](https://forms.gle/EHqi19bi48UgMth59) en el que se les solicitará que especifiquen quiénes son las personas que integran el grupo de trabajo y cuál es el repositorio que debemos evaluar.
 
@@ -59,4 +59,6 @@ Se evaluarán los siguientes aspectos:
 10-30 pts: insuficiente
 
 
+{% include copybutton.html %}
 
+{% include additional_content.html %}

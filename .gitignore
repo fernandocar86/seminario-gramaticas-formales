@@ -1,3 +1,35 @@
+# Files
+*ace
+*avm.pdf
+*avm.tex
+*ltree.tex
+*tree.pdf
+*motomamifiltrado.txt
+*wishtemp
+*/malt/
+
+# LaTeX
+*.ps
+*.aux
+*.out
+*.blg
+*.bbl
+*.dvi
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.inf
+*.ind
+*.lot
+*.lof
+*.log
+*.nlo
+*.nls
+*.synctex.gz
+*.toc
+*.sta
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -25,17 +57,6 @@ share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-Clase-03/data/motomamifiltrado.txt
-Clase-05/ParserMinimalistaStabler1/ltree.tex
-Clase-05/ParserMinimalistaStabler1/wishtemp
-Clase-06/ParserMinimalistaStabler2/ltree.tex
-Clase-06/ParserMinimalistaStabler2/wishtemp
-Clase-09/ace
-Clase-09/avm.tex
-Clase-09/avm.pdf
-Clase-09/tree.tex
-Clase-09/tree.pdf
-Clase-11/malt/
 MANIFEST
 
 # PyInstaller
@@ -155,6 +176,9 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+# emacs
+*~undo-tree~
 
 # PyCharm
 #  JetBrains specific template is maintainted in a separate JetBrains.gitignore that can

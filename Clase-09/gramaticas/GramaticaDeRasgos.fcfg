@@ -1,0 +1,40 @@
+% start S
+#Adaptado al español de la gramática elaborada por Klein para el libro de NLTK
+#
+# ###################
+# Reglas de la Gramática
+# ###################
+
+# Reescritura de la Raíz
+S -> SN[NUM=?n] SV[NUM=?n]
+
+# Reescritura de SN
+SN[NUM=?n] -> PropN[NUM=?n] 
+SN[NUM=?n,GEN=?g] -> Det[NUM=?n,GEN=?g] N[NUM=?n,GEN=?g]
+
+# Reescritura de SV
+SV[TIEMPO=?t, NUM=?n] -> V[TIEMPO=?t, NUM=?n]
+
+# ###################
+# Lexical Productions
+# ###################
+
+Det[NUM=sg,GEN=masc] -> 'este' | 'el'
+Det[NUM=pl,GEN=masc] -> 'estos' | 'los'
+Det[NUM=sg,GEN=fem] -> 'esta' | 'la'
+Det[NUM=pl,GEN=fem] -> 'estas' | 'las'
+
+PropN[NUM=sg]-> 'Cata' | 'Julia' | 'Fede' | 'Fer' | 'Martín' | 'Maca' | 'Vicky' | 'Pablo'
+
+N[NUM=sg,GEN=fem] -> 'chica' | 'mujer' | 'persona' | 'criatura'
+N[NUM=sg,GEN=masc] -> 'chico' | 'hombre' | 'sujeto' 
+N[NUM=pl,GEN=fem] -> 'chicas' | 'mujeres' | 'personas' | 'criaturas'
+N[NUM=pl,GEN=masc] -> 'chicos' | 'hombres' | 'sujetos' 
+
+V[TIEMPO=pres,NUM=sg] -> 'desaparece' | 'camina' | 'muerde' | 'llora' | 'aparece' | 'viene' | 'estornudan'
+V[TIEMPO=pres,NUM=pl] -> 'desaparecen' | 'caminan' | 'lloran' | 'muerden' | 'aparecen' | 'vienen' | 'estornudan'
+
+V[TIEMPO=pas,NUM=sg] -> 'desapareció' | 'caminó' | 'mordió' | 'lloraba' | 'apareció' | 'vino' | 'estornudó'
+V[TIEMPO=pas,NUM=pl] -> 'desaparecieron' | 'caminaron' | 'mordieron' | 'lloraban' | 'aparecieron' | 'vinieron' | 'estornudaron'
+
+
