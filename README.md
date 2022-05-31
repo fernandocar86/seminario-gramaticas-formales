@@ -182,6 +182,9 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
       </ul>
     </td>
     <td>
+      <ul>
+        <li><a href="./Clase-10/handout.pdf">Apunte sobre LFG</a></li>
+      </ul>
     </td>
   </tr>
   <tr>
