@@ -25,7 +25,7 @@ SC/?x[NUM=?n] -> C ST/?x[NUM=?n]
 # Reescritura de C
 C -> 'que'
 
-# Reescritura de ST
+# Reescritura de STiempo
 ST -> SN[NUM=?n] SV[NUM=?n]
 ST/?x[NUM=?n] -> N/?x[NUM=?n] SV[NUM=?n]
 
@@ -69,7 +69,7 @@ Wh[NUM=pl] -> 'quiénes'
 V[SUBCAT='intrans', TENSE=pres,NUM=sg] -> 'desaparece' | 'camina' | 'muerde' | 'llora' | 'aparece' | 'viene' | 'estornuda'
 V[SUBCAT='intrans', TENSE=pres,NUM=pl] -> 'desaparecen' | 'caminan' | 'lloran' | 'muerden' | 'aparecen' | 'vienen' | 'estornudan'
 
-V[SUBCAT='intrans', TENSE=pas,NUM=sg] -> 'desapareció' | 'caminó' | 'mordió' | 'lloraba' | 'apareció' | 'vino' | 'estornudó'| 
+V[SUBCAT='intrans', TENSE=pas,NUM=sg] -> 'desapareció' | 'caminó' | 'mordió' | 'lloraba' | 'apareció' | 'vino' | 'estornudó'
 V[SUBCAT='intrans', TENSE=pas,NUM=pl] -> 'desaparecieron' | 'caminaron' | 'mordieron' | 'lloraban' | 'aparecieron' | 'vinieron' | 'estornudaron'
 
 # Verbos transitivos
@@ -80,6 +80,3 @@ V[SUBCAT='trans', TENSE=pas,NUM=sg] -> 'vio'
 
 V[SUBCAT='decir', TENSE=pres,NUM=sg] -> 'dice' | 'afirma' | 'defiende' | 'argumenta' | 'sostiene' 
 V[SUBCAT='decir', TENSE=pas,NUM=sg] -> 'dijo' | 'afirmó' | 'defendió' | 'argumentó' | 'sostuvo' 
-
-
-
