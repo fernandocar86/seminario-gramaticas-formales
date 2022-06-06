@@ -17,6 +17,7 @@ SN[NUM=?n,GEN=?g] -> Det[NUM=?n,GEN=?g] N[NUM=?n,GEN=?g]
 SV[NUM=?n] -> V[SUBCAT='intrans', TENSE=?t, NUM=?n]
 SV[NUM=?n] -> V[SUBCAT='decir', TENSE=?t, NUM=?n] SC
 SV/?x[NUM=?n] -> V[SUBCAT='decir', TENSE=?t, NUM=?m] SN[NUM=?m] SC/?x[NUM=?n]
+SV/?x[NUM=?n] -> V[SUBCAT='trans', TENSE=?t, NUM=?m] N/?x[NUM=?m]
 
 # Reescritura de SC
 SC -> C ST
@@ -28,6 +29,7 @@ C -> 'que'
 # Reescritura de STiempo
 ST -> SN[NUM=?n] SV[NUM=?n]
 ST/?x[NUM=?n] -> N/?x[NUM=?n] SV[NUM=?n]
+ST/?x[NUM=?n] -> SV/?x[NUM=?n]
 
 # ###################
 # Lexical Productions
