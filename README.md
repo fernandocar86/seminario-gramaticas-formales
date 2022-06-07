@@ -199,6 +199,7 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
     </td>
     <td>
       <ul>
+        <li><a href="./Clase-11/handout.pdf">Apunte sobre Gramáticas de Dependencias</a></li>
         <li><a href="./Clase-11/Clase-11-jupyter.md">Visualización de Notebook</a></li>
       </ul>
     </td>
