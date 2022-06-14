@@ -9,9 +9,9 @@
 
 
 ```python
-import spacy
-import nltk
 import re
+import nltk
+import spacy
 from nltk import Tree
 from spacy import displacy 
 from nltk.parse import malt
@@ -190,7 +190,16 @@ doc.sentences[0].words[0].head
 
 ## Freeling
 
-[Demo](https://nlp.lsi.upc.edu/freeling/demo/demo.php)
+[Demo visual](https://nlp.lsi.upc.edu/freeling/demo/demo.php)
+
+
+```python
+# Sugerencias para probar:
+# A las 4 de la tarde tomo leche y como tostadas.
+# No tengo más sueño.
+# ¿A quién dijiste que viste el sábado?
+# Dije que vi a mi tía.
+```
 
 ## Malt Parser
 
@@ -250,14 +259,14 @@ maltParser = nltk.parse.malt.MaltParser(os.getenv('MALT_PARSER'), os.getenv('MAL
 
 
 ```python
-oracion8 = input()
-stemma = maltParser.parse_one(oracion8.split()).tree()
+oracion_malt = 'John saw Mary with her new dress'
+stemma = maltParser.parse_one(oracion_malt.split()).tree()
 print(stemma)
 ```
 
 ## Spacy - Dependency parser
 
-### Nota para quien no tenga la MV: 
+**Nota para quien no tenga la MV:**
 
 Antes de correr hay que instalar spacy. Con pip3, eso se puede hacer con el comando 
 
@@ -271,25 +280,34 @@ Alternativamente puede probarse de instalar es_core_news_md.
 
 `python3 -m spacy download es_core_news_md`
 
-En ese caso, para correrlo hay que cambiar en el código de abajo `es_core_news_sm` por `es_core_news_md`
+En ese caso, para correrlo hay que cambiar en el código de abajo `es_core_news_sm` por `es_core_news_md`.
 
 
 ```python
-def gramaticadependencias(sentence):       #Define la función
-    nlp = spacy.load('es_core_news_sm')    #Carga el modelo entrenado
-    doc = nlp(sentence)                    #define una variable doc con la oración procesada por el modelo
-    #for token in doc:               
-        #print(token.text, token.dep_, token.head.text, token.head.pos_,
-        #    [child for child in token.children])
-    #options = {"compact": True, "bg": "#09a3d5","color": "white", "font": "Source Sans Pro"}
-    #displacy.render(doc, style='dep', jupyter=True, options=options)
-    displacy.render(doc, style='dep', jupyter=True)
+# Carga el modelo
+nlp = spacy.load('es_core_news_sm')
+
+# Procesa la oración
+sent = "¿quiénes dijo Juan que estornudaron?"
+doc = nlp(sent)
+
+#options = {"compact": True, "bg": "#09a3d5","color": "white", "font": "Source Sans Pro"}
+# Visualización
+spacy.displacy.render(doc, style="dep")
 ```
 
 
 ```python
-oracion5 = input('Escribí una oración\n')
-gramaticadependencias(oracion5)
+def gramaticadependencias(sentence):                # Define la función
+    nlp = spacy.load('es_core_news_sm')             # Carga el modelo entrenado
+    doc = nlp(sentence)                             # Procesa la oración con el modelo
+    displacy.render(doc, style='dep', jupyter=True) # Visualiza
+```
+
+
+```python
+oracion_spacy = input('Escribí una oración\n')
+gramaticadependencias(oracion_spacy)
 ```
 
 
