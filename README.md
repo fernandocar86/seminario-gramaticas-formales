@@ -72,7 +72,7 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
     <td>
     <ul>
     	<li><a href="./Clase-03/handout.pdf">Apunte sobre jerarquía de Chomsky</a></li>
-    	<li><a href="./Clase-03/Clase-03-jupyter.md">Notebook librería re</a></li>
+    	<li><a href="./Clase-03/Clase-03-jupyter.md">Notebook sobre librería re</a></li>
     </ul>
     </td>
   </tr>
