@@ -6,7 +6,6 @@
 'cigarrillo' -> 'el'
 'plaza' -> 'la'
 'facultad' -> 'la'
-'fue' -> 'el'
 'fue' -> 'entregado' | 'enviado' | 'fumado' | 'explotado'
 'entregado' -> 'por'
 'explotado' -> 'por'
