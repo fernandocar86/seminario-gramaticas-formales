@@ -38,7 +38,6 @@ def dep_parser(sentence, grammar):         # define una función llamada dep_par
     dep_gram = nltk.data.load(grammar, cache=False) # carga la gramática a nltk
     dep_gram = nltk.DependencyGrammar.fromstring(dep_gram) # parsea la gramática como gramática de dependencias
     pdp = nltk.ProjectiveDependencyParser(dep_gram) # aarga la gramática en el parser
-    print(dep_gram)                        # imprime mi gramática
     for tree in pdp.parse(sent):           # para cada árbol posible en mi gramática para esa oración
         print(tree)                        # lo imprime
         return(tree)
@@ -67,31 +66,18 @@ def npdep_parser(sentence, grammar):                # define una función llamad
     dep_gram = nltk.data.load(grammar, cache=False) # carga la gramática a nltk
     dep_gram = nltk.DependencyGrammar.fromstring(dep_gram) # parsea la gramática como gramática de dependencias
     pdp = nltk.NonprojectiveDependencyParser(dep_gram) # carga la gramática en el parser
-    print(sent)
-    print(dep_gram)                                  # imprime mi gramática
-    g, = pdp.parse(sent)
-    print(g.root['word'])
-    structure = g.tree()
-    print(structure)
-    return(structure)
+    for tree in pdp.parse(sent):
+        print(tree.tree().draw())
+    return tree.tree()
 ```
 
 
 ```python
 #Para correr el Nonproyective Dependency Parser
 
-oracion1 = 'fede fuma el cigarrillo'    # Define la oración a analizar
-grammar1 = 'gramaticas/DG1.txt'        # establece cuál va a ser mi gramática
-npdep_parser(oracion1, grammar1)        # Para correr la función
-```
-
-
-```python
-#Para correr el Nonproyective Dependency Parser
-
-oracion2 = 'quién fuma el cigarrillo'  # Define la oración a analizar
+#oracion2 = 'quién fuma el cigarrillo'  # Define la oración a analizar
 #oracion2 = 'quién dijo fede que fuma'  # Define la oración a analizar
-#oracion2 = 'qué dijo fede que fuma'  # Define la oración a analizar
+oracion2 = 'qué dijo fede que fuma'  # Define la oración a analizar
 # Habría que arreglar la función npdep_parser para que pueda tomar estas dos últimas oraciones
 grammar2 = 'gramaticas/DG2.txt'       # establece cuál va a ser mi gramática
 npdep_parser(oracion2, grammar2)        # Para correr la función
@@ -99,12 +85,9 @@ npdep_parser(oracion2, grammar2)        # Para correr la función
 
 ## PystanfordDependencies
 
-El parser de Stanford se mudó a un nuevo repositorio y cambió su nombre a Stanza. Se puede encontrar la documentación en [https://stanfordnlp.github.io/stanza/](https://stanfordnlp.github.io/stanza/)
-
 
 ```python
 import stanza
-from stanza.models.common.doc import Token
 ```
 
 
@@ -120,7 +103,7 @@ nlp
 
 
 ```python
-doc = nlp("Pablo Neruda escribe poemas") # Anota una oración
+doc = nlp("Pablo Neruda escribe poemas en Capri") # Anota una oración
 doc
 ```
 
@@ -141,7 +124,7 @@ doc.sentences[0].dependencies
 
 
 ```python
-doc = nlp("el poeta chileno escribe poemas y la mujer alemana corta un kuchen")
+doc = nlp("el poeta chileno escribe poemas.")
 doc
 ```
 
@@ -188,9 +171,13 @@ extraer_entidades(doc.sentences[0])
 doc.sentences[0].words[0].head
 ```
 
-## Freeling
+## FreeLing
 
-[Demo visual](https://nlp.lsi.upc.edu/freeling/demo/demo.php)
+FreeLing posee su propio server gratuito que disponibiliza el pipeline de la librería. También se puede descargar
+y correr como un programa local e incluso cuenta con una implementación en Python. Hoy vamos a probar FreeLing 
+en su [demo visual](https://nlp.lsi.upc.edu/freeling/demo/demo.php).
+
+Si hay dudas con el uso de tags de PoS, se pueden revisar rápudamente en esta página: [Descripción del Tagset](https://www.sketchengine.eu/spanish-freeling-part-of-speech-tagset/)
 
 
 ```python
@@ -199,6 +186,8 @@ doc.sentences[0].words[0].head
 # No tengo más sueño.
 # ¿A quién dijiste que viste el sábado?
 # Dije que vi a mi tía.
+# Pablo Neruda escribe poemas en Capri.
+# pablo neruda escribe poemas en capri.
 ```
 
 ## Malt Parser
