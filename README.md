@@ -214,6 +214,7 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
     </td>
     <td>
       <ul>
+        <li><a href="./Clase-12/handout.pdf">Apunte sobre DG como cuádrupla</a></li>
         <li><a href="./Clase-12/dependency-parsers.md">Notebook sobre DP</a></li>
         <li><a href="./Clase-12/spacy-intro.md">Notebook sobre spaCy</a></li>
       </ul>
