@@ -1,55 +1,36 @@
-:- S, NP, NC, PARTP, PP
+:- S, N
 
-		
-D :: NP/NC
-PRO :: NP
+	
+el => N/N
+la => N/N
+una => N/N
+un => N/N
 
-TV :: (S\NP)/NP
-DTV :: TV/PP
+julia => N
+cata => N
+fede => N
+martín => N
+pablo => N
 
+él => N
+ella => N
 
-el => D
-la => D
-una => D
-un => D
+regalo => N
+globo => N
+plaza => N
+facultad => N
+tabaco => N
 
-julia => NP
-cata => NP
-fede => NP
-martín => NP
-pablo => NP
-fer => NP
-vicky => NP
+fuma => S\N
+habla => S\N
 
-él => PRO
-ella => PRO
+conoce => (S\N)/N
+mira => (S\N)/N
 
-regalo => NC
-globo => NC
-plaza => NC
-facultad => NC
-tabaco => NC
+envió => ((S\N)/N)/N
+entregó => ((S\N)/N)/N
 
-fuma => S\NP
+a => N/N
 
-fumó => TV
-explotó => TV
-
-envió => DTV
-entregó => DTV
-
-a => PP/NP
-por => PP/NP
-en => PP/NP
-
-fumado => PARTP/PP
-enviado => PARTP/PP
-entregado => PARTP/PP
-explotado => PARTP/PP
-
-fue => (S\NP)/PARTP
-
-explotó => S\NP
-habla => S\NP
 
 
