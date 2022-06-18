@@ -1,0 +1,4 @@
+# Hacer una gramática que reconozca las siguientes oraciones solo con las categorías S y N:
+# ella mira una película
+# Juan trabaja acá
+# ella mira ese pequeño extraño tatuaje

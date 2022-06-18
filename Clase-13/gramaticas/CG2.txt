@@ -1,0 +1,39 @@
+:- S, N
+
+D :: N/N
+TV :: (S\N)/N
+DTV :: TV/N
+	
+el => D
+la => D
+una => D
+un => D
+
+julia => N
+cata => N
+fede => N
+martín => N
+pablo => N
+
+él => N
+ella => N
+
+regalo => N
+globo => N
+plaza => N
+facultad => N
+tabaco => N
+
+fuma => S\N
+habla => S\N
+
+conoce => TV
+mira => TV
+
+envió => DTV
+entregó => DTV
+
+a => N/N
+
+
+
