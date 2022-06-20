@@ -232,6 +232,7 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
     <td>
       <ul>
         <li><a href="./Clase-13/Clase-13-jupyter.md">Visualización de Notebook</a></li>
+        <li><a href="./Clase-13/handout.pdf">Apunte de introducción a gramáticas categoriales</a></li>
       </ul>
     </td>
   </tr>
