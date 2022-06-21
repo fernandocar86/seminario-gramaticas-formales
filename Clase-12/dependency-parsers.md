@@ -282,7 +282,7 @@ doc = nlp(sent)
 
 #options = {"compact": True, "bg": "#09a3d5","color": "white", "font": "Source Sans Pro"}
 # Visualización
-spacy.displacy.render(doc, style="dep")
+displacy.render(doc, style="dep", jupyter=True)
 ```
 
 
@@ -302,12 +302,11 @@ gramaticadependencias(oracion_spacy)
 
 ```python
 nlp = spacy.load('es_core_news_sm')
-doc = nlp(oracion5)
+doc = nlp(oracion_spacy)
 root = [token for token in doc if token.head == token][0]
 print('| {0:10}| {1:5}| {2:7}| {3:7}| {4:30} |'.format('TEXTO','DEP','N_IZQ','N_DER','ANCESTROS'))
 print('|'+'='*69+'|')
 for descendant in root.subtree:
-    assert root is descendant or root.is_ancestor(descendant)
     print('| {0:10}| {1:5}| {2:7}| {3:7}| {4:30} |'.format(
         descendant.text,
         descendant.dep_,
