@@ -1,0 +1,64 @@
+:- S, NP, NC
+
+# Determinantes		
+el => NP[tres,anim]/NC[masc,anim]
+la => NP[tres,anim]/NC[fem,anim]
+una => NP[tres,anim]/NC[fem,anim]
+un => NP[tres,anim]/NC[masc,anim]
+el => NP[tres,inanim]/NC[masc,inanim]
+la => NP[tres,inanim]/NC[fem,inanim]
+una => NP[tres,inanim]/NC[fem,inanim]
+un => NP[tres,inanim]/NC[masc,inanim]
+
+# Conjunciones
+y => var\.,var/.,var
+o => var\.,var/.,var
+
+# Nombres propios
+julia => NP[tres,anim]
+cata => NP[tres,anim]
+fede => NP[tres,anim]
+martín => NP[tres,anim]
+pablo => NP[tres,anim]
+fer => NP[tres,anim]
+vicky => NP[tres,anim]
+
+# Pronombres nominativos
+yo => NP[uno,anim]
+vos => NP[dos,anim]
+él => NP[tres,anim]
+ella => NP[tres,anim]
+
+# Nombres inanimados
+regalo => NC[masc,inanim]
+globo => NC[masc,inanim]
+plaza => NC[fem,inanim]
+facultad => NC[fem,inanim]
+cigarrillo => NC[masc,inanim]
+
+# Nombres animados
+persona => NC[fem,anim]
+profesor => NC[masc,anim]
+profesora => NC[fem,anim]
+
+# Verbos intransitivos
+fumo => S\NP[uno,anim]
+fumás => S\NP[dos,anim]
+fuma => S\NP[tres,anim]
+fumó => S\NP[tres,anim] 
+explotó => S\NP[tres,inanim]
+hablo => S\NP[uno,anim]
+hablás => S\NP[dos,anim]
+habla => S\NP[tres,anim]
+
+# Verbos transitivos
+fumo => (S\NP[uno,anim])/NP[inanim]
+fumás => (S\NP[dos,anim])/NP[inanim]
+fuma => (S\NP[tres,anim])/NP[inanim]
+agarro => (S\NP[uno,anim])/NP[inanim]
+agarrás => (S\NP[dos,anim])/NP[inanim]
+agarra => (S\NP[tres,anim])/NP[inanim]
+miro => (S\NP[uno,anim])/NP[inanim]
+mirás => (S\NP[dos,anim])/NP[inanim]
+mira => (S\NP[tres,anim])/NP[inanim]
+
