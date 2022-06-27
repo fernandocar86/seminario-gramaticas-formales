@@ -249,6 +249,7 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
       <ul>
         <li><a href="./Clase-14/handout.pdf">Apunte sobre gramáticas categoriales generalizadas</a></li>
         <li><a href="./Clase-14/Clase-14-jupyter.md">Visualización de Notebook</a></li>
+        <li><a href="./TPs/tp4.pdf">TP4</a></li>
       </ul>
     </td>
   </tr>
