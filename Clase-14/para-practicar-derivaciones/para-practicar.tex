@@ -1,0 +1,35 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Archivo para hacer derivaciones categoriales
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Configurar la compilación rápida como PdfLaTex + ver pdf
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Empieza el preámbulo
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper, 12pt]{article} %Tipo de documento y tamaño de letra
+\usepackage[utf8]{inputenc} % Paquete de tipo de letra
+\usepackage[T1]{fontenc} % Paquete de codificación
+\usepackage[spanish]{babel} % Paquete de idioma
+\usepackage[normalem]{ulem} % Paquete de codificación
+\usepackage{lmodern} % La fuente
+
+\usepackage{graphics} % Paquete para escalar las derivaciones
+\usepackage{semantic} % Paquete para las derivaciones 
+% La sintaxis para las derivaciones es la siguiente
+% Si A es la premisa o conjunto de premisas, B la conclusión y C la regla de inferencia
+% El código para la inferencia es \inference{A}{B}[C]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Empieza el documento
+
+\begin{document}
+
+\scalebox{0.7}{\inference{Ringo}{N}[lex] \inference{comió}{(S{\backslash}N)/N}[lex] \inference{el}{N/N}[lex] \inference{sabroso}{N/N}[lex] \inference{hueso}{N}[lex]}
+
+
+\scalebox{0.7}{\inference{El}{N/N}[lex] \inference{tour}{N}[lex] \inference{mágico}{N{\backslash}N}[lex] \inference{misterioso}{N{\backslash}N}[lex] \inference{comenzó}{S{\backslash}N}[lex]}
+
+
+
+\end{document}
