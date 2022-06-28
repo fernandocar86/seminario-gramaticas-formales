@@ -25,6 +25,28 @@
 
 \begin{document}
 
+
+
+\inference{\inference{Ringo}{n}[lex] \inference{duerme}{s{\backslash}n}[lex]}{s}[<apl]
+
+\inference{\inference{\inference{Ringo}{n}[lex]}{s/(s{\backslash}n)}[Asc]\inference{duerme}{s{\backslash}n}[lex]}{s}[>Apl]
+
+
+\scalebox{0.7}{ \inference{\inference{\inference{Macarena}{PN}[lex]\inference{\inference{\inference{riega}{(S{\backslash}PN)/PN}[lex]\inference{\inference{esa}{PN/CN}[lex]\inference{pequeña}{CN/CN}[lex]}{PN/CN}[comp]}{(S{\backslash}PN)/CN}[comp]}{(S/CN){\backslash}PN}[asoc]}{S/CN}[<apl]\inference{planta}{CN}[lex]}{S}[>apl]
+}
+
+\scalebox{0.6}{ \inference{\inference{\inference{Juan}{NP}[lex]}{S/(S{\backslash}NP)}[asc]\inference{\inference{\inference{rompió}{(S{\backslash}NP)/NP}[lex] \inference{el vidrio}{NP}[]}{S{\backslash}NP}[>apl] \inference{\inference{con}{((S{\backslash}NP){\backslash}(S{\backslash}NP))/NP}[lex] \inference{el martillo}{NP}[]}{(S{\backslash}NP){\backslash}(S{\backslash}NP)}[>apl]}{S{\backslash}NP}[<apl]}{S}[>apl]
+}
+
+\scalebox{0.7}{
+\inference{\inference{Ringo}{N}[lex] \inference{\inference{comió}{(S{\backslash}N)/N}[lex] \inference{\inference{el}{N/N}[lex] \inference{\inference{sabroso}{N/N}[lex] \inference{hueso}{N}[lex]}{N}[>apl]}{N}[>apl]}{S{\backslash}N}[>apl]}{S}[<apl]
+}
+
+
+
+\scalebox{0.7}{\inference{\inference{\inference{Ringo}{N}[lex] \inference{\inference{\inference{comió}{(S{\backslash}N)/N}[lex] \inference{\inference{el}{N/N}[lex] \inference{sabroso}{N/N}[lex]}{N/N}[comp]}{(S{\backslash}N)/N}[comp]}{(S/N){\backslash}N}[asoc]}{S/N}[<apl] \inference{hueso}{N}[lex]}{S}[>apl]
+}
+
 \scalebox{0.7}{\inference{Ringo}{N}[lex] \inference{comió}{(S{\backslash}N)/N}[lex] \inference{el}{N/N}[lex] \inference{sabroso}{N/N}[lex] \inference{hueso}{N}[lex]}
 
 
