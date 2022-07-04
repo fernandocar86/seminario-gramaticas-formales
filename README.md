@@ -259,6 +259,7 @@ Para cumplir con la regularidad en este seminario, es necesario realizar una ser
     <td>
       <ul>
         <li>Cierre de cursada.</li>
+        <li>Presentación del <a href="./TPs/trabajo-final.pdf">trabajo final</a>.</li>
       </ul>
     </td>
     <td></td>
