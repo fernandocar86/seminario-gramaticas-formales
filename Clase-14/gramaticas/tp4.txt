@@ -1,0 +1,13 @@
+:- S, NP, NC, A
+
+el => NP/NC
+la => NP/NC
+
+león => NC
+leona => NC
+ 
+corre => S\NP
+está => S\NP/NC
+
+cansada => A
+cansado => A
