@@ -1,0 +1,30 @@
+:- S, NP, NC, A
+
+Vi :: S\NP
+Vtrcomer :: S\NP[anim]/NP[inanim]  # Pusimos "Vtrcomer" porque el verbo comer toma como segundo argumento un objeto inanimado y comible
+Vcopfem :: S\NP[fem]/A[fem]
+Vcopmasc :: S\NP[masc]/A[masc]
+
+# Determinantes #
+el => NP[masc,anim]/NC[masc,anim]
+la => NP[fem,anim]/NC[fem,anim]
+la => NP[fem,inanim]/NC[fem,inanim]
+
+# Nombres #
+león => NC[masc,anim]
+leona => NC[fem,anim]
+carne => NC[fem,inanim]
+
+# Verbos intrasitivos #
+corre => Vi
+
+# Verbos trasitivos #
+come => Vtrcomer   
+
+# Verbos copulativos #
+está => Vcopfem
+está => Vcopmasc
+
+# Adjetivos #
+cansada => A[fem]
+cansado => A[masc]
