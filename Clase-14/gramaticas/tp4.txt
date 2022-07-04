@@ -1,13 +1,16 @@
 :- S, NP, NC, A
 
-el => NP/NC
-la => NP/NC
+el => NP[masc]/NC[masc]
+la => NP[fem]/NC[fem]
 
-león => NC
-leona => NC
+león => NC[masc]
+leona => NC[fem]
  
 corre => S\NP
-está => S\NP/NC
+está => S\NP[fem]/A[fem]
+está => S\NP[masc]/A[masc]
 
-cansada => A
-cansado => A
+cansada => A[fem]
+cansado => A[masc]
+
+#[]
