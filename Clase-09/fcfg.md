@@ -873,8 +873,8 @@ make_graph(fs_b_nltk)
 
 ## Estructuras de rasgos como funciones
 
-> _These simple structures provide the base for a general subsumption relation “$\sqsubseteq$” which imposes a partial informativeness order on arbitrary feature structures S and T. In Shieber’s formulation, feature structures are treated as partial functions from features to values, so that the expression “S(f)” denotes the value that a structure S assigns to a feature f. Similarly,
-dom(S) denotes the domain of features to which a structure S assigns a value. The expression “S(p)” denotes the value assigned a sequence or path of attributes. Applying a feature structure S to a path (fg) provides a convenient reference to the value obtained by applying S successively to f and g._
+> _These simple structures provide the base for a general subsumption relation $\sqsubseteq$ which imposes a partial informativeness order on arbitrary feature structures S and T. In Shieber’s formulation, feature structures are treated as partial functions from features to values, so that the expression $S(f)$ denotes the value that a structure S assigns to a feature f. Similarly,
+dom(S) denotes the domain of features to which a structure S assigns a value. The expression $S(p)$ denotes the value assigned a sequence or path of attributes. Applying a feature structure S to a path (fg) provides a convenient reference to the value obtained by applying S successively to f and g._
 (Blevins, 2011: 306)
 
 El objeto `FeatStruct` que nos ofrece NLTK nos permite obtener el valor asociado a un atributo fácilmente.
