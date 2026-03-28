@@ -13,6 +13,7 @@ import nltk
 
 ## Estructuras de rasgos
 
+$$
 \begin{equation}
 \text{(A) }N = \begin{bmatrix}
 \text{SIGNIFICANTE torta}\\
@@ -22,7 +23,9 @@ import nltk
 \text{PLU -}\\
 \end{bmatrix}
 \end{equation}
+$$
 
+$$
 \begin{equation}
 \text{(B) }N = \begin{bmatrix}
 \text{LEX virus}\\
@@ -33,7 +36,9 @@ import nltk
 \end{bmatrix}
 \end{bmatrix}
 \end{equation}
+$$
 
+$$
 \begin{equation}
 \text{(C) }ADJ = \begin{bmatrix}
 \text{LEX mutantes}\\
@@ -44,6 +49,7 @@ import nltk
 \end{bmatrix}
 \end{bmatrix}
 \end{equation}
+$$
 
 ### Representación con diccionarios
 
@@ -277,6 +283,7 @@ Ahora tenemos una categoría que se aproxima un poco más a lo que quisiéramos 
 
 El método `update`, como recurso para unificar estrucuras, solo resulta útil (y no conlleva efectos indeseados) cuando las estructuras involucradas contienen exactamente los mismo valores asignados a los mismos atributos o tienen rasgos no compartidos (_i.e._ alguna o ambas tiene un par <atributo, valor> que la otra no). Recordemos las estructuras indicadas por Blevins(2011) para "él" (D, izq.) y "canta" (D, der.).
 
+$$
 \begin{equation}
 \begin{bmatrix}
 \text{PER 3}\\
@@ -291,7 +298,7 @@ El método `update`, como recurso para unificar estrucuras, solo resulta útil (
 \text{CASO nom}
 \end{bmatrix}
 \end{equation}
-
+$$
 
 ```python
 fs_d_1 = {
@@ -421,7 +428,7 @@ subsumes_dict(fs_d_2, fs_d)
 
 
 
-Ventatas de la representación con diccionarios:
+Ventajas de la representación con diccionarios:
 
 - brinda un método sencillo para realizar el proceso de unificación para estructuras atómicas
 
